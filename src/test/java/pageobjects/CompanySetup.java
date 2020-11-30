@@ -3,19 +3,18 @@ package pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import test.justin.BaseTestCase;
 import utils.WebBasePage;
 
 public class CompanySetup extends WebBasePage {
 
     WebDriver driver;
     public static String productType;
-    DeployProduct deployProduct;
+    DeployProductPage deployProduct;
     public CompanySetup(WebDriver driver)
     {
         super(driver,"Company Setup Page");
         this.driver=driver;
-        this.deployProduct=new DeployProduct(driver);
+        this.deployProduct=new DeployProductPage(driver);
     }
 
     public void clickCompanySetupSubMenu()
@@ -90,6 +89,23 @@ public class CompanySetup extends WebBasePage {
         {
             if (no == null) {
                 click(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][1]//div//span[@class='slider round']"), "Product Cost No", 15);
+            }
+        }
+        deployProduct.handleSuccessPopup();
+    }
+    public void clickDepreciationToggle(boolean depriciation)
+    {
+        WebElement yes=findElementsVisibility(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider-yes']"));
+        WebElement no=findElementsVisibility(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider-no']"));
+        if(depriciation)
+        {
+            if (yes == null) {
+                click(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider round']"), "Product Cost Yes", 15);
+            }
+        }else
+        {
+            if (no == null) {
+                click(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider round']"), "Product Cost No", 15);
             }
         }
         deployProduct.handleSuccessPopup();

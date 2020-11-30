@@ -5,13 +5,16 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import utils.Errors;
 import utils.PropertiesLoader;
 import utils.WebBasePage;
 import utils.Config;
 
 import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -25,7 +28,14 @@ public class AddProductPage extends WebBasePage
     private static Properties prop = new PropertiesLoader(FILE_NAME).load();
     public static String pName;
     public static String proCode;
+    public static String pType;
+    String pattern = "yyyyMMddHHmmss";
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+    String dateValue = simpleDateFormat.format(new Date());
+    static String itemNameRandomValue;
+    static String productCode;
     WebDriver driver;
+    String filePath = System.getProperty("user.dir")+"\\src\\main\\resources\\testfiles\\";
 
     public AddProductPage(WebDriver driver)
     {
@@ -69,7 +79,7 @@ public class AddProductPage extends WebBasePage
                 else if(i==expectedCodeType.length && !element.getText().equals(expected))
                 {
                     getTest().log(LogStatus.FAIL, "BarCode Dropdown values are Not Displayed as expected");
-                    logger.info("BarCode Dropdown values are displayed as expected");
+                    logger.info("BarCode Dropdown values are not displayed as expected");
                 }
 
             }
@@ -78,21 +88,21 @@ public class AddProductPage extends WebBasePage
     }
     public void selectProductType()
     {
-        waitForVisibilityOfElement(By.cssSelector("div>select#AssetTypeId"),30);
         selectValueWithIndex(By.cssSelector("div>select#AssetTypeId"),1,"Product Type",10);
     }
-    public void enterProductName100Character()
+    public void enterProductNameHundredCharacter()
     {
         enter(By.cssSelector("div>input#Name"), prop.getProperty("productName100Charc"), "Product Name", 10);
     }
-    public void enterProductName101Character()
+    public void enterProductNameOneHundreadOneCharacter()
     {
         enter(By.cssSelector("div>input#Name"), prop.getProperty("productName101Charc"), "Product Name", 10);
         click(By.xpath("//label[@for='BarcodeTypeId']"),"bcarcode",10);
     }
     public void enterItemName()
     {
-            enter(By.cssSelector("div>input#Name"),prop.getProperty("productName"), "Product Name", 10);
+            itemNameRandomValue = prop.getProperty("productName") + dateValue;
+            enter(By.cssSelector("div>input#Name"),itemNameRandomValue, "Product Name", 10);
     }
     public void enterProductNameWithAlphaNumeric()
     {
@@ -110,23 +120,41 @@ public class AddProductPage extends WebBasePage
     }
     public void validateStatus()
     {
-        String status=getText(By.xpath("//select[@id='StatusId']"),10);
-          String pStatus=status.substring(0,6);
-        if(pStatus.equals("Active"))
+        Select select = new Select(driver.findElement(By.xpath("//select[@id='StatusId']")));
+        WebElement option = select.getFirstSelectedOption();
+        String defaultItem = option.getText();
+        if(defaultItem.equals("Active"))
         {
-            getTest().log(LogStatus.PASS, "Status is Validated successfully on Add product Page");
-            logger.info("Status is Validated successfully on Add product Page");
+            getTest().log(LogStatus.PASS, "Product Status is Validated successfully on Add product Page and the default status is " +defaultItem );
+            logger.info("Product Status is Validated successfully on Add product Page " +defaultItem);
         }
         else
             {
                 getTest().log(LogStatus.FAIL, "Status is updated wrongly on Add product Page");
-                logger.info("Status is updated wrongly on Add product Page");
+                logger.info("Product Status is updated wrongly on Add product Page");
             }
     }
     public void selectStatus()
     {
-        validateStatus();
-        selectValueWithIndex(By.cssSelector("select#StatusId"),0,"satatus",10);
+        selectValueWithIndex(By.cssSelector("select#StatusId"),1,"status",10);
+    }
+    public void changeProductStatus()
+    {
+        String pStatus="Inactive";
+        selectValueWithText(By.cssSelector("select#StatusId"),pStatus,"status",10);
+        String expectedValue=getAtribute(By.xpath("//select[@id='StatusId']//option[text()='"+pStatus+"']"),"value",10);
+        String actualValue=getAtribute(By.cssSelector("select#StatusId"),"value",10);
+        if(expectedValue.equals(actualValue))
+        {
+            getTest().log(LogStatus.PASS, "Status is changed successfully to "+pStatus);
+            logger.info("Status is changed successfully to "+pStatus);
+        }
+        else
+            {
+                getTest().log(LogStatus.FAIL, "Status is not changed to "+pStatus);
+                logger.info("Status is not changed to "+pStatus);
+            }
+
     }
     public void selectAudit()
     {
@@ -140,7 +168,7 @@ public class AddProductPage extends WebBasePage
     {
         selectValueWithIndex(By.cssSelector("select#CalibrationFrequency"),1,"calibration",10);
     }
-    public void enterProductCode6Character()
+    public void enterProductCodeSixCharacter()
     {
         enter(By.cssSelector("div>input#ItemCode"),prop.getProperty("productCode6Charcter"),"product code",10);
     }
@@ -150,40 +178,32 @@ public class AddProductPage extends WebBasePage
     }
     public void enterProductCode()
     {
+        productCode = dateValue.substring(8,14);
         defaultPcode=getAtribute(By.cssSelector("input#txtitemtypecode"),"value",30);
-        enter(By.cssSelector("div>input#ItemCode"),prop.getProperty("productCode"),"product code",10);
+        enter(By.cssSelector("div>input#ItemCode"),productCode,"product code",10);
+
     }
     public void enterProductCodeWithAlphaNumeric()
     {
         enter(By.cssSelector("div>input#ItemCode"),prop.getProperty("productCodeAlphaNumeric"),"product code",10);
     }
-    public void enterProductNameWith1Character()
+    public void enterProductNameWithOneCharacter()
     {
       enter(By.cssSelector("div>input#Name"),prop.getProperty("productName1Character"),"product code",10);
     }
     public void uploadDocument()
     {
-    driver.findElement(By.cssSelector("input#flFileDisplay")).sendKeys(Config.testfilejpg);
-        String docName=getText(By.xpath("(//div//input[@type='text'])[14]"),20);
-    driver.findElement(By.cssSelector("input#flFileDisplay")).sendKeys(Config.testfilePDF);
-        String doc2Name=getText(By.xpath("(//div//input[@type='text'])[14]"),20);
-        if(docName.equals(doc2Name))
-        {
-            getTest().log(LogStatus.PASS, "Newly uploaded Document is not reflected");
-            logger.info("Newly uploaded Document is not reflected");
-        }
-        else if(doc2Name.equals(Config.testfilePDFfileName))
-        {
-            getTest().log(LogStatus.FAIL, "Document upload field i sworking as expected");
-            logger.info("Document upload field i sworking as expected");
-        }
-
+       uploadDoc(By.cssSelector("input#flFileDisplay"), filePath+prop.getProperty("testfilejpg") ,"Upload document", 10 );
     }
-    public void enterDescription250Character()
+    public void enterDescription()
     {
         enter(By.cssSelector("textarea#Description"),prop.getProperty("description250Character"),"description",10);
     }
-    public void enterDescription1Character()
+    public void enterDescriptionTwoHundredFiftyCharacter()
+    {
+        enter(By.cssSelector("textarea#Description"),prop.getProperty("description250Character"),"description",10);
+    }
+    public void enterDescriptionOneCharacter()
     {
         enter(By.cssSelector("textarea#Description"),prop.getProperty("description1Character"),"description",10);
     }
@@ -201,20 +221,19 @@ public class AddProductPage extends WebBasePage
     }
     public void clickNextButton()
     {
-//        click(By.cssSelector("a#btnNext"),"Next button",10);
-
+        click(By.cssSelector("a#btnNext"),"Next button",10);
         waitForVisibilityOfElement(By.xpath("(//span[@class='p-name text-white'])[3]"),30);
         String deployTab=getText(By.xpath("(//span[@class='p-name text-white'])[3]"),10);
         String deployProduct=prop.getProperty("deployTab");
         if(deployProduct.equals(deployTab))
         {
-            getTest().log(LogStatus.PASS, "Deploy Product Tab is displayed succfully ");
-            logger.info("Deploy Product Tab is displayed succfully");
+            getTest().log(LogStatus.PASS, "Deploy Product Tab page is displayed successfully ");
+            logger.info("Deploy Product Tab page is displayed succfully");
         }
         else
         {
-            getTest().log(LogStatus.PASS, "Deploy Product Tab is not displayed succfully ");
-            logger.info("Deploy product Tab is not displayed");
+            getTest().log(LogStatus.PASS, "Deploy Product Tab page is not displayed succfully ");
+            logger.info("Deploy product Tab page is not displayed");
         }
 
     }
@@ -229,22 +248,34 @@ public class AddProductPage extends WebBasePage
     public void manageProductPageValidation()
     {
         waitForVisibilityOfElement(By.xpath("//table[@id='tablelistingdata']/tbody/tr[@class='low-bar odd'][1]/td[5]/span"),30);
-        String pCode=prop.getProperty("productCode");
-        String pName=prop.getProperty("productName");
-        String productName=getText(By.xpath("//table/tbody/tr[2]/td[5]"),15);
-        String productCode=getText(By.xpath("//table/tbody/tr[2]/td[4]"),15);
-        if(pName.equals(productName)&& pCode.contains(productCode))
+        String productName=getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[5]"),15);
+        String productCodeApp=getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]"),15);
+        if(itemNameRandomValue.equals(productName)&& (defaultPcode+productCode).equals(productCodeApp))
         {
-            getTest().log(LogStatus.PASS, "Product List Page is displayed");
-            logger.info("Product List Page is displayed");
+            getTest().log(LogStatus.PASS, "Added Product is saved in the product list page and product list page is also displayed");
+            logger.info("Added Product is saved in the product list page and product list page is also displayed");
         }
         else
         {
-            getTest().log(LogStatus.PASS, "Product List Page is Not displayed");
-            logger.info("Product List Page is not displayed");
+            getTest().log(LogStatus.PASS, "Added Product is saved in the product list page and product list page is not displayed");
+            logger.info("Added Product is saved in the product list page and product list page is not displayed");
         }
 
 
+    }
+    public void defaultProductCodeValidation()
+    {
+        String productCodeApp=getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]"),15);
+        if((defaultPcode+productCode).equals(productCodeApp))
+        {
+            getTest().log(LogStatus.PASS, "Entered Product code is displayed in the combination of Product type + Product code as "+(defaultPcode+productCode));
+            logger.info("Entered Product code is displayed with the combination of Product type + Product code as "+(defaultPcode+productCode));
+        }
+        else
+        {
+            getTest().log(LogStatus.PASS, "Entered Product code is not displayed in the combination of Product type + Product code as ");
+            logger.info("Entered Product code is not displayed in the combination of Product type + Product code as ");
+        }
     }
     public void handleSuccessPopup()
     {
@@ -256,21 +287,6 @@ public class AddProductPage extends WebBasePage
         }
     }
 
-    public void pCodeValidation()
-    {
-        String productCode=getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]//span"),10);
-        if(productCode.contains(defaultPcode))
-        {
-            getTest().log(LogStatus.PASS, "Default product code is displayed as expected");
-            logger.info("Default product code is displayed as expected");
-        }
-        else
-        {
-            getTest().log(LogStatus.FAIL, "Default product code is not displayed as expected");
-            logger.info("Default product code is not displayed as expected");
-        }
-
-    }
     public void mandatoryFieldValidation()
     {
         click(By.cssSelector("a#btnSave"),"save button",60);
@@ -282,33 +298,64 @@ public class AddProductPage extends WebBasePage
         String errorMsgg= barcodeTypeRequired;
         if(errorMsg.equals(productTypeErrorMsg) && errorMsgs.equals(productNameErrorMsg) && errorMsgg.equals(barcodetypeErrorMsg))
         {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed ");
+            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in mandatory fields on add product Page");
             logger.info("Error Message is successfully displayed as "+errorMsg);
             logger.info("Error Message is successfully displayed as "+errorMsgs);
             logger.info("Error Message is successfully displayed as "+errorMsgs);
         }
         else
         {
-            getTest().log(LogStatus.FAIL, "Error Message is successfully displayed ");
-            logger.info("Error Messgae is not displayed");
+            getTest().log(LogStatus.FAIL, "Error Message is successfully displayed in mandatory fields on add product Page ");
+            logger.info("Error Messgae is not displayed in mandatory fields on add product Page");
         }
+        driver.navigate().refresh();
     }
     public void documentValidation()
     {
         scrollDown();
-        driver.findElement(By.cssSelector("input#flFileDisplay")).sendKeys(Config.testfiletiff);
+        uploadDoc(By.cssSelector("input#flFileDisplay"),filePath+prop.getProperty("testfiletiff"), "Upload document" , 10);
         String documentErrorMsg=Errors.uploadValidDocuments;
         String docErrorMsg=getText(By.xpath("//label[@for='flFileDisplay']//following::small"),10);
         if(documentErrorMsg.equals(docErrorMsg))
         {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed ");
+            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in uploading document field on Addproduct page");
             logger.info("Error Message is displayed successfully displayed as "+documentErrorMsg);
 
         }
         else
         {
-            getTest().log(LogStatus.FAIL, "Error Message is successfully displayed ");
-            logger.info("Error Message is not displayed");
+            getTest().log(LogStatus.FAIL, "Error Message is not displayed in uploading document field on Addproduct page ");
+            logger.info("Error Message is not displayed in uploading document field on Addproduct page");
+
+        }
+
+    }
+    public void uploadDocuValidation()
+    {
+        uploadDoc(By.cssSelector("input#flFileDisplay"), filePath+prop.getProperty("testfilejpg"), "uploaded document", 10);
+        String docName=getText(By.xpath("(//div[@class='custom-file']//div//input[@type='text'])[1]"),20);
+        uploadDoc(By.cssSelector("input#flFileDisplay"),filePath+prop.getProperty("testfilePDF"), "Upload document",10);
+        String doc2Name=getText(By.xpath("(//div[@class='custom-file']//div//input[@type='text'])[1]"),20);
+        if(!docName.equals("") && !doc2Name.equals(""))
+        {
+            if (docName.equals(doc2Name))
+            {
+                getTest().log(LogStatus.FAIL, "Newly uploaded Document is not reflected");
+                logger.info("Newly uploaded Document is not reflected");
+            } else if (doc2Name.equals(prop.getProperty("testfilePDFfileName"))) {
+                getTest().log(LogStatus.PASS, "Document upload field is working as expected");
+                logger.info("Document upload field is working as expected");
+            }
+            else
+            {
+                getTest().log(LogStatus.FAIL, "Document upload field is not working as expected");
+                logger.info("Document upload field is not working as expected");
+            }
+        }
+        else
+        {
+            getTest().log(LogStatus.FAIL, "Not able to get the file Name");
+            logger.info("Not able to get the file Name");
 
         }
 
@@ -318,25 +365,7 @@ public class AddProductPage extends WebBasePage
         String productCode=getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]//span"),10);
         proCode=productCode.substring(4,10);
     }
-    public void productCodeValidation()
-    {
 
-        String pCodeErrorMsg;
-        enter(By.cssSelector("div>input#ItemCode"),proCode,"product code",10);
-
-        String errormsg=Errors.duplicateProductCode;
-        pCodeErrorMsg=getText(By.xpath("(//div[contains(@class,'input-group ')]//following::small)[1]"),60);
-        if (pCodeErrorMsg.equals(errormsg))
-        {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed ");
-            logger.info("Error Message is successfully displaed as "+errormsg);
-        }
-        else
-        {
-            getTest().log(LogStatus.FAIL, "Error Message is not successfully displayed ");
-            logger.info("Error Message is not Displayed");
-        }
-    }
     public void getProductName()
     {
         String productName=getText(By.xpath("(//a[normalize-space(@id)='ancEditAssetType'])[1]"),10);
@@ -351,12 +380,12 @@ public class AddProductPage extends WebBasePage
         duplicateNameErrorMsg=getText(By.xpath("(//input[@id='Name']//following::span)[1]"),50);
         if(duplicateNameErrorMsg.equals(nameerrorMsg))
         {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed ");
+            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product Name field on Addproduct page as "+nameerrorMsg);
             logger.info("Error Message is successfully displayed as "+nameerrorMsg);
         }
         else
         {
-            getTest().log(LogStatus.FAIL, "Error Message is not successfully displayed ");
+            getTest().log(LogStatus.FAIL, "Error Message is not successfully displayed in product Name field on Addproduct page");
             logger.info("Error Message is not displayed");
         }
 
@@ -370,13 +399,13 @@ public class AddProductPage extends WebBasePage
         String descriptionErrorMsg=getText(By.xpath("(//label[@for='Description']//following::span)[1]"),10);
         if(descriptionErrorMsg.equals(errorMsg))
         {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed ");
-            logger.info("Error Messgae is successfully displayed as "+errorMsg);
+            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in description field on Addproduct page as "+errorMsg);
+            logger.info("Error Message is successfully displayed in description field on Addproduct page as "+errorMsg);
         }
         else
         {
-            getTest().log(LogStatus.FAIL, "Error Message isNot  successfully displayed ");
-            logger.info("Error Message is not displayed");
+            getTest().log(LogStatus.FAIL, "Error Message is Not successfully displayed in description field on Addproduct page");
+            logger.info("Error Message is not displayed in description field on Addproduct page");
         }
         driver.navigate().refresh();
     }
@@ -386,16 +415,15 @@ public class AddProductPage extends WebBasePage
         String pNameErrorMsg=getText(By.xpath("(//input[@id='Name']//following::span)[1]"),10);
         if(errorMsgs.equals(pNameErrorMsg) )
         {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed ");
-            logger.info("Error Message is successfully displayed as "+errorMsgs);
+            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product name field as "+errorMsgs);
+            logger.info("Error Message is successfully displayed in product name field as "+errorMsgs);
 
         }
         else
         {
-            getTest().log(LogStatus.FAIL, "Error Messgae is not displayed");
-            logger.info("Error Messgae is not displayed");
+            getTest().log(LogStatus.FAIL, "Error Messgae is not displayed in product name field");
+            logger.info("Error Messgae is not displayed in product name field");
         }
-        driver.navigate().refresh();
     }
     public void verifymandatoryFieldValidation()
     {
@@ -415,14 +443,14 @@ public class AddProductPage extends WebBasePage
                     i++;
                     if(element.getText().equals(expected))
                     {
-                        getTest().log(LogStatus.PASS, expected+" error message is displayed as expected");
-                        logger.info(expected+" error message is displayed as expected");
+                        getTest().log(LogStatus.PASS, expected+" Error message is displayed as expected in the mandatory fields");
+                        logger.info(expected+" Error message is displayed as expected in mandatory fields");
                         break;
                     }
                     else if (i==errorMessageLocator.size()&&!element.getText().equals(expected))
                     {
-                        getTest().log(LogStatus.FAIL, expected+" error message is not displayed as expected");
-                        logger.info(expected+" error message is not displayed as expected");
+                        getTest().log(LogStatus.FAIL, expected+" Error message is not displayed as expected in mandatory fields");
+                        logger.info(expected+" Error message is not displayed as expected in mandatory fields");
                     }
                 }
             }
@@ -435,17 +463,44 @@ public class AddProductPage extends WebBasePage
         String productTypeErrorMsg=getText(By.xpath("(//select[@id='AssetTypeId']//following::span)[1]"),10);
         if(errorMsgs.equals(productTypeErrorMsg) )
         {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed ");
-            logger.info("Error Message is successfully displayed as "+errorMsgs);
+            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product type field as "+errorMsgs);
+            logger.info("Error Message is successfully displayed in product type field as "+errorMsgs);
 
         }
         else
         {
-            getTest().log(LogStatus.FAIL, "Error Messgae is not displayed");
-            logger.info("Error Messgae is not displayed");
+            getTest().log(LogStatus.FAIL, "Error Messgae is not displayed in product type field");
+            logger.info("Error Messgae is not displayed in product type field");
         }
         driver.navigate().refresh();
     }
+    public void getProductTYpe()
+    {
+     String productType=getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[3]//span"),10);
+     pType=productType;
+
+    }
+    public void duplicateProductCodeValidation()
+    {
+
+        String pCodeErrorMsg;
+        selectValueWithText(By.cssSelector("div>select#AssetTypeId"),pType,"product type",20);
+        enter(By.cssSelector("div>input#ItemCode"),proCode,"product code",10);
+
+        String errormsg=Errors.duplicateProductCode;
+        pCodeErrorMsg=getText(By.xpath("(//div[contains(@class,'input-group ')]//following::small)[1]"),60);
+        if (pCodeErrorMsg.equals(errormsg))
+        {
+            getTest().log(LogStatus.PASS, "Error Message is successfully displayed on product code field as "+errormsg);
+            logger.info("Error Message is successfully displayed on product code field as "+errormsg);
+        }
+        else
+        {
+            getTest().log(LogStatus.FAIL, "Error Message is not successfully displayed on product code field ");
+            logger.info("Error Message is not Displayed");
+        }
+    }
+
 
 
 

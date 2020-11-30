@@ -15,10 +15,7 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -44,6 +41,10 @@ public class WebBasePage extends WaitStatement{
 
         driver.get(url);
         getTest().log(LogStatus.PASS,"Url opened - "+url);
+    }
+    public List<WebElement> findMultipleElement(By by){
+        List<WebElement> elements = driver.findElements(by);
+        return elements;
     }
     public String NameGenerator()
     {
@@ -508,6 +509,20 @@ public class WebBasePage extends WaitStatement{
             fis.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void uploadDoc(By by,String value,String name,int time){
+        WebElement element=findElementVisibility(by,time);
+        staticWait(500);
+        if(element!=null){
+            element.sendKeys(value);
+            getTest().log(LogStatus.PASS,name+" uploaded with value - "+value);
+            logger.info(name+" uploaded with value - "+value);
+        }else{
+            getTest().log(LogStatus.FAIL,pageName+name+" not uploaded with value - "+value);
+            logger.info(name+" not uploaded with path - "+value);
+            Assert.fail(name+" -  element not present");
         }
     }
 }

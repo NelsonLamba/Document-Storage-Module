@@ -48,24 +48,14 @@ public class WebTestBase {
     @BeforeTest(alwaysRun = true)
     public void setUp(String browser, String env) throws MalformedURLException {
 
-        //test=getTest(method.getDeclaringClass().getSimpleName()+"-"+method.getName(),method.getName());
         String url;
-        if (env.equalsIgnoreCase("local")) {
-            driver = new Drivers().getWebDriver(browser);
-            driver.manage().window().maximize();
-        } else if (env.equalsIgnoreCase("browserstack")) {
-            //driver = new Drivers().getBrowserStackDriver(browser);
-            driver.manage().window().maximize();
-        }else if (env.equalsIgnoreCase("browserstackMobile")) {
-           // driver = new Drivers().getMobileBrowserStackDriver(browser);
-        }
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-        System.out.println(System.getProperty("environment"));
+        driver = new Drivers().getWebDriver(browser);
         if (System.getProperty("environment") != null) {
             url = System.getProperty("environment");
             driver.get(url);
         } else {
             driver.get("https://sandbox2.talygen.com/");
+            driver.manage().window().maximize();
         }
     }
 
