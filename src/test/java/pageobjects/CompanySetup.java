@@ -9,12 +9,11 @@ public class CompanySetup extends WebBasePage {
 
     WebDriver driver;
     public static String productType;
-    DeployProductPage deployProduct;
+
     public CompanySetup(WebDriver driver)
     {
         super(driver,"Company Setup Page");
         this.driver=driver;
-        this.deployProduct=new DeployProductPage(driver);
     }
 
     public void clickCompanySetupSubMenu()
@@ -61,6 +60,7 @@ public class CompanySetup extends WebBasePage {
     }
     public void clickProductCostToggle(boolean cost)
     {
+        DeployProductPage deployProduct = new DeployProductPage(driver);
         WebElement yes=findElementsVisibility(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][5]//div//span[@class='slider-yes']"));
         WebElement no=findElementsVisibility(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][5]//div//span[@class='slider-no']"));
         if(cost)
@@ -78,6 +78,7 @@ public class CompanySetup extends WebBasePage {
     }
     public void clickInsurancePolicyToggle(boolean policy)
     {
+        DeployProductPage deployProduct = new DeployProductPage(driver);
         WebElement yes=findElementsVisibility(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][1]//div//span[@class='slider-yes']"));
         WebElement no=findElementsVisibility(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][1]//div//span[@class='slider-no']"));
         if(policy)
@@ -95,6 +96,7 @@ public class CompanySetup extends WebBasePage {
     }
     public void clickDepreciationToggle(boolean depriciation)
     {
+        DeployProductPage deployProduct = new DeployProductPage(driver);
         WebElement yes=findElementsVisibility(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider-yes']"));
         WebElement no=findElementsVisibility(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider-no']"));
         if(depriciation)

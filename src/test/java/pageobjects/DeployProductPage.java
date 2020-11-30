@@ -16,14 +16,13 @@ import static reporting.ComplexReportFactory.getTest;
 
 public class DeployProductPage extends WebBasePage {
     WebDriver driver;
-    List<String>locationNameList;
+    List<String>locationNameList=new ArrayList<>();
     CompanySetup companySetup;
     public DeployProductPage(WebDriver driver)
     {
         super(driver,"Dashboard Page");
         this.driver=driver;
-        this.locationNameList=new ArrayList<>();
-        this.companySetup=new CompanySetup(driver);
+        companySetup=new CompanySetup(driver);
     }
 
     public void clickFullMenuDropDown()
@@ -40,9 +39,6 @@ public class DeployProductPage extends WebBasePage {
     }
     public void navigateToDeployTab()
     {
-        clickFullMenuDropDown();
-        clickAssetManagement();
-        clickManageProduct();
         click(By.cssSelector("ul#myTab>li:nth-child(2)>a"),"Deploy Tab",10);
     }
     public void openProduct(String productName)
@@ -61,17 +57,22 @@ public class DeployProductPage extends WebBasePage {
         expecteListHeader.add("Deployed By");
         expecteListHeader.add("Deployed At");
         expecteListHeader.add("Quantity");
+        expecteListHeader.add("Product Cost/Qty");
 
 
-//        List<WebElement> listHeader=driver.findElements(By.xpath("//table[@id='deployItemsTable']//tr//th//span"));
-        List<WebElement> listHeader=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tr//th//span"));
+        List<WebElement> listHeader=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tr//th//span"),15);
         for (WebElement actual:listHeader) {
-            for (Object expected:expecteListHeader ) {
+            List<String> expectedValues=expecteListHeader;
+            for (Object expected:expectedValues ) {
                 i++;
+                String text2=actual.getText();
+                String text1=expected.toString();
                 if(actual.getText().equals(expected))
                 {
                     getTest().log(LogStatus.PASS, "The "+expected+" Header is displayed in the Deploy listing page");
                     logger.info("The "+expected+" Header is displayed in the Deploy listing page");
+                    i=0;
+                    break;
                 }
                 else if(i==listHeader.size()&&!actual.getText().equals(expected))
                 {
@@ -148,13 +149,13 @@ public class DeployProductPage extends WebBasePage {
 
     public void verifySearchedProduct(String searchItem)
     {
-//        List<WebElement> searchedProduct=driver.findElements(By.cssSelector("table#deployItemsTable>tbody>tr>td>a"));
-        List<WebElement> searchedProduct=findMultipleElement(By.cssSelector("table#deployItemsTable>tbody>tr>td>a"));
+        List<WebElement> searchedProduct=findMultipleElement(By.cssSelector("table#deployItemsTable>tbody>tr>td>a"),15);
         for (WebElement locators:searchedProduct) {
             if(locators.getText().equals(searchItem))
             {
                 getTest().log(LogStatus.PASS, "Searched location list is Displayed");
                 logger.info("Searched location list is Displayed");
+                break;
             }
             else
             {
@@ -165,12 +166,12 @@ public class DeployProductPage extends WebBasePage {
     }
     public  void clickClearSearch()
     {
-        click(By.className("a#aUN_ClearSearch"),"Clear Search",15);
+        click(By.cssSelector("a#aUN_ClearSearch"),"Clear Search",15);
     }
     public void verifyClearedSearch()
     {
         String searchfield=getAtribute(By.cssSelector("input#assetSearch"),"value",15);
-        if(searchfield==null) {
+        if(searchfield=="") {
             logger.info("Search field is cleared successfully");
             getTest().log(LogStatus.PASS, "Search field is cleared successfully");
         }
@@ -261,11 +262,11 @@ public class DeployProductPage extends WebBasePage {
     {
         enter(By.cssSelector("div>input#PurchaseOrder"),purchaseOrder,"PurchaseOrder",15);
     }
-    public void selectOrderDate(String orderDate)
+    /*public void selectOrderDate(String orderDate)
     {
         //enter(By.cssSelector("div>input#txtOrderDate"),orderDate,"Order Date",15);
         clickOrderDateField();
-    }
+    }*/
     public void enterInvoiceNumber(String invoiceNumber)
     {
         enter(By.cssSelector("div>input#txtOrderDate"),invoiceNumber,"Invoice Number",15);
@@ -321,8 +322,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyCreatedDeployProduct(String modelName)
     {
-//        List<WebElement> deployedProductlist=driver.findElements(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[2]//span"));
-        List<WebElement> deployedProductlist=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[2]//span"));
+        List<WebElement> deployedProductlist=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[2]//span"),15);
         for (WebElement element:deployedProductlist) {
             if(element.getText().equals(modelName))
             {
@@ -342,8 +342,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyRecordsPerPage(int count)
     {
-//        int recordCount=driver.findElements(By.cssSelector("//table[@id='deployItemsTable']//tbody//tr")).size();
-        int recordCount=findMultipleElement(By.cssSelector("//table[@id='deployItemsTable']//tbody//tr")).size();
+        int recordCount=findMultipleElement(By.cssSelector("//table[@id='deployItemsTable']//tbody//tr"),15).size();
         if(recordCount<=count)
         {
             getTest().log(LogStatus.PASS, "Records are displayed according to the selected page size");
@@ -388,17 +387,6 @@ public class DeployProductPage extends WebBasePage {
             logger.info("Deploy Product popup is not displayed in edit mode");
         }
     }
-    /*public void verifyPagination()
-    {
-        List resultList=new ArrayList();
-        String[] pagination=getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"),15).split(" ");
-        int startCount= Integer.parseInt(pagination[1]);
-        int countinCurrentPage=Integer.parseInt(pagination[3]);
-        int totalCountinPagination=Integer.parseInt(pagination[5]);
-        int recordCount=driver.findElements(By.cssSelector("//table[@id='deployItemsTable']//tbody//tr")).size();
-        resultList.add((countinCurrentPage-(startCount-1))==recordCount?"true":"false");
-        click(By.cssSelector());
-    }*/
     public void verifymandatoryFieldValidation()
     {
 
@@ -409,10 +397,8 @@ public class DeployProductPage extends WebBasePage {
         expectedErrors.add("Unit Price should be greater than 0");
 
         int i=0;
-//        int mandatoryFieldCount=driver.findElements(By.xpath("//div[@class='modal-content']//span[@class='text-danger' and text()='*']")).size();
-        int mandatoryFieldCount=findMultipleElement(By.xpath("//div[@class='modal-content']//span[@class='text-danger' and text()='*']")).size();
-//        List<WebElement> errorMessageLocator=driver.findElements(By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"));
-        List<WebElement> errorMessageLocator=findMultipleElement(By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"));
+        int mandatoryFieldCount=findMultipleElement(By.xpath("//div[@class='modal-content']//span[@class='text-danger' and text()='*']"),15).size();
+        List<WebElement> errorMessageLocator=findMultipleElement(By.xpath("//div[@class='modal-content']//span[contains(@class,'invalid-feedback')]"),15);
         if(mandatoryFieldCount==errorMessageLocator.size())
         {
             for (WebElement element:errorMessageLocator) {
@@ -495,7 +481,7 @@ public class DeployProductPage extends WebBasePage {
     public void getLocationsFromSetup()
     {
         //List<WebElement> locationList=driver.findElements(By.cssSelector("#ancEditLocation"));
-        List<WebElement> locationList=findMultipleElement(By.cssSelector("#ancEditLocation"));
+        List<WebElement> locationList=findMultipleElement(By.cssSelector("#ancEditLocation"),15);
         for (WebElement element:locationList)
         {
             locationNameList.add(element.getText());
@@ -504,7 +490,7 @@ public class DeployProductPage extends WebBasePage {
     public void verifyLocations()
     {
         int i=0;
-        List<WebElement> locations=findMultipleElement(By.cssSelector(".scrollbar>li>a>span"));
+        List<WebElement> locations=findMultipleElement(By.cssSelector(".scrollbar>li>a>span"),15);
         for (WebElement actualElement:locations)
         {
             for (Object expectedElement:locationNameList)
@@ -538,7 +524,7 @@ public class DeployProductPage extends WebBasePage {
     {
         int i=0;
         //List<WebElement> actualChildNameList=driver.findElements(By.cssSelector("ul.child>li>a>div"));
-        List<WebElement> actualChildNameList=findMultipleElement(By.cssSelector("ul.child>li>a>div"));
+        List<WebElement> actualChildNameList=findMultipleElement(By.cssSelector("ul.child>li>a>div"),15);
         for (WebElement element:actualChildNameList)
         {
             i++;
@@ -691,9 +677,9 @@ public class DeployProductPage extends WebBasePage {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
         LocalDateTime now = LocalDateTime.now();
         String[] currentDate=dtf.format(now).split("/");
-        /*String day=currentDate[0];
+        String day=currentDate[0];
         String month=currentDate[1];
-        String year=currentDate[2];*/
+        String year=currentDate[2];
         return currentDate;
     }
     public WebElement selectDate(String datefield,String date)
@@ -910,7 +896,7 @@ public class DeployProductPage extends WebBasePage {
         click(By.cssSelector("div>input#depreciationId"),"Depreciation Rule",15);
         WebElement depreciationValues=findElementsVisibility(By.cssSelector("select#depreciationId>option:nth-child(2)"));
 //        List<WebElement> depreciationRule=driver.findElements(By.cssSelector("select#depreciationId>option"));
-        List<WebElement> depreciationRule=findMultipleElement(By.cssSelector("select#depreciationId>option"));
+        List<WebElement> depreciationRule=findMultipleElement(By.cssSelector("select#depreciationId>option"),15);
         if(depreciationRule.size()>=4)
         {
             getTest().log(LogStatus.PASS, "Depreciation dropdown values are displayed as expected");
@@ -925,10 +911,10 @@ public class DeployProductPage extends WebBasePage {
     public void verifyProductLifeMandatory()
     {
 //        int beforeDepreciationRule=driver.findElements(By.xpath("//form[@id='AdddEditeploy']//div[@class='row']//span[@class='text-danger']")).size();
-        int beforeDepreciationRule=findMultipleElement(By.xpath("//form[@id='AdddEditeploy']//div[@class='row']//span[@class='text-danger']")).size();
+        int beforeDepreciationRule=findMultipleElement(By.xpath("//form[@id='AdddEditeploy']//div[@class='row']//span[@class='text-danger']"),15).size();
         selectDepreciationRule(2);
 //        int afterDepreciationRule=driver.findElements(By.xpath("//form[@id='AdddEditeploy']//div[@class='row']//span[@class='text-danger']")).size();
-        int afterDepreciationRule=findMultipleElement(By.xpath("//form[@id='AdddEditeploy']//div[@class='row']//span[@class='text-danger']")).size();
+        int afterDepreciationRule=findMultipleElement(By.xpath("//form[@id='AdddEditeploy']//div[@class='row']//span[@class='text-danger']"),15).size();
         if(beforeDepreciationRule<afterDepreciationRule)
         {
             getTest().log(LogStatus.PASS, "Product Life field is displayed as mandatory after selecting depreciation rule");
@@ -988,7 +974,7 @@ public class DeployProductPage extends WebBasePage {
     {
         String modelName=getText(By.cssSelector("div>input#Model"),15);
 //        List<WebElement> modelInList=driver.findElements(By.xpath("//tbody[@class='gridRowsBody ']//tr//td[4]"));
-        List<WebElement> modelInList=findMultipleElement(By.xpath("//tbody[@class='gridRowsBody ']//tr//td[4]"));
+        List<WebElement> modelInList=findMultipleElement(By.xpath("//tbody[@class='gridRowsBody ']//tr//td[4]"),15);
         for (WebElement element:modelInList)
         {
           if(element.getText().equals(modelName))
@@ -1004,6 +990,7 @@ public class DeployProductPage extends WebBasePage {
           }
         }
     }
+
     public void clickCancelButton()
     {
         click(By.cssSelector("a#cancelBtn"),"Cancel",15);
@@ -1014,7 +1001,7 @@ public class DeployProductPage extends WebBasePage {
         clickCancelButton();
         make100PageSize();
 //        List<WebElement> modelNameLocatorList=driver.findElements(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[2]"));
-        List<WebElement> modelNameLocatorList=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[2]"));
+        List<WebElement> modelNameLocatorList=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[2]"),15);
         for (WebElement element:modelNameLocatorList)
         {
            if(!element.getText().equals(modelName))
@@ -1036,7 +1023,7 @@ public class DeployProductPage extends WebBasePage {
         clickSaveButton();
         make100PageSize();
         //List<WebElement> modelNameLocatorList=driver.findElements(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[2]"));
-        List<WebElement> modelNameLocatorList=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[2]"));
+        List<WebElement> modelNameLocatorList=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[2]"),15);
         for (WebElement element:modelNameLocatorList)
         {
             if(element.getText().equals(modelName))
@@ -1071,36 +1058,5 @@ public class DeployProductPage extends WebBasePage {
             getTest().log(LogStatus.FAIL, "Close button is not working as expecetd");
             logger.info("Close button is not working as expecetd");
         }
-    }
-    public void addDeployProduct(String quantity,String unitPrice,String modelName,String manufacturer,
-                                   String vendor,String cost,String purchaseOrder,String invoiceNumber,String date,
-                                   String insurenceNumber,String insurarName,int depreciationRule,String productLife,String salvageCost)
-    {
-        clickAddDeployButton();
-        selectLocationFromDropdown();
-        enterQuantity(quantity);
-        enterUnitPrice(unitPrice);
-        enterModel(modelName);
-        enterManufacturer(manufacturer);
-        enterVendor(vendor);
-        enterProductCost(cost);
-        enterPurchaseOrder(purchaseOrder);
-        clickOrderDateField();
-        selectDate("Order",date);
-        enterInvoiceNumber(invoiceNumber);
-        clickInvoiceDateField();
-        selectDate("Invoice",date);
-        enterInsuranceNumber(insurenceNumber);
-        enterInsurarName(insurarName);
-        clickInsuranceDateField();
-        selectDate("Insurance",date);
-        clickWarrantyDateField();
-        selectDate("Warranty",date);
-        selectDepreciationRule(depreciationRule);
-        enterProductLife(productLife);
-        enterSalvageCost(salvageCost);
-        clickAddListButton();
-        clickSaveButton();
-        handleSuccessPopup();
     }
 }
