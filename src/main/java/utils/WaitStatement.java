@@ -1,5 +1,7 @@
 package utils;
 
+import com.relevantcodes.extentreports.LogStatus;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,121 +11,93 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
+import static reporting.ComplexReportFactory.getTest;
+
 public class WaitStatement {
 
     WebDriver driver;
+    public static Logger logger;
     public WaitStatement(WebDriver driver){
         this.driver=driver;
+        logger = Logger.getLogger("");
     }
 
     public WebElement findElementVisibility(final By by,int time) {
 
         WebDriverWait wait = new WebDriverWait(driver, time);
         try {
-
             return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         } catch (Exception e) {
-            System.out.println();
+            getTest().log(LogStatus.FAIL,"Element not found : "+by);
+            logger.info("Element not found : "+by);
             return null;
         }
-
     }
 
     public WebElement findElementClickable(final By by,int time) {
 
         WebDriverWait wait = new WebDriverWait(driver, time);
-
         try {
-
             wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-            wait.until(ExpectedConditions.elementToBeClickable(by));
-            wait.until((ExpectedCondition<Boolean>) _webDriver -> (_webDriver.findElement(by) != null));
+            return wait.until(ExpectedConditions.elementToBeClickable(by));
         } catch (Exception e) {
-            System.out.println();
+            getTest().log(LogStatus.FAIL,"Element not found : "+by);
+            logger.info("Element not found : "+by);
             return null;
         }
-        return driver.findElement(by);
-
     }
     public WebElement findElementPresence(final By by,int time) {
 
         WebDriverWait wait = new WebDriverWait(driver, time);
-
         try {
-
-            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
-            wait.until((ExpectedCondition<Boolean>) _webDriver -> (_webDriver.findElement(by) != null));
+            return wait.until(ExpectedConditions.presenceOfElementLocated(by));
         } catch (Exception e) {
-            System.out.println();
+            getTest().log(LogStatus.FAIL,"Element not found : "+by);
+            logger.info("Element not found : "+by);
             return null;
         }
-        return driver.findElement(by);
 
     }
 
     public WebElement findElementsVisibility(final By by) {
 
         List<WebElement> webElements = driver.findElements(by);
-        for(WebElement ele : webElements){
+        for (WebElement ele : webElements) {
             try {
-                if(ele.isDisplayed()){
+                if (ele.isDisplayed()) {
                     return ele;
                 }
             } catch (Exception e) {
-                System.out.println();
+                getTest().log(LogStatus.FAIL, "Element not found : " + by);
+                logger.info("Element not found : "+by);
                 return null;
             }
-
         }
-
-
         return null;
     }
 
-    public WebElement findElementsPresence(final By by,int time) {
-
-        WebDriverWait wait = new WebDriverWait(driver, time);
-        List<WebElement> webElements = driver.findElements(by);
-        for(WebElement ele : webElements){
-            try {
-                wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
-                wait.until((ExpectedCondition<Boolean>) _webDriver -> (ele != null));
-                return ele;
-            } catch (Exception e) {
-                System.out.println();
-                return null;
-            }
-        }
-
-        return driver.findElement(by);
-
-    }
-
-    public WebElement waitForInVisibilityOfElement(final By by,int time) {
+    public boolean waitForInVisibilityOfElement(final By by,int time) {
 
         WebDriverWait wait = new WebDriverWait(driver, time);
         try {
-
-            wait.until(ExpectedConditions.invisibilityOf(driver.findElement(by)));
+            return wait.until(ExpectedConditions.invisibilityOf(driver.findElement(by)));
         } catch (Exception e) {
-            System.out.println();
-            return null;
+            getTest().log(LogStatus.FAIL,"Element not found : "+by);
+            logger.info("Element not found : "+by);
+            return false;
         }
-        return driver.findElement(by);
 
     }
     public WebElement waitForVisibilityOfElement(final By by,int time) {
 
         WebDriverWait wait = new WebDriverWait(driver, time);
         try {
-
-            wait.until(ExpectedConditions.visibilityOf(driver.findElement(by)));
+            return wait.until(ExpectedConditions.visibilityOf(driver.findElement(by)));
         } catch (Exception e) {
-            System.out.println();
+            getTest().log(LogStatus.FAIL,"Element not found : "+by);
+            logger.info("Element not found : "+by);
             return null;
         }
-        return driver.findElement(by);
-
     }
 
     public boolean findElementsVisibilityByClick(final By by) {
@@ -136,11 +110,10 @@ public class WaitStatement {
                     return false;
                 }
             } catch (Exception e) {
-                System.out.println(e);
+                getTest().log(LogStatus.FAIL,"Element not found : "+by);
+                logger.info("Element not found : "+by);
             }
-
         }
         return true;
     }
-
 }

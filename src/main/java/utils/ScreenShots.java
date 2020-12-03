@@ -10,9 +10,7 @@ import java.nio.file.Files;
 
 import static reporting.ComplexReportFactory.getTest;
 
-/**
- * Created by theem_000 on 10-02-2018.
- */
+
 public class ScreenShots {
 
     public void takeScreenShot(WebDriver driver , String methodname){

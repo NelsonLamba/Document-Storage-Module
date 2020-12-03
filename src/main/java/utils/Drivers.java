@@ -20,12 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class Drivers {
 
     public WebDriver driver;
-    //    private static final String USERNAME = "joshuadavid1";
-//    private static final String AUTOMATE_KEY = "LHWVX9K38rcLakHomikW";
-    private static final String USERNAME = "dineshtets1";
-    private static final String AUTOMATE_KEY = "PB6q7ecbHdPEy93k91NX";
-    private static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-
+    public static final String path= System.getProperty("user.dir") + "\\src\\main\\resources\\downloadedFiles\\";
     public WebDriver getWebDriver(String browser) throws MalformedURLException {
 
         if (browser.equals("firefox")) {
@@ -67,42 +62,5 @@ public class Drivers {
         return driver;
     }
 
-    /*public WebDriver getBrowserStackDriver(String browser) throws MalformedURLException {
-
-        String downloadFilepath = System.getProperty("user.dir") + "\\src\\main\\resources\\downloadedFiles\\";
-
-        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-        chromePrefs.put("profile.default_content_settings.popups", 0);
-        chromePrefs.put("download.default_directory", downloadFilepath);
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", chromePrefs);
-
-        DesiredCapabilities caps = new DesiredCapabilities(options);
-        caps.setCapability("resolution", "1920x1080");
-        caps.setCapability("os", "Windows");
-        caps.setCapability("os_version", "10");
-        caps.setCapability("browser", browser);
-        caps.setCapability("browser_version", "84");
-        caps.setCapability("name", "joshuadavid1's First Test");
-        WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
-        return driver;
-    }*/
-
-    /*public WebDriver getMobileBrowserStackDriver(String browser) throws MalformedURLException {
-        DesiredCapabilities caps = new DesiredCapabilities();
-//        caps.setCapability("os_version", "11");
-//        caps.setCapability("device", "iPhone 8 Plus");
-        caps.setCapability("os_version", "10.0");
-        caps.setCapability("device", "Samsung Galaxy S20");
-        caps.setCapability("real_mobile", "true");
-        caps.setCapability("browserName", "Chrome");
-        caps.setCapability("name", "joshuadavid1's First Test");
-        WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
-        driver.get("app.talygen.com");
-
-        return driver;
-
-
-    }*/
 
 }

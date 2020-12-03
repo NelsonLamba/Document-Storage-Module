@@ -9,8 +9,6 @@ import org.openqa.selenium.support.ui.Select;
 import utils.Errors;
 import utils.PropertiesLoader;
 import utils.WebBasePage;
-import utils.Config;
-
 import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -49,11 +47,11 @@ public class AddProductPage extends WebBasePage
     }
     public void clickAssetManagement()
     {
-        click(By.cssSelector("#menuitem3 > a"),"Asset Management",10);
+        click(By.xpath("//div//li[@data-name='Asset']"),"Asset Management",10);
     }
     public void clickManageProduct()
     {
-        click(By.xpath("(//ul[contains(@class,'submenu clschild')]//a[@id='cadmin_messageboard_link'])[2]"),"Manage Product",10);
+        click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"),"Manage Product",10);
     }
     public void clickAddNewButton()
     {
@@ -172,16 +170,11 @@ public class AddProductPage extends WebBasePage
     {
         enter(By.cssSelector("div>input#ItemCode"),prop.getProperty("productCode6Charcter"),"product code",10);
     }
-    public void enterProductCode7Character()
-    {
-        enter(By.cssSelector("div>input#ItemCode"),prop.getProperty("ProductCodeWith7Character"),"product code",10);
-    }
     public void enterProductCode()
     {
         productCode = dateValue.substring(8,14);
         defaultPcode=getAtribute(By.cssSelector("input#txtitemtypecode"),"value",30);
         enter(By.cssSelector("div>input#ItemCode"),productCode,"product code",10);
-
     }
     public void enterProductCodeWithAlphaNumeric()
     {
@@ -222,8 +215,8 @@ public class AddProductPage extends WebBasePage
     public void clickNextButton()
     {
         click(By.cssSelector("a#btnNext"),"Next button",10);
-        waitForVisibilityOfElement(By.xpath("(//span[@class='p-name text-white'])[3]"),30);
-        String deployTab=getText(By.xpath("(//span[@class='p-name text-white'])[3]"),10);
+        waitForVisibilityOfElement(By.xpath("//section[@class='main-content no-left-bar']//span[@class='p-name text-white']"),30);
+        String deployTab=getText(By.xpath("//section[@class='main-content no-left-bar']//span[@class='p-name text-white']"),10);
         String deployProduct=prop.getProperty("deployTab");
         if(deployProduct.equals(deployTab))
         {
@@ -287,29 +280,6 @@ public class AddProductPage extends WebBasePage
         }
     }
 
-    public void mandatoryFieldValidation()
-    {
-        click(By.cssSelector("a#btnSave"),"save button",60);
-        String productTypeErrorMsg=getText(By.xpath("(//select[@id='AssetTypeId']//following::span)[1]"),10);
-        String productNameErrorMsg=getText(By.xpath("(//input[@id='Name']//following::span)[1]"),10);
-        String barcodetypeErrorMsg=getText(By.xpath("(//select[@id='BarcodeTypeId']//following::span)[1]"),10);
-        String errorMsg= Errors.productTypeRequired;
-        String errorMsgs= productNameReuired;
-        String errorMsgg= barcodeTypeRequired;
-        if(errorMsg.equals(productTypeErrorMsg) && errorMsgs.equals(productNameErrorMsg) && errorMsgg.equals(barcodetypeErrorMsg))
-        {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in mandatory fields on add product Page");
-            logger.info("Error Message is successfully displayed as "+errorMsg);
-            logger.info("Error Message is successfully displayed as "+errorMsgs);
-            logger.info("Error Message is successfully displayed as "+errorMsgs);
-        }
-        else
-        {
-            getTest().log(LogStatus.FAIL, "Error Message is successfully displayed in mandatory fields on add product Page ");
-            logger.info("Error Messgae is not displayed in mandatory fields on add product Page");
-        }
-        driver.navigate().refresh();
-    }
     public void documentValidation()
     {
         scrollDown();
@@ -333,9 +303,9 @@ public class AddProductPage extends WebBasePage
     public void uploadDocuValidation()
     {
         uploadDoc(By.cssSelector("input#flFileDisplay"), filePath+prop.getProperty("testfilejpg"), "uploaded document", 10);
-        String docName=getText(By.xpath("(//div[@class='custom-file']//div//input[@type='text'])[1]"),20);
+        String docName=getText(By.xpath("//div[@class='custom-file']//div//input[@type='text']"),20);
         uploadDoc(By.cssSelector("input#flFileDisplay"),filePath+prop.getProperty("testfilePDF"), "Upload document",10);
-        String doc2Name=getText(By.xpath("(//div[@class='custom-file']//div//input[@type='text'])[1]"),20);
+        String doc2Name=getText(By.xpath("//div[@class='custom-file']//div//input[@type='text']"),20);
         if(!docName.equals("") && !doc2Name.equals(""))
         {
             if (docName.equals(doc2Name))
@@ -368,7 +338,7 @@ public class AddProductPage extends WebBasePage
 
     public void getProductName()
     {
-        String productName=getText(By.xpath("(//a[normalize-space(@id)='ancEditAssetType'])[1]"),10);
+        String productName=getText(By.xpath("//a[normalize-space(@id)='ancEditAssetType']"),10);
         pName=productName;
     }
     public void productNameValidation()
@@ -425,42 +395,11 @@ public class AddProductPage extends WebBasePage
             logger.info("Error Messgae is not displayed in product name field");
         }
     }
-    public void verifymandatoryFieldValidation()
-    {
-
-        List expectedErrors=new ArrayList();
-        expectedErrors.add(productTypeRequired);
-        expectedErrors.add(productNameReuired);
-        expectedErrors.add(barcodeTypeRequired);
-
-        int i=0;
-        int mandatoryFieldCount=driver.findElements(By.xpath("//div[@class='row']//span[@class='text-danger' and text()='*']")).size();
-        List<WebElement> errorMessageLocator=driver.findElements(By.xpath("//span[@class='invalid-feedback']"));
-        if(mandatoryFieldCount==errorMessageLocator.size())
-        {
-            for (WebElement element:errorMessageLocator) {
-                for (Object expected:expectedErrors) {
-                    i++;
-                    if(element.getText().equals(expected))
-                    {
-                        getTest().log(LogStatus.PASS, expected+" Error message is displayed as expected in the mandatory fields");
-                        logger.info(expected+" Error message is displayed as expected in mandatory fields");
-                        break;
-                    }
-                    else if (i==errorMessageLocator.size()&&!element.getText().equals(expected))
-                    {
-                        getTest().log(LogStatus.FAIL, expected+" Error message is not displayed as expected in mandatory fields");
-                        logger.info(expected+" Error message is not displayed as expected in mandatory fields");
-                    }
-                }
-            }
-        }
-    }
 
     public void productTypeValidation()
     {
         String errorMsgs= productTypeRequired;
-        String productTypeErrorMsg=getText(By.xpath("(//select[@id='AssetTypeId']//following::span)[1]"),10);
+        String productTypeErrorMsg=getText(By.xpath("//input[@id='Name']//parent::div//span[@class='invalid-feedback']"),10);
         if(errorMsgs.equals(productTypeErrorMsg) )
         {
             getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product type field as "+errorMsgs);
@@ -480,15 +419,19 @@ public class AddProductPage extends WebBasePage
      pType=productType;
 
     }
+    public void selectPtype()
+    {
+        selectValueWithText(By.cssSelector("div>select#AssetTypeId"),pType,"product type",20);
+    }
+
     public void duplicateProductCodeValidation()
     {
 
         String pCodeErrorMsg;
-        selectValueWithText(By.cssSelector("div>select#AssetTypeId"),pType,"product type",20);
         enter(By.cssSelector("div>input#ItemCode"),proCode,"product code",10);
 
         String errormsg=Errors.duplicateProductCode;
-        pCodeErrorMsg=getText(By.xpath("(//div[contains(@class,'input-group ')]//following::small)[1]"),60);
+        pCodeErrorMsg=getText(By.xpath("//div[contains(@class,'input-group ')]//following::small"),60);
         if (pCodeErrorMsg.equals(errormsg))
         {
             getTest().log(LogStatus.PASS, "Error Message is successfully displayed on product code field as "+errormsg);
@@ -500,8 +443,63 @@ public class AddProductPage extends WebBasePage
             logger.info("Error Message is not Displayed");
         }
     }
+    public void mandatoryFieldValidations() {
+        int i = 0;
+        click(By.cssSelector("a#btnSave"),"save button",60);
+        List<WebElement> errorMessageLocator = findMultipleElement(By.cssSelector("[class='invalid-feedback']"),15);
+        List<WebElement> expectedErrorMSg=errorMessageLocator;
+        String []expectedValue = {"Product Type","Product Name","Barcode Type"};
+        for (Object expected : expectedValue) {
+            for (WebElement element : expectedErrorMSg) {
+                i++;
+                String actualText = element.getText();
+                String expectedText = expected.toString();
+                if (actualText.indexOf(expectedText)!=-1) {
+                    getTest().log(LogStatus.PASS, "Error message for \""+expected+"\" field is displayed as expected");
+                    logger.info("Error message for \""+expected+"\" field is displayed as expected");
+                    i=0;
+                    break;
+                } else if (i == expectedValue.length && !element.getText().contains(expectedText)) {
+                    getTest().log(LogStatus.FAIL, "Error message for \""+expected+"\" field is not displayed");
+                    logger.info("Error message for \""+expected+"\" field is not displayed as expected");
+                }
+            }
+        }
+
+    }
 
 
-
+    public void verifymandatoryFieldValidationOnAsteriskSymbolField() {
+        int i = 0;
+        List<WebElement> errorMessageLocator = findMultipleElement(By.cssSelector("[class='invalid-feedback']"),15);
+        String []expectedValue = {"Product Type","Item Name","Barcode Type"};
+        for (Object expected : expectedValue) {
+            WebElement asteriskField=findElementPresence(By.xpath("//label[text()='"+expected+":']//span"),15);
+            if(asteriskField!=null)
+            {
+                getTest().log(LogStatus.PASS, "The Asterisk symbol is displayed for "+expected+" field");
+                logger.info("The Asterisk symbol is displayed for "+expected+" field");
+            }
+            else {
+                getTest().log(LogStatus.FAIL, "The Asterisk symbol is not displayed for "+expected+" field");
+                logger.info("The Asterisk symbol is not displayed for "+expected+" field");
+            }
+            List<WebElement> expectedElements=errorMessageLocator;
+            for (WebElement element : expectedElements) {
+                i++;
+                String actualText = element.getText();
+                String expectedText = expected.toString();
+                if (actualText.indexOf(expectedText)!=-1) {
+                    getTest().log(LogStatus.PASS, "Error message for \""+expected+"\" field is displayed as expected");
+                    logger.info("Error message for \""+expected+"\" field is displayed as expected");
+                    i=0;
+                    break;
+                } else if (i == expectedValue.length && actualText.indexOf(expectedText)==-1) {
+                    getTest().log(LogStatus.FAIL, "Error message for \""+expected+"\" field is not displayed as expected");
+                    logger.info("Error message for \""+expected+"\" field is not displayed as expected");
+                }
+            }
+        }
+    }
 
 }

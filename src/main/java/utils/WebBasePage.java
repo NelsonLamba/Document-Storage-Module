@@ -42,9 +42,18 @@ public class WebBasePage extends WaitStatement{
         driver.get(url);
         getTest().log(LogStatus.PASS,"Url opened - "+url);
     }
-    public List<WebElement> findMultipleElement(By by){
-        List<WebElement> elements = driver.findElements(by);
-        return elements;
+    public List<WebElement> findMultipleElement(By by,int time){
+        try {
+            waitForVisibilityOfElement(by, time);
+            List<WebElement> elements = driver.findElements(by);
+            return elements;
+        }
+        catch (Exception e)
+        {
+            getTest().log(LogStatus.FAIL,"Element not found : "+by);
+            logger.info("Element not found : "+by);
+            return null;
+        }
     }
     public String NameGenerator()
     {
@@ -75,6 +84,16 @@ public class WebBasePage extends WaitStatement{
         givenName = String.join("", names);
         return givenName;
 
+    }
+    public void wairForLoader(int time)
+    {
+        try{
+            waitForInVisibilityOfElement(By.cssSelector(".lds-ring"),time);
+        }catch(Exception e)
+        {
+            getTest().log(LogStatus.FAIL,"Loader not found");
+            logger.info("Loader not found");
+        }
     }
     public void sleep(int time)
     {
@@ -284,7 +303,8 @@ public class WebBasePage extends WaitStatement{
             logger.info(" get attribute value is  - "+getText);
             return getText;
         } catch (Exception e) {
-            //e.printStackTrace();
+            getTest().log(LogStatus.FAIL,"Element not found : "+by);
+            logger.info("Element not found : "+by);
         }
 
         return null;
@@ -369,7 +389,7 @@ public class WebBasePage extends WaitStatement{
     }
 
     public void clickByElementsPresence(By by,String name,int time) {
-        WebElement element = findElementsPresence(by, time);
+        WebElement element = findElementPresence(by, time);
         staticWait(500);
         if (element != null) {
             element.click();

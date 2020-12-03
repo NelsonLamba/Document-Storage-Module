@@ -2,7 +2,6 @@ package Action;
 
 import org.openqa.selenium.WebDriver;
 import pageobjects.AddProductPage;
-
 import static reporting.ComplexReportFactory.getTest;
 
 public class AddProductAction
@@ -37,9 +36,14 @@ public class AddProductAction
         addProductPage.getProductCode();
         addProductPage.getProductTYpe();
         addProductPage.clickAddNewButton();
+        addProductPage.selectPtype();
+        addProductPage.enterItemName();
+        addProductPage.selectBarCodeType();
         addProductPage.duplicateProductCodeValidation();
+
     }
     public void dropDownValidation()
+
     {
         addProductPage.verifyBarCodeDropDown();
     }
@@ -92,8 +96,8 @@ public class AddProductAction
     }
     public void mandatoryFieldValidation()
     {
-        addProductPage.mandatoryFieldValidation();
-        addProductPage.verifymandatoryFieldValidation();
+        addProductPage.mandatoryFieldValidations();
+        addProductPage.verifymandatoryFieldValidationOnAsteriskSymbolField();
     }
     public void changeStatusWhileCreatingProduct()
     {
@@ -122,6 +126,10 @@ public class AddProductAction
         addProductPage.manageProductPageValidation();
         addProductPage.defaultProductCodeValidation();
         addProductPage.goBackToAddProductPage();
+    }
+    public void defaultCodeValidation()
+    {
+
     }
 
     public void deployTab()

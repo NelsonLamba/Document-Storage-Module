@@ -12,7 +12,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void addProduct()
     {
-        test = getTest("TC_Asset Management_27_End-to-End - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_15_21_27_28_End-to-End - Related Information - Verify CalibrationCommentpopup Page");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -32,7 +32,7 @@ public class AddProduct extends WebTestBase
 
     }
     @Test()
-    public void duplicateProductNameAndCodeValidation()
+    public void duplicateProductNameValidation()
     {
         test = getTest("TC_Asset Management_7_12_13- Related Information - Verify CalibrationCommentpopup Page");
         AddProductAction addProductAction=new AddProductAction(driver);
@@ -63,7 +63,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void barCode()
     {
-        test = getTest("TC_Asset Management_19 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_19_20 - Related Information - Verify CalibrationCommentpopup Page");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -103,7 +103,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void documentValidation()
     {
-        test = getTest("TC_Asset Management_30 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_29_30 - Related Information - Verify CalibrationCommentpopup Page");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -143,7 +143,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void mandatoryFieldValidation()
     {
-        test = getTest("TC_Asset Management_24_25_26 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_10_24_25_26 - Related Information - Verify CalibrationCommentpopup Page");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
