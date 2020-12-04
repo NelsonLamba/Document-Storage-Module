@@ -35,10 +35,10 @@ public class CompanySetupAction {
         DeployProductPage deployProduct=new DeployProductPage(driver);
         companySetup.clickAddLocationButton();
         companySetup.selectParentLocation();
-        companySetup.enterLocationName("Eigth Child Location");
-        companySetup.enterAddreesLine1("addressOne");
-        companySetup.enterCity("city");
-        companySetup.selectCountry("India");
+        companySetup.enterLocationName();
+        companySetup.enterAddreesLine1();
+        companySetup.enterCity();
+        companySetup.selectCountry();
         companySetup.saveLocation();
         deployProduct.handleSuccessPopup();
     }
