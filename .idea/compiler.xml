@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ticketingsystem" />
+        <module name="talygen" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ticketingsystem" target="1.8" />
+      <module name="talygen" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -4,6 +4,7 @@ import bsh.commands.dir;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static reporting.ComplexReportFactory.*;
@@ -23,45 +25,36 @@ public class WebTestBase {
 
     public WebDriver driver;
     public ExtentTest test;
+    public static Logger logger;
+    private final static String FILE_NAME = System.getProperty("user.dir")+"\\src\\main\\resources\\testdata.properties";
+    private static Properties prop = new PropertiesLoader(FILE_NAME).load();
 
-    @BeforeSuite(alwaysRun = true)
-   /* public void CreateTestLogPath() {
-        excelpath = System.getProperty("user.dir") + "\\src\\main\\resources\\TestData.xlsx";
-        File zipFilePath = new File(System.getProperty("user.dir") + "\\src\\main\\resources\\zipFilePath");
-        File downloadFilePath = new File(System.getProperty("user.dir") + "\\src\\main\\resources\\downloadedFiles");
-        try {
-            FileUtils.cleanDirectory(zipFilePath);
-            FileUtils.cleanDirectory(downloadFilePath);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }*/
-
-    @AfterSuite(alwaysRun = true)
+     @AfterSuite(alwaysRun = true)
     public void close() {
         closeReport();
     }
 
-    @Parameters({"browser", "env"})
-
     @BeforeTest(alwaysRun = true)
-    public void setUp(String browser, String env) throws MalformedURLException {
-
-        String url;
-        driver = new Drivers().getWebDriver(browser);
-        if (System.getProperty("environment") != null) {
-            url = System.getProperty("environment");
-            driver.get(url);
-        } else {
-            driver.get("https://sandbox2.talygen.com/");
-            driver.manage().window().maximize();
+    public void setUp() throws MalformedURLException {
+        String url = System.getProperty("url");
+        String browser = System.getProperty("browser");
+        if(url == null){
+            url = prop.getProperty("url");
         }
+        if(browser == null){
+            browser = "chrome";
+        }
+        System.out.println(url);
+        driver = new Drivers().getWebDriver(browser);
+        driver.get(url);
+        driver.manage().window().maximize();
     }
 
     @BeforeMethod()
     public void beforeMethod(Method method) {
-        //test = getTest(method.getDeclaringClass().getSimpleName() + "-" + method.getName(), method.getName());
+        logger = Logger.getLogger(method.getDeclaringClass().getSimpleName() + "-" + method.getName());
+//        test = getTest(method.getDeclaringClass().getSimpleName() + "-" + method.getName(), method.getName());
+        System.out.println("Method Name - "+method.getDeclaringClass().getSimpleName() + "-" + method.getName());
     }
 
     @AfterMethod(alwaysRun = true)

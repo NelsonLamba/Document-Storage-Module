@@ -4,22 +4,30 @@ import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WrapsElement;
+import utils.PropertiesLoader;
 import utils.WebBasePage;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
 import static reporting.ComplexReportFactory.getTest;
 
 public class DeployProductPage extends WebBasePage {
     WebDriver driver;
+    private final static String FILE_NAME = System.getProperty("user.dir")+"\\src\\main\\resources\\testdata.properties";
+    private static Properties prop = new PropertiesLoader(FILE_NAME).load();
     public static List<String>parentLocationNameList=new ArrayList<>();
     public static List<String>childLocationNameList=new ArrayList<>();
     public static String inputDate;
     public static String modelNameFromPopup;
+    String pattern = "yyyyMMddHHmmss";
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+    String dateValue = simpleDateFormat.format(new Date());
     CompanySetupPage companySetup;
     public DeployProductPage(WebDriver driver)
     {
@@ -51,7 +59,7 @@ public class DeployProductPage extends WebBasePage {
     public void verifyListingColumnHeader()
     {
         int i=0;
-        List expecteListHeader=new ArrayList();
+        List<String> expecteListHeader=new ArrayList<>();
         expecteListHeader.add("Location");
         expecteListHeader.add("Model");
         expecteListHeader.add("Ref. PurchaseOrder");
@@ -137,13 +145,13 @@ public class DeployProductPage extends WebBasePage {
         }
         else
         {
-            getTest().log(LogStatus.PASS, "\"Previous Button\" is not displayed in the Deploy product page");
+            getTest().log(LogStatus.FAIL, "\"Previous Button\" is not displayed in the Deploy product page");
             logger.info("\"Previous Button\" is not displayed in the Deploy product page");
         }
     }
-    public void enterInSearchField(String searchItem)
+    public void enterInSearchField(String locationToSearch)
     {
-        enter(By.cssSelector("input#assetSearch"),searchItem,"Search Field",15);
+        enter(By.cssSelector("input#assetSearch"),locationToSearch,"Search Field",15);
     }
     public void clickSearchButton()
     {
@@ -151,11 +159,11 @@ public class DeployProductPage extends WebBasePage {
         wairForLoader(20);
     }
 
-    public void verifySearchedProduct(String searchItem)
+    public void verifySearchedProduct(String expectedResultLocation)
     {
         List<WebElement> searchedProduct=findMultipleElement(By.cssSelector("table#deployItemsTable>tbody>tr>td>a"),20);
         for (WebElement locators:searchedProduct) {
-            if(locators.getText().equals(searchItem))
+            if(locators.getText().equals(expectedResultLocation))
             {
                 getTest().log(LogStatus.PASS, "Searched location list is Displayed");
                 logger.info("Searched location list is Displayed");
@@ -163,7 +171,7 @@ public class DeployProductPage extends WebBasePage {
             }
             else
             {
-                getTest().log(LogStatus.PASS, "Searched location list is not Displayed");
+                getTest().log(LogStatus.FAIL, "Searched location list is not Displayed");
                 logger.info("Searched location list is not Displayed");
             }
         }
@@ -188,9 +196,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void clickAddDeployButton()
     {
-        //scrollToWebelement(By.cssSelector("a#ancDeployItems"),"Add Deploy");
-       // click(By.cssSelector("a#ancDeployItems"),"Add Deploy",15);
-        findElementVisibility(By.cssSelector("a#ancDeployItems"),15).click();
+        click(By.cssSelector("a#ancDeployItems"),"Add Deploy",15);
     }
     public void verifyAddDeployProductPage()
     {
@@ -200,7 +206,7 @@ public class DeployProductPage extends WebBasePage {
             logger.info("The \"Add Deploy Product\" page is displayed");
         }
         else {
-            getTest().log(LogStatus.PASS, "The \"Add Deploy Product\" page is displayed");
+            getTest().log(LogStatus.FAIL, "The \"Add Deploy Product\" page is displayed");
             logger.info("The \"Add Deploy Product\" page is displayed");
         }
     }
@@ -210,7 +216,6 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyNextPage()
     {
-        //waitForLoad(20);
         waitForVisibilityOfElement(By.xpath("//div[@class='theme-primary partition-full']//span[text()='Related Information']"),20);
         WebElement relatedInformationHeader=findElementVisibility(By.xpath("//div[@class='theme-primary partition-full']//span[text()='Related Information']"),15);
         if(relatedInformationHeader!=null) {
@@ -264,34 +269,30 @@ public class DeployProductPage extends WebBasePage {
     {
         enter(By.cssSelector("div>input#UnitPrice"),unitPrice,"Unit Price",15);
     }
-    public void enterModel(String model)
+    public void enterModel(String modelName)
     {
-        enter(By.cssSelector("div>input#Model"),model,"Model",15);
-        getModelNameFromPopup();
+        enter(By.cssSelector("div>input#Model"),modelName+dateValue,"Model",15);
+        modelNameFromPopup=findElementsVisibility(By.cssSelector("div>input#model")).getAttribute("value");
     }
-    public void enterManufacturer(String manufacturer)
+    public void enterManufacturer(String manufaturer)
     {
-        enter(By.cssSelector("div>input#Manufacturer"),manufacturer,"Manufacturer",15);
+        enter(By.cssSelector("div>input#Manufacturer"),manufaturer,"Manufacturer",15);
     }
     public void enterVendor(String vendor)
     {
-        enter(By.cssSelector("div>input#Vendor"),vendor,"Vendor",15);
+        enter(By.cssSelector("div>input#Vendor"),"Test Vendor","Vendor",15);
     }
-    public void enterProductCost(String cost)
+    public void enterProductCost(String productCost)
     {
-        enter(By.cssSelector("div>input#AssetCost"),cost,"AssetCost",15);
+        enter(By.cssSelector("div>input#AssetCost"),productCost,"AssetCost",15);
     }
     public void enterPurchaseOrder(String purchaseOrder)
     {
         enter(By.cssSelector("div>input#PurchaseOrder"),purchaseOrder,"PurchaseOrder",15);
     }
-    public void enterInvoiceNumber(String invoiceNumber)
+    public void enterInvoiceNumber(String invoiceNumbmer)
     {
-        enter(By.cssSelector("div>input#InvoiceNumber"),invoiceNumber,"Invoice Number",15);
-    }
-    public void selectInvoiceDate(String invoiceDate)
-    {
-        enter(By.cssSelector("div>input#InvoiceDate"),invoiceDate,"Invoice Date",15);
+        enter(By.cssSelector("div>input#InvoiceNumber"),invoiceNumbmer,"Invoice Number",15);
     }
     public void enterInsuranceNumber(String insuranceNumber)
     {
@@ -301,17 +302,9 @@ public class DeployProductPage extends WebBasePage {
     {
         enter(By.cssSelector("div>input#InsurerName"),insurarName,"InsurerName",15);
     }
-    public void enterInsuranceValidity(String insuranceValidity)
+    public void selectDepreciationRule()
     {
-        enter(By.cssSelector("div>input#txtInsuranceToDate"),insuranceValidity,"Insurance Validity",15);
-    }
-    public void enterWarrantyDuration(String warrantyDuration)
-    {
-        enter(By.cssSelector("div>input#txtWarrantyDuration"),warrantyDuration,"Warranty Duration",15);
-    }
-    public void selectDepreciationRule(int index)
-    {
-        selectValueWithIndex(By.cssSelector("div>select#depreciationId"),index,"Depreciation Rule",15);
+        selectValueWithIndex(By.cssSelector("div>select#depreciationId"),1,"Depreciation Rule",15);
     }
     public void enterProductLife(String year)
     {
@@ -325,10 +318,6 @@ public class DeployProductPage extends WebBasePage {
     {
         click(By.cssSelector("div>a#btn_AddRow"),"Add to List",15);
     }
-    public void getModelNameFromPopup()
-    {
-        modelNameFromPopup=findElementVisibility(By.cssSelector("div>input#Model"),15).getAttribute("value");
-    }
     public void clickSaveButton()
     {
         click(By.cssSelector("a#saveBtnn"),"Save",15);
@@ -336,42 +325,26 @@ public class DeployProductPage extends WebBasePage {
     public void handleSuccessPopup()
     {
         waitForVisibilityOfElement(By.cssSelector("div.alert-success"),20);
-        click(By.cssSelector("#closenotifymessage"),"Close Popup",15);
+            click(By.cssSelector("#closenotifymessage"),"Close Popup",15);
     }
     public void verifyCreatedDeployProduct()
     {
         waitForLoad(20);
+        int i=0;
         List<WebElement> deployedProductlist=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[2]//span"),15);
         for (WebElement element:deployedProductlist) {
+            i++;
             if(element.getText().equals(modelNameFromPopup))
             {
                 getTest().log(LogStatus.PASS, "Created \"Deploy Product\" is displayed in the list");
                 logger.info("Created \"Deploy Product\" is displayed in the list");
                 break;
             }
-            else
+            else if(i==deployedProductlist.size() && !element.getText().equals(modelNameFromPopup))
             {
                 getTest().log(LogStatus.FAIL, "Created \"Deploy Product\" is not displayed in the list");
                 logger.info("Created \"Deploy Product\" is not displayed in the list");
             }
-        }
-    }
-    public void changeRecordsPerPage(String count)
-    {
-        selectValueWithValue(By.cssSelector("pageSize"),count,"Page Size",15);
-    }
-    public void verifyRecordsPerPage(int count)
-    {
-        int recordCount=findMultipleElement(By.cssSelector("//table[@id='deployItemsTable']//tbody//tr"),15).size();
-        if(recordCount<=count)
-        {
-            getTest().log(LogStatus.PASS, "Records are displayed according to the selected page size");
-            logger.info("Records are displayed according to the selected page size");
-        }
-        else
-        {
-            getTest().log(LogStatus.FAIL, "Records are not displayed according to the selected page size");
-            logger.info("Records are not displayed according to the selected page size");
         }
     }
     public void verifyBreadCrumb()
@@ -493,14 +466,6 @@ public class DeployProductPage extends WebBasePage {
             logger.info("Search result for location is not displayed as expected");
         }
     }
-    public void navigateToCompanySetup()
-    {
-        click(By.cssSelector("[data-name='COMPANY']>a"),"Company Setup",15);
-    }
-    public void navigateToLocationSetup()
-    {
-        click(By.cssSelector("[data-original-title='Location']"),"Location Setup",15);
-    }
     public void make100PageSize()
     {
         selectValueWithValue(By.cssSelector("select#pageSize"),"100","Page Size",15);
@@ -527,7 +492,6 @@ public class DeployProductPage extends WebBasePage {
     {
         int i=0;
         String locator=(locationType.equals("parent"))?".scrollbar>li>a>span":"ul.child>li>a>div";
-        waitForVisibilityOfElement(By.cssSelector(locator),20);
         List<WebElement> locations=findMultipleElement(By.cssSelector(locator),15);
         for (WebElement actualElement:locations)
         {
@@ -537,7 +501,7 @@ public class DeployProductPage extends WebBasePage {
                 i++;
                 String text1=actualElement.getText();
                 String text2=expectedElement.toString();
-             if(actualElement.getText().equals(expectedElement))
+             if(text1.equals(text2))
              {
                  getTest().log(LogStatus.PASS, "Expected "+locationType+" location \""+expectedElement+"\" location is present in both setup and location dropdown");
                  logger.info("Expected "+locationType+" location \""+expectedElement+"\" location is present in both setup and location dropdown");
@@ -551,17 +515,6 @@ public class DeployProductPage extends WebBasePage {
              }
             }
         }
-    }
-    public void createChildLocation(String locationName,String addressOne,String city,String country)
-    {
-        companySetup.clickAddLocationButton();
-        companySetup.selectParentLocation();
-        companySetup.enterLocationName(locationName);
-        companySetup.enterAddreesLine1(addressOne);
-        companySetup.enterCity(city);
-        companySetup.selectCountry(country);
-        companySetup.saveLocation();
-        handleSuccessPopup();
     }
     public void clearLocationSelection()
     {
@@ -583,7 +536,8 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyQuantityMinimumChar()
     {
-        enterQuantity("5");
+        String text=prop.getProperty("quantityMinimumCharacter");
+        enterQuantity(text);
         clickAddListButton();
         WebElement errorMessage=findElementVisibility(By.xpath("//input[@id='Quantity']//parent::div//span[@class='invalid-feedback']"),20);
         if(errorMessage==null)
@@ -599,7 +553,8 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyQuantityCharandSpclChar()
     {
-        enterQuantity("Abc!@#");
+        String text=prop.getProperty("quantityCharandSpclChar");
+        enterQuantity(text);
         String actualText=findElementVisibility(By.cssSelector("div>input#Quantity"),15).getText();
         if(actualText.equals(""))
         {
@@ -614,12 +569,13 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyQuantityMaxChar()
     {
-        enterQuantity("805665");
+        String text=prop.getProperty("quantityMaxChar");
+        enterQuantity(text);
         String actualText=findElementVisibility(By.cssSelector("div>input#Quantity"),15).getAttribute("value");
-        if(actualText.equals("80566"))
+        if(actualText.length()<=5)
         {
-            getTest().log(LogStatus.PASS, "Quantity field is not accepts more than 5 characters as expected");
-            logger.info("Quantity field is not accepts more than 5 characters as expected");
+            getTest().log(LogStatus.PASS, "Quantity field is not accepts more than 5 characters as expected. Accepted Value : "+actualText);
+            logger.info("Quantity field is not accepts more than 5 characters as expected. Accepted Value : "+actualText);
         }
         else
         {
@@ -627,29 +583,31 @@ public class DeployProductPage extends WebBasePage {
             logger.info("Quantity field is accepts more than 5 characters as "+actualText);
         }
     }
-    public void verifyModelFieldValidation(String modelName)
+    public void verifyModelFieldValidation()
     {
+        String modelName=prop.getProperty("alphaNumericModelName");
         enterModel(modelName);
         String actualText=findElementVisibility(By.cssSelector("div>input#Model"),15).getAttribute("value");
         if(modelName.equals(actualText))
         {
-            getTest().log(LogStatus.PASS, "Model Name field is accept the data as expected");
-            logger.info("Model Name field is accept the data as expected");
+            getTest().log(LogStatus.PASS, "Model Name field is accept alpha numeric character as expected. Accepted value : "+actualText);
+            logger.info("Model Name field is accept alpha numeric character as expected. Accepted value : "+actualText);
         }
         else
         {
-            getTest().log(LogStatus.FAIL, "Model Name field is not working as expected. It accept the Value \""+modelName+"\"");
-            logger.info("Model Naem field is not working as expected. It accept the Value \""+modelName+"\"");
+            getTest().log(LogStatus.FAIL, "Model Name field is not accept alpha numeric character as expected. It accept the Value \""+modelName+"\"");
+            logger.info("Model Name field is not accept alpha numeric character as expected. It accept the Value \""+modelName+"\"");
         }
     }
-    public void verifyManufacturerFieldValidation(String manufacturerName)
+    public void verifyManufacturerFieldAlphaNum()
     {
+        String manufacturerName=prop.getProperty("alphaNumericManufaturerName");
         enterManufacturer(manufacturerName);
         String actualText=findElementVisibility(By.cssSelector("div>input#Manufacturer"),15).getAttribute("value");
         if(manufacturerName.equals(actualText))
         {
-            getTest().log(LogStatus.PASS, "Manufaturer Name field is accept the data as expected");
-            logger.info("Manufaturer Name field is accept the data as expected");
+            getTest().log(LogStatus.PASS, "Manufaturer Name field is accept the data as expected. Accepted value : "+actualText);
+            logger.info("Manufaturer Name field is accept the data as expected. Accepted value : "+actualText);
         }
         else
         {
@@ -657,19 +615,55 @@ public class DeployProductPage extends WebBasePage {
             logger.info("Manufaturer Naem field is not working as expected. It accept the Value \""+manufacturerName+"\"");
         }
     }
-    public void verifyVendorFieldValidation(String vendorName)
+    public void verifyManufacturerFieldSpclCharReject()
     {
-        enterManufacturer(vendorName);
-        String actualText=findElementVisibility(By.cssSelector("div>input#Model"),15).getAttribute("value");
+        String[] specialCharReject = {"<","{","}","%","[","]","(",")","?:","|'",";","=","&#","|","&+"};
+        for(String str:specialCharReject){
+            enterManufacturer(str);
+            clickAddListButton();
+            WebElement manufacturerError=findElementVisibility(By.xpath("//input[@id='Manufacturer']//parent::div//span[@for='Manufacturer']"),5);
+            if(manufacturerError!=null) {
+                getTest().log(LogStatus.PASS, "Manufaturer Name field displays the error message as expected when enter \""+str+"\"");
+                logger.info("Manufaturer Name field displays the error message as expected when enter \""+str+"\"");
+            }
+            else {
+                getTest().log(LogStatus.FAIL, "Manufaturer Name field is not displays the error message as expected when enter \""+str+"\"");
+                logger.info("Manufaturer Name field is not displays the error message as expected when enter \""+str+"\"");
+            }
+        }
+    }
+    public void verifyManufacturerFieldSpclCharAccept()
+    {
+        String[] specialCharAccept ={"@","#","$"};
+        for(String str:specialCharAccept){
+            enterManufacturer(str);
+            clickAddListButton();
+            WebElement manufacturerError=findElementVisibility(By.xpath("//input[@id='Manufacturer']//parent::div//span[@for='Manufacturer']"),5);
+            if(manufacturerError==null) {
+                getTest().log(LogStatus.PASS, "Manufaturer Name field accepts the value \""+str+"\" as expected");
+                logger.info("Manufaturer Name field accepts the value \""+str+"\" as expected");
+            }
+            else {
+                getTest().log(LogStatus.FAIL, "Manufaturer Name field displays the error message when enter special character \""+str+"\"");
+                logger.info("Manufaturer Name field displays the error message when enter special character \""+str+"\"");
+            }
+        }
+    }
+
+    public void verifyVendorFieldValidation()
+    {
+        String vendorName=prop.getProperty("alphaNumericVendorName");
+        enterVendor(vendorName);
+        String actualText=findElementVisibility(By.cssSelector("div>input#Vendor"),15).getAttribute("value");
         if(vendorName.equals(actualText))
         {
-            getTest().log(LogStatus.PASS, "Vendor Name field is accept the data as expected");
-            logger.info("Vendor Name field is accept the data as expected");
+            getTest().log(LogStatus.PASS, "Vendor Name field is accept the alpha numeric characters as expected. Accepted value : "+actualText);
+            logger.info("Vendor Name field is accept the alpha numeric characters as expected. Accepted value : "+actualText);
         }
         else
         {
-            getTest().log(LogStatus.FAIL, "Vendor Name field is not working as expected. It accept the Value \""+vendorName+"\"");
-            logger.info("Vendor Naem field is not working as expected. It accept the Value \""+vendorName+"\"");
+            getTest().log(LogStatus.FAIL, "Vendor Name field is not accept the alpha numeric characters as expected. It accept the Value \""+vendorName+"\"");
+            logger.info("Vendor Name field is not accept the alpha numeric characters as expected. It accept the Value \""+vendorName+"\"");
         }
     }
     public void verifyProductCostFieldBehaviour(String condition)
@@ -743,9 +737,9 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyInsurerNameFieldBehaviour(String condition)
     {
-        boolean insurerNameField=findElementVisibility(By.cssSelector("div>input#InsurerName"),15).isEnabled();
+        WebElement insurerNameField=findElementVisibility(By.cssSelector("div>input#InsurerName"),15);
         if(condition.equals("enable")) {
-            if (insurerNameField) {
+            if (insurerNameField.isEnabled()) {
                 getTest().log(LogStatus.PASS, "Insurer Name field is enabled when Insurance Policy toggle is set as \"Yes\" in the company setup page");
                 logger.info("Insurer Name field is enabled when Insurance Policy toggle is set as \"Yes\" in the company setup page");
             }else {
@@ -755,7 +749,7 @@ public class DeployProductPage extends WebBasePage {
         }
         else if(condition.equals("disable"))
         {
-            if (!insurerNameField) {
+            if (!insurerNameField.isEnabled()) {
                 getTest().log(LogStatus.PASS, "Insurer Name field is disabled when product type is set as \"No\" in the company setup page");
                 logger.info("Insurer Name field is disabled when product type is set as \"No\" in the company setup page");
             }else {
@@ -766,7 +760,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void productCostNumbersOnly()
     {
-        String productCost="123456";
+        String productCost=prop.getProperty("productCostNumeric");
         enterProductCost(productCost);
         String actualText=findElementVisibility(By.cssSelector("div>input#AssetCost"),15).getAttribute("value");
         if(actualText.equals(productCost))
@@ -782,7 +776,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void productCostCharandSpclChar()
     {
-        String productCost="Ab@#";
+        String productCost=prop.getProperty("productCostCharSpclChar");
         enterProductCost(productCost);
         String actualText=findElementVisibility(By.cssSelector("div>input#AssetCost"),15).getAttribute("value");
         if(actualText.equals(""))
@@ -798,7 +792,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void productCostMinimum()
     {
-        String productCost="1";
+        String productCost=prop.getProperty("productCostMinimum");
         enterProductCost(productCost);
         clickAddListButton();
         WebElement errorMessageElement=findElementVisibility(By.xpath("//input[@id='AssetCost']//parent::div//span[@class='valid-feedback invalid-feedback']"),15);
@@ -815,7 +809,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void productCostMaximum()
     {
-        String productCost="1234567890";
+        String productCost=prop.getProperty("productCostMaximum");
         enterProductCost(productCost);
         String actualText=findElementVisibility(By.cssSelector("div>input#AssetCost"),15).getAttribute("value");
         if(actualText.equals(productCost))
@@ -831,13 +825,13 @@ public class DeployProductPage extends WebBasePage {
     }
     public void productCostMoreThanMaximum()
     {
-        String productCost="1234567890123";
+        String productCost=prop.getProperty("productCostMoreMaximum");
         enterProductCost(productCost);
         String actualText=findElementVisibility(By.cssSelector("div>input#AssetCost"),15).getAttribute("value");
-        if(!actualText.equals(productCost))
+        if(actualText.length()<=10)
             {
-            getTest().log(LogStatus.PASS, "Product Cost field does not accepts the data with more than 10 digit as expected. Entered Data : "+productCost);
-            logger.info("Product Cost field does not accepts the data with more than 10 digit as expected. Entered Data : "+productCost);
+            getTest().log(LogStatus.PASS, "Product Cost field does not accepts the data with more than 10 digit as expected. Accepted Data : "+actualText);
+            logger.info("Product Cost field does not accepts the data with more than 10 digit as expected. Accepted Data : "+actualText);
         }
         else
         {
@@ -861,7 +855,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyRefernceNumberAlphaNumeric()
     {
-        String refPurchaseOrder="Abc123";
+        String refPurchaseOrder=prop.getProperty("purchaseNumberAlphaNumeric");
         enterPurchaseOrder(refPurchaseOrder);
         String actualText=findElementVisibility(By.cssSelector("div>input#PurchaseOrder"),15).getAttribute("value");
         if(actualText.equals(refPurchaseOrder))
@@ -875,20 +869,38 @@ public class DeployProductPage extends WebBasePage {
             logger.info("Reference PurchaseOrder field is not working as expected. It accept the Value \""+refPurchaseOrder+"\"");
         }
     }
-    public void verifyRefernceNumberSpclChar()
+    public void verifyRefernceNumberSpclCharAccept()
     {
-        String refPurchaseOrder="!@#$";
-        enterPurchaseOrder(refPurchaseOrder);
-        String actualText=findElementVisibility(By.cssSelector("div>input#PurchaseOrder"),15).getAttribute("value");
-        if(actualText.equals(refPurchaseOrder))
-        {
-            getTest().log(LogStatus.PASS, "Reference PurchaseOrder field is accept the data with special characters as expected. Entered Data : "+refPurchaseOrder);
-            logger.info("Reference PurchaseOrder field is accept the data with special characters as expected. Entered Data : "+refPurchaseOrder);
+        String[] specialCharAccept ={"@","#","$"};
+        for(String str:specialCharAccept){
+            enterPurchaseOrder(str);
+            clickAddListButton();
+            WebElement refPurchaseOrderError=findElementVisibility(By.xpath("//input[@id='PurchaseOrder']//parent::div//span[@for='PurchaseOrder']"),5);
+            if(refPurchaseOrderError==null) {
+                getTest().log(LogStatus.PASS, "Reference Purchase Order field accepts the value \""+str+"\" as expected");
+                logger.info("Reference Purchase Order field accepts the value \""+str+"\" as expected");
+            }
+            else {
+                getTest().log(LogStatus.FAIL, "Reference Purchase Order field displays the error message when enter special character \""+str+"\"");
+                logger.info("Reference Purchase Order field displays the error message when enter special character \""+str+"\"");
+            }
         }
-        else
-        {
-            getTest().log(LogStatus.FAIL, "Reference PurchaseOrder field is not working as expected. It accept the Value \""+refPurchaseOrder+"\"");
-            logger.info("Reference PurchaseOrder field is not working as expected. It accept the Value \""+refPurchaseOrder+"\"");
+    }
+    public void verifyRefernceNumberSpclCharReject()
+    {
+        String[] specialCharReject = {"<","{","}","%","[","]","(",")","?:","|'",";","=","&#","|","&+"};
+        for(String str:specialCharReject){
+            enterPurchaseOrder(str);
+            clickAddListButton();
+            WebElement refPurchaseOrderError=findElementVisibility(By.xpath("//input[@id='PurchaseOrder']//parent::div//span[@for='PurchaseOrder']"),5);
+            if(refPurchaseOrderError!=null) {
+                getTest().log(LogStatus.PASS, "Reference Purchase Order field displays the error message as expected when enter \""+str+"\"");
+                logger.info("Reference Purchase Order field displays the error message as expected when enter \""+str+"\"");
+            }
+            else {
+                getTest().log(LogStatus.FAIL, "Reference Purchase Order field is not displays the error message as expected when enter \""+str+"\"");
+                logger.info("Reference Purchase Order field is not displays the error message as expected when enter \""+str+"\"");
+            }
         }
     }
     public String selectDate(String date)
@@ -917,42 +929,42 @@ public class DeployProductPage extends WebBasePage {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("M/d/yyyy");
         LocalDateTime previousDay = LocalDateTime.now().minusDays(1);
         String expectedDate=dtf.format(previousDay);
-        String locator=(field.equals("Product"))?"txtOrderDate":(field.equals("Invoice"))?"InvoiceDate":(field.equals("Insurance"))?"txtInsuranceToDate":(field.equals("Warranty"))?"txtWarrantyDuration":"";
+        String locator=(field.equals("Order"))?"txtOrderDate":(field.equals("Invoice"))?"InvoiceDate":(field.equals("Insurance"))?"txtInsuranceToDate":(field.equals("Warranty"))?"txtWarrantyDuration":"";
         String actualText=findElementVisibility(By.cssSelector("input#"+locator),15).getAttribute("value");
         if(actualText.equals(expectedDate))
         {
-            getTest().log(LogStatus.PASS, "Old Date was selected as expected");
-            logger.info("Old Date was selected as expected");
+            getTest().log(LogStatus.PASS, "Old Date was selected as expected for \""+field+"\" date field");
+            logger.info("Old Date was selected as expected for \""+field+"\" date field");
         }else
         {
-            getTest().log(LogStatus.FAIL, "Not able to select Old date");
-            logger.info("Not able to select Old date");
+            getTest().log(LogStatus.FAIL, "Not able to select Old date for \""+field+"\" date field");
+            logger.info("Not able to select Old date for \""+field+"\" date field");
         }
     }
-    public void verifyNotClickablePastDate()
+    public void verifyNotClickablePastDate(String field)
     {
         String dayClass=selectDate("Old");
         if(dayClass.contains("disabled"))
         {
-            getTest().log(LogStatus.PASS, "Not able to select Future Date as expected");
-            logger.info("Not able to select Future Date as expected");
+            getTest().log(LogStatus.PASS, "Not able to select Past Date as expected for \""+field+"\" date field");
+            logger.info("Not able to select Past Date as expected for \""+field+"\" date field");
         }else
         {
-            getTest().log(LogStatus.FAIL, "Future date can be selected");
-            logger.info("Future date can be selected");
+            getTest().log(LogStatus.FAIL, "Past date can be selected for \""+field+"\" date field");
+            logger.info("Past date can be selected for \""+field+"\" date field");
         }
     }
-    public void verifyNotClickableFutureDate()
+    public void verifyNotClickableFutureDate(String field)
     {
         String dayClass=selectDate("Future");
         if(dayClass.contains("disabled"))
         {
-            getTest().log(LogStatus.PASS, "Not able to select Future Date as expected");
-            logger.info("Not able to select Future Date as expected");
+            getTest().log(LogStatus.PASS, "Not able to select Future Date as expected for \""+field+"\" date field");
+            logger.info("Not able to select Future Date as expected for \""+field+"\" date field");
         }else
         {
-            getTest().log(LogStatus.FAIL, "Future date can be selected");
-            logger.info("Future date can be selected");
+            getTest().log(LogStatus.FAIL, "Future date can be selected for \""+field+"\" date field");
+            logger.info("Future date can be selected for \""+field+"\" date field");
         }
     }
     public void verifyClickableFutureDate(String field)
@@ -965,12 +977,12 @@ public class DeployProductPage extends WebBasePage {
         String actualText=findElementVisibility(By.cssSelector("input#"+locator),15).getAttribute("value");
         if(actualText.equals(expectedDate))
         {
-            getTest().log(LogStatus.PASS, "Future Date is selected for "+field+" date field");
-            logger.info("Future Date is selected for "+field+" date field");
+            getTest().log(LogStatus.PASS, "Future Date is selected for \""+field+"\" date field");
+            logger.info("Future Date is selected for \""+field+"\" date field");
         }else
         {
-            getTest().log(LogStatus.FAIL, "Not able to select future date for "+field+" date field");
-            logger.info("Not able to select future date for "+field+" date field");
+            getTest().log(LogStatus.FAIL, "Not able to select future date for \""+field+"\" date field");
+            logger.info("Not able to select future date for \""+field+"\" date field");
         }
     }
     public void verifyWithCurrentDate(String field)
@@ -983,12 +995,12 @@ public class DeployProductPage extends WebBasePage {
         String actualText=findElementVisibility(By.cssSelector("input#"+locator),15).getAttribute("value");
         if(actualText.equals(currentDate))
         {
-            getTest().log(LogStatus.PASS, "Current date is selected as expected");
-            logger.info("Current date is selected as expected");
+            getTest().log(LogStatus.PASS, "Current date is selected as expected for \""+field+"\" date field");
+            logger.info("Current date is selected as expected for \""+field+"\" date field");
         }else
         {
-            getTest().log(LogStatus.FAIL, "Current date is not selected");
-            logger.info("Current date is not selected");
+            getTest().log(LogStatus.FAIL, "Current date is not selected for \""+field+"\" date field");
+            logger.info("Current date is not selected for \""+field+"\" date field");
         }
     }
     public void verifyOrderDateFieldPresence()
@@ -1050,7 +1062,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyInvoiceNumberAlphaNumeric()
     {
-        String invoiceNumber="A1b2C3";
+        String invoiceNumber=prop.getProperty("invoiceNumberAlphaNumeric");
         enterInvoiceNumber(invoiceNumber);
         String actualText=findElementVisibility(By.cssSelector("div>input#InvoiceNumber"),15).getAttribute("value");
         if(invoiceNumber.equals(actualText))
@@ -1064,26 +1076,46 @@ public class DeployProductPage extends WebBasePage {
             logger.info("Invoice Number field is not accepting the data with alpha numeric character as expected. Entered Data : "+invoiceNumber);
         }
     }
-    public void verifyInvoiceNumberSpclChar()
+    public void verifyInvoiceNumberSpclCharAccept()
     {
-        String invoiceNumber="!@#$%";
-        enterInvoiceNumber(invoiceNumber);
-        String actualText=findElementVisibility(By.cssSelector("div>input#InvoiceNumber"),15).getAttribute("value");
-        if(invoiceNumber.equals(actualText))
-        {
-            getTest().log(LogStatus.PASS, "Invoice Number field is accept the data with special character as expected. Entered Data : "+invoiceNumber);
-            logger.info("Invoice Number field is accept the data with special character as expected. Entered Data : "+invoiceNumber);
-        }
-        else
-        {
-            getTest().log(LogStatus.FAIL, "Invoice Number field is not accepting the data with special character as expected. Entered Data : "+invoiceNumber);
-            logger.info("Invoice Number field is not accepting the data with special character as expected. Entered Data : "+invoiceNumber);
+        String[] specialCharAccept ={"@","#","$"};
+        for(String str:specialCharAccept){
+            enterInvoiceNumber(str);
+            clickAddListButton();
+            WebElement refPurchaseOrderError=findElementVisibility(By.xpath("//input[@id='InvoiceNumber']//parent::div//span[@for='PurchaseOrder']"),5);
+            if(refPurchaseOrderError==null) {
+                getTest().log(LogStatus.PASS, "Inoice Number field accepts the value \""+str+"\" as expected");
+                logger.info("Inoice Number field accepts the value \""+str+"\" as expected");
+            }
+            else {
+                getTest().log(LogStatus.FAIL, "Inoice Number field displays the error message when enter special character \""+str+"\"");
+                logger.info("Inoice Number field displays the error message when enter special character \""+str+"\"");
+            }
         }
     }
+
+    public void verifyInvoiceNumberSpclCharReject()
+    {
+        String[] specialCharReject = {"<","{","}","%","[","]","(",")","?:","|'",";","=","&#","|","&+"};
+        for(String str:specialCharReject){
+            enterInvoiceNumber(str);
+            clickAddListButton();
+            WebElement refPurchaseOrderError=findElementVisibility(By.xpath("//input[@id='InvoiceNumber']//parent::div//span[@for='PurchaseOrder']"),5);
+            if(refPurchaseOrderError!=null) {
+                getTest().log(LogStatus.PASS, "Inoice Number field displays the error message as expected when enter \""+str+"\"");
+                logger.info("Inoice Number field displays the error message as expected when enter \""+str+"\"");
+            }
+            else {
+                getTest().log(LogStatus.FAIL, "Inoice Number field is not displays the error message as expected when enter \""+str+"\"");
+                logger.info("Inoice Number field is not displays the error message as expected when enter \""+str+"\"");
+            }
+        }
+    }
+
     public void verifyInsuranceNumberAlphaNumeric()
     {
-        String insuranceNumber="A1b2C3";
-        enterInvoiceNumber(insuranceNumber);
+        String insuranceNumber=prop.getProperty("insuranceNumberAlphaNumeric");
+        enterInsuranceNumber(insuranceNumber);
         String actualText=findElementVisibility(By.cssSelector("div>input#InsuranceRefNumber"),15).getAttribute("value");
         if(insuranceNumber.equals(actualText))
         {
@@ -1098,13 +1130,13 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyInsurerNameAlphaNumeric()
     {
-        String insurarName="A1b2C3";
+        String insurarName=prop.getProperty("insurerNameAlphaNumeric");
         enterInsurarName(insurarName);
         String actualText=findElementVisibility(By.cssSelector("div>input#InsurerName"),15).getText();
-        if(!insurarName.equals(actualText))
+        if(insurarName.equals(actualText))
         {
-            getTest().log(LogStatus.PASS, "Insurar Name field is accept the data as expected");
-            logger.info("Insurar Name field is accept the data as expected");
+            getTest().log(LogStatus.PASS, "Insurar Name field is accept the data with alpha numeric character");
+            logger.info("Insurar Name field is accept the data with alpha numeric character");
         }
         else
         {
@@ -1112,34 +1144,12 @@ public class DeployProductPage extends WebBasePage {
             logger.info("Insurar Name field is not working as expected. It accept the Value \""+insurarName+"\"");
         }
     }
-    public void verifyInsurenceDateField(String condition)
-    {
-        boolean insurenceDate=findElementsVisibility(By.cssSelector("div>input#[data-target='#txtInsuranceToDate']")).isEnabled();
-        if(condition.equals("enable")) {
-            if (insurenceDate) {
-                getTest().log(LogStatus.PASS, "Insurence Ref Number Field is enabled when toggle in product type page is set as \"Yes\"");
-                logger.info("Insurence Ref Number field is enabled when toggle in product type page is set as \"Yes\" in the company setup page");
-            }else {
-                getTest().log(LogStatus.FAIL, "Insurence Ref Number field is diabled when toggle in product type page is set as \"Yes\"");
-                logger.info("Insurence Ref Number field is enabled when toggle in product type page is set as \"Yes\"");
-            }
-        }
-        else if(condition.equals("disable"))
-        {
-            if (!insurenceDate) {
-                getTest().log(LogStatus.PASS, "Insurence Ref Number field is disabled when toggle in product type page is set as \"No\"");
-                logger.info("Insurence Ref Number field is disabled when toggle in product type page is set as \"No\"");
-            }else {
-                getTest().log(LogStatus.FAIL, "Insurence Ref Number field is enabled when toggle in product type page is set as \"No\"");
-                logger.info("Insurence Ref Number is enabled when toggle in product type page is set as \"No\"");
-            }
-        }
-    }
     public void verifyDepreciationRuleField(String depreciation)
     {
-        boolean depreciationRule=findElementsVisibility(By.cssSelector("div>input#depreciationId")).isEnabled();
+       scrollToWebelement(By.cssSelector("div>select#depreciationId"),"Depreciation Rule");
+        WebElement depreciationRule=findElementVisibility(By.cssSelector("div>select#depreciationId"),15);
         if(depreciation.equals("enable")) {
-            if (depreciationRule) {
+            if (depreciationRule.isEnabled()) {
                 getTest().log(LogStatus.PASS, "Depriciation Rule Field is enabled when toggle in product type page is set as \"Yes\"");
                 logger.info("Depriciation Rule field is enabled when toggle in product type page is set as \"Yes\" in the company setup page");
             }else {
@@ -1149,7 +1159,7 @@ public class DeployProductPage extends WebBasePage {
         }
         else if(depreciation.equals("disable"))
         {
-            if (!depreciationRule) {
+            if (!depreciationRule.isEnabled()) {
                 getTest().log(LogStatus.PASS, "Depriciation Rule field is disabled when toggle in product type page is set as \"No\"");
                 logger.info("Depriciation Rule field is disabled when toggle in product type page is set as \"No\"");
             }else {
@@ -1160,8 +1170,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyDepreciarionDropdown()
     {
-        click(By.cssSelector("div>input#depreciationId"),"Depreciation Rule",15);
-        WebElement depreciationValues=findElementsVisibility(By.cssSelector("select#depreciationId>option:nth-child(2)"));
+        click(By.cssSelector("div>select#depreciationId"),"Depreciation Rule",15);
         List<WebElement> depreciationRule=findMultipleElement(By.cssSelector("select#depreciationId>option"),15);
         if(depreciationRule.size()>=4)
         {
@@ -1177,7 +1186,7 @@ public class DeployProductPage extends WebBasePage {
     public void verifyProductLifeMandatory()
     {
         int beforeDepreciationRule=findMultipleElement(By.xpath("//form[@id='AdddEditeploy']//div[@class='row']//span[@class='text-danger']"),15).size();
-        selectDepreciationRule(2);
+        selectDepreciationRule();
         int afterDepreciationRule=findMultipleElement(By.xpath("//form[@id='AdddEditeploy']//div[@class='row']//span[@class='text-danger']"),15).size();
         if(beforeDepreciationRule<afterDepreciationRule)
         {
@@ -1192,7 +1201,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyProductLifeNumeric()
     {
-        String year="2";
+        String year=prop.getProperty("productLifeYear");
         enterProductLife(year);
         String actualText=findElementVisibility(By.cssSelector("div>input#ItemLife"),15).getAttribute("value");
         if(actualText.equals(year))
@@ -1208,7 +1217,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyProductLifeAlphaNumeric()
     {
-        String year="A2bc";
+        String year=prop.getProperty("productLifeYearAlphaNumeric");
         enterProductLife(year);
         String actualText=findElementVisibility(By.cssSelector("div>input#ItemLife"),15).getAttribute("value");
         if(!actualText.equals(year))
@@ -1222,31 +1231,15 @@ public class DeployProductPage extends WebBasePage {
             logger.info("Product Life field does not accepts the data with alpha numeric character as expected. Entered date : "+year);
         }
     }
-    public void verifyProductLifeMinimumChar()
-    {
-        String year="";
-        enterProductLife(year);
-        WebElement errorMsg=findElementVisibility(By.xpath("//input[@id='ItemLife']//parent::div//span"),15);
-        if(errorMsg!=null)
-        {
-            getTest().log(LogStatus.PASS, "Product Life field accepts the data as expected");
-            logger.info("Product Life field accepts the data as expected");
-        }
-        else
-        {
-            getTest().log(LogStatus.FAIL, "Product Life field not accepts the data as expected and it accepts value as \\\"\"+year+\"\\\"");
-            logger.info("Product Life field not accepts the data as expected and it accepts value as \""+year+"\"");
-        }
-    }
     public void verifyProductLifeMaximumChar()
     {
-        String year="12345";
+        String year=prop.getProperty("productLifeYearMaximumChar");
         enterProductLife(year);
         String actualText=findElementVisibility(By.cssSelector("div>input#ItemLife"),15).getAttribute("value");
         if(!actualText.equals(year))
         {
-            getTest().log(LogStatus.PASS, "Product Life field not accepts the data with more than 3 digits as expected Entered Data : "+year);
-            logger.info("Product Life field not accepts the data with more than 3 digits as expected Entered Data : "+year);
+            getTest().log(LogStatus.PASS, "Product Life field not accepts the data with more than 3 digits as expected Accepted Data : "+actualText);
+            logger.info("Product Life field not accepts the data with more than 3 digits as expected Accepted Data : "+actualText);
         }
         else
         {
@@ -1256,7 +1249,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifySalvageCostNumeric()
     {
-        String salvageCost="123";
+        String salvageCost=prop.getProperty("salvageCost");
         enterSalvageCost(salvageCost);
         String actualText=findElementVisibility(By.cssSelector("div>input#SalvageCost"),15).getAttribute("value");
         if(actualText.equals(salvageCost))
@@ -1272,7 +1265,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifySalvageCostCharandSpclChar()
     {
-        String salvageCost="Abc!@#";
+        String salvageCost=prop.getProperty("salvageCostCharandSpclChar");
         enterSalvageCost(salvageCost);
         String actualText=findElementVisibility(By.cssSelector("div>input#SalvageCost"),15).getAttribute("value");
         if(actualText.equals(""))
@@ -1288,7 +1281,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifySalvageCostMaxChar()
     {
-        String salvageCost="1234567890";
+        String salvageCost=prop.getProperty("salvageCostMaxChar");
         enterSalvageCost(salvageCost);
         String actualText=findElementVisibility(By.cssSelector("div>input#SalvageCost"),15).getAttribute("value");
         if(actualText.equals(salvageCost))
@@ -1304,13 +1297,13 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifySalvageCostMorethanMaxChar()
     {
-        String salvageCost="1234567890123456";
+        String salvageCost=prop.getProperty("salvageCostMoreMaxChar");
         enterSalvageCost(salvageCost);
         String actualText=findElementVisibility(By.cssSelector("div>input#SalvageCost"),15).getAttribute("value");
         if(!actualText.equals(salvageCost))
         {
-            getTest().log(LogStatus.PASS, "Salvage Cost field is not accepts the data with more than 10 digit values as expected. Entered Data : "+salvageCost);
-            logger.info("Salvage Cost field accepts the data with more than of 10 digit values as expected. Entered Data : "+salvageCost);
+            getTest().log(LogStatus.PASS, "Salvage Cost field is not accepts the data with more than 10 digit values as expected. Accepted Data : "+actualText);
+            logger.info("Salvage Cost field accepts the data with more than of 10 digit values as expected. Accepted Data : "+actualText);
         }
         else
         {
@@ -1334,6 +1327,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void verifyDeployList(String modelName)
     {
+        waitForVisibilityOfElement(By.xpath("//div[@class='row']//div[1]//div//table[@id='example']//tbody//tr//td[4]"),15);
         String expectedModelName=modelName;
         List<WebElement> modelInList=findMultipleElement(By.xpath("//div[@class='row']//div[1]//div//table[@id='example']//tbody//tr//td[4]"),15);
         for (WebElement element:modelInList)
@@ -1377,27 +1371,7 @@ public class DeployProductPage extends WebBasePage {
            }
         }
     }
-    public void verifySaveButtonFunctionality()
-    {
-        String modelName=getText(By.cssSelector("div>input#Model"),15);
-        clickSaveButton();
-        make100PageSize();
-        List<WebElement> modelNameLocatorList=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[2]"),15);
-        for (WebElement element:modelNameLocatorList)
-        {
-            if(element.getText().equals(modelName))
-            {
-                getTest().log(LogStatus.PASS, "Save button is working as expecetd");
-                logger.info("Save button is working as expecetd");
-                break;
-            }
-            else
-            {
-                getTest().log(LogStatus.FAIL, "Save button is not working as expecetd");
-                logger.info("Save button is not working as expecetd");
-            }
-        }
-    }
+
     public void clickCloseButton()
     {
         waitForVisibilityOfElement(By.cssSelector("div>input#Quantity"),20);
@@ -1417,38 +1391,7 @@ public class DeployProductPage extends WebBasePage {
             logger.info("Close button is not working as expecetd");
         }
     }
-    public void createDeployProduct(String quantity,String unitPrice,String modelName,String manufacturer,
-                                    String vendor,String cost,String purchaseOrder,String invoiceNumber,String date,
-                                    String insurenceNumber,String insurarName,int depreciationRule,String productLife,String salvageCost)
-    {
-        clickLocationDropdown();
-        selectLocationValueFromDropdown();
-        enterQuantity(quantity);
-        enterUnitPrice(unitPrice);
-        enterModel(modelName);
-        enterManufacturer(manufacturer);
-        enterVendor(vendor);
-        enterProductCost(cost);
-        enterPurchaseOrder(purchaseOrder);
-        clickOrderDateField();
-        selectDate(date);
-        enterInvoiceNumber(invoiceNumber);
-        clickInvoiceDateField();
-        selectDate(date);
-        enterInsuranceNumber(insurenceNumber);
-        enterInsurarName(insurarName);
-        clickInsuranceDateField();
-        selectDate(date);
-        clickWarrantyDateField();
-        selectDate("Future");
-        selectDepreciationRule(depreciationRule);
-        enterProductLife(productLife);
-        enterSalvageCost(salvageCost);
-        clickAddListButton();
-        clickSaveButton();
-        handleSuccessPopup();
-    }
-    public void VerifyPaginationFunctionalities()
+    public void verifyPaginationFunctionalities()
     {
         String[] defaultpaginationText=getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"),20).split(" ");
         int defaultStartRecordCount=Integer.parseInt(defaultpaginationText[1]);
@@ -1457,7 +1400,7 @@ public class DeployProductPage extends WebBasePage {
         WebElement paginationNavigator=findElementVisibility(By.xpath("//div[@class='nu-paging']//li//ul"),15);
         if(paginationNavigator!=null)
         {
-            click(By.xpath("//a[@class='page-link next' and text()='Next']"),"Next",15);
+            click(By.xpath("//a[@class='page-link next' and text()='Next']"),"Pagination Next",15);
             waitForLoad(10);
             String[] nextPaginationText=getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"),20).split(" ");
             int nextPageStartRecordCount=Integer.parseInt(nextPaginationText[1]);
@@ -1467,10 +1410,11 @@ public class DeployProductPage extends WebBasePage {
                 logger.info("Next page is displayed as expected when click on the \"Next\" pagination button");
             }
             else {
-                getTest().log(LogStatus.PASS, "Next page is not displayed as expected when click on the \"Next\" pagination button");
+                getTest().log(LogStatus.FAIL, "Next page is not displayed as expected when click on the \"Next\" pagination button");
                 logger.info("Next page is not displayed as expected when click on the \"Next\" pagination button");
             }
-            findElementVisibility(By.xpath("//a[@class='page-link previous' and text()='Prev']"),15).click();
+            waitForVisibilityOfElement(By.xpath("//a[@class='page-link previous' and text()='Prev']"),20);
+            click(By.xpath("//a[@class='page-link previous' and text()='Prev']")," Pagination Previous",15);
             waitForLoad(10);
             String[] previousPaginationText=getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"),20).split(" ");
             int previousPageEndCount=Integer.parseInt(previousPaginationText[3]);
@@ -1481,10 +1425,11 @@ public class DeployProductPage extends WebBasePage {
             }
             else
             {
-                getTest().log(LogStatus.PASS, "Previous page is not displayed as expected when click on the \"Previous\" pagination button");
+                getTest().log(LogStatus.FAIL, "Previous page is not displayed as expected when click on the \"Previous\" pagination button");
                 logger.info("Previous page is not displayed as expected when click on the \"Previous\" pagination button");
             }
-            findElementVisibility(By.xpath("//a[@class='page-link next' and text()='Last ']"),15).click();
+            waitForVisibilityOfElement(By.xpath("//a[@class='page-link next' and text()='Last ']"),20);
+            click(By.xpath("//a[@class='page-link next' and text()='Last ']"),"Pagination Last",15);
             waitForLoad(10);
             String[] lastPagePaginationText=getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"),20).split(" ");
             int lastPageEndCount=Integer.parseInt(lastPagePaginationText[3]);
@@ -1495,10 +1440,11 @@ public class DeployProductPage extends WebBasePage {
             }
             else
             {
-                getTest().log(LogStatus.PASS, "Last page is not displayed as expected when click on the \"Last\" pagination button");
+                getTest().log(LogStatus.FAIL, "Last page is not displayed as expected when click on the \"Last\" pagination button");
                 logger.info("Last page is not displayed as expected when click on the \"Last\" pagination button");
             }
-            findElementVisibility(By.xpath("//a[@class='page-link  first' and text()='First ']"),15).click();
+            waitForVisibilityOfElement(By.xpath("//a[@class='page-link  first' and text()='First ']"),20);
+            click(By.xpath("//a[@class='page-link  first' and text()='First ']"),"Pagination First",15);
             waitForLoad(10);
             String[] firstPagePaginationText=getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"),20).split(" ");
             int firstPageStartRecordCount=Integer.parseInt(firstPagePaginationText[1]);
@@ -1509,7 +1455,7 @@ public class DeployProductPage extends WebBasePage {
             }
             else
             {
-                getTest().log(LogStatus.PASS, "First page is not displayed as expected when click on the \"First\" pagination button");
+                getTest().log(LogStatus.FAIL, "First page is not displayed as expected when click on the \"First\" pagination button");
                 logger.info("First page is not displayed as expected when click on the \"First\" pagination button");
             }
         }

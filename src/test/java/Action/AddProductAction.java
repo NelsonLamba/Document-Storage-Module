@@ -2,7 +2,6 @@ package Action;
 
 import org.openqa.selenium.WebDriver;
 import pageobjects.AddProductPage;
-import static reporting.ComplexReportFactory.getTest;
 
 public class AddProductAction
 {
@@ -43,7 +42,6 @@ public class AddProductAction
 
     }
     public void dropDownValidation()
-
     {
         addProductPage.verifyBarCodeDropDown();
     }
@@ -126,10 +124,6 @@ public class AddProductAction
         addProductPage.manageProductPageValidation();
         addProductPage.defaultProductCodeValidation();
         addProductPage.goBackToAddProductPage();
-    }
-    public void defaultCodeValidation()
-    {
-
     }
 
     public void deployTab()

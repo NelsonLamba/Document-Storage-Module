@@ -2,10 +2,15 @@ package Action;
 
 import org.openqa.selenium.WebDriver;
 import pageobjects.DeployProductPage;
+import utils.PropertiesLoader;
+
+import java.util.Properties;
 
 public class DeployProductAction {
     WebDriver driver;
     DeployProductPage deployProduct;
+    private final static String FILE_NAME = System.getProperty("user.dir")+"\\src\\main\\resources\\testdata.properties";
+    private static Properties prop = new PropertiesLoader(FILE_NAME).load();
 
     public DeployProductAction(WebDriver driver)
     {
@@ -40,11 +45,11 @@ public class DeployProductAction {
         deployProduct.verifyPreviousButton();
         deployProduct.verifyNextButton();
     }
-    public void searchingFunctionality(String searchItem)
+    public void searchingFunctionality()
     {
-        deployProduct.enterInSearchField(searchItem);
+        deployProduct.enterInSearchField(prop.getProperty("productListLocartionToSearch"));
         deployProduct.clickSearchButton();
-        deployProduct.verifySearchedProduct(searchItem);
+        deployProduct.verifySearchedProduct(prop.getProperty("productListLocartionToSearch"));
     }
     public void searchFieldClearFunctionality()
     {
@@ -66,9 +71,7 @@ public class DeployProductAction {
         deployProduct.verifyPreviousPage();
     }
     public void verifyAddedDeployProduct() {
-        deployProduct.createDeployProduct("1","1","Automation three","Teser",
-                "Tester","10","100","0001","current","0001",
-                "Tester",2,"2","10");
+        createProductToDeploy();
         deployProduct.make100PageSize();
         deployProduct.verifyCreatedDeployProduct();
     }
@@ -95,13 +98,13 @@ public class DeployProductAction {
     public void locationDropdownSearchFuctionality()
     {
         deployProduct.verifySearchFieldinLocationDropdown();
-        deployProduct.enterInLocationSearch("Location5");
-        deployProduct.verifyLocationSearch("Location5");
+        deployProduct.enterInLocationSearch(prop.getProperty("dropdownLocationToSearch"));
+        deployProduct.verifyLocationSearch(prop.getProperty("dropdownLocationToSearch"));
     }
     public void selectAndClearLocation()
     {
         deployProduct.selectLocationValueFromDropdown();
-        deployProduct.verifySelectedLocation("Location5");
+        deployProduct.verifySelectedLocation(prop.getProperty("dropdownLocationToSearch"));
         deployProduct.clearLocationSelection();
         deployProduct.verifyClearedLocation();
     }
@@ -119,13 +122,14 @@ public class DeployProductAction {
     }
     public void verifyModelandVendorNameField()
     {
-        deployProduct.verifyModelFieldValidation("A1b2C3");
-        deployProduct.verifyVendorFieldValidation("A1b2C3");
+        deployProduct.verifyModelFieldValidation();
+        deployProduct.verifyVendorFieldValidation();
     }
     public void verifyManufacturerNameField()
     {
-        deployProduct.verifyManufacturerFieldValidation("A1b2C3");
-        deployProduct.verifyManufacturerFieldValidation("A1!b2@");
+        deployProduct.verifyManufacturerFieldAlphaNum();
+        deployProduct.verifyManufacturerFieldSpclCharAccept();
+        deployProduct.verifyManufacturerFieldSpclCharReject();
     }
     public void verifyProductCostFieldBehaviour(String condition)
     {
@@ -135,7 +139,6 @@ public class DeployProductAction {
     public void verifyInsurenceRefNumFieldBehaviour(String condition)
     {
         deployProduct.verifyInsuranceRefNumFieldBehaviour(condition);
-        deployProduct.clickCloseButton();
     }
     public void verifyInsurenceDateFieldBehaviour(String condition)
     {
@@ -159,7 +162,8 @@ public class DeployProductAction {
     {
         deployProduct.verifyReferenceNumberFieldPesence();
         deployProduct.verifyRefernceNumberAlphaNumeric();
-        deployProduct.verifyRefernceNumberSpclChar();
+        deployProduct.verifyRefernceNumberSpclCharAccept();
+        deployProduct.verifyRefernceNumberSpclCharReject();
     }
     public void verifyDateField()
     {
@@ -169,23 +173,24 @@ public class DeployProductAction {
     public void verifyProductDateAsCurrentDate()
     {
         deployProduct.clickOrderDateField();
-        deployProduct.verifyWithCurrentDate("Product");
+        deployProduct.verifyWithCurrentDate("Order");
     }
     public void verifyProductDateAsOldDate()
     {
         deployProduct.clickOrderDateField();
-        deployProduct.verifyWithOldDate("Product");
+        deployProduct.verifyWithOldDate("Order");
     }
     public void verifyProductDateFutureDate()
     {
         deployProduct.clickOrderDateField();
-        deployProduct.verifyNotClickableFutureDate();
+        deployProduct.verifyNotClickableFutureDate("Order");
     }
     public void verifyInvoiceNumberFieldFunctionality()
     {
         deployProduct.verifyInvoiceNumberFieldPresence();
         deployProduct.verifyInvoiceNumberAlphaNumeric();
-        deployProduct.verifyInvoiceNumberSpclChar();
+        deployProduct.verifyInvoiceNumberSpclCharAccept();
+        deployProduct.verifyInvoiceNumberSpclCharReject();
     }
     public void verifyInvoiceDateAsCurrentDate()
     {
@@ -200,7 +205,7 @@ public class DeployProductAction {
     public void verifyInvoiceDateFutureDate()
     {
         deployProduct.clickInvoiceDateField();
-        deployProduct.verifyNotClickableFutureDate();
+        deployProduct.verifyNotClickableFutureDate("Invoice");
     }
     public void verifyInsuranceNumandInsurerNameField()
     {
@@ -222,15 +227,15 @@ public class DeployProductAction {
     public void verifyPastWarrantyDate()
     {
         deployProduct.clickWarrantyDateField();
-        deployProduct.verifyNotClickablePastDate();
+        deployProduct.verifyNotClickablePastDate("Warranty");
     }
     public void verifyFutureWarrantyDate()
     {
         deployProduct.verifyClickableFutureDate("Warranty");
     }
-    public void verifyDepreciationRuleFieldBehaviour(String depreciation)
+    public void verifyDepreciationRuleFieldBehaviour(String behaviour)
     {
-        deployProduct.verifyDepreciationRuleField(depreciation);
+        deployProduct.verifyDepreciationRuleField(behaviour);
         deployProduct.clickCloseButton();
     }
     public void verifyDepreciationDropdown()
@@ -273,36 +278,36 @@ public class DeployProductAction {
     {
         deployProduct.clickLocationDropdown();
         deployProduct.selectLocationValueFromDropdown();
-        deployProduct.enterQuantity("1");
-        deployProduct.enterUnitPrice("1");
-        deployProduct.enterModel("Automation Model Test");
-        deployProduct.enterManufacturer("Automation Manufacturer Test");
-        deployProduct.enterVendor("Automation Vendor Test");
-        deployProduct.enterProductCost("10");
-        deployProduct.enterPurchaseOrder("100");
+        deployProduct.enterQuantity(prop.getProperty("quantities"));
+        deployProduct.enterUnitPrice(prop.getProperty("unitPrice"));
+        deployProduct.enterModel(prop.getProperty("modelNameToCreate"));
+        deployProduct.enterManufacturer(prop.getProperty("manufacturerName"));
+        deployProduct.enterVendor(prop.getProperty("vendorName"));
+        deployProduct.enterProductCost(prop.getProperty("productCost"));
+        deployProduct.enterPurchaseOrder(prop.getProperty("purchaseOrder"));
         deployProduct.clickOrderDateField();
-        deployProduct.selectDate("Current");
-        deployProduct.enterInvoiceNumber("123456");
+        deployProduct.selectDate(prop.getProperty("currentDate"));
+        deployProduct.enterInvoiceNumber(prop.getProperty("invoiceNumber"));
         deployProduct.clickInvoiceDateField();
-        deployProduct.selectDate("Current");
-        deployProduct.enterInsuranceNumber("123456");
-        deployProduct.enterInsurarName("Automation Insurar Name");
+        deployProduct.selectDate(prop.getProperty("currentDate"));
+        deployProduct.enterInsuranceNumber(prop.getProperty("insuranceNumber"));
+        deployProduct.enterInsurarName(prop.getProperty("insurarName"));
         deployProduct.clickInsuranceDateField();
-        deployProduct.selectDate("Future");
+        deployProduct.selectDate(prop.getProperty("futureDate"));
         deployProduct.clickWarrantyDateField();
-        deployProduct.selectDate("Future");
-        deployProduct.selectDepreciationRule(2);
-        deployProduct.enterProductLife("2");
-        deployProduct.enterSalvageCost("20");
+        deployProduct.selectDate(prop.getProperty("futureDate"));
+        deployProduct.selectDepreciationRule();
+        deployProduct.enterProductLife(prop.getProperty("productLifeYear"));
+        deployProduct.enterSalvageCost(prop.getProperty("salvageCost"));
     }
     public void addToListFunctionality()
     {
         deployProduct.verifyAddToListButton();
         deployProduct.clickAddListButton();
-        deployProduct.verifyDeployList("Automation Model Test");
+        deployProduct.verifyDeployList(prop.getProperty("modelNameToCreate"));
     }
     public void verifyPagination()
     {
-        deployProduct.VerifyPaginationFunctionalities();
+        deployProduct.verifyPaginationFunctionalities();
     }
 }

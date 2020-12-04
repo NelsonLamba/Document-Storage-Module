@@ -11,8 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-import static reporting.ComplexReportFactory.getTest;
-
 public class WaitStatement {
 
     WebDriver driver;
@@ -28,8 +26,6 @@ public class WaitStatement {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         } catch (Exception e) {
-            getTest().log(LogStatus.FAIL,"Element not found : "+by);
-            logger.info("Element not found : "+by);
             return null;
         }
     }
@@ -41,8 +37,6 @@ public class WaitStatement {
             wait.until(ExpectedConditions.visibilityOfElementLocated(by));
             return wait.until(ExpectedConditions.elementToBeClickable(by));
         } catch (Exception e) {
-            getTest().log(LogStatus.FAIL,"Element not found : "+by);
-            logger.info("Element not found : "+by);
             return null;
         }
     }
@@ -52,8 +46,6 @@ public class WaitStatement {
         try {
             return wait.until(ExpectedConditions.presenceOfElementLocated(by));
         } catch (Exception e) {
-            getTest().log(LogStatus.FAIL,"Element not found : "+by);
-            logger.info("Element not found : "+by);
             return null;
         }
 
@@ -68,8 +60,6 @@ public class WaitStatement {
                     return ele;
                 }
             } catch (Exception e) {
-                getTest().log(LogStatus.FAIL, "Element not found : " + by);
-                logger.info("Element not found : "+by);
                 return null;
             }
         }
@@ -82,8 +72,6 @@ public class WaitStatement {
         try {
             return wait.until(ExpectedConditions.invisibilityOf(driver.findElement(by)));
         } catch (Exception e) {
-            getTest().log(LogStatus.FAIL,"Element not found : "+by);
-            logger.info("Element not found : "+by);
             return false;
         }
 
@@ -94,8 +82,6 @@ public class WaitStatement {
         try {
             return wait.until(ExpectedConditions.visibilityOf(driver.findElement(by)));
         } catch (Exception e) {
-            getTest().log(LogStatus.FAIL,"Element not found : "+by);
-            logger.info("Element not found : "+by);
             return null;
         }
     }
@@ -110,8 +96,6 @@ public class WaitStatement {
                     return false;
                 }
             } catch (Exception e) {
-                getTest().log(LogStatus.FAIL,"Element not found : "+by);
-                logger.info("Element not found : "+by);
             }
         }
         return true;

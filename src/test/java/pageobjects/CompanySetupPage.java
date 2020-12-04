@@ -3,12 +3,22 @@ package pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.PropertiesLoader;
 import utils.WebBasePage;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Properties;
 
 public class CompanySetupPage extends WebBasePage {
 
     WebDriver driver;
     public static String productType;
+    String pattern = "yyyyMMddHHmmss";
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+    String dateValue = simpleDateFormat.format(new Date());
+    private final static String FILE_NAME = System.getProperty("user.dir")+"\\src\\main\\resources\\testdata.properties";
+    private static Properties prop = new PropertiesLoader(FILE_NAME).load();
 
     public CompanySetupPage(WebDriver driver)
     {
@@ -34,21 +44,21 @@ public class CompanySetupPage extends WebBasePage {
         click(By.cssSelector("div#divmultilevelselect>div>div"),"Parent Location Dropdown",15);
         click(By.xpath("//ul[@id='CompantLocationSelect']//li[@class='parentli'][1]//span"),"Parent Location Value",15);
     }
-    public void enterLocationName(String locationName)
+    public void enterLocationName()
     {
-        enter(By.cssSelector("input#LocationName"),locationName,"Location Name",15);
+        enter(By.cssSelector("input#LocationName"),prop.getProperty("childLocationName")+dateValue,"Location Name",15);
     }
-    public void enterAddreesLine1(String addressOne)
+    public void enterAddreesLine1()
     {
-        enter(By.cssSelector("input#Address1"),addressOne,"Address Line1",15);
+        enter(By.cssSelector("input#Address1"),"Address Line1","Address Line1",15);
     }
-    public void enterCity(String city)
+    public void enterCity()
     {
-        enter(By.cssSelector("input#City"),city,"City",15);
+        enter(By.cssSelector("input#City"),"City","City",15);
     }
-    public void selectCountry(String country)
+    public void selectCountry()
     {
-        selectValueWithText(By.cssSelector("select#ddlCountry"),country,"Country",15);
+        selectValueWithText(By.cssSelector("select#ddlCountry"),"India","Country",15);
     }
     public void saveLocation()
     {
@@ -56,6 +66,7 @@ public class CompanySetupPage extends WebBasePage {
     }
     public void sideBarProductType()
     {
+        findElementVisibility(By.cssSelector(".customsearchbox>input"),15);
         enter(By.cssSelector(".customsearchbox>input"),"Product Type","Menu Search",15);
         click(By.xpath("//ul[@id='upper']//li//a[text()='Product Type']"),"Side Bar Product Type",15);
         wairForLoader(20);
@@ -75,6 +86,11 @@ public class CompanySetupPage extends WebBasePage {
     public void saveProductTypeChange()
     {
         click(By.cssSelector("a#btnSave"),"Save",15);
+    }
+    public void confirmationPopup()
+    {
+            findElementsVisibility(By.cssSelector("div.modal-confirm-footer"));
+            click(By.cssSelector("div.modal-confirm-footer>button"), "Confirmation Ok", 15);
     }
     public void clickProductCostToggle(boolean cost)
     {
@@ -97,6 +113,7 @@ public class CompanySetupPage extends WebBasePage {
                 click(By.xpath("//input[@id='IsItemCostN']//parent::label//span[@class='slider round']"), "Product Cost No", 15);
                 saveProductTypeChange();
                 wairForLoader(20);
+                confirmationPopup();
                 deployProduct.handleSuccessPopup();
             }
         }

@@ -55,36 +55,6 @@ public class WebBasePage extends WaitStatement{
             return null;
         }
     }
-    public String NameGenerator()
-    {
-        String givenName = "";
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMddHHmmss");
-        LocalDateTime now = LocalDateTime.now();
-        String today=dtf.format(now);
-        String []name=today.split("");
-
-        String[] names = new String[10];
-        for (int i = 0; i < name.length; i++)
-        {
-            switch (name[i])
-            {
-                case "0": names[i] = "A"; break;
-                case "1": names[i] = "B"; break;
-                case "2": names[i] = "C"; break;
-                case "3": names[i] = "D"; break;
-                case "4": names[i] = "F"; break;
-                case "5": names[i] = "G"; break;
-                case "6": names[i] = "H"; break;
-                case "7": names[i] = "J"; break;
-                case "8": names[i] = "K"; break;
-                case "9": names[i] = "L"; break;
-                default: names[i] = "Z"; break;
-            }
-        }
-        givenName = String.join("", names);
-        return givenName;
-
-    }
     public void wairForLoader(int time)
     {
         try{
@@ -95,18 +65,9 @@ public class WebBasePage extends WaitStatement{
             logger.info("Loader not found");
         }
     }
-    public void sleep(int time)
-    {
-        try{
-            Thread.sleep(time);
-        }catch(Exception e)
-        {
-
-        }
-    }
     public void enter(By by,String value,String name,int time){
         WebElement element=findElementVisibility(by,time);
-        staticWait(500);
+        staticWait(200);
         if(element!=null){
             element.clear();
             element.sendKeys(value);
@@ -121,7 +82,7 @@ public class WebBasePage extends WaitStatement{
 
      public void click(By by,String name,int time) {
          WebElement element = findElementVisibility(by, time);
-         staticWait(500);
+         staticWait(200);
          if (element != null) {
              element.click();
              getTest().log(LogStatus.PASS, name + " clicked");
@@ -132,22 +93,6 @@ public class WebBasePage extends WaitStatement{
              Assert.fail(name + " -  element not present");
          }
      }
-    public void clickWithOutAssert(By by,String name,int time) {
-        WebElement element = findElementVisibility(by, time);
-        if (element != null) {
-            try {
-                element.click();
-                getTest().log(LogStatus.PASS, name + " clicked");
-                logger.info(name + " clicked ");
-            } catch (Exception e) {
-                getTest().log(LogStatus.FAIL, pageName + name + " not clicked ");
-                logger.info(name + " not clicked");
-            }
-        } else {
-            getTest().log(LogStatus.FAIL, pageName + name + " not clicked ");
-            logger.info(name + " not clicked");
-        }
-    }
     public void browserBack() {
         driver.navigate().back();
     }
@@ -210,7 +155,7 @@ public class WebBasePage extends WaitStatement{
 
     public void selectValueWithText(By by,String value,String name,int time){
         staticWait(200);
-        WebElement element=findElementPresence(by,time);
+        WebElement element=findElementVisibility(by,time);
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].scrollIntoView();", element);
         staticWait(200);
@@ -296,7 +241,7 @@ public class WebBasePage extends WaitStatement{
     }
 
     public String getAtribute(By by,String tag , int time){
-        WebElement ele = findElementPresence(by,time);
+        WebElement ele = findElementVisibility(by,time);
         String getText;
         try {
             getText = ele.getAttribute(tag);
@@ -389,7 +334,7 @@ public class WebBasePage extends WaitStatement{
     }
 
     public void clickByElementsPresence(By by,String name,int time) {
-        WebElement element = findElementPresence(by, time);
+        WebElement element = findElementVisibility(by, time);
         staticWait(500);
         if (element != null) {
             element.click();

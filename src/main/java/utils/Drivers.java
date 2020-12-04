@@ -47,6 +47,7 @@ public class Drivers {
             chromePrefs.put("profile.default_content_settings.popups", 0);
             chromePrefs.put("download.default_directory", downloadFilepath);
             chromePrefs.put("download.prompt_for_download", false);
+            chromePrefs.put("profile.default_content_setting_values.automatic_downloads", 1);
 
 
             ChromeOptions options = new ChromeOptions();
