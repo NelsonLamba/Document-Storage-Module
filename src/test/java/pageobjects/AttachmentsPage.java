@@ -24,6 +24,7 @@ public class AttachmentsPage extends WebBasePage {
     String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\testfiles\\";
     public static String termsAndCondition="No";
     public static int filesInDirectory;
+    public static int attachmentCountBeforeDelete;
     public AttachmentsPage(WebDriver driver)
     {
         super(driver,"");
@@ -89,7 +90,8 @@ public class AttachmentsPage extends WebBasePage {
         WebElement addMoreFile=findElementClickable(By.cssSelector("div>#addMore"),20);
         if(addMoreFile!=null)
         {
-            getTest().log(LogStatus.PASS,"\"Add More Files\" is present as clickable");
+            clickAddMoreAttachment();
+            getTest().log(LogStatus.PASS,"\"Add More Files\" is present as clickable and clicked");
         }
         else
         {
@@ -101,7 +103,8 @@ public class AttachmentsPage extends WebBasePage {
         WebElement clearFile=findElementClickable(By.cssSelector("div>.clear"),20);
         if(clearFile!=null)
         {
-            getTest().log(LogStatus.PASS,"\"Clear File\" is present as clickable");
+            clickMinusIcon();
+            getTest().log(LogStatus.PASS,"\"Clear File\" is present as clickable and clicked");
         }
         else
         {
@@ -113,7 +116,8 @@ public class AttachmentsPage extends WebBasePage {
         WebElement saveButton=findElementClickable(By.cssSelector("a#btnSave"),20);
         if(saveButton!=null)
         {
-            getTest().log(LogStatus.PASS,"\"Save Button\" is present as clickable");
+            clickSaveButton();
+            getTest().log(LogStatus.PASS,"\"Save Button\" is present as clickable and clicked");
         }
         else
         {
@@ -125,7 +129,8 @@ public class AttachmentsPage extends WebBasePage {
         WebElement cancelButton=findElementClickable(By.cssSelector("a#btnCancel"),20);
         if(cancelButton!=null)
         {
-            getTest().log(LogStatus.PASS,"\"Cancel Button\" is present as clickable");
+            clickCancelButton();
+            getTest().log(LogStatus.PASS,"\"Cancel Button\" is present as clickable and clicked");
         }
         else
         {
@@ -137,7 +142,8 @@ public class AttachmentsPage extends WebBasePage {
         WebElement previousButton=findElementClickable(By.cssSelector("a#Previous"),20);
         if(previousButton!=null)
         {
-            getTest().log(LogStatus.PASS,"\"Previous Button\" is present as clickable");
+            clickPreviousButton();
+            getTest().log(LogStatus.PASS,"\"Previous Button\" is present as clickable and clicked");
         }
         else
         {
@@ -188,7 +194,8 @@ public class AttachmentsPage extends WebBasePage {
         WebElement downloadIcon=findElementClickable(By.xpath("//table[@id='example']//tbody//tr[1]//td//a[@class='downloadfile']"),20);
         if(downloadIcon!=null)
         {
-            getTest().log(LogStatus.PASS,"\"Download Icon\" is present as clickable");
+            clickDownloadButton();
+            getTest().log(LogStatus.PASS,"\"Download Icon\" is present as clickable and clicked");
         }
         else
         {
@@ -200,7 +207,8 @@ public class AttachmentsPage extends WebBasePage {
         WebElement deleteIcon=findElementClickable(By.xpath("//table[@id='example']//tbody//tr[1]//td//a[@class='deletefile']"),20);
         if(deleteIcon!=null)
         {
-            getTest().log(LogStatus.PASS,"\"Delete Icon\" is present as clickable");
+            clickDeleteIcon();
+            getTest().log(LogStatus.PASS,"\"Delete Icon\" is present as clickable and clicked");
         }
         else
         {
@@ -209,11 +217,11 @@ public class AttachmentsPage extends WebBasePage {
     }
     public void verifyRemoveIconClickable()
     {
-        clickAddMoreAttachment();
         WebElement removeIcon= findElementClickable(By.xpath("//div//a[contains(@class,'actionicons remove')]"),20);
         if(removeIcon!=null)
         {
-            getTest().log(LogStatus.PASS,"\"Remove Icon\" is present as clickable");
+            clickRemoveAttachmentField();
+            getTest().log(LogStatus.PASS,"\"Remove Icon\" is present as clickable and clicked");
         }
         else
         {
@@ -289,10 +297,11 @@ public class AttachmentsPage extends WebBasePage {
     }
     public void clickPreviousButton()
     {
-        click(By.cssSelector("a#Previous"),"Cancel",15);
+        click(By.cssSelector("a#Previous"),"Previous",15);
     }
     public void clickDeleteIcon()
     {
+        attachmentCountBeforeDelete=findMultipleElement(By.xpath("//table[@id='example']//tbody//tr"),20).size();
         click(By.xpath("//table[@id='example']//tbody//tr[1]//td//a[@class='deletefile']"),"Delete",15);
     }
     public void confirmAttchmentDelete()
@@ -310,13 +319,12 @@ public class AttachmentsPage extends WebBasePage {
         }
         File[] dir2 = new File(downloadPath).listFiles();
         filesInDirectory=dir2.length;
-        scrollToWebelement(By.xpath("//table[@id='example']//tbody//tr[1]//td//a[@class='downloadfile']"),"Download");
         click(By.xpath("//table[@id='example']//tbody//tr[1]//td//a[@class='downloadfile']"),"Download",20);
     }
     public void verifyPlusIconFunctionality()
     {
         int attachmentNameFieldCountBefore=findMultipleElement(By.cssSelector("#txtAttachment"),15).size();
-        clickAddMoreAttachment();
+        verifyAddMoreFileClickable();
         int attachmentNameFieldCountAfter=findMultipleElement(By.cssSelector("#txtAttachment"),15).size();
         if(attachmentNameFieldCountBefore<attachmentNameFieldCountAfter)
         {
@@ -330,7 +338,7 @@ public class AttachmentsPage extends WebBasePage {
     public void verifyCrossIconFunctionality()
     {
         int attachmentNameFieldCountBefore=findMultipleElement(By.cssSelector("#txtAttachment"),15).size();
-        clickRemoveAttachmentField();
+        verifyRemoveIconClickable();
         int attachmentNameFieldCountAfter=findMultipleElement(By.cssSelector("#txtAttachment"),15).size();
         if(attachmentNameFieldCountBefore>attachmentNameFieldCountAfter)
         {
@@ -343,8 +351,7 @@ public class AttachmentsPage extends WebBasePage {
     }
     public void verifyMinusIconFunctionality()
     {
-        String attachedFileNameBefore=getAtribute(By.cssSelector("div>input#flFile"),"value",15);
-        clickMinusIcon();
+        verifyClearFileClickable();
         String attachedFileNameAfter=getAtribute(By.cssSelector("div>input#flFile"),"value",15);
         if(attachedFileNameAfter.equals(""))
         {
@@ -385,7 +392,8 @@ public class AttachmentsPage extends WebBasePage {
         String downloadPath = Drivers.path;
         String fileName = prop.getProperty("testfileDoc");
         File dir = new File(downloadPath + fileName);
-        waitTillNewFile(dir.toString(), filesInDirectory);
+        File dir2 = new File(downloadPath);
+        waitTillNewFile(dir2.toString(), filesInDirectory);
         boolean dirContents = dir.exists();
         if (dirContents) {
             getTest().log(LogStatus.PASS, "File is downloaded and exist in the folder");
@@ -397,8 +405,6 @@ public class AttachmentsPage extends WebBasePage {
     }
     public void verifyDeleteFunctionality()
     {
-        int attachmentCountBeforeDelete=findMultipleElement(By.xpath("//table[@id='example']//tbody//tr"),20).size();
-        clickDeleteIcon();
         int attachmentCountAfterDelete=findMultipleElement(By.xpath("//table[@id='example']//tbody//tr"),20).size();
         int expectedCount=attachmentCountBeforeDelete-1;
         if(expectedCount==attachmentCountAfterDelete)

@@ -9,14 +9,14 @@ import static reporting.ComplexReportFactory.getTest;
 
 public class Attachment extends WebTestBase {
 
-    /*@Test
+    @Test
     public void verifyElementClickableOne()
     {
         AttachmentsAction attachmentsAction=new AttachmentsAction(driver);
         test = getTest("Asset Management_138_139_140");
         new LoginAction(driver).logoutLogin();
         attachmentsAction.navigateToAttachmentPage();
-        attachmentsAction.verifyFieldClickable();
+        attachmentsAction.addRemoveFieldClickable();
     }
     @Test
     public void verifyElementClickableTwo()
@@ -36,7 +36,7 @@ public class Attachment extends WebTestBase {
         attachmentsAction.navigateToAttachmentPage();
         attachmentsAction.addAttachmentToList();
         attachmentsAction.verifyAttachmentList();
-    }*/
+    }
      @Test
     public void verifyDownloadAndDeleteFunctions()
     {
@@ -44,11 +44,11 @@ public class Attachment extends WebTestBase {
         test = getTest("Asset Management_145_146");
         new LoginAction(driver).logoutLogin();
         attachmentsAction.navigateToAttachmentPage();
-//        attachmentsAction.addAttachmentToList();
+        attachmentsAction.addAttachmentToList();
         attachmentsAction.downloadFunctionality();
         attachmentsAction.deleteFunctionality();
     }
-    /*@Test
+    @Test
     public void verifyPreviousAndCancel()
     {
         AttachmentsAction attachmentsAction = new AttachmentsAction(driver);
@@ -57,5 +57,5 @@ public class Attachment extends WebTestBase {
         attachmentsAction.navigateToAttachmentPage();
         attachmentsAction.previousButtonFunctionality();
         attachmentsAction.cancelButtonFunctionality();
-    }*/
+    }
 }

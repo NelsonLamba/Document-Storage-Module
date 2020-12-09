@@ -5,7 +5,7 @@
     <test name="TestName">
 
         <classes>
-            <class name="testcases.DeployProduct"/>
+            <class name="testcases.Attachment"/>
         </classes>
 
 

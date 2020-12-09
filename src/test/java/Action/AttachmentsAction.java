@@ -23,11 +23,12 @@ public class AttachmentsAction {
         deployProduct.openProduct("145hhh");
         attachment.navigateToAttachmentTab();
     }
-    public void verifyFieldClickable()
+    public void addRemoveFieldClickable()
     {
-        attachment.verifyAddMoreFileClickable();
-        attachment.verifyRemoveIconClickable();
-        attachment.verifyClearFileClickable();
+        attachment.verifyPlusIconFunctionality();
+        attachment.verifyCrossIconFunctionality();
+        attachment.uploadAttachment();
+        attachment.verifyMinusIconFunctionality();
     }
     public void nameCheckBoxUpload()
     {
@@ -41,7 +42,6 @@ public class AttachmentsAction {
         attachment.selectTermsAndConditionsYes();
         attachment.uploadAttachment();
         attachment.verifySaveButtonClickable();
-        attachment.clickSaveButton();
         deployProduct.handleSuccessPopup();
     }
     public void verifyAttachmentList()
@@ -53,11 +53,7 @@ public class AttachmentsAction {
     public void cancelButtonFunctionality()
     {
         attachment.navigateToAttachmentTab();
-        attachment.enterAttachmentName();
-        attachment.selectTermsAndConditionsYes();
-        attachment.uploadAttachment();
         attachment.verifyCancelButtonClickable();
-        attachment.clickCancelButton();
         attachment.verifyManageProductPage();
     }
     public void previousButtonFunctionality()
@@ -66,7 +62,6 @@ public class AttachmentsAction {
         attachment.selectTermsAndConditionsYes();
         attachment.uploadAttachment();
         attachment.verifyPreviousButtonClickable();
-        attachment.clickPreviousButton();
         attachment.verifyPreviousButtonFunctionality();
     }
     public void downloadFunctionality()
@@ -74,13 +69,11 @@ public class AttachmentsAction {
         deployProduct.openProduct("145hhh");
         attachment.navigateToAttachmentTab();
         attachment.verifyDownloadIconClickable();
-        attachment.clickDownloadButton();
         attachment.verifyDownloadedFile();
     }
     public void deleteFunctionality()
     {
         attachment.verifyDeleteIconClickable();
-        attachment.clickDeleteIcon();
         attachment.confirmAttchmentDelete();
         deployProduct.handleSuccessPopup();
         attachment.verifyDeleteFunctionality();

@@ -1,0 +1,705 @@
+2020-12-08 19:17:02,451  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:17:02,829  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:17:03,176  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:17:36,254  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:17:36,631  INFO [main] User Login Page:89 - Full Menu clicked 
+2020-12-08 19:17:37,432  INFO [main] User Login Page:89 - clickAssertManagement clicked 
+2020-12-08 19:17:51,984  INFO [main] User Login Page:89 - ManageProduct clicked 
+2020-12-08 19:17:55,915  INFO [main] User Login Page:89 - Product name clicked 
+2020-12-08 19:17:57,006  INFO [main] User Login Page:89 - related Information button clicked 
+2020-12-08 19:17:57,218  INFO [main] User Login Page:180 - BreadCrumb is displayed in the Deploy Product listing page
+2020-12-08 19:18:10,108  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-08 19:18:16,457  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-08 19:18:16,876  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:18:17,244  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:18:17,577  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:18:24,911  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:18:25,212  INFO [main] User Login Page:89 - Full Menu clicked 
+2020-12-08 19:18:25,605  INFO [main] User Login Page:89 - clickAssertManagement clicked 
+2020-12-08 19:18:29,732  INFO [main] User Login Page:89 - ManageProduct clicked 
+2020-12-08 19:18:33,188  INFO [main] User Login Page:89 - Product name clicked 
+2020-12-08 19:18:34,326  INFO [main] User Login Page:89 - related Information button clicked 
+2020-12-08 19:18:35,817  INFO [main] User Login Page:89 - clickBarCodePrint clicked 
+2020-12-08 19:18:35,819  INFO [main] User Login Page:193 - clickbarCodePrint element clicked
+2020-12-08 19:18:35,876  INFO [main] User Login Page:239 -  Text displayed is  - Barcode
+2020-12-08 19:18:35,876  INFO [main] User Login Page:204 - Barcode print popup is Displayed
+2020-12-08 19:18:36,953  INFO [main] User Login Page:89 - closeBarCodePrint clicked 
+2020-12-08 19:18:49,237  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-08 19:18:54,833  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-08 19:18:55,272  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:18:55,693  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:18:56,029  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:19:03,142  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:19:03,496  INFO [main] User Login Page:89 - Full Menu clicked 
+2020-12-08 19:19:03,910  INFO [main] User Login Page:89 - clickAssertManagement clicked 
+2020-12-08 19:19:06,913  INFO [main] User Login Page:89 - ManageProduct clicked 
+2020-12-08 19:19:11,058  INFO [main] User Login Page:89 - Product name clicked 
+2020-12-08 19:19:12,148  INFO [main] User Login Page:89 - related Information button clicked 
+2020-12-08 19:19:13,487  INFO [main] User Login Page:89 - clickuniqueCode clicked 
+2020-12-08 19:19:15,448  INFO [main] User Login Page:75 - Edit Uniquename entered with value - AT20201208191836
+2020-12-08 19:19:15,478  INFO [main] User Login Page:248 -  get attribute value is  - AT20201208191836
+2020-12-08 19:19:15,478  INFO [main] User Login Page:256 - UserName field is editable and able change as AT20201208191836
+2020-12-08 19:19:15,870  INFO [main] User Login Page:75 - Edit Warrenty entered with value - 12
+2020-12-08 19:19:15,904  INFO [main] User Login Page:248 -  get attribute value is  - 12
+2020-12-08 19:19:15,904  INFO [main] User Login Page:269 - warrentyduration field is editable and able change as 12
+2020-12-08 19:19:16,481  INFO [main] User Login Page:89 - acquisitiondate clicked 
+2020-12-08 19:19:16,852  INFO [main] User Login Page:89 - Mont&Year popup clicked 
+2020-12-08 19:19:17,225  INFO [main] User Login Page:89 - Year popup clicked 
+2020-12-08 19:19:17,582  INFO [main] User Login Page:89 - Year Value clicked 
+2020-12-08 19:19:17,926  INFO [main] User Login Page:89 - Month Value clicked 
+2020-12-08 19:19:18,648  INFO [main] User Login Page:89 - choosewarrentydate clicked 
+2020-12-08 19:19:18,966  INFO [main] User Login Page:89 - Mont&Year popup clicked 
+2020-12-08 19:19:19,265  INFO [main] User Login Page:89 - Year popup clicked 
+2020-12-08 19:19:19,596  INFO [main] User Login Page:89 - Year Value clicked 
+2020-12-08 19:19:19,927  INFO [main] User Login Page:89 - Month Value clicked 
+2020-12-08 19:19:20,434  INFO [main] User Login Page:75 - Edit cost entered with value - 10015
+2020-12-08 19:19:20,460  INFO [main] User Login Page:248 -  get attribute value is  - 10015
+2020-12-08 19:19:20,460  INFO [main] User Login Page:282 - Cost field is editable and able change as 10015
+2020-12-08 19:19:20,821  INFO [main] User Login Page:75 - Edit serialnumber entered with value - 10
+2020-12-08 19:19:20,849  INFO [main] User Login Page:248 -  get attribute value is  - 10
+2020-12-08 19:19:20,850  INFO [main] User Login Page:295 - UserName field is editable and able change as 10
+2020-12-08 19:19:21,214  INFO [main] User Login Page:75 - Edit Licensekey entered with value - 4
+2020-12-08 19:19:21,240  INFO [main] User Login Page:248 -  get attribute value is  - 4
+2020-12-08 19:19:21,242  INFO [main] User Login Page:308 - licencekey field is editable and able change as 4
+2020-12-08 19:19:21,616  INFO [main] User Login Page:75 - Edit Licensetype entered with value - One
+2020-12-08 19:19:21,681  INFO [main] User Login Page:248 -  get attribute value is  - One
+2020-12-08 19:19:21,681  INFO [main] User Login Page:321 - licencekey field is editable and able change as One
+2020-12-08 19:19:22,136  INFO [main] User Login Page:75 - Edit Versione entered with value - 1.0.3658.0
+2020-12-08 19:19:22,174  INFO [main] User Login Page:248 -  get attribute value is  - 1.0.3658.0
+2020-12-08 19:19:22,175  INFO [main] User Login Page:334 - Version field is editable and able change as 1.0.3658.0
+2020-12-08 19:19:22,550  INFO [main] User Login Page:75 - Edit InstalledMachine entered with value - machine_577
+2020-12-08 19:19:22,576  INFO [main] User Login Page:248 -  get attribute value is  - machine_577
+2020-12-08 19:19:22,576  INFO [main] User Login Page:347 - InstalledMachine field is editable and able change as machine_577
+2020-12-08 19:19:22,967  INFO [main] User Login Page:75 - Edit InstalledPath entered with value - path
+2020-12-08 19:19:23,020  INFO [main] User Login Page:248 -  get attribute value is  - path
+2020-12-08 19:19:23,021  INFO [main] User Login Page:361 - InstalledPath field is editable and able change as path
+2020-12-08 19:19:25,037  INFO [main] User Login Page:178 - Page scroll down
+2020-12-08 19:19:27,592  INFO [main] User Login Page:210 - Scroll to this element - auditdate
+2020-12-08 19:19:28,674  INFO [main] User Login Page:89 - auditdate clicked 
+2020-12-08 19:19:29,017  INFO [main] User Login Page:89 - Mont&Year popup clicked 
+2020-12-08 19:19:29,315  INFO [main] User Login Page:89 - Year popup clicked 
+2020-12-08 19:19:29,665  INFO [main] User Login Page:89 - Year Value clicked 
+2020-12-08 19:19:29,986  INFO [main] User Login Page:89 - Month Value clicked 
+2020-12-08 19:19:30,167  INFO [main] User Login Page:523 - Element is  Disabled
+2020-12-08 19:19:30,184  INFO [main] User Login Page:534 - nextimagedisabledfield is  Disabled
+2020-12-08 19:19:30,540  INFO [main] User Login Page:75 - ModelName entered with value - New
+2020-12-08 19:19:30,568  INFO [main] User Login Page:248 -  get attribute value is  - New
+2020-12-08 19:19:30,568  INFO [main] User Login Page:375 - ModelName field is editable and able change as New
+2020-12-08 19:19:30,923  INFO [main] User Login Page:75 - Edit ModelNumber entered with value - 1100
+2020-12-08 19:19:30,970  INFO [main] User Login Page:248 -  get attribute value is  - 1100
+2020-12-08 19:19:30,971  INFO [main] User Login Page:389 - ModelNumber field is editable and able change as 1100
+2020-12-08 19:19:31,341  INFO [main] User Login Page:75 - Edit Brand entered with value - Old
+2020-12-08 19:19:31,367  INFO [main] User Login Page:248 -  get attribute value is  - Old
+2020-12-08 19:19:31,368  INFO [main] User Login Page:402 - Brand field is editable and able change as Old
+2020-12-08 19:19:31,737  INFO [main] User Login Page:75 - Edit BillNumber entered with value - 1343 
+2020-12-08 19:19:31,766  INFO [main] User Login Page:248 -  get attribute value is  - 1343 
+2020-12-08 19:19:31,766  INFO [main] User Login Page:415 - BillNumber field is editable and able change as 1343 
+2020-12-08 19:19:32,146  INFO [main] User Login Page:75 - Edit ImeiNumber entered with value - 11210111
+2020-12-08 19:19:32,172  INFO [main] User Login Page:248 -  get attribute value is  - 11210111
+2020-12-08 19:19:32,173  INFO [main] User Login Page:428 - ImeiNumber field is editable and able change as 11210111
+2020-12-08 19:19:32,562  INFO [main] User Login Page:75 - Edit SimNumber entered with value - 987451158
+2020-12-08 19:19:32,593  INFO [main] User Login Page:248 -  get attribute value is  - 987451158
+2020-12-08 19:19:32,593  INFO [main] User Login Page:441 - SimNumber field is editable and able change as 987451158
+2020-12-08 19:19:33,010  INFO [main] User Login Page:75 - Edit phonenumber entered with value - 12345
+2020-12-08 19:19:33,038  INFO [main] User Login Page:248 -  get attribute value is  - 12345
+2020-12-08 19:19:33,038  INFO [main] User Login Page:454 - phonenumber field is editable and able change as 12345
+2020-12-08 19:19:33,397  INFO [main] User Login Page:75 - Edit mobileironredsetup entered with value - setup
+2020-12-08 19:19:33,443  INFO [main] User Login Page:248 -  get attribute value is  - setup
+2020-12-08 19:19:33,443  INFO [main] User Login Page:467 - mobileironredsetup field is editable and able change as setup
+2020-12-08 19:19:33,811  INFO [main] User Login Page:75 - Edit accessoryon entered with value - on
+2020-12-08 19:19:33,839  INFO [main] User Login Page:248 -  get attribute value is  - on
+2020-12-08 19:19:33,840  INFO [main] User Login Page:480 - accessoryon field is editable and able change as on
+2020-12-08 19:19:34,207  INFO [main] User Login Page:75 - Edit machinename entered with value - ElRoyal
+2020-12-08 19:19:34,234  INFO [main] User Login Page:248 -  get attribute value is  - ElRoyal
+2020-12-08 19:19:34,235  INFO [main] User Login Page:493 - machinename field is editable and able change as ElRoyal
+2020-12-08 19:19:34,752  INFO [main] User Login Page:210 - Scroll to this element - editdivision
+2020-12-08 19:19:35,675  INFO [main] User Login Page:75 - Edit divisionname entered with value - 1.0.0214
+2020-12-08 19:19:35,718  INFO [main] User Login Page:248 -  get attribute value is  - 1.0.0214
+2020-12-08 19:19:35,718  INFO [main] User Login Page:507 - divisionname field is editable and able change as 1.0.0214
+2020-12-08 19:19:36,413  INFO [main] User Login Page:166 - SelectStatus selected with value - Inactive
+2020-12-08 19:19:57,600  INFO [main] User Login Page:75 - Edit GPS entered with value - on
+2020-12-08 19:19:57,628  INFO [main] User Login Page:248 -  get attribute value is  - on
+2020-12-08 19:19:57,629  INFO [main] User Login Page:578 - GPS field is editable and able change as on
+2020-12-08 19:19:59,982  INFO [main] User Login Page:224 - laptop bag check box click by JS
+2020-12-08 19:20:00,013  INFO [main] User Login Page:545 - editRFIDdisabledfield is  Disabled
+2020-12-08 19:20:00,500  INFO [main] User Login Page:89 - downloadBarImage clicked 
+2020-12-08 19:20:03,344  INFO [main] User Login Page:239 -  Text displayed is  - Related Information has been successfully updated.
+2020-12-08 19:20:03,772  INFO [main] User Login Page:89 - close the alert message clicked 
+2020-12-08 19:20:16,330  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-08 19:20:22,143  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-08 19:20:22,572  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:20:22,945  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:20:23,266  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:20:31,574  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:20:31,906  INFO [main] :89 - Full Menu clicked 
+2020-12-08 19:20:32,804  INFO [main] :89 - clickAssertManagement clicked 
+2020-12-08 19:20:37,003  INFO [main] :89 - ManageProduct clicked 
+2020-12-08 19:20:43,391  INFO [main] :89 - Product name clicked 
+2020-12-08 19:20:44,495  INFO [main] :89 - related Information button clicked 
+2020-12-08 19:20:45,333  INFO [main] :113 - Pass - The Location Header is displayed in the Related information page
+2020-12-08 19:20:45,365  INFO [main] :113 - Pass - The Unique Name/Code Header is displayed in the Related information page
+2020-12-08 19:20:45,416  INFO [main] :113 - Pass - The Total Quantity Header is displayed in the Related information page
+2020-12-08 19:20:45,486  INFO [main] :113 - Pass - The Available Quantity Header is displayed in the Related information page
+2020-12-08 19:20:45,623  INFO [main] :113 - Pass - The Barcode Header is displayed in the Related information page
+2020-12-08 19:20:45,761  INFO [main] :113 - Pass - The Serial Number Header is displayed in the Related information page
+2020-12-08 19:20:45,919  INFO [main] :113 - Pass - The Phone No. Header is displayed in the Related information page
+2020-12-08 19:20:46,083  INFO [main] :113 - Pass - The Cost Header is displayed in the Related information page
+2020-12-08 19:20:46,469  INFO [main] :113 - Pass - The Warranty Expiration Date Header is displayed in the Related information page
+2020-12-08 19:20:46,639  INFO [main] :113 - Pass - The Calibration Date Header is displayed in the Related information page
+2020-12-08 19:20:46,802  INFO [main] :113 - Pass - The Audit Header is displayed in the Related information page
+2020-12-08 19:20:46,993  INFO [main] :113 - Pass - The View History Header is displayed in the Related information page
+2020-12-08 19:20:47,175  INFO [main] :113 - Pass - The Status Header is displayed in the Related information page
+2020-12-08 19:20:47,409  INFO [main] :113 - Pass - The Action Header is displayed in the Related information page
+2020-12-08 19:20:59,688  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-08 19:21:05,636  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-08 19:21:06,072  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:21:06,495  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:21:06,815  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:21:13,069  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:21:13,382  INFO [main] User Login Page:89 - Full Menu clicked 
+2020-12-08 19:21:13,863  INFO [main] User Login Page:89 - clickAssertManagement clicked 
+2020-12-08 19:21:17,000  INFO [main] User Login Page:89 - ManageProduct clicked 
+2020-12-08 19:21:21,254  INFO [main] User Login Page:89 - Product name clicked 
+2020-12-08 19:21:22,381  INFO [main] User Login Page:89 - related Information button clicked 
+2020-12-08 19:21:23,238  INFO [main] User Login Page:239 -  Text displayed is  - AT20201208191836
+2020-12-08 19:21:25,222  INFO [main] User Login Page:89 - downloadBarImage clicked 
+2020-12-08 19:21:25,227  INFO [main] User Login Page:655 - Downloaded File is not Exist
+2020-12-08 19:21:37,557  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-08 19:21:43,191  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-08 19:21:43,635  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:21:44,052  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:21:44,371  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:21:49,278  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:21:49,615  INFO [main] User Login Page:89 - Full Menu clicked 
+2020-12-08 19:21:49,956  INFO [main] User Login Page:89 - clickAssertManagement clicked 
+2020-12-08 19:21:52,875  INFO [main] User Login Page:89 - ManageProduct clicked 
+2020-12-08 19:21:56,518  INFO [main] User Login Page:89 - Product name clicked 
+2020-12-08 19:21:58,534  INFO [main] User Login Page:89 - related Information button clicked 
+2020-12-08 19:22:14,747  INFO [main] User Login Page:89 - downloadBulkBarCode clicked 
+2020-12-08 19:22:14,751  INFO [main] User Login Page:240 - Downloaded File is not Exist
+2020-12-08 19:22:27,043  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-08 19:22:32,597  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-08 19:22:33,041  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:22:33,473  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:22:33,772  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:22:46,854  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:22:47,189  INFO [main] User Login Page:89 - Full Menu clicked 
+2020-12-08 19:22:47,591  INFO [main] User Login Page:89 - clickAssertManagement clicked 
+2020-12-08 19:22:52,571  INFO [main] User Login Page:89 - ManageProduct clicked 
+2020-12-08 19:22:57,952  INFO [main] User Login Page:89 - Product name clicked 
+2020-12-08 19:22:59,120  INFO [main] User Login Page:89 - related Information button clicked 
+2020-12-08 19:23:01,170  INFO [main] User Login Page:210 - Scroll to this element - Status Header
+2020-12-08 19:23:01,767  INFO [main] User Login Page:239 -  Text displayed is  - Inactive
+2020-12-08 19:23:02,292  INFO [main] User Login Page:89 - change status clicked 
+2020-12-08 19:23:02,351  INFO [main] User Login Page:239 -  Text displayed is  - Are you sure you want to change the status?
+2020-12-08 19:23:05,659  INFO [main] User Login Page:89 - ok clicked 
+2020-12-08 19:23:05,941  INFO [main] User Login Page:239 -  Text displayed is  - Related Information has been successfully updated.
+2020-12-08 19:23:06,530  INFO [main] User Login Page:89 - close success message clicked 
+2020-12-08 19:23:07,067  INFO [main] User Login Page:210 - Scroll to this element - Status Header
+2020-12-08 19:23:07,662  INFO [main] User Login Page:239 -  Text displayed is  - Active
+2020-12-08 19:23:07,663  INFO [main] User Login Page:803 - Inactive status is changed to Active status as expected
+2020-12-08 19:23:07,709  INFO [main] User Login Page:239 -  Text displayed is  - Active
+2020-12-08 19:23:08,205  INFO [main] User Login Page:89 - Edit status clicked 
+2020-12-08 19:23:08,696  INFO [main] User Login Page:89 - select DD clicked 
+2020-12-08 19:23:08,753  INFO [main] User Login Page:841 - expected[k]+" value present in the DropDown"
+2020-12-08 19:23:08,763  INFO [main] User Login Page:841 - expected[k]+" value present in the DropDown"
+2020-12-08 19:23:08,773  INFO [main] User Login Page:841 - expected[k]+" value present in the DropDown"
+2020-12-08 19:23:08,783  INFO [main] User Login Page:841 - expected[k]+" value present in the DropDown"
+2020-12-08 19:23:08,793  INFO [main] User Login Page:841 - expected[k]+" value present in the DropDown"
+2020-12-08 19:23:09,652  INFO [main] User Login Page:134 - SelectStatus selected with value - 3
+2020-12-08 19:23:09,733  INFO [main] User Login Page:239 -  Text displayed is  - Are you sure you want to change the status?
+2020-12-08 19:23:10,061  INFO [main] User Login Page:89 - ok clicked 
+2020-12-08 19:23:12,245  INFO [main] User Login Page:239 -  Text displayed is  - Related Information has been successfully updated.
+2020-12-08 19:23:12,701  INFO [main] User Login Page:89 - close success message clicked 
+2020-12-08 19:23:25,145  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-08 19:23:30,723  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-08 19:23:31,096  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:23:31,528  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:23:31,870  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:23:37,989  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:23:38,339  INFO [main] User Login Page:89 - Full Menu clicked 
+2020-12-08 19:23:38,779  INFO [main] User Login Page:89 - clickAssertManagement clicked 
+2020-12-08 19:23:42,681  INFO [main] User Login Page:89 - ManageProduct clicked 
+2020-12-08 19:23:47,262  INFO [main] User Login Page:89 - Product name clicked 
+2020-12-08 19:23:48,366  INFO [main] User Login Page:89 - related Information button clicked 
+2020-12-08 19:23:49,190  INFO [main] User Login Page:129 - The  Searchbar is displayed in the Related information page
+2020-12-08 19:23:49,653  INFO [main] User Login Page:75 - UniqueName entered with value - 145hhh_10
+2020-12-08 19:23:50,123  INFO [main] User Login Page:89 - searchicon clicked 
+2020-12-08 19:23:51,442  INFO [main] User Login Page:239 -  Text displayed is  - 145hhh_10
+2020-12-08 19:23:51,442  INFO [main] User Login Page:150 - Searched unique name is displayed as expected
+2020-12-08 19:23:51,901  INFO [main] User Login Page:89 - clickResetIcon clicked 
+2020-12-08 19:23:51,999  INFO [main] User Login Page:167 - The  Searchbar is Empty in the Related information page
+2020-12-08 19:24:04,424  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-08 19:24:10,024  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-08 19:24:10,397  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:24:10,785  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:24:11,108  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:24:16,620  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:24:16,953  INFO [main] User Login Page:89 - Full Menu clicked 
+2020-12-08 19:24:17,951  INFO [main] User Login Page:89 - clickAssertManagement clicked 
+2020-12-08 19:24:21,532  INFO [main] User Login Page:89 - ManageProduct clicked 
+2020-12-08 19:24:25,573  INFO [main] User Login Page:89 - Product name clicked 
+2020-12-08 19:24:27,228  INFO [main] User Login Page:89 - related Information button clicked 
+2020-12-08 19:24:28,439  INFO [main] User Login Page:89 - clickauditComment clicked 
+2020-12-08 19:24:29,100  INFO [main] User Login Page:239 -  Text displayed is  - Audit Date:*
+2020-12-08 19:24:29,100  INFO [main] User Login Page:731 - Calibration Comment Popup  Page is  Displayed
+2020-12-08 19:24:29,693  INFO [main] User Login Page:89 - chooseAuditStartDate clicked 
+2020-12-08 19:24:30,009  INFO [main] User Login Page:89 - Mont&Year popup clicked 
+2020-12-08 19:24:30,349  INFO [main] User Login Page:89 - Year popup clicked 
+2020-12-08 19:24:30,711  INFO [main] User Login Page:89 - Year Value clicked 
+2020-12-08 19:24:31,034  INFO [main] User Login Page:89 - Month Value clicked 
+2020-12-08 19:24:31,733  INFO [main] User Login Page:89 - chooseAuditNextDate clicked 
+2020-12-08 19:24:32,063  INFO [main] User Login Page:89 - Mont&Year popup clicked 
+2020-12-08 19:24:32,392  INFO [main] User Login Page:89 - Year popup clicked 
+2020-12-08 19:24:32,746  INFO [main] User Login Page:89 - Year Value clicked 
+2020-12-08 19:24:33,068  INFO [main] User Login Page:89 - Month Value clicked 
+2020-12-08 19:24:33,828  INFO [main] User Login Page:89 - status clicked 
+2020-12-08 19:24:34,239  INFO [main] User Login Page:75 - Audit Comment entered with value - Unique Products
+2020-12-08 19:24:34,704  INFO [main] User Login Page:89 - savepostComment clicked 
+2020-12-08 19:24:35,226  INFO [main] User Login Page:89 - closeicon clicked 
+2020-12-08 19:24:47,789  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-08 19:24:53,332  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-08 19:24:53,734  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:24:54,094  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:24:54,424  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:25:01,186  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:25:01,566  INFO [main] User Login Page:89 - Full Menu clicked 
+2020-12-08 19:25:01,949  INFO [main] User Login Page:89 - clickAssertManagement clicked 
+2020-12-08 19:25:06,033  INFO [main] User Login Page:89 - ManageProduct clicked 
+2020-12-08 19:25:12,254  INFO [main] User Login Page:89 - Product name clicked 
+2020-12-08 19:25:13,366  INFO [main] User Login Page:89 - related Information button clicked 
+2020-12-08 19:25:15,401  INFO [main] User Login Page:178 - Page scroll down
+2020-12-08 19:25:17,959  INFO [main] User Login Page:210 - Scroll to this element - edit status
+2020-12-08 19:25:19,046  INFO [main] User Login Page:89 - clickCalibrationComment clicked 
+2020-12-08 19:25:19,502  INFO [main] User Login Page:239 -  Text displayed is  - Calibration Date:*
+2020-12-08 19:25:19,502  INFO [main] User Login Page:671 - Calibration Comment Popup  Page is  Displayed
+2020-12-08 19:25:20,069  INFO [main] User Login Page:89 - chooseCalibrationDate clicked 
+2020-12-08 19:25:20,385  INFO [main] User Login Page:89 - Mont&Year popup clicked 
+2020-12-08 19:25:20,706  INFO [main] User Login Page:89 - Year popup clicked 
+2020-12-08 19:25:21,055  INFO [main] User Login Page:89 - Year Value clicked 
+2020-12-08 19:25:21,406  INFO [main] User Login Page:89 - Month Value clicked 
+2020-12-08 19:25:22,086  INFO [main] User Login Page:89 - chooseCalibrationNextDate clicked 
+2020-12-08 19:25:22,352  INFO [main] User Login Page:89 - Mont&Year popup clicked 
+2020-12-08 19:25:22,667  INFO [main] User Login Page:89 - Year popup clicked 
+2020-12-08 19:25:23,031  INFO [main] User Login Page:89 - Year Value clicked 
+2020-12-08 19:25:23,359  INFO [main] User Login Page:89 - Month Value clicked 
+2020-12-08 19:25:24,160  INFO [main] User Login Page:89 - status clicked 
+2020-12-08 19:25:24,536  INFO [main] User Login Page:75 - Calibration Comment entered with value - Unique Products
+2020-12-08 19:25:25,008  INFO [main] User Login Page:89 - savepostComment clicked 
+2020-12-08 19:25:25,498  INFO [main] User Login Page:89 - closeicon clicked 
+2020-12-08 19:25:38,003  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-08 19:25:43,436  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-08 19:25:43,852  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:25:44,222  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:25:44,595  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:25:50,645  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:25:51,001  INFO [main] User Login Page:89 - Full Menu clicked 
+2020-12-08 19:25:51,316  INFO [main] User Login Page:89 - clickAssertManagement clicked 
+2020-12-08 19:25:55,192  INFO [main] User Login Page:89 - ManageProduct clicked 
+2020-12-08 19:25:59,573  INFO [main] User Login Page:89 - Product name clicked 
+2020-12-08 19:26:00,617  INFO [main] User Login Page:89 - related Information button clicked 
+2020-12-08 19:26:01,464  INFO [main] :239 -  Text displayed is  - Showing 1 to 10 of 22 enteries
+2020-12-08 19:26:01,967  INFO [main] :89 - Pagination Next clicked 
+2020-12-08 19:26:02,034  INFO [main] :239 -  Text displayed is  - Showing 1 to 10 of 22 enteries
+2020-12-08 19:26:02,034  INFO [main] :1414 - Next page is not displayed as expected when click on the "Next" pagination button
+2020-12-08 19:26:03,335  INFO [main] :89 -  Pagination Previous clicked 
+2020-12-08 19:26:03,399  INFO [main] :239 -  Text displayed is  - Showing 11 to 20 of 22 enteries
+2020-12-08 19:26:03,400  INFO [main] :1429 - Previous page is not displayed as expected when click on the "Previous" pagination button
+2020-12-08 19:26:03,845  INFO [main] :89 - Pagination Last clicked 
+2020-12-08 19:26:04,242  INFO [main] :239 -  Text displayed is  - Showing 1 to 10 of 22 enteries
+2020-12-08 19:26:04,242  INFO [main] :1444 - Last page is not displayed as expected when click on the "Last" pagination button
+2020-12-08 19:26:18,753  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-08 19:26:23,923  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-08 19:26:24,320  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:26:24,676  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:26:25,034  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:26:30,238  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:26:30,585  INFO [main] User Login Page:89 - Full Menu clicked 
+2020-12-08 19:26:30,935  INFO [main] User Login Page:89 - clickAssertManagement clicked 
+2020-12-08 19:26:34,242  INFO [main] User Login Page:89 - ManageProduct clicked 
+2020-12-08 19:26:38,319  INFO [main] User Login Page:89 - Product name clicked 
+2020-12-08 19:26:39,395  INFO [main] User Login Page:89 - related Information button clicked 
+2020-12-08 19:26:41,445  INFO [main] User Login Page:178 - Page scroll down
+2020-12-08 19:26:43,970  INFO [main] User Login Page:210 - Scroll to this element - edit status
+2020-12-08 19:26:45,142  INFO [main] User Login Page:89 - view History clicked 
+2020-12-08 19:26:49,486  INFO [main] User Login Page:239 -  Text displayed is  - Product:
+2020-12-08 19:26:49,486  INFO [main] User Login Page:870 - Product Information  Page is  Displayed
+2020-12-08 19:26:49,519  INFO [main] User Login Page:902 - Pass - The Product: Header is displayed in the Related information page
+2020-12-08 19:26:49,596  INFO [main] User Login Page:902 - Pass - The Unique Name: Header is displayed in the Related information page
+2020-12-08 19:26:49,622  INFO [main] User Login Page:902 - Pass - The Serial Number: Header is displayed in the Related information page
+2020-12-08 19:26:49,713  INFO [main] User Login Page:902 - Pass - The Brand: Header is displayed in the Related information page
+2020-12-08 19:26:49,763  INFO [main] User Login Page:902 - Pass - The Model Name: Header is displayed in the Related information page
+2020-12-08 19:26:49,861  INFO [main] User Login Page:902 - Pass - The Model Number: Header is displayed in the Related information page
+2020-12-08 19:26:50,051  INFO [main] User Login Page:902 - Pass - The Cost: Header is displayed in the Related information page
+2020-12-08 19:26:50,113  INFO [main] User Login Page:902 - Pass - The Warranty Duration: Header is displayed in the Related information page
+2020-12-08 19:26:50,215  INFO [main] User Login Page:902 - Pass - The Warranty Expiration Date: Header is displayed in the Related information page
+2020-12-08 19:26:50,715  INFO [main] User Login Page:89 - pending checkout List clicked 
+2020-12-08 19:26:50,763  INFO [main] User Login Page:239 -  Text displayed is  - Item Name
+2020-12-08 19:26:50,763  INFO [main] User Login Page:921 - Pending Check Out List  Page is  Displayed
+2020-12-08 19:26:50,788  INFO [main] User Login Page:948 - Pass - The Item Name Header is displayed in the Related information page
+2020-12-08 19:26:50,819  INFO [main] User Login Page:948 - Pass - The From Time Header is displayed in the Related information page
+2020-12-08 19:26:50,867  INFO [main] User Login Page:948 - Pass - The To Time Header is displayed in the Related information page
+2020-12-08 19:26:50,919  INFO [main] User Login Page:948 - Pass - The Check Out Request By Header is displayed in the Related information page
+2020-12-08 19:26:50,981  INFO [main] User Login Page:948 - Pass - The Check Out Request Date Header is displayed in the Related information page
+2020-12-08 19:26:51,058  INFO [main] User Login Page:948 - Pass - The Assign Header is displayed in the Related information page
+2020-12-08 19:26:51,141  INFO [main] User Login Page:948 - Pass - The Reject Header is displayed in the Related information page
+2020-12-08 19:30:38,879  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-08 19:30:39,268  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-08 19:30:39,614  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-08 19:30:53,663  INFO [main] User Login Page:89 - Login clicked 
+2020-12-08 19:30:53,972  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-08 19:30:54,984  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-08 19:31:10,776  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-08 19:31:15,299  INFO [main] User Login Page:89 - Product clicked 
+2020-12-08 19:31:16,375  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-08 19:31:31,922  INFO [main] User Login Page:92 - Product not clicked
+2020-12-09 10:37:59,604  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 10:38:00,016  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 10:38:00,319  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 10:38:14,178  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 10:38:14,474  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 10:38:18,336  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 10:38:32,308  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 10:38:44,004  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 10:38:45,108  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 10:39:00,522  INFO [main] User Login Page:92 - Product not clicked
+2020-12-09 10:39:53,855  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 10:39:54,234  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 10:39:54,534  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 10:40:07,196  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 10:40:07,537  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 10:40:09,369  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 10:40:17,786  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 10:40:28,376  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 10:40:29,457  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 10:40:30,023  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:40:31,178  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:40:33,719  INFO [main] User Login Page:89 - Download clicked 
+2020-12-09 10:42:16,499  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 10:42:16,904  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 10:42:17,248  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 10:42:28,905  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 10:42:29,228  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 10:42:31,066  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 10:42:41,695  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 10:42:47,315  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 10:42:48,343  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 10:42:48,906  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:42:50,011  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:42:52,623  INFO [main] User Login Page:89 - Download clicked 
+2020-12-09 10:43:48,677  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 10:43:49,072  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 10:43:49,436  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 10:43:56,726  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 10:43:57,115  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 10:43:58,668  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 10:44:16,850  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 10:44:24,570  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 10:44:25,660  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 10:44:26,201  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:44:55,757  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:45:03,730  INFO [main] User Login Page:89 - Download clicked 
+2020-12-09 10:46:18,848  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 10:46:19,261  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 10:46:19,629  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 10:46:32,725  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 10:46:33,033  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 10:46:34,636  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 10:46:42,275  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 10:46:51,440  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 10:46:52,525  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 10:46:53,076  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:46:54,250  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:46:57,288  INFO [main] User Login Page:89 - Download clicked 
+2020-12-09 10:47:40,717  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 10:47:41,085  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 10:47:41,452  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 10:47:50,490  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 10:47:50,806  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 10:47:56,198  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 10:48:08,391  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 10:48:17,325  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 10:48:18,397  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 10:48:18,955  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:48:20,098  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:48:21,829  INFO [main] User Login Page:89 - Download clicked 
+2020-12-09 10:49:02,033  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 10:49:02,381  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 10:49:02,688  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 10:49:13,140  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 10:49:13,521  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 10:49:17,112  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 10:49:26,046  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 10:49:33,608  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 10:49:34,704  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 10:49:35,279  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:49:36,433  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:49:40,006  INFO [main] User Login Page:89 - Download clicked 
+2020-12-09 10:49:42,008  INFO [main] User Login Page:396 - File is not exist in the folder
+2020-12-09 10:50:06,503  INFO [main] User Login Page:89 - Delete clicked 
+2020-12-09 10:50:20,231  INFO [main] User Login Page:89 - Ok clicked 
+2020-12-09 10:50:28,108  INFO [main] User Login Page:89 - Close Popup clicked 
+2020-12-09 10:52:06,487  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 10:52:06,903  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 10:52:07,264  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 10:52:26,443  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 10:52:26,799  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 10:52:31,611  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 10:52:49,967  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 10:53:00,907  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 10:53:02,586  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 10:53:03,124  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:53:04,225  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 10:53:06,271  INFO [main] User Login Page:89 - Download clicked 
+2020-12-09 10:53:08,273  INFO [main] User Login Page:398 - File is not exist in the folder
+2020-12-09 10:53:25,380  INFO [main] User Login Page:89 - Delete clicked 
+2020-12-09 10:53:39,184  INFO [main] User Login Page:89 - Ok clicked 
+2020-12-09 10:53:44,002  INFO [main] User Login Page:89 - Close Popup clicked 
+2020-12-09 10:57:27,090  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 10:57:27,503  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 10:57:27,876  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 10:57:46,469  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 10:57:46,816  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 10:57:47,369  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 10:57:59,496  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 10:58:03,397  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 10:58:04,475  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 10:58:13,446  INFO [main] User Login Page:75 - Attachment Name entered with value - Attach123
+2020-12-09 10:58:16,116  INFO [main] User Login Page:224 - Terms and Conditions click by JS
+2020-12-09 10:58:18,684  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 10:58:34,621  INFO [main] User Login Page:89 - Cancel clicked 
+2020-12-09 10:59:15,311  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 10:59:33,317  INFO [main] User Login Page:75 - Attachment Name entered with value - Attach123
+2020-12-09 10:59:48,939  INFO [main] User Login Page:224 - Terms and Conditions click by JS
+2020-12-09 11:00:04,635  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:00:23,688  INFO [main] User Login Page:89 - Cancel clicked 
+2020-12-09 11:07:01,721  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:07:02,134  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:07:02,456  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:07:22,444  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:07:22,815  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:07:27,897  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:07:45,153  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:07:57,965  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:07:59,076  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:07:59,670  INFO [main] User Login Page:75 - Attachment Name entered with value - Attach123
+2020-12-09 11:08:01,877  INFO [main] User Login Page:224 - Terms and Conditions click by JS
+2020-12-09 11:08:02,480  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:08:15,075  INFO [main] User Login Page:89 - Save clicked 
+2020-12-09 11:08:15,770  INFO [main] User Login Page:89 - Close Popup clicked 
+2020-12-09 11:08:27,634  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:08:28,634  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:08:41,238  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-09 11:08:47,825  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-09 11:08:48,232  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:08:48,604  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:08:48,972  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:09:07,882  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:09:08,180  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:09:08,545  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:09:21,226  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:09:30,672  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:09:31,786  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:09:32,236  INFO [main] User Login Page:75 - Attachment Name entered with value - Attach123
+2020-12-09 11:09:34,410  INFO [main] User Login Page:224 - Terms and Conditions click by JS
+2020-12-09 11:09:34,998  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:09:35,579  INFO [main] User Login Page:89 - Save clicked 
+2020-12-09 11:09:36,567  INFO [main] User Login Page:89 - Ok clicked 
+2020-12-09 11:09:47,411  INFO [main] User Login Page:89 - Close Popup clicked 
+2020-12-09 11:09:57,354  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:09:58,461  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:09:59,024  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 11:10:00,167  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 11:10:02,029  INFO [main] User Login Page:89 - Download clicked 
+2020-12-09 11:10:05,031  INFO [main] User Login Page:401 - File is not exist in the folder
+2020-12-09 11:10:05,623  INFO [main] User Login Page:89 - Delete clicked 
+2020-12-09 11:10:05,981  INFO [main] User Login Page:89 - Ok clicked 
+2020-12-09 11:10:07,228  INFO [main] User Login Page:89 - Close Popup clicked 
+2020-12-09 11:10:19,531  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-09 11:10:27,361  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-09 11:10:27,858  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:10:28,255  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:10:28,591  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:10:39,626  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:10:39,982  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:10:40,269  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:10:51,466  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:11:04,413  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:11:05,474  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:11:06,150  INFO [main] User Login Page:89 - Delete clicked 
+2020-12-09 11:11:07,055  INFO [main] User Login Page:89 - Confirmation clicked 
+2020-12-09 11:11:08,277  INFO [main] User Login Page:89 - Close Popup clicked 
+2020-12-09 11:11:08,775  INFO [main] User Login Page:89 - Delete clicked 
+2020-12-09 11:11:09,594  INFO [main] User Login Page:89 - Confirmation clicked 
+2020-12-09 11:11:11,159  INFO [main] User Login Page:89 - Close Popup clicked 
+2020-12-09 11:11:11,611  INFO [main] User Login Page:89 - Delete clicked 
+2020-12-09 11:11:12,500  INFO [main] User Login Page:89 - Confirmation clicked 
+2020-12-09 11:11:13,921  INFO [main] User Login Page:89 - Close Popup clicked 
+2020-12-09 11:11:16,401  INFO [main] User Login Page:89 - Add More clicked 
+2020-12-09 11:11:17,098  INFO [main] User Login Page:89 - Remove Attachment clicked 
+2020-12-09 11:11:17,764  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:11:18,173  INFO [main] User Login Page:89 - Clear Attachment clicked 
+2020-12-09 11:11:30,483  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-09 11:11:36,974  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-09 11:11:37,402  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:11:37,779  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:11:38,140  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:11:54,619  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:11:54,935  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:11:55,255  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:12:06,257  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:12:18,216  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:12:19,253  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:12:19,840  INFO [main] User Login Page:75 - Attachment Name entered with value - Attach123
+2020-12-09 11:12:19,868  INFO [main] User Login Page:248 -  get attribute value is  - Attach123
+2020-12-09 11:12:22,110  INFO [main] User Login Page:224 - Terms and Conditions click by JS
+2020-12-09 11:12:34,548  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-09 11:12:40,414  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-09 11:12:40,832  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:12:41,205  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:12:41,540  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:12:56,412  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:12:56,763  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:12:57,096  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:13:05,229  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:13:15,197  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:13:16,174  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:13:16,778  INFO [main] User Login Page:75 - Attachment Name entered with value - Attach123
+2020-12-09 11:13:18,986  INFO [main] User Login Page:224 - Terms and Conditions click by JS
+2020-12-09 11:13:19,618  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:13:20,862  INFO [main] User Login Page:89 - Cancel clicked 
+2020-12-09 11:13:25,761  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:13:33,703  INFO [main] User Login Page:89 - Cancel clicked 
+2020-12-09 11:28:20,060  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:28:20,507  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:28:20,811  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:28:37,418  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:28:37,764  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:28:41,248  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:28:55,836  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:29:02,050  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:29:03,221  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:29:23,788  INFO [main] User Login Page:89 - Add More clicked 
+2020-12-09 11:30:00,451  INFO [main] User Login Page:89 - Remove Attachment clicked 
+2020-12-09 11:30:41,438  INFO [main] User Login Page:248 -  get attribute value is  - 
+2020-12-09 11:30:47,223  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:30:48,380  INFO [main] User Login Page:89 - Clear Attachment clicked 
+2020-12-09 11:31:07,251  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:31:36,712  INFO [main] User Login Page:248 -  get attribute value is  - C:\fakepath\file-sample_100kB.doc
+2020-12-09 11:33:37,187  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:33:37,580  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:33:37,971  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:33:45,562  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:33:45,897  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:33:48,136  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:33:56,424  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:34:00,959  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:34:02,009  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:34:04,932  INFO [main] User Login Page:89 - Add More clicked 
+2020-12-09 11:34:05,544  INFO [main] User Login Page:89 - Remove Attachment clicked 
+2020-12-09 11:34:06,195  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:34:06,888  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:34:07,398  INFO [main] User Login Page:89 - Clear Attachment clicked 
+2020-12-09 11:34:07,427  INFO [main] User Login Page:248 -  get attribute value is  - 
+2020-12-09 11:35:41,150  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:35:41,558  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:35:41,935  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:35:48,624  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:35:48,981  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:35:49,551  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:35:56,987  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:36:00,465  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:36:01,492  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:36:04,363  INFO [main] User Login Page:89 - Add More clicked 
+2020-12-09 11:36:04,912  INFO [main] User Login Page:89 - Remove Attachment clicked 
+2020-12-09 11:36:05,551  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:36:06,021  INFO [main] User Login Page:89 - Clear Attachment clicked 
+2020-12-09 11:36:06,048  INFO [main] User Login Page:248 -  get attribute value is  - 
+2020-12-09 11:42:46,203  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:42:46,565  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:42:46,891  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:42:53,812  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:42:54,166  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:42:54,961  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:43:09,041  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:43:14,137  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:43:15,209  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:43:15,695  INFO [main] User Login Page:75 - Attachment Name entered with value - Attach123
+2020-12-09 11:43:17,895  INFO [main] User Login Page:224 - Terms and Conditions click by JS
+2020-12-09 11:43:18,450  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:43:25,946  INFO [main] User Login Page:89 - Save clicked 
+2020-12-09 11:43:26,563  INFO [main] User Login Page:89 - Close Popup clicked 
+2020-12-09 11:43:31,043  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:43:32,112  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:43:44,663  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-09 11:43:50,557  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-09 11:43:51,001  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:43:51,375  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:43:51,697  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:43:57,018  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:43:57,327  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:43:57,693  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:44:01,038  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:44:05,704  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:44:06,800  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:44:07,300  INFO [main] User Login Page:75 - Attachment Name entered with value - Attach123
+2020-12-09 11:44:09,467  INFO [main] User Login Page:224 - Terms and Conditions click by JS
+2020-12-09 11:44:10,081  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:44:10,692  INFO [main] User Login Page:89 - Save clicked 
+2020-12-09 11:44:11,616  INFO [main] User Login Page:89 - Ok clicked 
+2020-12-09 11:44:15,886  INFO [main] User Login Page:89 - Close Popup clicked 
+2020-12-09 11:44:21,326  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:44:22,385  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:44:22,954  INFO [main] User Login Page:210 - Scroll to this element - Download
+2020-12-09 11:44:24,591  INFO [main] User Login Page:89 - Download clicked 
+2020-12-09 11:44:27,594  INFO [main] User Login Page:400 - File is downloaded and exist in the folder
+2020-12-09 11:44:28,191  INFO [main] User Login Page:89 - Delete clicked 
+2020-12-09 11:44:29,123  INFO [main] User Login Page:89 - Ok clicked 
+2020-12-09 11:44:30,298  INFO [main] User Login Page:89 - Close Popup clicked 
+2020-12-09 11:44:42,616  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-09 11:44:48,086  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-09 11:44:48,493  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:44:48,905  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:44:49,225  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:44:55,370  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:44:55,689  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:44:56,089  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:45:01,214  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:45:04,612  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:45:05,643  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:45:06,341  INFO [main] User Login Page:89 - Add More clicked 
+2020-12-09 11:45:06,873  INFO [main] User Login Page:89 - Remove Attachment clicked 
+2020-12-09 11:45:07,499  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:45:07,934  INFO [main] User Login Page:89 - Clear Attachment clicked 
+2020-12-09 11:45:07,960  INFO [main] User Login Page:248 -  get attribute value is  - 
+2020-12-09 11:45:20,369  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-09 11:45:24,626  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-09 11:45:25,174  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:45:25,612  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:45:26,009  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:45:31,866  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:45:32,181  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:45:32,515  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:45:36,365  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:45:40,241  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:45:41,259  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:45:42,204  INFO [main] User Login Page:75 - Attachment Name entered with value - Attach123
+2020-12-09 11:45:42,337  INFO [main] User Login Page:248 -  get attribute value is  - Attach123
+2020-12-09 11:45:44,529  INFO [main] User Login Page:224 - Terms and Conditions click by JS
+2020-12-09 11:45:56,951  INFO [main] User Login Page:224 - Logout menu click by JS
+2020-12-09 11:46:02,437  INFO [main] User Login Page:224 - Logout click by JS
+2020-12-09 11:46:02,869  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-09 11:46:03,283  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-09 11:46:03,605  INFO [main] User Login Page:89 - Privacy Policy clicked 
+2020-12-09 11:46:09,782  INFO [main] User Login Page:89 - Login clicked 
+2020-12-09 11:46:10,095  INFO [main] User Login Page:89 - Ful Menu clicked 
+2020-12-09 11:46:10,458  INFO [main] User Login Page:89 - Asset Management clicked 
+2020-12-09 11:46:16,139  INFO [main] User Login Page:89 - Manage Product clicked 
+2020-12-09 11:46:20,090  INFO [main] User Login Page:89 - Product clicked 
+2020-12-09 11:46:21,153  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:46:21,536  INFO [main] User Login Page:75 - Attachment Name entered with value - Attach123
+2020-12-09 11:46:23,719  INFO [main] User Login Page:224 - Terms and Conditions click by JS
+2020-12-09 11:46:24,346  INFO [main] User Login Page:487 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2020-12-09 11:46:25,929  INFO [main] User Login Page:89 - Previous clicked 
+2020-12-09 11:46:28,139  INFO [main] User Login Page:89 - Attachments Tab clicked 
+2020-12-09 11:46:32,308  INFO [main] User Login Page:89 - Cancel clicked 

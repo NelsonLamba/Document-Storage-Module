@@ -413,6 +413,7 @@ public class WebBasePage extends WaitStatement{
     }
 
     public void waitTillNewFile(String path, int previousFileCount){
+        staticWait(3000);
         int timeCount = 1;
         for(timeCount =1;timeCount <20; timeCount++){
             if(countNumberOfFilesInFolder(path)>previousFileCount){
