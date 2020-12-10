@@ -15,13 +15,11 @@ import utils.WebBasePage;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
-import static org.testng.reporters.XMLReporter.FILE_NAME;
+
 import static reporting.ComplexReportFactory.getTest;
 
 public class RelatedInformationPage extends WebBasePage {
@@ -29,14 +27,13 @@ public class RelatedInformationPage extends WebBasePage {
     WebDriver driver;
 
     public RelatedInformationPage(WebDriver driver) {
-        super(driver, "");
+        super(driver, "Related information page");
         this.driver = driver;
     }
 
     private final static String FILE_NAME = System.getProperty("user.dir") + "\\src\\main\\resources\\testdata.properties";
     String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\testfiles\\";
     private static Properties prop = new PropertiesLoader(FILE_NAME).load();
-    //String searchUniqueName = NameGenerator();
     String searchUniqueName = "145hhh_10";
     String pattern = "yyyyMMddHHmmss";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -53,24 +50,22 @@ public class RelatedInformationPage extends WebBasePage {
     public void clickAssertManagement() {
         click(By.xpath("//div//li[@data-name='Asset']"), "clickAssertManagement", 15);
     }
-
-    public void clickManageProduct() {
-        click(By.xpath("(//ul[contains(@class,'submenu clschild')]//a[@id='cadmin_messageboard_link'])[2]"), "ManageProduct", 5);
+    public void clickManageProduct()
+    {
+        click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 10);
     }
-
     public void clickRelatedProduct() {
         click(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[5]//a"), "Product name", 20);
     }
-
     public void clickRelatedInformationTab() {
-        waitForVisibilityOfElement(By.xpath("(//a[@id='tab-timeline'])[2]"), 50);
-        click(By.xpath("(//a[@id='tab-timeline'])[2]"), "related Information button", 20);
+        waitForVisibilityOfElement(By.xpath("//a[text()='Related Information ']"), 50);
+        click(By.xpath("//a[text()='Related Information ']"), "related Information button", 20);
     }
 
-    //    public void openProduct()
-//    {
-//        click(By.xpath("//table[@id='tablelistingdata']//tbody//tr//td[5]//a[contains(text(),'"+AddProductPage.itemNameRandomValue+"')]"),"Product",15);
-//    }
+   /*     public void openProduct()
+    {
+        click(By.xpath("//table[@id='tablelistingdata']//tbody//tr//td[5]//a[contains(text(),'"+AddProductPage.itemNameRandomValue+"')]"),"Product",15);
+    }*/
     public void checkRelatedpageHeading() {
         String element = getText(By.xpath("//div[@class='theme-primary partition-full']//span[text()='Related Information']"), 10);
         if (element.equals("Related Information")) {
@@ -79,12 +74,13 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, " RelatedInformation  Page is not Displayed");
             logger.info("RelatedInformation  Page is not  Displayed");
+            takeScreenshot();
         }
     }
 
     public void checkRelatedPageheaders() {
         int i = 0;
-        List expecteListHeader = new ArrayList();
+        List <String> expecteListHeader = new ArrayList<String>();
         expecteListHeader.add("Location");
         expecteListHeader.add("Unique Name/Code");
         expecteListHeader.add("Total Quantity");
@@ -106,8 +102,6 @@ public class RelatedInformationPage extends WebBasePage {
             List<String> element = expecteListHeader;
             for (Object expected : expecteListHeader) {
                 i++;
-                String txt = actual.getText();
-                String txt1 = expected.toString();
                 if (actual.getText().equals(expected)) {
                     getTest().log(LogStatus.PASS, "The " + expected + " Header is displayed in the Pending Checkout Page");
                     logger.info("Pass - The " + expected + " Header is displayed in the Related information page");
@@ -116,7 +110,7 @@ public class RelatedInformationPage extends WebBasePage {
                 } else if (i == listHeader.size() && !actual.getText().equals(expected)) {
                     getTest().log(LogStatus.FAIL, "The " + expected + " Header is not displayed in the Pending Checkout Page");
                     logger.info("Fail - The " + expected + " Header is not displayed in the Related information page");
-
+                    takeScreenshot();
                 }
             }
         }
@@ -130,6 +124,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "The  Searchbar is not displayed in the Related information page");
             logger.info("The  Searchbar is not displayed in the Related information page");
+            takeScreenshot();
         }
     }
 
@@ -151,6 +146,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Searched unique name is not displayed as expected");
             logger.info("Searched unique name is not displayed as expected");
+            takeScreenshot();
         }
     }
 
@@ -161,15 +157,14 @@ public class RelatedInformationPage extends WebBasePage {
 
     public void checksearchBarisEmpty() {
         String searchField = findElementVisibility(By.cssSelector("input#relatedAssetSearch"), 10).getAttribute("value");
-
-        if (searchField.equals("")) {
+        if (searchField!=null && searchField.equals("")) {
             getTest().log(LogStatus.PASS, "The  Searchbar is Empty in the Related information page");
             logger.info("The  Searchbar is Empty in the Related information page");
 
         } else {
             getTest().log(LogStatus.FAIL, "The  Searchbar is not Empty in the Related information page");
             logger.info("The  Searchbar is not Empty in the Related information page");
-
+            takeScreenshot();
         }
     }
 
@@ -181,19 +176,21 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "BreadCrumb is not displayed in the Related Information page");
             logger.info("BreadCrumb is not displayed in the Deploy Product listing page");
+            takeScreenshot();
         }
     }
 
     public void clickbarCodePrint() {
         waitForVisibilityOfElement(By.cssSelector("a#btnBarCodePDF"), 30);
         WebElement element = findElementVisibility(By.cssSelector("a#btnBarCodePDF"), 10);
-        if (element.isDisplayed()) {
+        if (element!=null) {
             click(By.cssSelector("a#btnBarCodePDF"), "clickBarCodePrint", 20);
             getTest().log(LogStatus.PASS, " clickbarCodePrint element click");
             logger.info("clickbarCodePrint element clicked");
         } else {
             getTest().log(LogStatus.FAIL, " clickbarCodePrint element is not click");
             logger.info("clickbarCodePrint element is not clicked");
+            takeScreenshot();
         }
     }
 
@@ -205,17 +202,17 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Barcode print popup is not Displayed");
             logger.info("Barcode print popup is not Displayed");
-
+            takeScreenshot();
         }
     }
 
     public void closebarCodePrintpopup() {
-        click(By.xpath("(//button[@class='close']//i[@class='fa fa-times'])[7]"), "closeBarCodePrint", 20);
+        click(By.xpath("//h5[@class='modal-title' and text()='Barcode']//parent::div//button"), "closeBarCodePrint", 20);
     }
 
     public void downloadBulkBarCode() {
         String downloadPath = Drivers.path;
-        String fileName = "Barcodes.pdf";
+        String fileName = prop.getProperty("downloadedPdf");
         File dir = new File(downloadPath + fileName);
         if (dir.exists()) {
             dir.delete();
@@ -227,7 +224,7 @@ public class RelatedInformationPage extends WebBasePage {
 
     public void checkDownloadedBulkBarCodePdf() {
         String downloadPath = Drivers.path;
-        String fileName = "Barcodes.pdf";
+        String fileName = prop.getProperty("downloadedPdf");
         File dir = new File(downloadPath + fileName);
         File dir2 = new File(downloadPath);
         waitTillNewFile(dir2.toString(), 0);
@@ -238,13 +235,14 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Downloaded File is not Exist");
             logger.info("Downloaded File is not Exist");
+            takeScreenshot();
         }
 
     }
 
 
     public void clickUniqueCode() {
-        click(By.xpath("(//a[@class='editinfo'])[1]"), "clickuniqueCode", 10);
+        click(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//a[@class='editinfo']"), "clickuniqueCode", 10);
     }
 
     public void editUniquename() {
@@ -257,6 +255,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "UserName field is not editable");
             logger.info("UserName field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -270,6 +269,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "UserName field is not editable");
             logger.info("warrentyduration field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -283,6 +283,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "UserName field is not editable");
             logger.info("Cost field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -296,6 +297,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "serialnumber field is not editable");
             logger.info("serialnumber field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -309,6 +311,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "licencekey field is not editable");
             logger.info("licencekey field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -322,6 +325,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Licensetype field is not editable");
             logger.info("Licensetype field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -335,6 +339,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Version field is not editable");
             logger.info("Version field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -348,6 +353,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Version field is not editable");
             logger.info("InstalledMachine field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -362,6 +368,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "InstalledPath field is not editable");
             logger.info("InstalledPath field is not editable");
+            takeScreenshot();
         }
         scrollDown();
     }
@@ -376,6 +383,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "InstalledPath field is not editable");
             logger.info("ModelName field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -390,6 +398,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "ModelNumber field is not editable");
             logger.info("ModelNumber field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -403,6 +412,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Brand field is not editable");
             logger.info("Brand field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -416,6 +426,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "BillNumber field is not editable");
             logger.info("BillNumber field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -429,6 +440,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "BillNumber field is not editable");
             logger.info("ImeiNumber field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -442,6 +454,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "SimNumber field is not editable");
             logger.info("SimNumber field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -455,6 +468,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "phonenumber field is not editable");
             logger.info("phonenumber field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -468,6 +482,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "mobileironredsetup field is not editable");
             logger.info("mobileironredsetup field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -481,6 +496,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "accessoryon field is not editable");
             logger.info("accessoryon field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -494,6 +510,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "accessoryon field is not editable");
             logger.info("machinename field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -508,12 +525,13 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "divisionname field is not editable");
             logger.info("divisionname field is not editable");
+            takeScreenshot();
         }
     }
 
 
     public void editStatusdrpdown() {
-        selectValueWithText(By.xpath("(//div//select[@id='StatusId'])[2]"), "Inactive", "SelectStatus", 10);
+        selectValueWithText(By.xpath("//div[@id='UN_PopUps']//select[@id='StatusId']"), "Inactive", "Select Status", 10);
     }
 
     public void nextCalibrationdisabledfield() {
@@ -524,6 +542,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "nextCalibrationdisabledfield is not  Disabled");
             logger.info("Element is  not Disabled");
+            takeScreenshot();
         }
     }
 
@@ -535,6 +554,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "nextimagedisabledfield is not  Disabled");
             logger.info("nextimagedisabledfield is  not Disabled");
+            takeScreenshot();
         }
     }
 
@@ -546,6 +566,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "editRFIDdisabledfield is not  Disabled");
             logger.info("editRFIDdisabledfield is  not Disabled");
+            takeScreenshot();
         }
     }
 
@@ -579,6 +600,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "GPS field is not editable");
             logger.info("GPS field is not editable");
+            takeScreenshot();
         }
     }
 
@@ -596,7 +618,6 @@ public class RelatedInformationPage extends WebBasePage {
     public String selectDate(String date) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("d/MMM/yyyy");
         LocalDateTime now = LocalDateTime.now();
-        String currentDate = dtf.format(now);
         String inputDate = (date.equals("Old")) ? dtf.format(now.minusDays(1)) : (date.equals("Future")) ? dtf.format(now.plusDays(1)) : dtf.format(now);
         String[] inputDateArray = inputDate.split("/");
         String day = inputDateArray[0];
@@ -634,7 +655,7 @@ public class RelatedInformationPage extends WebBasePage {
         if (dir.exists()) {
             dir.delete();
         }
-        click(By.xpath("(//a//i[@title='Download Barcode'])[1]"), "downloadBarImage", 20);
+        click(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//i[@title='Download Barcode']"), "downloadBarImage", 20);
         waitTillNewFile(downloadPath, 0);
     }
 
@@ -653,6 +674,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Downloaded File is not Exist");
             logger.info("Downloaded File is not Exist");
+            takeScreenshot();
         }
 
     }
@@ -673,7 +695,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Calibration Comment Popup  Page is not Displayed");
             logger.info("Calibration Comment Popup Page is not  Displayed");
-
+            takeScreenshot();
         }
     }
 
@@ -733,7 +755,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Calibration Comment Popup  Page is not Displayed");
             logger.info("Calibration Comment Popup Page is not  Displayed");
-
+            takeScreenshot();
         }
     }
 
@@ -781,6 +803,7 @@ public class RelatedInformationPage extends WebBasePage {
             } else {
                 getTest().log(LogStatus.FAIL, "Inactive field is not visible");
                 logger.info("Inactive field is not visible");
+                takeScreenshot();
             }
             String confirmationPopup = getText(By.xpath("//div[@class='modal-content my-popups']//div[contains(@class,'body alert alert-warning')]"), 15);
             if (confirmationPopup.equals("Are you sure you want to change the status?")) {
@@ -791,10 +814,12 @@ public class RelatedInformationPage extends WebBasePage {
                 } else {
                     getTest().log(LogStatus.FAIL, "Success Messgae is not displayed");
                     logger.info("Success Messgae is not displayed");
+                    takeScreenshot();
                 }
             } else {
                 getTest().log(LogStatus.FAIL, "Confirmation Popup is not displayed");
                 logger.info("Confirmation Popup is not displayed");
+                takeScreenshot();
             }
             scrollToWebelement(By.xpath("//table[@id='tblRelatedInfoListing']//th[@id='th-STATUS']"), "Status Header");
             String changedStatus = getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td[@class='actinact single-action']//span"), 20);
@@ -804,6 +829,7 @@ public class RelatedInformationPage extends WebBasePage {
             } else {
                 getTest().log(LogStatus.FAIL, "Inactive status is  not changed to Active status as expected");
                 logger.info("Inactive status is not changed to Active status as expected");
+                takeScreenshot();
             }
         }
     }
@@ -825,6 +851,7 @@ public class RelatedInformationPage extends WebBasePage {
             } else {
                 getTest().log(LogStatus.FAIL, "Success Messgae is not displayed");
                 logger.info("Success Messgae is not displayed");
+                takeScreenshot();
             }
         }
     }
@@ -842,6 +869,7 @@ public class RelatedInformationPage extends WebBasePage {
             } else if (i == 4 && !opt.getText().equals(expected[k])) {
                 getTest().log(LogStatus.FAIL, expected[k] + " value not present in the DropDown");
                 logger.info(expected[k] + " value not present in the DropDown");
+                takeScreenshot();
             }
             k = k + 1;
 
@@ -871,7 +899,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Product Information  Page is  Displayed");
             logger.info("Product Information  Page is not  Displayed");
-
+            takeScreenshot();
         }
 
     }
@@ -905,7 +933,7 @@ public class RelatedInformationPage extends WebBasePage {
                 } else if (i == listHeader.size() && !actual.getText().equals(expected)) {
                     getTest().log(LogStatus.FAIL, "The " + expected + " Header is not displayed in the Project Information Page");
                     logger.info("Fail - The " + expected + " Header is not displayed in the Related information page");
-
+                    takeScreenshot();
                 }
             }
         }
@@ -922,6 +950,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Pending Check Out List  Page is not Displayed");
             logger.info("Pending Check Out List Page is not  Displayed");
+            takeScreenshot();
         }
 
     }
@@ -951,7 +980,7 @@ public class RelatedInformationPage extends WebBasePage {
                 } else if (i == listHeader.size() && !actual.getText().equals(expected)) {
                     getTest().log(LogStatus.FAIL, "The " + expected + " Header is not displayed in the Pending Checkout Page");
                     logger.info("Fail - The " + expected + " Header is not displayed in the Related information page");
-
+                    takeScreenshot();
                 }
             }
         }
@@ -968,13 +997,9 @@ public class RelatedInformationPage extends WebBasePage {
             getTest().log(LogStatus.PASS, "selected product  is  Displayed");
         } else {
             getTest().log(LogStatus.FAIL, "selected product  is not Displayed");
+            takeScreenshot();
         }
     }
-
-    public void returntoRelatedInformation() {
-        click(By.xpath("//a[@id='tab-timeline' and (text()='Related Information ')]"), "Related Information", 10);
-    }
-
     public void selectrecordPagination() {
         String selectRecordPage = prop.getProperty("selectRecordPage");
         selectValueWithValue(By.cssSelector("#pageSize"), selectRecordPage, "Page size", 10);
@@ -991,6 +1016,7 @@ public class RelatedInformationPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Records are not displayed as expected based on the selected page size");
             logger.info("Records are not displayed as expected based on the selected page size");
+            takeScreenshot();
         }
     }
 

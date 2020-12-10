@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+        <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="false">
 
-    <test name="TestName">
+<test name="TestName">
 
-        <classes>
-            <class name="testcases.Attachment"/>
-        </classes>
+    <classes>
+        <class name="testcases.AddProduct"/>
+        <class name="testcases.DeployProduct"/>
+        <class name="testcases.RelatedInformation"/>
+        <class name="testcases.Attachment"/>
+    </classes>
 
 
-    </test>
+</test>
 
 
 </suite> <!-- Suite -->

@@ -36,7 +36,7 @@ public class AddProductPage extends WebBasePage {
     String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\testfiles\\";
 
     public AddProductPage(WebDriver driver) {
-        super(driver, "Dashboard Page");
+        super(driver, "Add product Page");
         this.driver = driver;
     }
 
@@ -75,6 +75,7 @@ public class AddProductPage extends WebBasePage {
                 } else if (i == expectedCodeType.length && !element.getText().equals(expected)) {
                     getTest().log(LogStatus.FAIL, "BarCode Dropdown values are Not Displayed as expected");
                     logger.info("BarCode Dropdown values are not displayed as expected");
+                    takeScreenshot();
                 }
 
             }
@@ -124,6 +125,7 @@ public class AddProductPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Status is updated wrongly on Add product Page");
             logger.info("Product Status is updated wrongly on Add product Page");
+            takeScreenshot();
         }
     }
 
@@ -142,6 +144,7 @@ public class AddProductPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Status is not changed to " + pStatus);
             logger.info("Status is not changed to " + pStatus);
+            takeScreenshot();
         }
 
     }
@@ -273,7 +276,7 @@ public class AddProductPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Error Message is not displayed in uploading document field on Addproduct page ");
             logger.info("Error Message is not displayed in uploading document field on Addproduct page");
-
+            takeScreenshot();
         }
 
     }
@@ -287,16 +290,19 @@ public class AddProductPage extends WebBasePage {
             if (docName.equals(doc2Name)) {
                 getTest().log(LogStatus.FAIL, "Newly uploaded Document is not reflected");
                 logger.info("Newly uploaded Document is not reflected");
+                takeScreenshot();
             } else if (doc2Name.equals(prop.getProperty("testfilePDFfileName"))) {
                 getTest().log(LogStatus.PASS, "Document upload field is working as expected");
                 logger.info("Document upload field is working as expected");
             } else {
                 getTest().log(LogStatus.FAIL, "Document upload field is not working as expected");
                 logger.info("Document upload field is not working as expected");
+                takeScreenshot();
             }
         } else {
             getTest().log(LogStatus.FAIL, "Not able to get the file Name");
             logger.info("Not able to get the file Name");
+            takeScreenshot();
 
         }
 
@@ -317,13 +323,14 @@ public class AddProductPage extends WebBasePage {
         enter(By.cssSelector("div>input#Name"), pName, "Product Name", 10);
         click(By.xpath("//label[@for='BarcodeTypeId']"), "bcarcode", 10);
         String nameerrorMsg = Errors.duplicateItemName;
-        duplicateNameErrorMsg = getText(By.xpath("(//input[@id='Name']//following::span)[1]"), 50);
+        duplicateNameErrorMsg = getText(By.xpath("//input[@id='Name']//parent::div//span[contains(@class,'invalid-feedback')]"), 20);
         if (duplicateNameErrorMsg.equals(nameerrorMsg)) {
             getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product Name field on Addproduct page as " + nameerrorMsg);
             logger.info("Error Message is successfully displayed as " + nameerrorMsg);
         } else {
             getTest().log(LogStatus.FAIL, "Error Message is not successfully displayed in product Name field on Addproduct page");
             logger.info("Error Message is not displayed");
+            takeScreenshot();
         }
 
     }
@@ -333,20 +340,22 @@ public class AddProductPage extends WebBasePage {
         String errorMsg = Errors.descriptionErrorMsg;
         enter(By.cssSelector("textarea#Description"), prop.getProperty("description251Character"), "description", 10);
         click(By.cssSelector("input#for_Employee"), "For company", 10);
-        String descriptionErrorMsg = getText(By.xpath("(//label[@for='Description']//following::span)[1]"), 10);
+        String descriptionErrorMsg = getText(By.xpath("//*[@id='Description']//parent::div//span[contains(@class,'invalid-feedback')]"), 10);
         if (descriptionErrorMsg.equals(errorMsg)) {
             getTest().log(LogStatus.PASS, "Error Message is successfully displayed in description field on Addproduct page as " + errorMsg);
             logger.info("Error Message is successfully displayed in description field on Addproduct page as " + errorMsg);
         } else {
             getTest().log(LogStatus.FAIL, "Error Message is Not successfully displayed in description field on Addproduct page");
             logger.info("Error Message is not displayed in description field on Addproduct page");
+            takeScreenshot();
         }
         driver.navigate().refresh();
     }
 
     public void productNameErrorMsgValidation() {
         String errorMsgs = productNameReuired;
-        String pNameErrorMsg = getText(By.xpath("(//input[@id='Name']//following::span)[1]"), 10);
+        scrollToWebelement(By.xpath("//input[@id='Name']//parent::div//span[contains(@class,'invalid-feedback')]"),"Product Name");
+        String pNameErrorMsg = getText(By.xpath("//input[@id='Name']//parent::div//span[contains(@class,'invalid-feedback')]"), 10);
         if (errorMsgs.equals(pNameErrorMsg)) {
             getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product name field as " + errorMsgs);
             logger.info("Error Message is successfully displayed in product name field as " + errorMsgs);
@@ -354,6 +363,7 @@ public class AddProductPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Error Messgae is not displayed in product name field");
             logger.info("Error Messgae is not displayed in product name field");
+            takeScreenshot();
         }
     }
 
@@ -367,6 +377,7 @@ public class AddProductPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Error Messgae is not displayed in product type field");
             logger.info("Error Messgae is not displayed in product type field");
+            takeScreenshot();
         }
         driver.navigate().refresh();
     }
@@ -394,6 +405,7 @@ public class AddProductPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Error Message is not successfully displayed on product code field ");
             logger.info("Error Message is not Displayed");
+            takeScreenshot();
         }
     }
 
@@ -416,6 +428,7 @@ public class AddProductPage extends WebBasePage {
                 } else if (i == expectedValue.length && !element.getText().contains(expectedText)) {
                     getTest().log(LogStatus.FAIL, "Error message for \"" + expected + "\" field is not displayed");
                     logger.info("Error message for \"" + expected + "\" field is not displayed as expected");
+                    takeScreenshot();
                 }
             }
         }
@@ -435,6 +448,8 @@ public class AddProductPage extends WebBasePage {
             } else {
                 getTest().log(LogStatus.FAIL, "The Asterisk symbol is not displayed for " + expected + " field");
                 logger.info("The Asterisk symbol is not displayed for " + expected + " field");
+                scrollToWebelement(By.xpath("//label[text()='" + expected + ":']//span"),expected.toString());
+                takeScreenshot();
             }
             List<WebElement> expectedElements = errorMessageLocator;
             for (WebElement element : expectedElements) {
@@ -449,6 +464,7 @@ public class AddProductPage extends WebBasePage {
                 } else if (i == expectedValue.length && actualText.indexOf(expectedText) == -1) {
                     getTest().log(LogStatus.FAIL, "Error message for \"" + expected + "\" field is not displayed as expected");
                     logger.info("Error message for \"" + expected + "\" field is not displayed as expected");
+                    takeScreenshot();
                 }
             }
         }

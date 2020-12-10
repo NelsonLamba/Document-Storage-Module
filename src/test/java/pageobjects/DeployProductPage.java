@@ -31,7 +31,7 @@ public class DeployProductPage extends WebBasePage {
     CompanySetupPage companySetup;
     public DeployProductPage(WebDriver driver)
     {
-        super(driver,"");
+        super(driver,"Deploy product page");
         this.driver=driver;
         companySetup=new CompanySetupPage(driver);
     }
@@ -46,7 +46,7 @@ public class DeployProductPage extends WebBasePage {
     }
     public void clickManageProduct()
     {
-        click(By.xpath("(//ul[contains(@class,'submenu clschild')]//a[@id='cadmin_messageboard_link'])[2]"),"Manage Product",10);
+        click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 10);
     }
     public void navigateToDeployTab()
     {
@@ -76,8 +76,6 @@ public class DeployProductPage extends WebBasePage {
             List<String> expectedValues=expecteListHeader;
             for (Object expected:expectedValues ) {
                 i++;
-                String text2=actual.getText();
-                String text1=expected.toString();
                 if(actual.getText().equals(expected))
                 {
                     getTest().log(LogStatus.PASS, "The \""+expected+"\" Header is displayed in the Deploy listing page");
@@ -89,6 +87,7 @@ public class DeployProductPage extends WebBasePage {
                 {
                     getTest().log(LogStatus.FAIL, "The \""+expected+"\" Header is not displayed in the Deploy listing page");
                     logger.info("The \""+expected+"\" Header is not displayed in the Deploy listing page");
+                    takeScreenshot();
                 }
             }
         }
@@ -105,6 +104,7 @@ public class DeployProductPage extends WebBasePage {
             {
             getTest().log(LogStatus.FAIL, "\"Search Bar\" is not displayed in the Deploy product page");
             logger.info("\"Search Bar\" is not displayed in the Deploy product page");
+            takeScreenshot();
         }
     }
     public void verifyDepolyProductAddButton()
@@ -119,6 +119,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "\"Deploy Product Add Button\" is not displayed in the Deploy product page");
             logger.info("\"Deploy Product Add Button\" is not displayed in the Deploy product page");
+            takeScreenshot();
         }
     }
     public void verifyNextButton()
@@ -133,6 +134,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "\"Next Button\" is not displayed in the Deploy product page");
             logger.info("\"Next Button\" is not displayed in the Deploy product page");
+            takeScreenshot();
         }
     }
     public void verifyPreviousButton()
@@ -147,6 +149,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "\"Previous Button\" is not displayed in the Deploy product page");
             logger.info("\"Previous Button\" is not displayed in the Deploy product page");
+            takeScreenshot();
         }
     }
     public void enterInSearchField(String locationToSearch)
@@ -173,6 +176,7 @@ public class DeployProductPage extends WebBasePage {
             {
                 getTest().log(LogStatus.FAIL, "Searched location list is not Displayed");
                 logger.info("Searched location list is not Displayed");
+                takeScreenshot();
             }
         }
     }
@@ -191,6 +195,7 @@ public class DeployProductPage extends WebBasePage {
         else {
             logger.info("Search field is not cleared successfully");
             getTest().log(LogStatus.FAIL, "Search field is not cleared successfully");
+            takeScreenshot();
         }
 
     }
@@ -208,6 +213,7 @@ public class DeployProductPage extends WebBasePage {
         else {
             getTest().log(LogStatus.FAIL, "The \"Add Deploy Product\" page is displayed");
             logger.info("The \"Add Deploy Product\" page is displayed");
+            takeScreenshot();
         }
     }
     public void clickNextButton()
@@ -225,6 +231,7 @@ public class DeployProductPage extends WebBasePage {
         else {
             getTest().log(LogStatus.FAIL, "\"Related Information page\" is not displayed when click Next button in \"Deploy Product page\"");
             logger.info("\"Related Information page\" is not displayed when click Next button in \"Deploy Product page\"");
+            takeScreenshot();
         }
     }
     public void clickPreviousButton()
@@ -242,6 +249,7 @@ public class DeployProductPage extends WebBasePage {
         else {
             getTest().log(LogStatus.FAIL, "\"Deploy Product page\" is not displayed when click previous button in \"Related Information page\"");
             logger.info("\"Deploy Product page\" is not displayed when click previous button in \"Related Information page\"");
+            takeScreenshot();
         }
     }
     public void selectLocationValueFromDropdown()
@@ -259,6 +267,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Selected Location is not displayed in the dropdown field");
             logger.info("Selected Location is not displayed in the dropdown field");
+            takeScreenshot();
         }
     }
     public void enterQuantity(String quantity)
@@ -272,7 +281,7 @@ public class DeployProductPage extends WebBasePage {
     public void enterModel(String modelName)
     {
         enter(By.cssSelector("div>input#Model"),modelName+dateValue,"Model",15);
-        modelNameFromPopup=findElementsVisibility(By.cssSelector("div>input#model")).getAttribute("value");
+        modelNameFromPopup=getAtribute(By.cssSelector("div>input#model"),"value",20);
     }
     public void enterManufacturer(String manufaturer)
     {
@@ -344,6 +353,7 @@ public class DeployProductPage extends WebBasePage {
             {
                 getTest().log(LogStatus.FAIL, "Created \"Deploy Product\" is not displayed in the list");
                 logger.info("Created \"Deploy Product\" is not displayed in the list");
+                takeScreenshot();
             }
         }
     }
@@ -359,6 +369,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "BreadCrumb is not displayed in the Deploy Product listing page");
             logger.info("BreadCrumb is not displayed in the Deploy Product listing page");
+            takeScreenshot();
         }
     }
     public void navigateToProductEditMode()
@@ -378,6 +389,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Deploy Product popup is not displayed in edit mode");
             logger.info("Deploy Product popup is not displayed in edit mode");
+            takeScreenshot();
         }
     }
     public void clearUnitPriceField()
@@ -398,6 +410,7 @@ public class DeployProductPage extends WebBasePage {
             else {
                 getTest().log(LogStatus.FAIL, "The Asterisk symbol is not displayed for "+expected+" field");
                 logger.info("The Asterisk symbol is not displayed for "+expected+" field");
+                takeScreenshot();
             }
             List<WebElement> expectedElements=errorMessageLocator;
             for (WebElement element : expectedElements) {
@@ -412,6 +425,7 @@ public class DeployProductPage extends WebBasePage {
                 } else if (i == expectedValue.length && !element.getText().contains(expectedText)) {
                     getTest().log(LogStatus.FAIL, "Error message for \""+expected+"\" field is not displayed");
                     logger.info("Error message for \""+expected+"\" field is displayed as expected");
+                    takeScreenshot();
                 }
             }
         }
@@ -432,6 +446,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Location Dropdown values are not displayed as expected");
             logger.info("Location Dropdown values are not displayed as expected");
+            takeScreenshot();
         }
     }
     public void verifySearchFieldinLocationDropdown()
@@ -446,6 +461,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Search field is not displayed in the Location dropdown");
             logger.info("Search field is not displayed in the Location dropdown");
+            takeScreenshot();
         }
     }
     public void enterInLocationSearch(String searchLocation)
@@ -464,6 +480,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Search result for location is not displayed as expected");
             logger.info("Search result for location is not displayed as expected");
+            takeScreenshot();
         }
     }
     public void make100PageSize()
@@ -479,7 +496,7 @@ public class DeployProductPage extends WebBasePage {
         for (WebElement element:locationList)
         {
             i++;
-            waitForVisibilityOfElement(By.xpath("(//a[@id='ancEditLocation'])[\"+i+\"]//parent::div//parent::div//parent::li//parent::ul"),15);
+            waitForVisibilityOfElement(By.xpath("(//a[@id='ancEditLocation'])["+i+"]//parent::div//parent::div//parent::li//parent::ul"),15);
             String attributeName=getAtribute(By.xpath("(//a[@id='ancEditLocation'])["+i+"]//parent::div//parent::div//parent::li//parent::ul"),"class",15);
             if(!attributeName.equals("parentbasemaster")) {
                 parentLocationNameList.add(element.getText());
@@ -512,6 +529,7 @@ public class DeployProductPage extends WebBasePage {
              {
                  getTest().log(LogStatus.FAIL, "Expected "+locationType+" location \""+expectedElement+"\" location is not present in location dropdown");
                  logger.info("Expected "+locationType+" location \""+expectedElement+"\" location is not present in location dropdown");
+                 takeScreenshot();
              }
             }
         }
@@ -532,6 +550,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Selected dropdown value is cleared as expected");
             logger.info("Selected dropdown value is cleared as expected");
+            takeScreenshot();
         }
     }
     public void verifyQuantityMinimumChar()
@@ -549,6 +568,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Quantity field is not accepts minimum of one character");
             logger.info("Quantity field is not accepts minimum of one character");
+            takeScreenshot();
         }
     }
     public void verifyQuantityCharandSpclChar()
@@ -565,6 +585,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Quantity field is accepts character and special characters as "+actualText);
             logger.info("Quantity field is accepts character and special characters as "+actualText);
+            takeScreenshot();
         }
     }
     public void verifyQuantityMaxChar()
@@ -581,6 +602,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Quantity field is accepts more than 5 characters as "+actualText);
             logger.info("Quantity field is accepts more than 5 characters as "+actualText);
+            takeScreenshot();
         }
     }
     public void verifyModelFieldValidation()
@@ -597,6 +619,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Model Name field is not accept alpha numeric character as expected. It accept the Value \""+modelName+"\"");
             logger.info("Model Name field is not accept alpha numeric character as expected. It accept the Value \""+modelName+"\"");
+            takeScreenshot();
         }
     }
     public void verifyManufacturerFieldAlphaNum()
@@ -613,6 +636,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Manufaturer Name field is not working as expected. It accept the Value \""+manufacturerName+"\"");
             logger.info("Manufaturer Naem field is not working as expected. It accept the Value \""+manufacturerName+"\"");
+            takeScreenshot();
         }
     }
     public void verifyManufacturerFieldSpclCharReject()
@@ -629,6 +653,7 @@ public class DeployProductPage extends WebBasePage {
             else {
                 getTest().log(LogStatus.FAIL, "Manufaturer Name field is not displays the error message as expected when enter \""+str+"\"");
                 logger.info("Manufaturer Name field is not displays the error message as expected when enter \""+str+"\"");
+                takeScreenshot();
             }
         }
     }
@@ -646,6 +671,7 @@ public class DeployProductPage extends WebBasePage {
             else {
                 getTest().log(LogStatus.FAIL, "Manufaturer Name field displays the error message when enter special character \""+str+"\"");
                 logger.info("Manufaturer Name field displays the error message when enter special character \""+str+"\"");
+                takeScreenshot();
             }
         }
     }
@@ -664,6 +690,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Vendor Name field is not accept the alpha numeric characters as expected. It accept the Value \""+vendorName+"\"");
             logger.info("Vendor Name field is not accept the alpha numeric characters as expected. It accept the Value \""+vendorName+"\"");
+            takeScreenshot();
         }
     }
     public void verifyProductCostFieldBehaviour(String condition)
@@ -676,6 +703,7 @@ public class DeployProductPage extends WebBasePage {
             }else {
                 getTest().log(LogStatus.FAIL, "Product Cost field is diabled when Product Cost toggle is set as \"Yes\" in the company setup page");
                 logger.info("Product Cost field is enabled when Product Cost toggle is set as \"Yes\" in the company setup page");
+                takeScreenshot();
             }
         }
         else if(condition.equals("disable"))
@@ -686,6 +714,7 @@ public class DeployProductPage extends WebBasePage {
             }else {
                 getTest().log(LogStatus.FAIL, "Product Cost field is enabled when Product Cost toggle is set as \"No\" in the company setup page");
                 logger.info("Product Cost field is enabled when Product Cost toggle is set as \"No\" in the company setup page");
+                takeScreenshot();
             }
         }
     }
@@ -699,6 +728,7 @@ public class DeployProductPage extends WebBasePage {
             }else {
                 getTest().log(LogStatus.FAIL, "Insurance Reference Number field is diabled when Insurance Policy toggle is set as \"Yes\" in the company setup page");
                 logger.info("Insurance Reference Number is enabled when Insurance Policy toggle is set as \"Yes\" in the company setup page");
+                takeScreenshot();
             }
         }
         else if(condition.equals("disable"))
@@ -709,6 +739,7 @@ public class DeployProductPage extends WebBasePage {
             }else {
                 getTest().log(LogStatus.FAIL, "Insurance Reference Number field is enabled when Insurance Policy toggle is set as \"No\" in the company setup page");
                 logger.info("Insurance Reference Number field is enabled when Insurance Policy toggle is set as \"No\" in the company setup page");
+                takeScreenshot();
             }
         }
     }
@@ -722,6 +753,7 @@ public class DeployProductPage extends WebBasePage {
             }else {
                 getTest().log(LogStatus.FAIL, "Insurance Date field is diabled when Insurance Policy toggle is set as \"Yes\" in the company setup page");
                 logger.info("Insurance Date is enabled when Insurance Policy toggle is set as \"Yes\" in the company setup page");
+                takeScreenshot();
             }
         }
         else if(condition.equals("disable"))
@@ -939,6 +971,7 @@ public class DeployProductPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL, "Not able to select Old date for \""+field+"\" date field");
             logger.info("Not able to select Old date for \""+field+"\" date field");
+            takeScreenshot();
         }
     }
     public void verifyNotClickablePastDate(String field)

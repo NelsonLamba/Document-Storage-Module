@@ -43,7 +43,7 @@ public class UserLoginPage extends WebBasePage
     }
     public void acceptPrivacyPolicy()
     {
-        click(By.xpath("(//div[contains(@class,'custom-checkbox')])[1]"),"Privacy Policy",10);
+        click(By.xpath("//input[@name='AcceptPrivacyPolicy']//parent::div[contains(@class,'custom')]"),"Privacy Policy",10);
     }
     public void clickLogin()
     {

@@ -22,7 +22,7 @@ public class CompanySetupPage extends WebBasePage {
 
     public CompanySetupPage(WebDriver driver)
     {
-        super(driver,"");
+        super(driver,"Company setup page");
         this.driver=driver;
     }
 
@@ -96,8 +96,6 @@ public class CompanySetupPage extends WebBasePage {
     {
         DeployProductPage deployProduct = new DeployProductPage(driver);
         scrollToWebelement(By.xpath("//input[@id='IsItemCostN']//parent::label//span[@class='slider round']"),"ProductCost Toggle");
-//        WebElement yes=findElementsVisibility(By.xpath("//input[@id='IsItemCostN']//parent::label//span[@class='slider-yes']"));
-//        WebElement no=findElementsVisibility(By.xpath("//input[@id='IsItemCostN']//parent::label//span[@class='slider-no']"));
         boolean option=findElementPresence(By.id("IsItemCostN"),15).isSelected();
         if(cost)
         {
@@ -122,8 +120,6 @@ public class CompanySetupPage extends WebBasePage {
     {
         DeployProductPage deployProduct = new DeployProductPage(driver);
         scrollToWebelement(By.xpath("//input[@id='InsurancePolicyN']//parent::label//span[@class='slider round']"),"ProductCost Toggle");
-        //WebElement yes=findElementsVisibility(By.xpath("//input[@id='InsurancePolicyN']//parent::label//span[@class='slider-yes']"));
-        //WebElement no=findElementsVisibility(By.xpath("//input[@id='InsurancePolicyN']//parent::label//span[@class='slider-no']"));
         boolean option=findElementPresence(By.id("InsurancePolicyN"),15).isSelected();
         if(policy)
         {
@@ -147,8 +143,6 @@ public class CompanySetupPage extends WebBasePage {
     {
         DeployProductPage deployProduct = new DeployProductPage(driver);
         scrollToWebelement(By.xpath("//input[@id='IsDepreciableN']//parent::label//span[@class='slider round']"),"ProductCost Toggle");
-//        WebElement yes=findElementsVisibility(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider-yes']"));
-//        WebElement no=findElementsVisibility(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider-no']"));
         boolean option=findElementPresence(By.id("IsDepreciableN"),15).isSelected();
         if(depriciation)
         {

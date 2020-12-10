@@ -21,157 +21,126 @@ import java.util.zip.ZipInputStream;
 
 import static reporting.ComplexReportFactory.getTest;
 
-public class WebBasePage extends WaitStatement{
+public class WebBasePage extends WaitStatement {
 
     private WebDriver driver;
     public static Logger logger;
     private String pageName;
-    public WebBasePage(WebDriver driver,String pageName){
+
+    public WebBasePage(WebDriver driver, String pageName) {
         super(driver);
-        this.driver=driver;
+        this.driver = driver;
         this.pageName = pageName;
         logger = Logger.getLogger(pageName);
     }
 
-    public void deleteAllCookies(){
-        driver.manage().deleteAllCookies();
-    }
-
-    public void open(String url){
+    public void open(String url) {
 
         driver.get(url);
-        getTest().log(LogStatus.PASS,"Url opened - "+url);
+        getTest().log(LogStatus.PASS, "Url opened - " + url);
     }
-    public List<WebElement> findMultipleElement(By by,int time){
-        try {
+
+    public List<WebElement> findMultipleElement(By by, int time) {
+        WebElement element = findElementVisibility(by, time);
+        List<WebElement> elements=new ArrayList<>();
+        if (element != null) {
             waitForVisibilityOfElement(by, time);
-            List<WebElement> elements = driver.findElements(by);
+            elements = driver.findElements(by);
+            return elements;
+        } else {
+            getTest().log(LogStatus.FAIL, "Element not found : " + by);
+            logger.info("Element not found : " + by);
+            takeScreenshot();
+            Assert.fail("Element not found : " + by);
             return elements;
         }
-        catch (Exception e)
-        {
-            getTest().log(LogStatus.FAIL,"Element not found : "+by);
-            logger.info("Element not found : "+by);
-            return null;
+    }
+
+    public void wairForLoader(int time) {
+        WebElement element = findElementVisibility(By.cssSelector(".lds-ring"), time);
+        if (element != null) {
+            waitForInVisibilityOfElement(By.cssSelector(".lds-ring"), time);
         }
     }
-    public void wairForLoader(int time)
-    {
-        try{
-            waitForInVisibilityOfElement(By.cssSelector(".lds-ring"),time);
-        }catch(Exception e)
-        {
-            getTest().log(LogStatus.FAIL,"Loader not found");
-            logger.info("Loader not found");
-        }
-    }
-    public void enter(By by,String value,String name,int time){
-        WebElement element=findElementVisibility(by,time);
+
+    public void enter(By by, String value, String name, int time) {
+        WebElement element = findElementVisibility(by, time);
         staticWait(200);
-        if(element!=null){
+        if (element != null) {
             element.clear();
             element.sendKeys(value);
-            getTest().log(LogStatus.PASS,name+" entered with value - "+value);
-            logger.info(name+" entered with value - "+value);
-        }else{
-            getTest().log(LogStatus.FAIL,pageName+name+" not entered with value - "+value);
-            logger.info(name+" not entered with value - "+value);
-            Assert.fail(name+" -  element not present");
+            getTest().log(LogStatus.PASS, name + " entered with value - " + value);
+            logger.info(name + " entered with value - " + value);
+        } else {
+            getTest().log(LogStatus.FAIL, pageName + name + " not entered with value - " + value);
+            logger.info(name + " not entered with value - " + value);
+            takeScreenshot();
+            Assert.fail(name + " -  element not present");
         }
     }
 
-     public void click(By by,String name,int time) {
-         WebElement element = findElementVisibility(by, time);
-         staticWait(200);
-         if (element != null) {
-             element.click();
-             getTest().log(LogStatus.PASS, name + " clicked");
-             logger.info(name + " clicked ");
-         } else {
-             getTest().log(LogStatus.FAIL, pageName + name + " not clicked ");
-             logger.info(name + " not clicked");
-             Assert.fail(name + " -  element not present");
-         }
-     }
-    public void browserBack() {
-        driver.navigate().back();
-    }
-
-    public void verifyPageHasErrors(String pagename){
-        if(driver.getPageSource().toLowerCase().contains("error")){
-            getTest().log(LogStatus.FAIL," Page has errors");
+    public void click(By by, String name, int time) {
+        WebElement element = findElementVisibility(by, time);
+        staticWait(200);
+        if (element != null) {
+            element.click();
+            getTest().log(LogStatus.PASS, name + " clicked");
+            logger.info(name + " clicked ");
+        } else {
+            getTest().log(LogStatus.FAIL, pageName + name + " not clicked ");
+            logger.info(name + " not clicked");
+            takeScreenshot();
+            Assert.fail(name + " -  element not present");
         }
     }
 
-    public void getPageSourceAndVerify(String value){
-        if(driver.getPageSource().contains(value)){
-            getTest().log(LogStatus.PASS,value+" present");
-            logger.info(value+" present");
-        }else{
-            logger.info(value+" not present");
-            Assert.fail(value+" not present");
-        }
-    }
-
-    public void verifyElement(By by,String name,int time){
-        WebElement element=findElementVisibility(by,time);
-        if(element!=null){
-            getTest().log(LogStatus.PASS,name+" element visible");
-            logger.info(name+" element visible");
-        }else{
-            getTest().log(LogStatus.FAIL,name+" element not visible");
-            logger.info(name+" element not visible");
-            Assert.fail(name+" -  element not present");
-        }
-    }
-
-    public void selectValueWithIndex(By by,int value,String name,int time){
-        WebElement element=findElementVisibility(by,time);
-        if(element!=null){
-            Select se=new Select(element);
+    public void selectValueWithIndex(By by, int value, String name, int time) {
+        WebElement element = findElementVisibility(by, time);
+        if (element != null) {
+            Select se = new Select(element);
             se.selectByIndex(value);
-            getTest().log(LogStatus.PASS,name+" selected with index - "+value);
-            logger.info(name+" selected with value - "+value);
-        }else{
-            getTest().log(LogStatus.FAIL,name+" not selected with index - "+value);
-            logger.info(name+" not selected with value - "+value);
-            Assert.fail(name+" -  element not present");
+            getTest().log(LogStatus.PASS, name + " selected with index - " + value);
+            logger.info(name + " selected with value - " + value);
+        } else {
+            getTest().log(LogStatus.FAIL, name + " not selected with index - " + value);
+            logger.info(name + " not selected with value - " + value);
+            takeScreenshot();
+            Assert.fail(name + " -  element not present");
         }
     }
 
-    public void selectValueWithValue(By by,String value,String name,int time){
-        WebElement element=findElementVisibility(by,time);
-        if(element!=null){
-            Select se=new Select(element);
+    public void selectValueWithValue(By by, String value, String name, int time) {
+        WebElement element = findElementVisibility(by, time);
+        if (element != null) {
+            Select se = new Select(element);
             se.selectByValue(value);
-            getTest().log(LogStatus.PASS,name+" selected with value - "+value);
-            logger.info(name+" selected with value - "+value);
-        }else{
-            getTest().log(LogStatus.FAIL,name+" not selected with value - "+value);
-            logger.info(name+" not selected with value - "+value);
-            Assert.fail(name+" -  element not present");
+            getTest().log(LogStatus.PASS, name + " selected with value - " + value);
+            logger.info(name + " selected with value - " + value);
+        } else {
+            getTest().log(LogStatus.FAIL, name + " not selected with value - " + value);
+            logger.info(name + " not selected with value - " + value);
+            takeScreenshot();
+            Assert.fail(name + " -  element not present");
         }
     }
 
-    public void selectValueWithText(By by,String value,String name,int time){
+    public void selectValueWithText(By by, String value, String name, int time) {
         staticWait(200);
-        WebElement element=findElementVisibility(by,time);
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", element);
-        staticWait(200);
-        if(element!=null){
-            Select se=new Select(element);
+        WebElement element = findElementVisibility(by, time);
+        if (element != null) {
+            Select se = new Select(element);
             se.selectByVisibleText(value);
-            getTest().log(LogStatus.PASS,name+" selected with value - "+value);
-            logger.info(name+" selected with value - "+value);
-        }else{
-            getTest().log(LogStatus.FAIL,name+" not selected with value - "+value);
-            logger.info(name+" not selected with value - "+value);
-            Assert.fail(name+" -  element not present");
+            getTest().log(LogStatus.PASS, name + " selected with value - " + value);
+            logger.info(name + " selected with value - " + value);
+        } else {
+            getTest().log(LogStatus.FAIL, name + " not selected with value - " + value);
+            logger.info(name + " not selected with value - " + value);
+            takeScreenshot();
+            Assert.fail(name + " -  element not present");
         }
     }
 
-    public void scrollDown(){
+    public void scrollDown() {
         staticWait(2000);
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -179,7 +148,7 @@ public class WebBasePage extends WaitStatement{
         staticWait(2000);
     }
 
-    public void staticWait(int time){
+    public void staticWait(int time) {
         try {
             Thread.sleep(time);
         } catch (InterruptedException e) {
@@ -188,307 +157,203 @@ public class WebBasePage extends WaitStatement{
         }
     }
 
-    public boolean waitForAttributeValue(By by,String tag, int timerCount){
-
-        int count = 1;
-        do{
-            if (getAtribute(by,"src",3)!=null){
-                staticWait(500);
-                return true;
-            }
-            staticWait(500);
-            count = count + 1;
-        }while(count <= timerCount);
-        return false;
-    }
-    public void scrollToWebelement(By by,String name){
+    public void scrollToWebelement(By by, String name) {
         staticWait(500);
         WebElement element = driver.findElement(by);
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", element);
-        getTest().log(LogStatus.PASS,"Scroll to this element - "+name);
-        logger.info("Scroll to this element - "+name);
-        staticWait(500);
+        if (element != null) {
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("arguments[0].scrollIntoView();", element);
+            getTest().log(LogStatus.PASS, "Scroll to this element - " + name);
+            logger.info("Scroll to this element - " + name);
+            staticWait(500);
+        } else {
+            getTest().log(LogStatus.PASS, name + " element is not found to scroll");
+            logger.info(name + " element is not found to scroll");
+            takeScreenshot();
+            Assert.fail(name + " element is not found to scroll");
+        }
     }
 
-    public String getUrl(){
+    public String getUrl() {
         return driver.getCurrentUrl();
     }
 
-    public void clickByJavascript(By by,String name, int time){
+    public void clickByJavascript(By by, String name, int time) {
         staticWait(2000);
         WebElement element = driver.findElement(by);
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", element);
-        getTest().log(LogStatus.PASS,name+" click by JS");
-        logger.info(name+" click by JS");
+        if (element != null) {
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", element);
+            getTest().log(LogStatus.PASS, name + " click by JS");
+            logger.info(name + " click by JS");
+        } else {
+            getTest().log(LogStatus.FAIL, "Not able to Locate " + name);
+            logger.info("Not able to Locate " + name);
+            takeScreenshot();
+            Assert.fail("Not able to Locate " + name);
+        }
 
     }
 
-    public int getRowCount(By by,String name){
-        int getCount = driver.findElements(by).size();
-        getTest().log(LogStatus.PASS,name+" count of the element size - "+getCount);
-        logger.info(name+" count of the element size - "+getCount);
-        return getCount;
+
+    public String getText(By by, int time) {
+        WebElement ele = findElementVisibility(by, time);
+        if (ele != null) {
+            String getText = ele.getText();
+            getTest().log(LogStatus.PASS, " Text displayed is  - " + getText);
+            logger.info(" Text displayed is  - " + getText);
+            return getText;
+        } else {
+            getTest().log(LogStatus.FAIL, "Element not found to get text");
+            logger.info("Element not found to get text");
+            takeScreenshot();
+            Assert.fail("Element not found to get text");
+            return null;
+        }
     }
 
-    public String getText(By by,int time){
-        WebElement ele = findElementVisibility(by,time);
-        String getText = ele.getText();
-        getTest().log(LogStatus.PASS," Text displayed is  - "+getText);
-        logger.info(" Text displayed is  - "+getText);
-        return getText;
-    }
-
-    public String getAtribute(By by,String tag , int time){
-        WebElement ele = findElementVisibility(by,time);
+    public String getAtribute(By by, String tag, int time) {
+        WebElement ele = findElementVisibility(by, time);
         String getText;
         try {
             getText = ele.getAttribute(tag);
-            logger.info(" get attribute value is  - "+getText);
+            logger.info(" get attribute value is  - " + getText);
             return getText;
         } catch (Exception e) {
-            getTest().log(LogStatus.FAIL,"Element not found : "+by);
-            logger.info("Element not found : "+by);
+            getTest().log(LogStatus.FAIL, "Element not found : " + by);
+            logger.info("Element not found : " + by);
+            takeScreenshot();
+            Assert.fail("Element not found : " + by);
+            return null;
         }
-
-        return null;
     }
 
-    public void switchToContentFrame(){
-        driver.switchTo().frame("ContentFrame");
-    }
-
-    public void waitForLoad(int timeoutSec)
-    {
+    public void waitForLoad(int timeoutSec) {
         try {
             new WebDriverWait(driver, timeoutSec).until((ExpectedCondition<Boolean>) wd ->
-            ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
+                    ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    public void hover(By by,String name, int time){
-        WebElement ele = findElementVisibility(by,time);
-        if(ele!=null){
+    public void hover(By by, String name, int time) {
+        WebElement ele = findElementVisibility(by, time);
+        if (ele != null) {
             Actions action = new Actions(driver);
             action.moveToElement(ele).perform();
-        }else{
-            getTest().log(LogStatus.FAIL,"Hover not performed");
+        } else {
+            getTest().log(LogStatus.FAIL, "Hover not performed");
+            takeScreenshot();
+            Assert.fail("Hover not performed");
         }
 
     }
 
-    public String getBackgroundColor(By by, int time){
-        WebElement ele = findElementVisibility(by,time);
-        String color = ele.getCssValue("background-color");
-        return Color.fromString(color).asHex();
-    }
-
-    public String getForegroundColor(By by, int time){
-        WebElement ele = findElementVisibility(by,time);
-        String color = ele.getCssValue("color");
-        return Color.fromString(color).asHex();
-    }
-
-    public int getHeight(By by, int time){
-        WebElement ele = findElementsVisibility(by);
-        return ele.getSize().getHeight();
-    }
-
-    public int getWidth(By by, int time){
-        WebElement ele = findElementsVisibility(by);
-        return ele.getSize().getWidth();
-    }
-
-    public void scrollUpDown(String scroll){
+    public void scrollUpDown(String scroll) {
         Actions actions = new Actions(driver);
-        if(scroll.equalsIgnoreCase("down")){
+        if (scroll.equalsIgnoreCase("down")) {
             actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
-        }else if(scroll.equalsIgnoreCase("up")){
+        } else if (scroll.equalsIgnoreCase("up")) {
             actions.keyDown(Keys.CONTROL).sendKeys(Keys.HOME).perform();
         }
 
     }
 
-    public String getCssValue(By by,String attribute, int time){
-        WebElement ele = findElementVisibility(by,time);
-        String color = ele.getCssValue(attribute);
-        return color;
-    }
-
-    public void clickByElements(By by,String name,int time) {
-        WebElement element = findElementsVisibility(by);
-        staticWait(500);
-        if (element != null) {
-            element.click();
-            getTest().log(LogStatus.PASS, name + " clicked");
-            logger.info(name + " clicked ");
-        } else {
-            getTest().log(LogStatus.FAIL, pageName + name + " not clicked ");
-            logger.info(name + " not clicked");
-            //Assert.fail(name + " -  element not present");
-        }
-    }
-
-    public void clickByElementsPresence(By by,String name,int time) {
-        WebElement element = findElementVisibility(by, time);
-        staticWait(500);
-        if (element != null) {
-            element.click();
-            getTest().log(LogStatus.PASS, name + " clicked");
-            logger.info(name + " clicked ");
-        } else {
-            getTest().log(LogStatus.FAIL, pageName + name + " not clicked ");
-            logger.info(name + " not clicked");
-            Assert.fail(name + " -  element not present");
-        }
-    }
-
-    public void pressKey(Keys keyname){
-        WebElement body = driver.findElement(By.tagName("body"));
-        body.sendKeys(keyname);
-        getTest().log(LogStatus.PASS, "Space bar is pressed");
-    }
-
-    public boolean switchToTab(int tabPosition){
+    public boolean switchToTab(int tabPosition) {
         boolean tabFound = false;
         Set<String> allWindowHandles = driver.getWindowHandles();
         ArrayList<String> tabs = new ArrayList<String>(allWindowHandles);
-        if(tabs.size()>0){
+        if (tabs.size() > 0) {
             try {
                 driver.switchTo().window(tabs.get(tabPosition));
             } catch (Exception e) {
-                getTest().log(LogStatus.FAIL,"Error in opening new tab");
+                getTest().log(LogStatus.FAIL, "Error in opening new tab");
+                takeScreenshot();
                 return false;
             }
             tabFound = true;
         }
-        if(!tabFound)
-            getTest().log(LogStatus.FAIL," There are no new tabs");
+        if (!tabFound) {
+            getTest().log(LogStatus.FAIL, " There are no new tabs");
+            takeScreenshot();
+        }
 
         return tabFound;
 
     }
 
-    public void closeCurrentTab(int currentTabIndex){
-        Set<String> allWindowHandles = driver.getWindowHandles();
-        ArrayList<String> tabs = new ArrayList<String>(allWindowHandles);
-        driver.switchTo().window(tabs.get(currentTabIndex));
-        driver.close();
-    }
-
-    public void switchToParentTab(){
-        Set<String> allWindowHandles = driver.getWindowHandles();
-        ArrayList<String> tabs = new ArrayList<String>(allWindowHandles);
-        driver.switchTo().window(tabs.get(0));
-    }
-
-    public void moveSlider(By by){
-
-        WebElement slider = findElementsVisibility(by);
-        Actions move = new Actions(driver);
-        Action action = (Action) move.dragAndDropBy(slider, 50, 0).build();
-        action.perform();
-    }
-
-    public void takeScreenshot(String name){
-        String imagePath=System.getProperty("user.dir")+"\\reports\\"+name+new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-        // generate screenshot as a file object
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+    public void closeCurrentTab(int currentTabIndex) {
         try {
-            // copy file object to designated location
-            org.apache.commons.io.FileUtils.copyFile(scrFile, new File(imagePath+".png"));
-            System.out.println(imagePath+".png");
-        }catch(Exception e){
-            Assert.fail("Error while taking screenshot - "+e);
+            Set<String> allWindowHandles = driver.getWindowHandles();
+            ArrayList<String> tabs = new ArrayList<String>(allWindowHandles);
+            driver.switchTo().window(tabs.get(currentTabIndex));
+            driver.close();
+        } catch (Exception e) {
+            getTest().log(LogStatus.FAIL, "Not able to close current tab");
+            logger.info("Not able to close  current tab");
+            takeScreenshot();
+            Assert.fail("Not able to close current tab");
         }
-        getTest().log(LogStatus.INFO, getTest().addScreenCapture(imagePath+".png"));
     }
 
-    public int countNumberOfFilesInFolder(String path){
+    public void switchToParentTab() {
+        try {
+            Set<String> allWindowHandles = driver.getWindowHandles();
+            ArrayList<String> tabs = new ArrayList<String>(allWindowHandles);
+            driver.switchTo().window(tabs.get(0));
+        } catch (Exception e) {
+            getTest().log(LogStatus.FAIL, "Not able to switch to parent tab");
+            logger.info("Not able to switch to parent tab");
+            takeScreenshot();
+            Assert.fail("Not able to switch to parent tab");
+        }
+    }
+
+    public void takeScreenshot() {
+        String imagePath = System.getProperty("user.dir") + "\\reports\\" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            org.apache.commons.io.FileUtils.copyFile(scrFile, new File(imagePath + ".png"));
+            System.out.println(imagePath + ".png");
+        } catch (Exception e) {
+            Assert.fail("Error while taking screenshot - " + e);
+        }
+        getTest().log(LogStatus.INFO, getTest().addScreenCapture(imagePath + ".png"));
+    }
+
+    public int countNumberOfFilesInFolder(String path) {
         return Objects.requireNonNull(new File(path).list()).length;
     }
 
-    public void waitTillNewFile(String path, int previousFileCount){
+    public void waitTillNewFile(String path, int previousFileCount) {
         staticWait(3000);
         int timeCount = 1;
-        for(timeCount =1;timeCount <20; timeCount++){
-            if(countNumberOfFilesInFolder(path)>previousFileCount){
+        for (timeCount = 1; timeCount < 20; timeCount++) {
+            if (countNumberOfFilesInFolder(path) > previousFileCount) {
                 getTest().log(LogStatus.PASS, "PDF downloaded...");
                 break;
             }
             staticWait(500);
-            System.out.println("countNumberOfFilesInFolder(path) - "+countNumberOfFilesInFolder(path)+" previousFileCount - "+previousFileCount);
+            System.out.println("countNumberOfFilesInFolder(path) - " + countNumberOfFilesInFolder(path) + " previousFileCount - " + previousFileCount);
+            logger.info("countNumberOfFilesInFolder(path) - " + countNumberOfFilesInFolder(path) + " previousFileCount - " + previousFileCount);
         }
 
     }
 
-    protected File getLatestFilefromDir(String dirPath){
-        File dir = new File(dirPath);
-        File[] files = dir.listFiles();
-        if (files == null || files.length == 0) {
-            return null;
-        }
-
-        File lastModifiedFile = files[0];
-        for (int i = 1; i < files.length; i++) {
-            if (lastModifiedFile.lastModified() < files[i].lastModified()) {
-                lastModifiedFile = files[i];
-            }
-        }
-        return lastModifiedFile;
-    }
-
-    protected void unzip(String zipFilePath, String destDir) {
-        File dir = new File(destDir);
-        // create output directory if it doesn't exist
-        if (!dir.exists()) dir.mkdirs();
-        FileInputStream fis;
-        //buffer for read and write data to file
-        byte[] buffer = new byte[1024];
-        try {
-            fis = new FileInputStream(zipFilePath);
-            ZipInputStream zis = new ZipInputStream(fis);
-            ZipEntry ze = zis.getNextEntry();
-            while (ze != null) {
-                String fileName = ze.getName();
-                File newFile = new File(destDir + File.separator + fileName);
-                System.out.println("Unzipping to " + newFile.getAbsolutePath());
-                //create directories for sub directories in zip
-                new File(newFile.getParent()).mkdirs();
-                FileOutputStream fos = new FileOutputStream(newFile);
-                int len;
-                while ((len = zis.read(buffer)) > 0) {
-                    fos.write(buffer, 0, len);
-                }
-                fos.close();
-                //close this ZipEntry
-                zis.closeEntry();
-                ze = zis.getNextEntry();
-            }
-            //close last ZipEntry
-            zis.closeEntry();
-            zis.close();
-            fis.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void uploadDoc(By by,String value,String name,int time){
-        WebElement element=findElementVisibility(by,time);
+    public void uploadDoc(By by, String value, String name, int time) {
+        WebElement element = findElementVisibility(by, time);
         staticWait(500);
-        if(element!=null){
+        if (element != null) {
             element.sendKeys(value);
-            getTest().log(LogStatus.PASS,name+" uploaded with value - "+value);
-            logger.info(name+" uploaded with value - "+value);
-        }else{
-            getTest().log(LogStatus.FAIL,pageName+name+" not uploaded with value - "+value);
-            logger.info(name+" not uploaded with path - "+value);
-            Assert.fail(name+" -  element not present");
+            getTest().log(LogStatus.PASS, name + " uploaded with value - " + value);
+            logger.info(name + " uploaded with value - " + value);
+        } else {
+            getTest().log(LogStatus.FAIL, pageName + name + " not uploaded with value - " + value);
+            logger.info(name + " not uploaded with path - " + value);
+            takeScreenshot();
+            Assert.fail(name + " -  element not present");
         }
     }
 }

@@ -12,7 +12,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void addProduct()
     {
-        test = getTest("TC_Asset Management_15_21_27_28_End-to-End - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_15_21_27_28");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -23,7 +23,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void changeStatusWhileCreatingProduct()
     {
-        test = getTest("TC_Asset Management_1_3 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_1_3");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -34,7 +34,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void duplicateProductNameValidation()
     {
-        test = getTest("TC_Asset Management_7_12_13- Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_7_12_13");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -43,7 +43,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public  void productNameValidation()
     {
-        test = getTest("TC_Asset Management_4,6,8,9 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_4,6,8,9");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -53,7 +53,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void productNameFieldValidation()
     {
-        test = getTest("TC_Asset Management_5 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_5");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -63,7 +63,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void barCode()
     {
-        test = getTest("TC_Asset Management_19_20 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_19_20");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -73,7 +73,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void productStatusfieldValidation()
     {
-        test = getTest("TC_Asset Management_2 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_2");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -83,7 +83,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void duplicateCodeValidation()
     {
-        test = getTest("TC_Asset Management_12_13- Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_12_13");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -92,7 +92,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void productCodeValidation()
     {
-        test = getTest("TC_Asset Management_11_14 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_11_14");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -103,7 +103,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void documentValidation()
     {
-        test = getTest("TC_Asset Management_29_30 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_29_30");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -113,7 +113,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void descriptionFieldErrorMessageValidation()
     {
-        test = getTest("TC_Asset Management_17 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_17");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -123,7 +123,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void descriptionFieldValidation()
     {
-        test = getTest("TC_Asset Management_16_18 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_16_18");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -133,7 +133,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void errorMsgValidationOnAddProductPage()
     {
-        test = getTest("TC_Asset Management_11_12_13_ - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_11_12_13");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -143,16 +143,12 @@ public class AddProduct extends WebTestBase
     @Test()
     public void mandatoryFieldValidation()
     {
-        test = getTest("TC_Asset Management_10_24_25_26 - Related Information - Verify CalibrationCommentpopup Page");
+        test = getTest("TC_Asset Management_10_24_25_26");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
         addProductAction.addNewButton();
         addProductAction.mandatoryFieldValidation();
     }
-
-
-
-
 
 }
