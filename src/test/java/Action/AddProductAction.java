@@ -53,8 +53,8 @@ public class AddProductAction
     {
         addProductPage.enterProductNameHundredCharacter();
         addProductPage.enterProductNameWithAlphaNumeric();
-        addProductPage.entertProductNameWithSpecialCharacter();
         addProductPage.enterProductNameWithOneCharacter();
+        addProductPage.entertProductNameWithSpecialCharacter();
     }
     public void productNamefieldValidation()
     {
@@ -104,6 +104,27 @@ public class AddProductAction
         addProductPage.selectBarCodeType();
         addProductPage.changeProductStatus();
     }
+    public void addProductUniqueName()
+    {
+        addProductPage.selectProductType();
+        addProductPage.enterUniqueItemName();
+        addProductPage.selectBarCodeType();
+        addProductPage.selectStatus();
+        addProductPage.selectAudit();
+        addProductPage.selectImageCapture();
+        addProductPage.selectCalibration();
+        addProductPage.enterProductCode();
+        addProductPage.uploadDocument();
+        addProductPage.enterDescription();
+        addProductPage.clickTheCheckBox();
+        addProductPage.enterStockValueForompany();
+        addProductPage.enterStockValueForEmployee();
+        addProductPage.clickSaveButton();
+        addProductPage.handleSuccessPopup();
+        addProductPage.manageProductPageValidation();
+        addProductPage.defaultProductCodeValidation();
+        addProductPage.goBackToAddProductPage();
+    }
     public void addProduct()
     {
         addProductPage.selectProductType();
@@ -121,9 +142,6 @@ public class AddProductAction
         addProductPage.enterStockValueForEmployee();
         addProductPage.clickSaveButton();
         addProductPage.handleSuccessPopup();
-        addProductPage.manageProductPageValidation();
-        addProductPage.defaultProductCodeValidation();
-        addProductPage.goBackToAddProductPage();
     }
 
     public void deployTab()

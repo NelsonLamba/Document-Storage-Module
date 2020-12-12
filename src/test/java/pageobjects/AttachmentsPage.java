@@ -22,7 +22,7 @@ public class AttachmentsPage extends WebBasePage {
     private final static String FILE_NAME = System.getProperty("user.dir")+"\\src\\main\\resources\\testdata.properties";
     private static Properties prop = new PropertiesLoader(FILE_NAME).load();
     String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\testfiles\\";
-    public static String termsAndCondition=prop.getProperty("termsAndConditionNo");
+    public static String termsAndCondition;
     public static int filesInDirectory;
     public static int attachmentCountBeforeDelete;
     public AttachmentsPage(WebDriver driver)
@@ -42,7 +42,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"User not able to click \"Attachment Tab\"");
             logger.info("User not able to click \"Attachment Tab\"");
-            takeScreenshot();
+            takeScreenshot("AttachmentTab");
         }
     }
     public void enterAttachmentName()
@@ -62,7 +62,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"\"Attachement Name\" field not accepts the alpha numeric data as expected and Entered Data : "+prop.getProperty("attachmentNameAlphaNumeric"));
             logger.info("\"Attachement Name\" field not accepts the alpha numeric data as expected and Entered Data : "+prop.getProperty("attachmentNameAlphaNumeric"));
-            takeScreenshot();
+            takeScreenshot("AttachmentName");
         }
     }
     public void termAnsConditions()
@@ -79,7 +79,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"\"Terms and Conditions\" checkbox is present as not clickable");
             logger.info("\"Terms and Conditions\" checkbox is present as not clickable");
-            takeScreenshot();
+            takeScreenshot("TermsAndCond");
         }
     }
     public void verifyChooseFileClickable()
@@ -94,7 +94,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"\"Choose File\" is not present as clickable");
             logger.info("\"Choose File\" is not present as clickable");
-            takeScreenshot();
+            takeScreenshot("ChooseFile");
         }
     }
     public void verifyAddMoreFileClickable()
@@ -110,7 +110,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"\"Add More Files\" is not present as clickable");
             logger.info("\"Add More Files\" is not present as clickable");
-            takeScreenshot();
+            takeScreenshot("AddMoreFile");
         }
     }
     public void verifyClearFileClickable()
@@ -126,7 +126,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"\"Clear File\" is not present as clickable");
             logger.info("\"Clear File\" is not present as clickable");
-            takeScreenshot();
+            takeScreenshot("ClearFile");
         }
     }
     public void verifySaveButtonClickable()
@@ -142,7 +142,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"\"Save Button\" is not present as clickable");
             logger.info("\"Save Button\" is not present as clickable");
-            takeScreenshot();
+            takeScreenshot("Save");
         }
     }
     public void verifyCancelButtonClickable()
@@ -158,7 +158,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"\"Cancel Button\" is not present as clickable");
             logger.info("\"Cancel Button\" is not present as clickable");
-            takeScreenshot();
+            takeScreenshot("Cancel");
         }
     }
     public void verifyPreviousButtonClickable()
@@ -174,7 +174,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"\"Previous Button\" is not present as clickable");
             logger.info("\"Previous Button\" is not present as clickable");
-            takeScreenshot();
+            takeScreenshot("Previous");
         }
     }
     public void verifyAttachmentsDetails()
@@ -213,7 +213,7 @@ public class AttachmentsPage extends WebBasePage {
                     {
                         getTest().log(LogStatus.FAIL,expected+" data is not displayed in the attachment list");
                         logger.info(expected+" data is not displayed in the attachment list");
-                        takeScreenshot();
+                        takeScreenshot(expected.toString());
                     }
                     i++;
                 }
@@ -232,7 +232,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"\"Download Icon\" is not present as clickable");
             logger.info("\"Download Icon\" is not present as clickable");
-            takeScreenshot();
+            takeScreenshot("DownloadIcon");
         }
     }
     public void verifyDeleteIconClickable()
@@ -248,7 +248,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"\"Delete Icon\" is not present as clickable");
             logger.info("\"Delete Icon\" is not present as clickable");
-            takeScreenshot();
+            takeScreenshot("DeleteIcon");
         }
     }
     public void verifyRemoveIconClickable()
@@ -264,7 +264,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"\"Remove Icon\" is not present as clickable");
             logger.info("\"Remove Icon\" is not present as clickable");
-            takeScreenshot();
+            takeScreenshot("RemoveIcon");
         }
     }
     public void selectTermsAndConditionsYes()
@@ -272,24 +272,27 @@ public class AttachmentsPage extends WebBasePage {
         termsAndCondition=prop.getProperty("termsAndConditionYes");
         clickByJavascript(By.cssSelector("div.custom-checkbox>input[name='IsTermsAndCondition']"),"Terms and Conditions",15);
     }
+    public void selectTermsAndConditionsNo()
+    {
+        termsAndCondition=prop.getProperty("termsAndConditionNo");
+    }
     public void uploadAttachment()
     {
         uploadDoc(By.cssSelector("div>input#flFile"), filePath + prop.getProperty("testfileDoc"), "Upload Attachment", 10);
     }
     public void clickAddMoreAttachment()
     {
-            int recordsCount=findMultipleElement(By.xpath("//table[@id='example']//tbody//tr//td//a[@class='deletefile']"),20).size();
-            if(recordsCount>=3)
-            {
-                while(recordsCount!=0) {
-                    click(By.xpath("//table[@id='example']//tbody//tr[1]//td//a[@class='deletefile']"), "Delete", 20);
-                    click(By.cssSelector("button.btn-success"), "Confirmation", 20);
-                    waitForVisibilityOfElement(By.cssSelector("div.alert-success"), 20);
-                    click(By.cssSelector("#closenotifymessage"), "Close Popup", 15);
-                    recordsCount=findMultipleElement(By.xpath("//table[@id='example']//tbody//tr//td//a[@class='deletefile']"),20).size();
-                }
-            }
-            click(By.cssSelector("a#addMore"),"Add More",15);
+//            int recordsCount = findMultipleElement(By.xpath("//table[@id='example']//tbody//tr//td//a[@class='deletefile']"), 20).size();
+//            if (recordsCount >= 3) {
+//                while (recordsCount != 0) {
+//                    click(By.xpath("//table[@id='example']//tbody//tr[1]//td//a[@class='deletefile']"), "Delete", 20);
+//                    click(By.cssSelector("button.btn-success"), "Confirmation", 20);
+//                    waitForVisibilityOfElement(By.cssSelector("div.alert-success"), 20);
+//                    click(By.cssSelector("#closenotifymessage"), "Close Popup", 15);
+//                    recordsCount = findMultipleElement(By.xpath("//table[@id='example']//tbody//tr//td//a[@class='deletefile']"), 20).size();
+//                }
+//            }
+            click(By.cssSelector("a#addMore"), "Add More", 15);
     }
     public void clickRemoveAttachmentField()
     {
@@ -303,7 +306,7 @@ public class AttachmentsPage extends WebBasePage {
     {
         click(By.cssSelector("a#btnCancel"),"Cancel",15);
     }
-    public void closeConfirmationTermsAndCondition()
+    /*public void closeConfirmationTermsAndCondition()
     {
         List <WebElement> termsAndConditionFromTable=findMultipleElement(By.xpath("//table[@id='example']//tbody//tr//td[4]//span"),15);
         List <String> result=new ArrayList<>();
@@ -328,10 +331,11 @@ public class AttachmentsPage extends WebBasePage {
         {
             click(By.cssSelector("a#btnSave"),"Save",15);
         }
-    }
+    }*/
     public void clickSaveButton()
     {
-        closeConfirmationTermsAndCondition();
+//        closeConfirmationTermsAndCondition();
+        click(By.cssSelector("a#btnSave"),"Save",15);
         wairForLoader(20);
     }
     public void clickPreviousButton()
@@ -374,7 +378,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"Field for add more attachment is not displayed when click on the \"Add More Attchment\" icon");
             logger.info("Field for add more attachment is not displayed when click on the \"Add More Attchment\" icon");
-            takeScreenshot();
+            takeScreenshot("MoreAttachment");
         }
     }
     public void verifyCrossIconFunctionality()
@@ -391,7 +395,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"Additional attachment field is not displayed as expected when click on the \"Remove More Attchment\" icon");
            logger.info("Additional attachment field is not displayed as expected when click on the \"Remove More Attchment\" icon");
-           takeScreenshot();
+           takeScreenshot("AdditionAttachment");
         }
     }
     public void verifyMinusIconFunctionality()
@@ -407,7 +411,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"Already attached file is not removed as expected when click \"Clear Attachment\" icon");
            logger.info("Already attached file is not removed as expected when click \"Clear Attachment\" icon");
-           takeScreenshot();
+           takeScreenshot("ClearAttachment");
         }
     }
     public void verifyManageProductPage()
@@ -422,7 +426,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"Manage Product page is not displayed as expected when click \"Cancel\" button");
             logger.info("Manage Product page is not displayed as expected when click \"Cancel\" button");
-            takeScreenshot();
+            takeScreenshot("ManageProductPage");
         }
     }
     public void verifyPreviousButtonFunctionality()
@@ -438,7 +442,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"Related Information page is not displayed as expected when click \"Previous\" button");
            logger.info("Related Information page is not displayed as expected when click \"Previous\" button");
-           takeScreenshot();
+           takeScreenshot("RelatedInformation");
         }
     }
     public void verifyDownloadedFile()
@@ -455,7 +459,7 @@ public class AttachmentsPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "File is not exist in the folder");
             logger.info("File is not exist in the folder");
-            takeScreenshot();
+            takeScreenshot("FileDownload");
         }
     }
     public void verifyDeleteFunctionality()
@@ -471,7 +475,7 @@ public class AttachmentsPage extends WebBasePage {
         {
             getTest().log(LogStatus.FAIL,"Attachment is not removed from the list as expected when click on the \"Delete\" icon");
             logger.info("Attachment is not removed from the list as expected when click on the \"Delete\" icon");
-            takeScreenshot();
+            takeScreenshot("Delete");
         }
     }
 }

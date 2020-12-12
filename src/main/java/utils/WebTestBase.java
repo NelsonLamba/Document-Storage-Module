@@ -16,10 +16,13 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static reporting.ComplexReportFactory.*;
+import static utils.StaticData.createdProductName;
 
 public class WebTestBase {
 
@@ -34,7 +37,7 @@ public class WebTestBase {
         closeReport();
     }
 
-    @BeforeTest(alwaysRun = true)
+    @BeforeClass(alwaysRun = true)
     public void setUp() throws MalformedURLException {
         String url = System.getProperty("url");
         String browser = System.getProperty("browser");
@@ -62,13 +65,14 @@ public class WebTestBase {
 
         if (!result.isSuccess()) {
 
-            String imagePath = System.getProperty("user.dir") + "\\reports\\" + method.getName();
+            String imagePath = System.getProperty("user.dir") + "\\reports\\" + method.getName()+"_"+ new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
             // generate screenshot as a file object
             File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             try {
                 // copy file object to designated location
                 FileUtils.copyFile(scrFile, new File(imagePath + ".png"));
                 System.out.println(imagePath + ".png");
+                logger.info("Method - "+method.getName()+" failed , see the screenshot - "+imagePath + ".png");
             } catch (Exception e) {
                 Assert.fail("Error while taking screenshot - " + e);
             }
@@ -77,7 +81,7 @@ public class WebTestBase {
         closeTest(test);
     }
 
-    @AfterTest(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void closeBrowser() {
 
         driver.quit();

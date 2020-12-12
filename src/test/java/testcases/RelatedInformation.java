@@ -11,7 +11,7 @@ import static reporting.ComplexReportFactory.getTest;
 public class RelatedInformation extends WebTestBase {
     @Test
     public void checkRelatedPageDetail(){
-        test = getTest("TC_Asset Management_115");
+        test = getTest("TC_Asset Management_RelatedInformation_115");
         new LoginAction(driver).logoutLogin();
         RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         relatedinfo.navigatetoRelatedProduct();
@@ -21,7 +21,7 @@ public class RelatedInformation extends WebTestBase {
 
     @Test
     public void validationOnSearchField(){
-        test = getTest("TC_Asset Management_116_117_118_119");
+        test = getTest("TC_Asset Management_RelatedInformation_116_117_118_119");
         RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
         relatedinfo.navigatetoRelatedProduct();
@@ -33,7 +33,7 @@ public class RelatedInformation extends WebTestBase {
 
    @Test()
     public void ValidationOfBreadCrumbs(){
-        test = getTest("TC_Asset Management_120");
+        test = getTest("TC_Asset Management_RelatedInformation_120");
         RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
         relatedinfo.navigatetoRelatedProduct();
@@ -44,7 +44,7 @@ public class RelatedInformation extends WebTestBase {
     }
     @Test()
     public void barCodePrintValidation(){
-        test = getTest("TC_Asset Management_121");
+        test = getTest("TC_Asset Management_RelatedInformation_121");
         RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
         relatedinfo.navigatetoRelatedProduct();
@@ -55,7 +55,7 @@ public class RelatedInformation extends WebTestBase {
     }
     @Test
     public void downloadBulkBarCodeAndVerifyDownloadedFile(){
-        test = getTest("TC_Asset Management_122");
+        test = getTest("TC_Asset Management_RelatedInformation_122");
         RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
         relatedinfo.navigatetoRelatedProduct();
@@ -65,7 +65,7 @@ public class RelatedInformation extends WebTestBase {
     }
   @Test
     public void checkAndEditProductUniqueNameorCode(){
-        test = getTest("TC_Asset Management_123");
+        test = getTest("TC_Asset Management_RelatedInformation_123");
         RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
         relatedinfo.navigatetoRelatedProduct();
@@ -76,7 +76,7 @@ public class RelatedInformation extends WebTestBase {
     }
     @Test
     public void downloadBarImageAndVerifyDownloadedFile(){
-        test = getTest("TC_Asset Management_124");
+        test = getTest("TC_Asset Management_RelatedInformation_124");
         RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
         relatedinfo.navigatetoRelatedProduct();
@@ -87,7 +87,7 @@ public class RelatedInformation extends WebTestBase {
     }
     @Test
     public void verifyCalibrationCommentpopup(){
-        test = getTest("TC_Asset Management_125_126");
+        test = getTest("TC_Asset Management_RelatedInformation_125_126");
         RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
         relatedinfo.navigatetoRelatedProduct();
@@ -98,7 +98,7 @@ public class RelatedInformation extends WebTestBase {
     }
     @Test
     public void verifyAuditCommentpopup(){
-        test = getTest("TC_Asset Management_127_128");
+        test = getTest("TC_Asset Management_RelatedInformation_127_128");
         RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
         relatedinfo.navigatetoRelatedProduct();
@@ -110,7 +110,7 @@ public class RelatedInformation extends WebTestBase {
     }
     @Test
     public void editAndChangeStatus(){
-        test = getTest("TC_Asset Management_129_132");
+        test = getTest("TC_Asset Management_RelatedInformation_129_132");
         RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
         relatedinfo.navigatetoRelatedProduct();
@@ -122,7 +122,7 @@ public class RelatedInformation extends WebTestBase {
     @Test
     public void viewHistoryPageValidations()
     {
-        test = getTest("TC_Asset Management_130_131");
+        test = getTest("TC_Asset Management_RelatedInformation_130_131");
        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
         relatedinfo.navigatetoRelatedProduct();
@@ -132,7 +132,7 @@ public class RelatedInformation extends WebTestBase {
     }
     @Test
     public void verifyPagination(){
-        test = getTest("TC_Asset Management_133");
+        test = getTest("TC_Asset Management_RelatedInformation_133");
         RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
         relatedinfo.navigatetoRelatedProduct();

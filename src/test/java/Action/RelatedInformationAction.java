@@ -23,10 +23,7 @@ public void RelatedInformationtab()
 {
     relatedInformationPage.clickRelatedInformationTab();
 }
-public void checkRealtedPageHeader()
-{
-    relatedInformationPage.checkRelatedpageHeading();
-}
+
     public void checkRelatedPageDetail()
     {
         relatedInformationPage.checkRelatedPageheaders();

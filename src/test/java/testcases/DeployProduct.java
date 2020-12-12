@@ -10,74 +10,74 @@ import static reporting.ComplexReportFactory.getTest;
 
 public class DeployProduct extends WebTestBase {
 
-    @Test
+    @Test (priority = 1)
     public void verifyElementsPresence()
     {
         DeployProductAction deployProduct= new DeployProductAction(driver);
-        test = getTest("Asset Management_31_32_33_34");
+        test = getTest("TC_Asset Management_DeployProduct_31_32_33_34");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.verifyDeployListing();
         deployProduct.verifySearchandAddElementPresence();
         deployProduct.verifyPreviousandNextElementPresence();
     }
-   @Test
+    @Test(priority = 4)
     public void verifySearchFieldFunctionality()
-   {
-       DeployProductAction deployProduct=new DeployProductAction(driver);
-       test = getTest("Asset Management_35_36_37");
-       new LoginAction(driver).logoutLogin();
-       deployProduct.navigateToDeployProductPage();
-       deployProduct.searchingFunctionality();
-       deployProduct.searchFieldClearFunctionality();
-   }
-   @Test
-   public void previousAndNextButtonVerification()
-   {
-       DeployProductAction deployProduct=new DeployProductAction(driver);
-       test = getTest("Asset Management_39_40_43");
-       new LoginAction(driver).logoutLogin();
-       deployProduct.navigateToDeployProductPage();
-       deployProduct.breadCrumbValidation();
-       deployProduct.nextButtonFunctionality();
-       deployProduct.previousButtonFunctionality();
-   }
-   @Test
-    public void verifyDeployedProduct()
-   {
-       DeployProductAction deployProduct=new DeployProductAction(driver);
-       test = getTest("Asset Management_38_41");
-       new LoginAction(driver).logoutLogin();
-       deployProduct.navigateToDeployProductPage();
-       deployProduct.navigateToCreateProductPage();
-       deployProduct.addDeployPageVerification();
-       deployProduct.verifyAddedDeployProduct();
-   }
-   @Test
-   public void productEditPageValidation()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        test = getTest("Asset Management_44_53");
+        test = getTest("TC_Asset Management_DeployProduct_35_36_37");
+        new LoginAction(driver).logoutLogin();
+        deployProduct.navigateToDeployProductPage();
+        deployProduct.searchingFunctionality();
+        deployProduct.searchFieldClearFunctionality();
+    }
+    @Test(priority = 2)
+    public void previousAndNextButtonVerification()
+    {
+        DeployProductAction deployProduct=new DeployProductAction(driver);
+        test = getTest("TC_Asset Management_DeployProduct_39_40_43");
+        new LoginAction(driver).logoutLogin();
+        deployProduct.navigateToDeployProductPage();
+        deployProduct.breadCrumbValidation();
+        deployProduct.nextButtonFunctionality();
+        deployProduct.previousButtonFunctionality();
+    }
+    @Test(priority = 3)
+    public void verifyDeployedProduct()
+    {
+        DeployProductAction deployProduct=new DeployProductAction(driver);
+        test = getTest("TC_Asset Management_DeployProduct_38_41");
+        new LoginAction(driver).logoutLogin();
+        deployProduct.navigateToDeployProductPage();
+        deployProduct.navigateToCreateProductPage();
+        deployProduct.addDeployPageVerification();
+        deployProduct.verifyAddedDeployProduct();
+    }
+    @Test(priority = 5)
+    public void productEditPageValidation()
+    {
+        DeployProductAction deployProduct=new DeployProductAction(driver);
+        test = getTest("TC_Asset Management_DeployProduct_44_53");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.editPageVerification();
     }
 
-    @Test
+    @Test(priority = 6)
     public void mandatoryFieldValidation()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        test = getTest("Asset Management_45_111");
+        test = getTest("TC_Asset Management_DeployProduct_45_111");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.errorMessageValidation();
     }
-    @Test
+    @Test(priority = 7)
     public void verifyLocationDropdown()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        test = getTest("Asset Management_46_47_48_50_52_20");
+        test = getTest("TC_Asset Management_DeployProduct_46_47_48_50_52_20");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
@@ -85,12 +85,12 @@ public class DeployProduct extends WebTestBase {
         deployProduct.locationDropdownSearchFuctionality();
         deployProduct.selectAndClearLocation();
     }
-    @Test
+    @Test(priority = 8)
     public void verifyLocationDropdownValues()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
         CompanySetupAction comapnuSetup=new CompanySetupAction(driver);
-        test = getTest("Asset Management_49_51");
+        test = getTest("TC_Asset Management_DeployProduct_49_51");
         new LoginAction(driver).logoutLogin();
         comapnuSetup.navigateToCompanySetupPage();
         comapnuSetup.navigateSideBarLocation();
@@ -100,33 +100,33 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyLocationDropdownValues();
     }
-    @Test
+    @Test(priority = 9)
     public void verifyQuantityFieldFunctionality()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        test = getTest("Asset Management_54_55_56_57");
+        test = getTest("TC_Asset Management_DeployProduct_54_55_56_57");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyQuantityField();
     }
-    @Test
+    @Test(priority = 10)
     public  void verifyModelandVendorManufaturerFiels()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        test = getTest("Asset Management_58_59_60_61");
+        test = getTest("TC_Asset Management_DeployProduct_58_59_60_61");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyModelandVendorNameField();
         deployProduct.verifyManufacturerNameField();
     }
-    @Test
+    @Test(priority = 11)
     public void verifyProductCostField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
         CompanySetupAction comapnuSetup=new CompanySetupAction(driver);
-        test = getTest("Asset Management_62_63_64_65_66_67_68");
+        test = getTest("TC_Asset Management_DeployProduct_62_63_64_65_66_67_68");
         new LoginAction(driver).logoutLogin();
         comapnuSetup.navigateToCompanySetupPage();
         comapnuSetup.changeProductCostToggle(true);
@@ -142,21 +142,21 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyProductCostField();
     }
 
-    @Test
+    @Test(priority = 12)
     public void verifyReferencePurchaseOrder()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        test = getTest("Asset Management_69_70_71");
+        test = getTest("TC_Asset Management_DeployProduct_69_70_71");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyReferenceField();
     }
-    @Test
+    @Test(priority = 13)
     public void verifyProductOrderDateField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        test = getTest("Asset Management_72_73_74_78");
+        test = getTest("TC_Asset Management_DeployProduct_72_73_74_78");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
@@ -165,21 +165,21 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyProductDateAsOldDate();
         deployProduct.verifyProductDateFutureDate();
     }
-   @Test
+    @Test(priority = 14)
     public void verifyInvoiceNumberField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        test = getTest("Asset Management_75_76_77");
+        test = getTest("TC_Asset Management_DeployProduct_75_76_77");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInvoiceNumberFieldFunctionality();
     }
-     @Test
+    @Test(priority = 15)
     public void verifyInvoiceDateField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        test = getTest("Asset Management_79_80");
+        test = getTest("TC_Asset Management_DeployProduct_79_80");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
@@ -187,12 +187,12 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyInvoiceDateAsOldDate();
         deployProduct.verifyInvoiceDateFutureDate();
     }
-    @Test
+    @Test(priority = 16)
     public void verifyInsurenceFields()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
         CompanySetupAction comapnuSetup=new CompanySetupAction(driver);
-        test = getTest("Asset Management_81_82_83_84_85_86");
+        test = getTest("TC_Asset Management_DeployProduct_81_82_83_84_85_86");
         new LoginAction(driver).logoutLogin();
         comapnuSetup.navigateToCompanySetupPage();
         comapnuSetup.changeInsurranceRefNumToggle(false);
@@ -209,11 +209,11 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInsuranceNumandInsurerNameField();
     }
-    @Test
+    @Test(priority = 17)
     public void verifyInsurenceDateField() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
         CompanySetupAction comapnuSetup = new CompanySetupAction(driver);
-        test = getTest("Asset Management_87_88_89_90_91");
+        test = getTest("TC_Asset Management_DeployProduct_87_88_89_90_91");
         new LoginAction(driver).logoutLogin();
         comapnuSetup.navigateToCompanySetupPage();
         comapnuSetup.changeInsurranceRefNumToggle(false);
@@ -228,11 +228,11 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInsuranceValidDateFunctionality();
     }
-    @Test
+    @Test(priority = 18)
     public void verifyWarrantyDateField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        test = getTest("Asset Management_92_93_94");
+        test = getTest("TC_Asset Management_DeployProduct_92_93_94");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
@@ -240,11 +240,11 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyPastWarrantyDate();
         deployProduct.verifyFutureWarrantyDate();
     }
-    @Test
+    @Test(priority = 19)
     public void verifyInsurenceDateFieldBehaviour() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
         CompanySetupAction comapnuSetup = new CompanySetupAction(driver);
-        test = getTest("Asset Management_95_96_97_98_99");
+        test = getTest("TC_Asset Management_DeployProduct_95_96_97_98_99");
         new LoginAction(driver).logoutLogin();
         comapnuSetup.navigateToCompanySetupPage();
         comapnuSetup.changeDepreciationToggle(false);
@@ -259,40 +259,40 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyDepreciationDropdown();
     }
-    @Test
+    @Test(priority = 20)
     public void verifyProductLifeField() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
-        test = getTest("Asset Management_100_101_102_103_104");
+        test = getTest("TC_Asset Management_DeployProduct_100_101_102_103_104");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyProducLifeField();
     }
-    @Test
+    @Test(priority = 21)
     public void verifySalvageCostField() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
-        test = getTest("Asset Management_105_106_107_108");
+        test = getTest("TC_Asset Management_DeployProduct_105_106_107_108");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifySalvageCostField();
     }
-    @Test
+    @Test(priority = 22)
     public void verifyAddToListFunctionality()
     {
         DeployProductAction deployProduct = new DeployProductAction(driver);
-        test = getTest("Asset Management_109_110");
+        test = getTest("TC_Asset Management_DeployProduct_109_110");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.createProductToDeploy();
         deployProduct.addToListFunctionality();
     }
-    @Test
+    @Test(priority = 23)
     public void popupButtonsFunctionality()
     {
         DeployProductAction deployProduct = new DeployProductAction(driver);
-        test = getTest("Asset Management_112_113_114");
+        test = getTest("TC_Asset Management_DeployProduct_112_113_114");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
@@ -304,10 +304,10 @@ public class DeployProduct extends WebTestBase {
         deployProduct.createProductToDeploy();
         deployProduct.saveButtonFunctionality();
     }
-    @Test
+    @Test(priority = 24)
     public void verifyPaginationFunctionality() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
-        test = getTest("Asset Management_42");
+        test = getTest("TC_Asset Management_DeployProduct_42");
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.verifyPagination();

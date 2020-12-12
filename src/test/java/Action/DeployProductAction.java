@@ -24,7 +24,7 @@ public class DeployProductAction {
         deployProduct.clickFullMenuDropDown();
         deployProduct.clickAssetManagement();
         deployProduct.clickManageProduct();
-        deployProduct.openProduct("145hhh");
+        deployProduct.openProduct();
         deployProduct.navigateToDeployTab();
     }
     public void navigateToCreateProductPage()
@@ -47,9 +47,9 @@ public class DeployProductAction {
     }
     public void searchingFunctionality()
     {
-        deployProduct.enterInSearchField(prop.getProperty("productListLocartionToSearch"));
+        deployProduct.enterInSearchField();
         deployProduct.clickSearchButton();
-        deployProduct.verifySearchedProduct(prop.getProperty("productListLocartionToSearch"));
+        deployProduct.verifySearchedProduct();
     }
     public void searchFieldClearFunctionality()
     {
@@ -72,6 +72,7 @@ public class DeployProductAction {
     }
     public void verifyAddedDeployProduct() {
         createProductToDeploy();
+        saveButtonFunctionality();
         deployProduct.make100PageSize();
         deployProduct.verifyCreatedDeployProduct();
     }
@@ -290,8 +291,8 @@ public class DeployProductAction {
         deployProduct.enterInvoiceNumber(prop.getProperty("invoiceNumber"));
         deployProduct.clickInvoiceDateField();
         deployProduct.selectDate(prop.getProperty("currentDate"));
-        deployProduct.enterInsuranceNumber(prop.getProperty("insuranceNumber"));
-        deployProduct.enterInsurarName(prop.getProperty("insurarName"));
+//        deployProduct.enterInsuranceNumber(prop.getProperty("insuranceNumber"));
+//        deployProduct.enterInsurarName(prop.getProperty("insurarName"));
         deployProduct.clickInsuranceDateField();
         deployProduct.selectDate(prop.getProperty("futureDate"));
         deployProduct.clickWarrantyDateField();

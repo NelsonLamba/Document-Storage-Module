@@ -20,7 +20,7 @@ public class AttachmentsAction {
         deployProduct.clickFullMenuDropDown();
         deployProduct.clickAssetManagement();
         deployProduct.clickManageProduct();
-        deployProduct.openProduct("145hhh");
+        deployProduct.openProduct();
         attachment.navigateToAttachmentTab();
     }
     public void addRemoveFieldClickable()
@@ -39,14 +39,14 @@ public class AttachmentsAction {
     public void addAttachmentToList()
     {
         attachment.enterAttachmentName();
-        attachment.selectTermsAndConditionsYes();
+        attachment.selectTermsAndConditionsNo();
         attachment.uploadAttachment();
         attachment.verifySaveButtonClickable();
         deployProduct.handleSuccessPopup();
     }
     public void verifyAttachmentList()
     {
-        deployProduct.openProduct("145hhh");
+        deployProduct.openProduct();
         attachment.navigateToAttachmentTab();
         attachment.verifyAttachmentsDetails();
     }
@@ -66,7 +66,7 @@ public class AttachmentsAction {
     }
     public void downloadFunctionality()
     {
-        deployProduct.openProduct("145hhh");
+        deployProduct.openProduct();
         attachment.navigateToAttachmentTab();
         attachment.verifyDownloadIconClickable();
         attachment.verifyDownloadedFile();

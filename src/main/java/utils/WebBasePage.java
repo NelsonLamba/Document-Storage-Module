@@ -10,8 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import java.lang.reflect.Method;
 
 import java.io.*;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -50,7 +52,7 @@ public class WebBasePage extends WaitStatement {
         } else {
             getTest().log(LogStatus.FAIL, "Element not found : " + by);
             logger.info("Element not found : " + by);
-            takeScreenshot();
+            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
             Assert.fail("Element not found : " + by);
             return elements;
         }
@@ -67,14 +69,21 @@ public class WebBasePage extends WaitStatement {
         WebElement element = findElementVisibility(by, time);
         staticWait(200);
         if (element != null) {
-            element.clear();
-            element.sendKeys(value);
-            getTest().log(LogStatus.PASS, name + " entered with value - " + value);
-            logger.info(name + " entered with value - " + value);
+            try {
+                element.clear();
+                element.sendKeys(value);
+                getTest().log(LogStatus.PASS, name + " entered with value - " + value);
+                logger.info(name + " entered with value - " + value);
+            } catch (Exception e) {
+                getTest().log(LogStatus.FAIL, pageName + name + " not entered with value - " + value+ "error exist - "+e);
+                logger.info(name + " not entered with value - " + value);
+                takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
+                Assert.fail(name + " -  element not present");
+            }
         } else {
             getTest().log(LogStatus.FAIL, pageName + name + " not entered with value - " + value);
             logger.info(name + " not entered with value - " + value);
-            takeScreenshot();
+            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
             Assert.fail(name + " -  element not present");
         }
     }
@@ -89,7 +98,7 @@ public class WebBasePage extends WaitStatement {
         } else {
             getTest().log(LogStatus.FAIL, pageName + name + " not clicked ");
             logger.info(name + " not clicked");
-            takeScreenshot();
+            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
             Assert.fail(name + " -  element not present");
         }
     }
@@ -104,7 +113,7 @@ public class WebBasePage extends WaitStatement {
         } else {
             getTest().log(LogStatus.FAIL, name + " not selected with index - " + value);
             logger.info(name + " not selected with value - " + value);
-            takeScreenshot();
+            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
             Assert.fail(name + " -  element not present");
         }
     }
@@ -119,7 +128,7 @@ public class WebBasePage extends WaitStatement {
         } else {
             getTest().log(LogStatus.FAIL, name + " not selected with value - " + value);
             logger.info(name + " not selected with value - " + value);
-            takeScreenshot();
+            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
             Assert.fail(name + " -  element not present");
         }
     }
@@ -135,7 +144,7 @@ public class WebBasePage extends WaitStatement {
         } else {
             getTest().log(LogStatus.FAIL, name + " not selected with value - " + value);
             logger.info(name + " not selected with value - " + value);
-            takeScreenshot();
+            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
             Assert.fail(name + " -  element not present");
         }
     }
@@ -169,7 +178,7 @@ public class WebBasePage extends WaitStatement {
         } else {
             getTest().log(LogStatus.PASS, name + " element is not found to scroll");
             logger.info(name + " element is not found to scroll");
-            takeScreenshot();
+            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
             Assert.fail(name + " element is not found to scroll");
         }
     }
@@ -189,7 +198,7 @@ public class WebBasePage extends WaitStatement {
         } else {
             getTest().log(LogStatus.FAIL, "Not able to Locate " + name);
             logger.info("Not able to Locate " + name);
-            takeScreenshot();
+            takeScreenshot("NotClickByJS");
             Assert.fail("Not able to Locate " + name);
         }
 
@@ -204,9 +213,8 @@ public class WebBasePage extends WaitStatement {
             logger.info(" Text displayed is  - " + getText);
             return getText;
         } else {
-            getTest().log(LogStatus.FAIL, "Element not found to get text");
-            logger.info("Element not found to get text");
-            takeScreenshot();
+            getTest().log(LogStatus.FAIL, "Element not found "+by);
+            logger.info("Element not found "+by);
             Assert.fail("Element not found to get text");
             return null;
         }
@@ -222,7 +230,6 @@ public class WebBasePage extends WaitStatement {
         } catch (Exception e) {
             getTest().log(LogStatus.FAIL, "Element not found : " + by);
             logger.info("Element not found : " + by);
-            takeScreenshot();
             Assert.fail("Element not found : " + by);
             return null;
         }
@@ -245,7 +252,7 @@ public class WebBasePage extends WaitStatement {
             action.moveToElement(ele).perform();
         } else {
             getTest().log(LogStatus.FAIL, "Hover not performed");
-            takeScreenshot();
+            takeScreenshot("HoverNotPerformed");
             Assert.fail("Hover not performed");
         }
 
@@ -270,14 +277,14 @@ public class WebBasePage extends WaitStatement {
                 driver.switchTo().window(tabs.get(tabPosition));
             } catch (Exception e) {
                 getTest().log(LogStatus.FAIL, "Error in opening new tab");
-                takeScreenshot();
+                takeScreenshot("ErrorInOpenWindow");
                 return false;
             }
             tabFound = true;
         }
         if (!tabFound) {
             getTest().log(LogStatus.FAIL, " There are no new tabs");
-            takeScreenshot();
+            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
         }
 
         return tabFound;
@@ -293,7 +300,7 @@ public class WebBasePage extends WaitStatement {
         } catch (Exception e) {
             getTest().log(LogStatus.FAIL, "Not able to close current tab");
             logger.info("Not able to close  current tab");
-            takeScreenshot();
+            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
             Assert.fail("Not able to close current tab");
         }
     }
@@ -306,13 +313,13 @@ public class WebBasePage extends WaitStatement {
         } catch (Exception e) {
             getTest().log(LogStatus.FAIL, "Not able to switch to parent tab");
             logger.info("Not able to switch to parent tab");
-            takeScreenshot();
+            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
             Assert.fail("Not able to switch to parent tab");
         }
     }
 
-    public void takeScreenshot() {
-        String imagePath = System.getProperty("user.dir") + "\\reports\\" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+    public void takeScreenshot(String name) {
+        String imagePath = System.getProperty("user.dir") + "\\reports\\" +name+"_"+ new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
             org.apache.commons.io.FileUtils.copyFile(scrFile, new File(imagePath + ".png"));
@@ -352,9 +359,10 @@ public class WebBasePage extends WaitStatement {
         } else {
             getTest().log(LogStatus.FAIL, pageName + name + " not uploaded with value - " + value);
             logger.info(name + " not uploaded with path - " + value);
-            takeScreenshot();
+            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
             Assert.fail(name + " -  element not present");
         }
     }
+
 }
 
