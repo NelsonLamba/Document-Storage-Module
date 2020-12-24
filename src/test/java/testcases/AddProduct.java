@@ -9,7 +9,7 @@ import static reporting.ComplexReportFactory.getTest;
 
 public class AddProduct extends WebTestBase
 {
-   @Test()
+    @Test()
     public void addProductUniqueName()
     {
         test = getTest("TC_Asset Management_AddProduct_15_21_22_27_28");
@@ -120,7 +120,7 @@ public class AddProduct extends WebTestBase
         addProductAction.addNewButton();
         addProductAction.documentValidation();
     }
-    @Test()
+   @Test()
     public void descriptionFieldErrorMessageValidation()
     {
         test = getTest("TC_Asset Management_AddProduct_17");

@@ -274,8 +274,6 @@ public class AddProductPage extends WebBasePage {
             logger.info("Added Product is saved in the product list page and product list page is not displayed");
             takeScreenshot("ManageProductPage");
         }
-
-
     }
 
     public void defaultProductCodeValidation() {
@@ -295,11 +293,15 @@ public class AddProductPage extends WebBasePage {
         click(By.cssSelector("#closenotifymessage"),"Close Popup",15);
     }
 
-    public void documentValidation() {
+    public void uploadInvalidDoc() {
         scrollDown();
-        uploadDoc(By.cssSelector("input#flFileDisplay"), filePath + prop.getProperty("testfiletiff"), "Upload document", 10);
-        String documentErrorMsg = Errors.uploadValidDocuments;
-        String docErrorMsg = getText(By.xpath("//label[@for='flFileDisplay']//following::small"), 10);
+        uploadDoc(By.cssSelector("input#flFileDisplay"), filePath + prop.getProperty("testfiletiff"), "Upload document", 20);
+    }
+    public void verifyErrorMessageForInvalidDoc()
+    {
+        waitForVisibilityOfElement(By.xpath("//div[@id='notifymessage' and @style='display: flex;']"),20);
+        String documentErrorMsg = prop.getProperty("testfiletiff")+Errors.uploadValidDocuments;
+        String docErrorMsg = getText(By.xpath("//div[@role='alert']/span"), 10);
         if (documentErrorMsg.equals(docErrorMsg)) {
             getTest().log(LogStatus.PASS, "Error Message is successfully displayed in uploading document field on Addproduct page");
             logger.info("Error Message is displayed successfully displayed as " + documentErrorMsg);
@@ -309,10 +311,9 @@ public class AddProductPage extends WebBasePage {
             logger.info("Error Message is not displayed in uploading document field on Addproduct page");
             takeScreenshot("Document");
         }
-
+        click(By.xpath("//div[@role='alert']/button[@id='closenotifymessage']"),"Close Alert Message",10);
     }
-
-    public void uploadDocuValidation() {
+    public void uploadDocValidation() {
         uploadDoc(By.cssSelector("input#flFileDisplay"), filePath + prop.getProperty("testfilejpg"), "uploaded document", 10);
         String docName = getAtribute(By.xpath("//div[@class='custom-file']//div//input[@type='text']"), "value",20);
         uploadDoc(By.cssSelector("input#flFileDisplay"), filePath + prop.getProperty("testfilePDF"), "Upload document", 10);
@@ -340,7 +341,7 @@ public class AddProductPage extends WebBasePage {
     }
 
     public void getProductCode() {
-        String productCode = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]//span"), 10);
+        String productCode = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]//span"), 20);
         proCode = productCode.substring(4, 10);
     }
 
@@ -424,22 +425,30 @@ public class AddProductPage extends WebBasePage {
         selectValueWithText(By.cssSelector("div>select#AssetTypeId"), pType, "product type", 20);
     }
 
-    public void duplicateProductCodeValidation() {
-
-        String pCodeErrorMsg;
+    public void enterDuplicateProductCode()
+    {
         enter(By.cssSelector("div>input#ItemCode"), proCode, "product code", 10);
-
-        String errormsg = Errors.duplicateProductCode;
-        pCodeErrorMsg = getText(By.xpath("//div[contains(@class,'input-group ')]//following::small"), 60);
-        if (pCodeErrorMsg.equals(errormsg)) {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed on product code field as " + errormsg);
-            logger.info("Error Message is successfully displayed on product code field as " + errormsg);
-        } else {
-            getTest().log(LogStatus.FAIL, "Error Message is not displayed on product code field ");
-            logger.info("Error Message is not Displayed");
-            takeScreenshot("ProductCode");
-        }
     }
+    public void duplicateProductCodeValidation() {
+            WebElement duplicateError=findElementVisibility(By.cssSelector(".alert-dismissible"),30);
+            if(duplicateError!=null) {
+                String pCodeErrorMsg = getText(By.cssSelector(".alert-dismissible>span"), 20);
+                if (pCodeErrorMsg.equals(Errors.duplicateProductCode)) {
+                    getTest().log(LogStatus.PASS, "Error Message is successfully displayed on product code field as " + pCodeErrorMsg);
+                    logger.info("Error Message is successfully displayed on product code field as " + pCodeErrorMsg);
+                } else {
+                    getTest().log(LogStatus.FAIL, "Error Message is not displayed as expected for product code field " + pCodeErrorMsg);
+                    logger.info("Error Message is not Displayed as expected");
+                    takeScreenshot("ProductCode");
+                }
+            }
+            else
+            {
+                getTest().log(LogStatus.FAIL, "Error message for Duplicate product code is not displayed and product is created");
+                logger.info("Error message for Duplicate product code is not displayed and product is created");
+                takeScreenshot("ProductCode");
+            }
+        }
 
     public void mandatoryFieldValidations() {
         int i = 0;

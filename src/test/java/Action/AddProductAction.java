@@ -38,6 +38,8 @@ public class AddProductAction
         addProductPage.selectPtype();
         addProductPage.enterItemName();
         addProductPage.selectBarCodeType();
+        addProductPage.enterDuplicateProductCode();
+        addProductPage.clickSaveButton();
         addProductPage.duplicateProductCodeValidation();
 
     }
@@ -68,8 +70,13 @@ public class AddProductAction
     }
     public void documentValidation()
     {
-        addProductPage.documentValidation();
-        addProductPage.uploadDocuValidation();
+        addProductPage.selectProductType();
+        addProductPage.enterItemName();
+        addProductPage.selectBarCodeType();
+        addProductPage.uploadInvalidDoc();
+        addProductPage.clickSaveButton();
+        addProductPage.verifyErrorMessageForInvalidDoc();
+        addProductPage.uploadDocValidation();
     }
     public void errorMsgValidationOnDescriptiopn()
     {

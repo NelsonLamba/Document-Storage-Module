@@ -7123,3 +7123,175 @@ Allowed File Types:.doc,.pdf,.docx,.txt,.jpg
 2020-12-12 10:44:16,221  INFO [main] User Login Page:97 - Next button clicked 
 2020-12-12 10:44:16,545  INFO [main] User Login Page:213 -  Text displayed is  - Deploy Product
 2020-12-12 10:44:16,545  INFO [main] User Login Page:235 - Deploy Product Tab page is displayed succfully
+2020-12-24 11:57:36,068  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-24 11:57:36,541  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-24 11:57:36,847  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-24 11:57:40,504  INFO [main] User Login Page:97 - Login clicked 
+2020-12-24 11:57:53,797  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-24 11:57:57,034  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-24 11:58:03,726  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-24 11:58:08,341  INFO [main] User Login Page:97 - Add New clicked 
+2020-12-24 11:58:08,743  INFO [main] User Login Page:112 - Product Type selected with value - 1
+2020-12-24 11:58:09,305  INFO [main] User Login Page:76 - Product Name entered with value - IAT20201224115735
+2020-12-24 11:58:09,535  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-24 11:58:11,556  INFO [main] User Login Page:156 - Page scroll down
+2020-12-24 11:58:14,210  INFO [main] User Login Page:358 - Upload document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file_example_TIFF_1MB.tiff
+2020-12-24 11:58:25,352  INFO [main] User Login Page:217 - Element not found By.xpath: //div[@role='alert']/span
+2020-12-24 11:58:25,817  INFO [main] AddProduct-documentValidation:75 - Method - documentValidation failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\documentValidation_20201224115825.png
+2020-12-24 12:04:44,817  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-24 12:04:45,199  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-24 12:04:45,531  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-24 12:04:58,303  INFO [main] User Login Page:97 - Login clicked 
+2020-12-24 12:04:58,646  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-24 12:04:59,701  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-24 12:05:04,387  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-24 12:05:08,652  INFO [main] User Login Page:97 - Add New clicked 
+2020-12-24 12:05:08,956  INFO [main] User Login Page:112 - Product Type selected with value - 1
+2020-12-24 12:05:09,491  INFO [main] User Login Page:76 - Product Name entered with value - IAT20201224120444
+2020-12-24 12:05:09,723  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-24 12:05:11,742  INFO [main] User Login Page:156 - Page scroll down
+2020-12-24 12:05:14,401  INFO [main] User Login Page:358 - Upload document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file_example_TIFF_1MB.tiff
+2020-12-24 12:05:16,933  INFO [main] User Login Page:97 - Save clicked 
+2020-12-24 12:05:18,087  INFO [main] User Login Page:213 -  Text displayed is  - file_example_TIFF_1MB.tiff is not a valid file to upload. Only .doc,.pdf,.docx,.txt,.jpg file types are allowed to upload.
+2020-12-24 12:05:18,088  INFO [main] User Login Page:309 - Error Message is displayed successfully displayed as file_example_TIFF_1MB.tiff is not a valid file to upload. Only .doc,.pdf,.docx,.txt,.jpg file types are allowed to upload.
+2020-12-24 12:05:18,503  INFO [main] User Login Page:97 - Close Alert Message clicked 
+2020-12-24 12:05:19,102  INFO [main] User Login Page:358 - uploaded document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\55565.jpg
+2020-12-24 12:05:19,172  INFO [main] User Login Page:228 -  get attribute value is  - 55565.jpg
+2020-12-24 12:05:19,737  INFO [main] User Login Page:358 - Upload document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\pdf.pdf
+2020-12-24 12:05:19,785  INFO [main] User Login Page:228 -  get attribute value is  - pdf.pdf
+2020-12-24 12:05:19,785  INFO [main] User Login Page:330 - Document upload field is working as expected
+2020-12-24 12:07:36,914  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-24 12:07:37,326  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-24 12:07:37,681  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-24 12:07:40,599  INFO [main] User Login Page:97 - Login clicked 
+2020-12-24 12:07:48,573  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-24 12:07:54,417  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-24 12:08:03,368  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-24 12:08:13,836  INFO [main] User Login Page:97 - Add New clicked 
+2020-12-24 12:08:14,141  INFO [main] User Login Page:112 - Product Type selected with value - 1
+2020-12-24 12:08:14,528  INFO [main] User Login Page:76 - Product Name entered with value - IAT20201224120736
+2020-12-24 12:08:14,856  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-24 12:08:16,876  INFO [main] User Login Page:156 - Page scroll down
+2020-12-24 12:08:19,554  INFO [main] User Login Page:358 - Upload document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file_example_TIFF_1MB.tiff
+2020-12-24 12:08:21,903  INFO [main] User Login Page:97 - Save clicked 
+2020-12-24 12:08:23,001  INFO [main] User Login Page:213 -  Text displayed is  - file_example_TIFF_1MB.tiff is not a valid file to upload. Only .doc,.pdf,.docx,.txt,.jpg file types are allowed to upload.
+2020-12-24 12:08:23,002  INFO [main] User Login Page:309 - Error Message is displayed successfully displayed as file_example_TIFF_1MB.tiff is not a valid file to upload. Only .doc,.pdf,.docx,.txt,.jpg file types are allowed to upload.
+2020-12-24 12:08:23,390  INFO [main] User Login Page:97 - Close Alert Message clicked 
+2020-12-24 12:08:23,980  INFO [main] User Login Page:358 - uploaded document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\55565.jpg
+2020-12-24 12:08:24,043  INFO [main] User Login Page:228 -  get attribute value is  - 55565.jpg
+2020-12-24 12:08:24,596  INFO [main] User Login Page:358 - Upload document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\pdf.pdf
+2020-12-24 12:08:24,627  INFO [main] User Login Page:228 -  get attribute value is  - pdf.pdf
+2020-12-24 12:08:24,628  INFO [main] User Login Page:330 - Document upload field is working as expected
+2020-12-24 12:15:16,302  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-24 12:15:16,700  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-24 12:15:17,046  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-24 12:15:42,141  INFO [main] User Login Page:97 - Login clicked 
+2020-12-24 12:15:42,481  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-24 12:15:50,438  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-24 12:16:01,043  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-24 12:16:01,102  INFO [main] User Login Page:213 -  Text displayed is  - 1254000002
+2020-12-24 12:16:01,140  INFO [main] User Login Page:213 -  Text displayed is  - Hardware Product
+2020-12-24 12:16:05,751  INFO [main] User Login Page:97 - Add New clicked 
+2020-12-24 12:16:06,275  INFO [main] User Login Page:143 - product type selected with value - Hardware Product
+2020-12-24 12:16:06,729  INFO [main] User Login Page:76 - Product Name entered with value - IAT20201224121515
+2020-12-24 12:16:06,963  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-24 12:16:07,379  INFO [main] User Login Page:76 - product code entered with value - 000002
+2020-12-24 12:16:07,422  INFO [main] User Login Page:213 -  Text displayed is  - Please enter the item code. Else six digit item code will be generated by system.
+2020-12-24 12:16:07,423  INFO [main] User Login Page:440 - Error Message is not Displayed
+2020-12-24 12:32:52,607  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-24 12:32:52,956  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-24 12:32:53,301  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-24 12:32:56,734  INFO [main] User Login Page:97 - Login clicked 
+2020-12-24 12:33:08,511  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-24 12:33:11,530  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-24 12:33:19,242  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-24 12:33:19,298  INFO [main] User Login Page:213 -  Text displayed is  - 1254000002
+2020-12-24 12:33:19,346  INFO [main] User Login Page:213 -  Text displayed is  - Hardware Product
+2020-12-24 12:33:27,942  INFO [main] User Login Page:97 - Add New clicked 
+2020-12-24 12:33:28,475  INFO [main] User Login Page:143 - product type selected with value - Hardware Product
+2020-12-24 12:33:28,906  INFO [main] User Login Page:76 - Product Name entered with value - IAT20201224123252
+2020-12-24 12:33:29,246  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-24 12:33:30,966  INFO [main] AddProduct-duplicateCodeValidation:75 - Method - duplicateCodeValidation failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\duplicateCodeValidation_20201224123330.png
+2020-12-24 12:39:36,486  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-24 12:39:36,843  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-24 12:39:37,165  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-24 12:39:46,186  INFO [main] User Login Page:97 - Login clicked 
+2020-12-24 12:39:46,531  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-24 12:39:48,347  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-24 12:39:56,863  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-24 12:39:56,922  INFO [main] User Login Page:213 -  Text displayed is  - 1254000002
+2020-12-24 12:39:56,976  INFO [main] User Login Page:213 -  Text displayed is  - Hardware Product
+2020-12-24 12:40:00,553  INFO [main] User Login Page:97 - Add New clicked 
+2020-12-24 12:40:01,168  INFO [main] User Login Page:143 - product type selected with value - Hardware Product
+2020-12-24 12:40:01,623  INFO [main] User Login Page:97 - Alert Popup Close clicked 
+2020-12-24 12:40:02,014  INFO [main] User Login Page:76 - Product Name entered with value - IAT20201224123936
+2020-12-24 12:40:02,284  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-24 12:40:02,681  INFO [main] User Login Page:76 - product code entered with value - 000002
+2020-12-24 12:40:02,997  INFO [main] User Login Page:97 - Save clicked 
+2020-12-24 12:53:03,426  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-24 12:53:03,832  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-24 12:53:04,177  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-24 12:53:06,658  INFO [main] User Login Page:97 - Login clicked 
+2020-12-24 12:53:19,187  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-24 12:53:22,862  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-24 12:53:28,497  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-24 12:53:28,539  INFO [main] User Login Page:213 -  Text displayed is  - 1254000002
+2020-12-24 12:53:28,576  INFO [main] User Login Page:213 -  Text displayed is  - Hardware Product
+2020-12-24 12:53:33,851  INFO [main] User Login Page:97 - Add New clicked 
+2020-12-24 12:53:34,384  INFO [main] User Login Page:143 - product type selected with value - Hardware Product
+2020-12-24 12:53:34,857  INFO [main] User Login Page:97 - Alert Popup Close clicked 
+2020-12-24 12:53:35,249  INFO [main] User Login Page:76 - Product Name entered with value - IAT20201224125302
+2020-12-24 12:53:35,470  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-24 12:53:35,876  INFO [main] User Login Page:76 - product code entered with value - 000002
+2020-12-24 12:53:36,218  INFO [main] User Login Page:97 - Save clicked 
+2020-12-24 13:26:06,343  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-24 13:26:06,753  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-24 13:26:07,089  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-24 13:26:15,287  INFO [main] User Login Page:97 - Login clicked 
+2020-12-24 13:26:32,733  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-24 13:26:41,309  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-24 13:26:52,400  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-24 13:27:08,699  INFO [main] User Login Page:97 - Add New clicked 
+2020-12-24 13:27:09,016  INFO [main] User Login Page:112 - Product Type selected with value - 1
+2020-12-24 13:27:09,488  INFO [main] User Login Page:76 - Product Name entered with value - AT20201224132605
+2020-12-24 13:27:09,717  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-24 13:27:09,943  INFO [main] User Login Page:112 - status selected with value - 1
+2020-12-24 13:27:10,174  INFO [main] User Login Page:112 - Audit selected with value - 1
+2020-12-24 13:27:10,382  INFO [main] User Login Page:112 - Image frequency selected with value - 1
+2020-12-24 13:27:10,625  INFO [main] User Login Page:112 - calibration selected with value - 1
+2020-12-24 13:27:10,677  INFO [main] User Login Page:228 -  get attribute value is  - 5644
+2020-12-24 13:27:11,040  INFO [main] User Login Page:76 - product code entered with value - 132605
+2020-12-24 13:27:11,637  INFO [main] User Login Page:358 - Upload document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\55565.jpg
+2020-12-24 13:27:12,504  INFO [main] User Login Page:76 - description entered with value - The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy.
+2020-12-24 13:27:14,693  INFO [main] User Login Page:197 - unique name click by JS
+2020-12-24 13:27:15,091  INFO [main] User Login Page:76 - For company entered with value - 10000
+2020-12-24 13:27:15,480  INFO [main] User Login Page:76 - For company entered with value - 25474
+2020-12-24 13:27:25,966  INFO [main] User Login Page:97 - Save clicked 
+2020-12-24 13:27:26,464  INFO [main] User Login Page:97 - Close Popup clicked 
+2020-12-24 13:27:26,753  INFO [main] User Login Page:213 -  Text displayed is  - AT20201224132605
+2020-12-24 13:27:26,788  INFO [main] User Login Page:213 -  Text displayed is  - 
+2020-12-24 13:27:26,788  INFO [main] User Login Page:274 - Added Product is saved in the product list page and product list page is not displayed
+2020-12-24 13:27:27,152  INFO [main] User Login Page:213 -  Text displayed is  - 
+2020-12-24 13:27:27,152  INFO [main] User Login Page:288 - Entered Product code is not displayed in the combination of Product type + Product code as 
+2020-12-24 13:27:34,168  INFO [main] User Login Page:97 - Product Name clicked 
+2020-12-24 13:27:34,725  INFO [main] User Login Page:97 - Next button clicked 
+2020-12-24 13:27:46,192  INFO [main] User Login Page:217 - Element not found By.xpath: //section[@class='main-content no-left-bar']//span[@class='p-name text-white']
+2020-12-24 13:27:46,542  INFO [main] AddProduct-addProductUniqueName:75 - Method - addProductUniqueName failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\addProductUniqueName_20201224132746.png
+2020-12-24 13:28:01,742  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-24 13:28:02,069  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-24 13:28:02,359  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-24 13:28:07,728  INFO [main] User Login Page:97 - Login clicked 
+2020-12-24 13:28:20,627  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-24 13:28:31,657  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-24 13:28:46,211  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-24 13:29:05,885  INFO [main] User Login Page:97 - Product clicked 
+2020-12-24 13:29:06,501  INFO [main] User Login Page:97 - Deploy Tab clicked 
+2020-12-24 13:29:08,271  INFO [main] User Login Page:88 - The "Location" Header is displayed in the Deploy listing page
+2020-12-24 13:29:08,287  INFO [main] User Login Page:88 - The "Model" Header is displayed in the Deploy listing page
+2020-12-24 13:29:08,311  INFO [main] User Login Page:88 - The "Ref. PurchaseOrder" Header is displayed in the Deploy listing page
+2020-12-24 13:29:08,345  INFO [main] User Login Page:88 - The "Order Date" Header is displayed in the Deploy listing page
+2020-12-24 13:29:08,379  INFO [main] User Login Page:88 - The "Deployment Type" Header is displayed in the Deploy listing page
+2020-12-24 13:29:08,419  INFO [main] User Login Page:88 - The "Deployed By" Header is displayed in the Deploy listing page
+2020-12-24 13:29:08,467  INFO [main] User Login Page:88 - The "Deployed At" Header is displayed in the Deploy listing page
+2020-12-24 13:29:08,529  INFO [main] User Login Page:88 - The "Quantity" Header is displayed in the Deploy listing page
+2020-12-24 13:29:08,940  INFO [main] DeployProduct-verifyElementsPresence:75 - Method - verifyElementsPresence failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyElementsPresence_20201224132908.png

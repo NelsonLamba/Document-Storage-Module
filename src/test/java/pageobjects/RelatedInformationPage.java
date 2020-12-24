@@ -64,7 +64,7 @@ public class RelatedInformationPage extends WebBasePage {
     public void clickRelatedProduct() {
         String productName=createdProductName;
 //        if(productName!=null) {
-        click(By.xpath("//table[@id='tablelistingdata']//tbody//tr//td//a[normalize-space(text())='" + productName + "']"), "Product", 15);
+        click(By.xpath("//table[@id='tablelistingdata']//tbody//tr//td//a[normalize-space(text())='" + productName + "']"), "Product", 20);
 //        }
 //        else {
 //            click(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//td//a[@id='ancEditAssetType']"),"Product",15);

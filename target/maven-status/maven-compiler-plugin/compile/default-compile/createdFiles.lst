@@ -10,6 +10,7 @@ utils\WebTestBase.class
 utils\Errors.class
 utils\ScreenShots.class
 utils\WebBasePage$8.class
+utils\WebBasePage$12.class
 utils\WebBasePage$3.class
 utils\WebBasePage.class
 utils\WaitStatement.class

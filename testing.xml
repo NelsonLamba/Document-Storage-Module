@@ -5,9 +5,9 @@
     <test name="TestName">
         <classes>
             <class name="testcases.AddProduct"/>
-            <class name="testcases.DeployProduct"/>
-            <class name="testcases.RelatedInformation"/>
-            <class name="testcases.Attachment"/>
+           <class name="testcases.DeployProduct"/>
+               <class name="testcases.RelatedInformation"/>
+              <class name="testcases.Attachment"/>
         </classes>
     </test>
 
