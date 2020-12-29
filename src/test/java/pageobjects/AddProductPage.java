@@ -3,9 +3,12 @@ package pageobjects;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Errors;
 import utils.PropertiesLoader;
 import utils.WebBasePage;
@@ -341,7 +344,11 @@ public class AddProductPage extends WebBasePage {
     }
 
     public void getProductCode() {
-        String productCode = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]//span"), 20);
+
+        new WebDriverWait(driver, 60).until((ExpectedCondition<Boolean>) wd ->
+                ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
+
+        String productCode = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]//span"), 30);
         proCode = productCode.substring(4, 10);
     }
 
@@ -437,7 +444,8 @@ public class AddProductPage extends WebBasePage {
                     getTest().log(LogStatus.PASS, "Error Message is successfully displayed on product code field as " + pCodeErrorMsg);
                     logger.info("Error Message is successfully displayed on product code field as " + pCodeErrorMsg);
                 } else {
-                    getTest().log(LogStatus.FAIL, "Error Message is not displayed as expected for product code field " + pCodeErrorMsg);
+                    handleSuccessPopup();
+                    getTest().log(LogStatus.FAIL, "Error Message is not displayed as expected for product code field");
                     logger.info("Error Message is not Displayed as expected");
                     takeScreenshot("ProductCode");
                 }
@@ -482,7 +490,7 @@ public class AddProductPage extends WebBasePage {
         String actualText;
         String expectedText;
         List<WebElement> errorMessageLocator = findMultipleElement(By.cssSelector("[class='invalid-feedback']"), 15);
-        String[] expectedValue = {"Product Type", "Item Name", "Barcode Type"};
+        String[] expectedValue = {"Product Type", "Product Name", "Barcode Type"};
         for (Object expected : expectedValue) {
             WebElement asteriskField = findElementPresence(By.xpath("//label[text()='" + expected + ":']//span"), 15);
             if (asteriskField != null) {

@@ -1,19 +1,13 @@
 package pageobjects;
 
 import com.relevantcodes.extentreports.LogStatus;
-import org.apache.tools.ant.taskdefs.Available;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import testcases.DeployProduct;
 import utils.Drivers;
 import utils.PropertiesLoader;
 import utils.WebBasePage;
-
 import java.io.File;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -63,12 +57,7 @@ public class RelatedInformationPage extends WebBasePage {
 
     public void clickRelatedProduct() {
         String productName=createdProductName;
-//        if(productName!=null) {
         click(By.xpath("//table[@id='tablelistingdata']//tbody//tr//td//a[normalize-space(text())='" + productName + "']"), "Product", 20);
-//        }
-//        else {
-//            click(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//td//a[@id='ancEditAssetType']"),"Product",15);
-//        }
     }
 
     public void checkRelatedpageHeading() {
@@ -105,7 +94,7 @@ public class RelatedInformationPage extends WebBasePage {
         List<WebElement> listHeader = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tr//th//span"), 30);
         for (WebElement actual : listHeader) {
             List<String> element = expecteListHeader;
-            for (Object expected : expecteListHeader) {
+            for (Object expected : element) {
                 i++;
                 if (actual.getText().equals(expected)) {
                     getTest().log(LogStatus.PASS, "The " + expected + " Header is displayed in the Pending Checkout Page");
@@ -583,18 +572,6 @@ public class RelatedInformationPage extends WebBasePage {
         click(By.cssSelector("a#ancSaveRelatedInfo"), "downloadBarImage", 10);
     }
 
-    public void changeTheStatusDropDown() {
-        selectValueWithIndex(By.cssSelector("#ddlchangeitemsatats"), 3, "SelectStatus", 10);
-    }
-
-    public void editStatusDD() {
-        click(By.cssSelector("//a//i[@id='istatus']"), "Editstatus", 10);
-    }
-
-    public void clickok() {
-        click(By.xpath("//button[@data-bb-handler='confirm']"), "clickok", 10);
-    }
-
     public void editGPS() {
         String gps = prop.getProperty("gps");
         enter(By.cssSelector("input#GPS"), gps, "Edit GPS", 10);
@@ -930,7 +907,7 @@ public class RelatedInformationPage extends WebBasePage {
         List<WebElement> listHeader = driver.findElements(By.xpath("//div[@id='myTabContent']//div//b"));
         for (WebElement actual : listHeader) {
             List<String> element = expecteListHeader;
-            for (Object expected : expecteListHeader) {
+            for (Object expected : element) {
                 i++;
                 String txt1 = actual.getText();
                 String txt = expected.toString();
@@ -977,7 +954,7 @@ public class RelatedInformationPage extends WebBasePage {
         List<WebElement> listHeader = driver.findElements(By.xpath("//table[@id='tblRelatedInfoListing']//thead//tr//th//span"));
         for (WebElement actual : listHeader) {
             List<String> element = expecteListHeader;
-            for (Object expected : expecteListHeader) {
+            for (Object expected : element) {
                 i++;
                 String txt1 = actual.getText();
                 String txt = expected.toString();
@@ -994,41 +971,4 @@ public class RelatedInformationPage extends WebBasePage {
             }
         }
     }
-
-    public void clickManageProducts() {
-        click(By.xpath("//a[@data-original-title='Manage Product' and not (@id='cadmin_messageboard_link')]"), "clickManageproducts", 10);
-    }
-
-    public void chooseproduct() {
-        String element = getText(By.cssSelector("a#ancEditAssetType"), 15);
-        if (element.contains("145hhh")) {
-            click(By.cssSelector("a#ancEditAssetType"), "choose product", 10);
-            getTest().log(LogStatus.PASS, "selected product  is  Displayed");
-        } else {
-            getTest().log(LogStatus.FAIL, "Selected product  is not Displayed");
-            takeScreenshot("SelectedProduct");
-        }
-    }
-
-    public void selectrecordPagination() {
-        String selectRecordPage = prop.getProperty("selectRecordPage");
-        selectValueWithValue(By.cssSelector("#pageSize"), selectRecordPage, "Page size", 10);
-        waitForLoad(20);
-        Select checkrecord = new Select(driver.findElement(By.cssSelector("select#pageSize")));
-        String selectedOption = checkrecord.getFirstSelectedOption().getText();
-        int checkRecord = Integer.parseInt(selectedOption);
-        int recordCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 20).size();
-
-        if (checkRecord == Integer.parseInt(selectRecordPage) && recordCount <= checkRecord) {
-            getTest().log(LogStatus.PASS, "Records are displayed as expected based on the selected page size");
-            logger.info("Records are displayed as expected based on the selected page size");
-
-        } else {
-            getTest().log(LogStatus.FAIL, "Records are not displayed as expected based on the selected page size");
-            logger.info("Records are not displayed as expected based on the selected page size");
-            takeScreenshot("Records");
-        }
-    }
-
-
 }

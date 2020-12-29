@@ -3,6 +3,7 @@ package testcases;
 import Action.CompanySetupAction;
 import Action.DeployProductAction;
 import Action.LoginAction;
+import Action.RelatedInformationAction;
 import org.testng.annotations.Test;
 import utils.WebTestBase;
 

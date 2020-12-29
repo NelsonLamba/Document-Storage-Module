@@ -41,7 +41,6 @@ public class WebBasePage extends WaitStatement {
         driver.get(url);
         getTest().log(LogStatus.PASS, "Url opened - " + url);
     }
-
     public List<WebElement> findMultipleElement(By by, int time) {
         WebElement element = findElementVisibility(by, time);
         List<WebElement> elements=new ArrayList<>();

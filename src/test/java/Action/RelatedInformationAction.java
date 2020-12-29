@@ -145,13 +145,10 @@ public void viewHistoryPageValidations()
     relatedInformationPage.viewHistoryValidations();
 }
 
-    public void checkRecordscount()
-    {
-        relatedInformationPage.selectrecordPagination();
-    }
     public void paginationfunctionality()
     {
         DeployProductPage deployProductPage=new DeployProductPage(driver);
+        deployProductPage.selectrecordPagination();
         deployProductPage.verifyPaginationFunctionalities();
     }
 

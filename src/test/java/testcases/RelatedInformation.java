@@ -138,7 +138,6 @@ public class RelatedInformation extends WebTestBase {
         relatedinfo.navigatetoRelatedProduct();
         relatedinfo.RelatedInformationtab();
         relatedinfo.paginationfunctionality();
-        relatedinfo.checkRecordscount();
     }
 
 }

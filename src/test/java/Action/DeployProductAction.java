@@ -2,6 +2,7 @@ package Action;
 
 import org.openqa.selenium.WebDriver;
 import pageobjects.DeployProductPage;
+import testcases.RelatedInformation;
 import utils.PropertiesLoader;
 
 import java.util.Properties;
@@ -309,6 +310,8 @@ public class DeployProductAction {
     }
     public void verifyPagination()
     {
+        deployProduct.selectrecordPagination();
         deployProduct.verifyPaginationFunctionalities();
     }
+
 }

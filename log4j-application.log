@@ -7295,3 +7295,164 @@ Allowed File Types:.doc,.pdf,.docx,.txt,.jpg
 2020-12-24 13:29:08,467  INFO [main] User Login Page:88 - The "Deployed At" Header is displayed in the Deploy listing page
 2020-12-24 13:29:08,529  INFO [main] User Login Page:88 - The "Quantity" Header is displayed in the Deploy listing page
 2020-12-24 13:29:08,940  INFO [main] DeployProduct-verifyElementsPresence:75 - Method - verifyElementsPresence failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyElementsPresence_20201224132908.png
+2020-12-29 10:25:43,446  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-29 10:25:43,807  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-29 10:25:44,120  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-29 10:25:47,120  INFO [main] User Login Page:97 - Login clicked 
+2020-12-29 10:25:57,473  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-29 10:26:00,775  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-29 10:26:10,174  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-29 10:26:10,231  INFO [main] User Login Page:213 -  Text displayed is  - Test df
+2020-12-29 10:26:20,825  INFO [main] User Login Page:97 - Add New clicked 
+2020-12-29 10:26:21,372  INFO [main] User Login Page:76 - Product Name entered with value - Test df
+2020-12-29 10:26:21,956  INFO [main] User Login Page:97 - bcarcode clicked 
+2020-12-29 10:26:22,063  INFO [main] User Login Page:213 -  Text displayed is  - Product Name already exists
+2020-12-29 10:26:22,064  INFO [main] User Login Page:361 - Error Message is successfully displayed as Product Name already exists
+2020-12-29 10:29:11,198  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-29 10:29:11,618  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-29 10:29:11,968  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-29 10:29:17,368  INFO [main] User Login Page:97 - Login clicked 
+2020-12-29 10:29:31,969  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-29 10:29:32,788  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-29 10:29:42,693  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-29 10:29:49,035  INFO [main] User Login Page:97 - Add New clicked 
+2020-12-29 10:29:49,348  INFO [main] User Login Page:112 - Product Type selected with value - 1
+2020-12-29 10:29:49,773  INFO [main] User Login Page:76 - Product Name entered with value - AT20201229102910
+2020-12-29 10:29:50,094  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-29 10:29:50,327  INFO [main] User Login Page:112 - status selected with value - 1
+2020-12-29 10:29:50,568  INFO [main] User Login Page:112 - Audit selected with value - 1
+2020-12-29 10:29:50,785  INFO [main] User Login Page:112 - Image frequency selected with value - 1
+2020-12-29 10:29:50,997  INFO [main] User Login Page:112 - calibration selected with value - 1
+2020-12-29 10:29:51,032  INFO [main] User Login Page:228 -  get attribute value is  - 5644
+2020-12-29 10:29:51,413  INFO [main] User Login Page:76 - product code entered with value - 102910
+2020-12-29 10:29:52,035  INFO [main] User Login Page:358 - Upload document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\55565.jpg
+2020-12-29 10:29:52,944  INFO [main] User Login Page:76 - description entered with value - The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy.
+2020-12-29 10:29:55,123  INFO [main] User Login Page:197 - unique name click by JS
+2020-12-29 10:29:55,528  INFO [main] User Login Page:76 - For company entered with value - 10000
+2020-12-29 10:29:55,858  INFO [main] User Login Page:76 - For company entered with value - 25474
+2020-12-29 10:30:04,132  INFO [main] User Login Page:97 - Save clicked 
+2020-12-29 10:30:04,722  INFO [main] User Login Page:97 - Close Popup clicked 
+2020-12-29 10:30:04,832  INFO [main] User Login Page:213 -  Text displayed is  - AT20201229102910
+2020-12-29 10:30:04,868  INFO [main] User Login Page:213 -  Text displayed is  - 5644102910
+2020-12-29 10:30:04,868  INFO [main] User Login Page:271 - Added Product is saved in the product list page and product list page is also displayed
+2020-12-29 10:30:04,897  INFO [main] User Login Page:213 -  Text displayed is  - 5644102910
+2020-12-29 10:30:04,898  INFO [main] User Login Page:283 - Entered Product code is displayed with the combination of Product type + Product code as 5644102910
+2020-12-29 10:30:10,600  INFO [main] User Login Page:97 - Product Name clicked 
+2020-12-29 10:30:11,209  INFO [main] User Login Page:97 - Next button clicked 
+2020-12-29 10:30:14,267  INFO [main] User Login Page:213 -  Text displayed is  - Deploy Product
+2020-12-29 10:30:14,267  INFO [main] User Login Page:235 - Deploy Product Tab page is displayed succfully
+2020-12-29 10:35:20,433  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-29 10:35:20,892  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-29 10:35:21,271  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-29 10:35:39,150  INFO [main] User Login Page:97 - Login clicked 
+2020-12-29 10:35:39,467  INFO [main] User Login Page:97 - Ful Menu clicked 
+2020-12-29 10:35:42,577  INFO [main] User Login Page:97 - Asset Management clicked 
+2020-12-29 10:35:52,727  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-29 10:35:52,766  INFO [main] User Login Page:213 -  Text displayed is  - 5644102910
+2020-12-29 10:35:52,800  INFO [main] User Login Page:213 -  Text displayed is  - Food Product
+2020-12-29 10:36:00,234  INFO [main] User Login Page:97 - Add New clicked 
+2020-12-29 10:36:00,772  INFO [main] User Login Page:143 - product type selected with value - Food Product
+2020-12-29 10:36:01,164  INFO [main] User Login Page:76 - Product Name entered with value - IAT20201229103519
+2020-12-29 10:36:01,389  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-29 10:36:01,839  INFO [main] User Login Page:76 - product code entered with value - 102910
+2020-12-29 10:36:12,191  INFO [main] User Login Page:97 - Save clicked 
+2020-12-29 10:36:12,260  INFO [main] User Login Page:213 -  Text displayed is  - Product has been successfully added.
+2020-12-29 10:36:12,261  INFO [main] User Login Page:441 - Error Message is not Displayed as expected
+2020-12-29 11:10:55,995  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-29 11:10:56,426  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-29 11:10:56,765  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-29 11:10:59,107  INFO [main] User Login Page:97 - Login clicked 
+2020-12-29 11:11:33,870  INFO [main] User Login Page:97 - Full Menu clicked 
+2020-12-29 11:11:36,092  INFO [main] User Login Page:97 - clickAssertManagement clicked 
+2020-12-29 11:11:41,953  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-29 11:11:47,871  INFO [main] User Login Page:97 - Product clicked 
+2020-12-29 11:11:48,458  INFO [main] User Login Page:97 - related Information button clicked 
+2020-12-29 11:11:51,787  INFO [main] Company setup page:213 -  Text displayed is  - Showing 1 to 10 of 20 enteries
+2020-12-29 11:11:52,306  INFO [main] Company setup page:97 - Pagination Next clicked 
+2020-12-29 11:11:52,360  INFO [main] Company setup page:213 -  Text displayed is  - Showing 1 to 10 of 20 enteries
+2020-12-29 11:11:52,361  INFO [main] Company setup page:1324 - Next page is not displayed as expected when click on the "Next" pagination button
+2020-12-29 11:11:55,959  INFO [main] Company setup page:97 -  Pagination Previous clicked 
+2020-12-29 11:11:56,032  INFO [main] Company setup page:213 -  Text displayed is  - Showing 11 to 20 of 20 enteries
+2020-12-29 11:11:56,032  INFO [main] Company setup page:1337 - Previous page is not displayed as expected when click on the "Previous" pagination button
+2020-12-29 11:12:14,567  INFO [main] Company setup page:100 - Pagination Last not clicked
+2020-12-29 11:12:30,214  INFO [main] RelatedInformation-verifyPagination:75 - Method - verifyPagination failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyPagination_20201229111229.png
+2020-12-29 11:14:02,948  INFO [main] User Login Page:76 - User Name entered with value - safiya@yopmail.com
+2020-12-29 11:14:03,311  INFO [main] User Login Page:76 - Password entered with value - talygen@123
+2020-12-29 11:14:03,622  INFO [main] User Login Page:97 - Privacy Policy clicked 
+2020-12-29 11:14:17,473  INFO [main] User Login Page:97 - Login clicked 
+2020-12-29 11:14:17,825  INFO [main] User Login Page:97 - Full Menu clicked 
+2020-12-29 11:14:19,626  INFO [main] User Login Page:97 - clickAssertManagement clicked 
+2020-12-29 11:14:30,296  INFO [main] User Login Page:97 - Manage Product clicked 
+2020-12-29 11:14:30,626  INFO [main] User Login Page:97 - Product clicked 
+2020-12-29 11:14:56,464  INFO [main] User Login Page:97 - related Information button clicked 
+2020-12-29 11:14:57,576  INFO [main] Company setup page:213 -  Text displayed is  - Showing 1 to 10 of 20 enteries
+2020-12-29 11:14:58,076  INFO [main] Company setup page:97 - Pagination Next clicked 
+2020-12-29 11:14:58,149  INFO [main] Company setup page:213 -  Text displayed is  - Showing 1 to 10 of 20 enteries
+2020-12-29 11:14:58,149  INFO [main] Company setup page:1324 - Next page is not displayed as expected when click on the "Next" pagination button
+2020-12-29 11:14:59,595  INFO [main] Company setup page:97 -  Pagination Previous clicked 
+2020-12-29 11:14:59,682  INFO [main] Company setup page:213 -  Text displayed is  - Showing 11 to 20 of 20 enteries
+2020-12-29 11:14:59,682  INFO [main] Company setup page:1337 - Previous page is not displayed as expected when click on the "Previous" pagination button
+2020-12-29 11:15:16,639  INFO [main] Company setup page:100 - Pagination Last not clicked
+2020-12-29 11:15:22,193  INFO [main] RelatedInformation-verifyPagination:75 - Method - verifyPagination failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyPagination_20201229111521.png
+2020-12-29 11:25:39,859  INFO [main] User Login Page:83 - User Name entered with value - safiya@yopmail.com
+2020-12-29 11:25:40,256  INFO [main] User Login Page:83 - Password entered with value - talygen@123
+2020-12-29 11:25:40,611  INFO [main] User Login Page:104 - Privacy Policy clicked 
+2020-12-29 11:25:46,295  INFO [main] User Login Page:104 - Login clicked 
+2020-12-29 11:26:09,786  INFO [main] User Login Page:104 - Full Menu clicked 
+2020-12-29 11:26:19,869  INFO [main] User Login Page:104 - clickAssertManagement clicked 
+2020-12-29 11:26:38,869  INFO [main] User Login Page:104 - Manage Product clicked 
+2020-12-29 11:26:39,186  INFO [main] User Login Page:104 - Product clicked 
+2020-12-29 11:27:01,769  INFO [main] User Login Page:107 - related Information button not clicked
+2020-12-29 11:28:23,734  INFO [main] RelatedInformation-verifyPagination:75 - Method - verifyPagination failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyPagination_20201229112801.png
+2020-12-29 11:29:18,690  INFO [main] User Login Page:83 - User Name entered with value - safiya@yopmail.com
+2020-12-29 11:29:19,109  INFO [main] User Login Page:83 - Password entered with value - talygen@123
+2020-12-29 11:29:19,482  INFO [main] User Login Page:104 - Privacy Policy clicked 
+2020-12-29 11:29:25,980  INFO [main] User Login Page:104 - Login clicked 
+2020-12-29 11:29:41,285  INFO [main] User Login Page:107 - Full Menu not clicked
+2020-12-29 11:29:42,457  INFO [main] RelatedInformation-verifyPagination:75 - Method - verifyPagination failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyPagination_20201229112942.png
+2020-12-29 11:44:56,247  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-29 11:44:56,659  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-29 11:44:57,005  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-29 11:45:04,557  INFO [main] User Login Page:96 - Login clicked 
+2020-12-29 11:45:14,074  INFO [main] User Login Page:96 - Full Menu clicked 
+2020-12-29 11:45:16,631  INFO [main] User Login Page:96 - clickAssertManagement clicked 
+2020-12-29 11:45:29,006  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-29 11:45:33,100  INFO [main] User Login Page:96 - Product clicked 
+2020-12-29 11:45:33,738  INFO [main] User Login Page:96 - related Information button clicked 
+2020-12-29 11:45:35,852  INFO [main] Company setup page:212 -  Text displayed is  - Showing 1 to 10 of 20 enteries
+2020-12-29 11:45:35,993  INFO [main] Company setup page:212 -  Text displayed is  - AT20201228202811_10
+2020-12-29 11:45:36,419  INFO [main] Company setup page:96 - Pagination Next clicked 
+2020-12-29 11:45:39,871  INFO [main] Company setup page:212 -  Text displayed is  - Showing 11 to 20 of 20 enteries
+2020-12-29 11:45:39,871  INFO [main] Company setup page:1324 - Next page is displayed as expected when click on the "Next" pagination button
+2020-12-29 11:45:39,992  INFO [main] Company setup page:212 -  Text displayed is  - AT20201228202811_20
+2020-12-29 11:45:40,501  INFO [main] Company setup page:96 -  Pagination Previous clicked 
+2020-12-29 11:45:43,322  INFO [main] Company setup page:212 -  Text displayed is  - Showing 1 to 10 of 20 enteries
+2020-12-29 11:45:43,323  INFO [main] Company setup page:1340 - Previous page is displayed as expected when click on the "Previous" pagination button
+2020-12-29 11:45:44,529  INFO [main] Company setup page:212 -  Text displayed is  - AT20201228202811_10
+2020-12-29 11:45:45,043  INFO [main] Company setup page:96 - Pagination Last clicked 
+2020-12-29 11:45:48,037  INFO [main] Company setup page:212 -  Text displayed is  - Showing 11 to 20 of 20 enteries
+2020-12-29 11:45:48,037  INFO [main] Company setup page:1356 - Last page is displayed as expected when click on the "Last" pagination button
+2020-12-29 11:45:48,167  INFO [main] Company setup page:212 -  Text displayed is  - AT20201228202811_20
+2020-12-29 11:45:48,696  INFO [main] Company setup page:96 - Pagination First clicked 
+2020-12-29 11:45:52,580  INFO [main] Company setup page:212 -  Text displayed is  - Showing 1 to 10 of 20 enteries
+2020-12-29 11:45:52,580  INFO [main] Company setup page:1372 - First page is displayed as expected when click on the "First" pagination button
+2020-12-29 11:45:52,871  INFO [main] Company setup page:126 - Page size selected with value - 50
+2020-12-29 11:45:53,076  INFO [main] Company setup page:1025 - Records are displayed as expected based on the selected page size
+2020-12-29 12:12:48,741  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-29 12:12:49,198  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-29 12:12:49,542  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-29 12:12:51,949  INFO [main] User Login Page:96 - Login clicked 
+2020-12-29 12:13:08,302  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-29 12:13:13,288  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-29 12:13:23,173  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-29 12:13:23,240  INFO [main] User Login Page:212 -  Text displayed is  - 5644111748
+2020-12-29 12:13:23,286  INFO [main] User Login Page:212 -  Text displayed is  - Food Product
+2020-12-29 12:13:26,972  INFO [main] User Login Page:96 - Add New clicked 
+2020-12-29 12:13:27,488  INFO [main] User Login Page:142 - product type selected with value - Food Product
+2020-12-29 12:13:27,938  INFO [main] User Login Page:75 - Product Name entered with value - IAT20201229121248
+2020-12-29 12:13:28,175  INFO [main] User Login Page:111 - Barcode type selected with value - 1
+2020-12-29 12:13:28,572  INFO [main] User Login Page:75 - product code entered with value - 111748
+2020-12-29 12:13:32,686  INFO [main] User Login Page:96 - Save clicked 
+2020-12-29 12:13:32,758  INFO [main] User Login Page:212 -  Text displayed is  - Product has been successfully added.
+2020-12-29 12:13:33,403  INFO [main] User Login Page:96 - Close Popup clicked 
+2020-12-29 12:13:33,403  INFO [main] User Login Page:449 - Error Message is not Displayed as expected

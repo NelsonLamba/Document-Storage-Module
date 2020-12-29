@@ -4,6 +4,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import utils.PropertiesLoader;
 import utils.WebBasePage;
 
@@ -56,12 +57,7 @@ public class DeployProductPage extends WebBasePage {
 
     public void openProduct() {
         String productName = createdProductName;
-//        if(productName!=null) {
         click(By.xpath("//table[@id='tablelistingdata']//tbody//tr//td//a[normalize-space(text())='" + productName + "']"), "Product", 20);
-//        }
-//        else {
-//            click(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//td//a[@id='ancEditAssetType']"),"Product",15);
-//        }
     }
 
     public void verifyListingColumnHeader() {
@@ -1312,8 +1308,11 @@ public class DeployProductPage extends WebBasePage {
         int totalRecordCount = Integer.parseInt(defaultpaginationText[5]);
         WebElement paginationNavigator = findElementVisibility(By.xpath("//div[@class='nu-paging']//li//ul"), 15);
         if (paginationNavigator != null) {
+            int recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
+            String lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
             click(By.xpath("//a[@class='page-link next' and text()='Next']"), "Pagination Next", 15);
-            waitForLoad(20);
+            wairForLoader(20);
+            waitForInVisibilityOfElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
             String[] nextPaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int nextPageStartRecordCount = Integer.parseInt(nextPaginationText[1]);
             if (nextPageStartRecordCount == defaultEndCount + 1) {
@@ -1325,8 +1324,11 @@ public class DeployProductPage extends WebBasePage {
                 takeScreenshot("PaginationNext");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link previous' and text()='Prev']"), 20);
+            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
+            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
             click(By.xpath("//a[@class='page-link previous' and text()='Prev']"), " Pagination Previous", 15);
-            waitForLoad(20);
+            wairForLoader(20);
+            waitForInVisibilityOfElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
             String[] previousPaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int previousPageEndCount = Integer.parseInt(previousPaginationText[3]);
             if (previousPageEndCount == nextPageStartRecordCount - 1) {
@@ -1338,8 +1340,11 @@ public class DeployProductPage extends WebBasePage {
                 takeScreenshot("PaginationPrevious");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link next' and text()='Last ']"), 20);
+            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
+            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
             click(By.xpath("//a[@class='page-link next' and text()='Last ']"), "Pagination Last", 15);
-            waitForLoad(20);
+            wairForLoader(20);
+            waitForInVisibilityOfElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
             String[] lastPagePaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int lastPageEndCount = Integer.parseInt(lastPagePaginationText[3]);
             if (lastPageEndCount == totalRecordCount) {
@@ -1351,8 +1356,11 @@ public class DeployProductPage extends WebBasePage {
                 takeScreenshot("PaginationLast");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link  first' and text()='First ']"), 20);
+            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
+            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
             click(By.xpath("//a[@class='page-link  first' and text()='First ']"), "Pagination First", 15);
-            waitForLoad(20);
+            wairForLoader(20);
+            waitForInVisibilityOfElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
             String[] firstPagePaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int firstPageStartRecordCount = Integer.parseInt(firstPagePaginationText[1]);
             if (firstPageStartRecordCount == defaultStartRecordCount) {
@@ -1363,6 +1371,25 @@ public class DeployProductPage extends WebBasePage {
                 logger.info("First page is not displayed as expected when click on the \"First\" pagination button");
                 takeScreenshot("PaginationFirst");
             }
+        }
+    }
+    public void selectrecordPagination() {
+        String selectRecordPage = prop.getProperty("selectRecordPage");
+        selectValueWithValue(By.cssSelector("#pageSize"), selectRecordPage, "Page size", 10);
+        waitForLoad(20);
+        Select checkrecord = new Select(driver.findElement(By.cssSelector("select#pageSize")));
+        String selectedOption = checkrecord.getFirstSelectedOption().getText();
+        int checkRecord = Integer.parseInt(selectedOption);
+        int recordCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 20).size();
+
+        if (checkRecord == Integer.parseInt(selectRecordPage) && recordCount <= checkRecord) {
+            getTest().log(LogStatus.PASS, "Records are displayed as expected based on the selected page size");
+            logger.info("Records are displayed as expected based on the selected page size");
+
+        } else {
+            getTest().log(LogStatus.FAIL, "Records are not displayed as expected based on the selected page size");
+            logger.info("Records are not displayed as expected based on the selected page size");
+            takeScreenshot("Records");
         }
     }
 }
