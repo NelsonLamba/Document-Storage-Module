@@ -104,7 +104,8 @@ public class WebBasePage extends WaitStatement {
 
     public void selectValueWithIndex(By by, int value, String name, int time) {
         WebElement element = findElementVisibility(by, time);
-        if (element != null) {
+        boolean elementEnabled = findElementVisibility(by, time).isEnabled();
+        if (element != null && elementEnabled) {
             Select se = new Select(element);
             se.selectByIndex(value);
             getTest().log(LogStatus.PASS, name + " selected with index - " + value);

@@ -159,6 +159,7 @@ public class DeployProductAction {
         deployProduct.productCostMinimum();
         deployProduct.productCostMaximum();
         deployProduct.productCostMoreThanMaximum();
+        deployProduct.clickCloseButton();
     }
     public void verifyReferenceField()
     {
@@ -221,7 +222,7 @@ public class DeployProductAction {
         deployProduct.clickInsuranceDateField();
         deployProduct.verifyClickableFutureDate("Insurance");
     }
-    public void verifySelectedWarrantyDate()
+    public void verifyCurrentWarrantyDate()
     {
         deployProduct.clickWarrantyDateField();
         deployProduct.verifyWithCurrentDate("Warranty");
@@ -246,7 +247,8 @@ public class DeployProductAction {
     }
     public void verifyProducLifeField()
     {
-        deployProduct.verifyProductLifeMandatory();
+        deployProduct.verifyProductLifeAsteriskSymbol();
+        deployProduct.verifyProductLifeMandatoryError();
         deployProduct.verifyProductLifeNumeric();
         deployProduct.verifyProductLifeAlphaNumeric();
         deployProduct.verifyProductLifeMaximumChar();
@@ -306,7 +308,7 @@ public class DeployProductAction {
     {
         deployProduct.verifyAddToListButton();
         deployProduct.clickAddListButton();
-        deployProduct.verifyDeployList(prop.getProperty("modelNameToCreate"));
+        deployProduct.verifyDeployList();
     }
     public void verifyPagination()
     {

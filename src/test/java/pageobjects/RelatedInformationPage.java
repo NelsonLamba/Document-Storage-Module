@@ -930,7 +930,7 @@ public class RelatedInformationPage extends WebBasePage {
         click(By.xpath("//a[text()='Pending Check Out List']"), "pending checkout List", 10);
         String element = getText(By.xpath("//span[normalize-space(@id)='ASSETGROUP']"), 15);
 
-        if (element.contains("Item Name")) {
+        if (element.contains("Unique Name")) {
             getTest().log(LogStatus.PASS, "Pending Check Out List  Page is  Displayed");
             logger.info("Pending Check Out List  Page is  Displayed");
         } else {

@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import testcases.DeployProduct;
 import utils.Errors;
 import utils.PropertiesLoader;
 import utils.WebBasePage;
@@ -103,10 +104,12 @@ public class AddProductPage extends WebBasePage {
     public void enterUniqueItemName() {
         itemNameRandomValue = prop.getProperty("productName") + dateValue;
         enter(By.cssSelector("div>input#Name"), itemNameRandomValue, "Product Name", 10);
+        createdProductName = itemNameRandomValue;
     }
     public void enterItemName() {
         itemNameRandomValue = prop.getProperty("productName") + dateValue;
         enter(By.cssSelector("div>input#Name"), "I"+itemNameRandomValue, "Product Name", 10);
+        createdProductName = itemNameRandomValue;
     }
 
     public void enterProductNameWithAlphaNumeric() {
@@ -230,8 +233,8 @@ public class AddProductPage extends WebBasePage {
 
     public void clickNextButton() {
         click(By.cssSelector("a#btnNext"), "Next button", 10);
-        waitForVisibilityOfElement(By.xpath("//section[@class='main-content no-left-bar']//span[@class='p-name text-white']"), 30);
-        String deployTab = getText(By.xpath("//section[@class='main-content no-left-bar']//span[@class='p-name text-white']"), 10);
+        waitForVisibilityOfElement(By.xpath("//div[@aria-labelledby='DeployProduct-tab']//section[@class='page-action']//span"), 30);
+        String deployTab = getText(By.xpath("//div[@aria-labelledby='DeployProduct-tab']//section[@class='page-action']//span"), 10);
         String deployProduct = prop.getProperty("deployTab");
         if (deployProduct.equals(deployTab)) {
             getTest().log(LogStatus.PASS, "Deploy Product Tab page is displayed successfully ");
@@ -484,7 +487,65 @@ public class AddProductPage extends WebBasePage {
 
     }
 
+    public void checkNotUniqueName()
+    {
+        DeployProductPage deployProduct=new DeployProductPage(driver);
+        RelatedInformationPage relatedInformation=new RelatedInformationPage(driver);
+        deployProduct.openProduct();
+        deployProduct.navigateToDeployTab();
+        deployProduct.clickAddDeployButton();
+        deployProduct.clickLocationDropdown();
+        deployProduct.selectLocationValueFromDropdown();
+        deployProduct.enterQuantity("1");
+        deployProduct.enterUnitPrice("1");
+        deployProduct.enterProductCost("1");
+        deployProduct.clickAddListButton();
+        deployProduct.clickSaveButton();
+        deployProduct.handleSuccessPopup();
+        relatedInformation.clickRelatedInformationTab();
 
+        String actualName=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//a[@class='editinfo']"),20).trim();
+        if(createdProductName.equals(actualName))
+        {
+            getTest().log(LogStatus.PASS, "Unique Name is not generated as expected");
+            logger.info("Unique Name is not generated as expected");
+        }
+        else
+        {
+            getTest().log(LogStatus.FAIL, "Unique Name is generated as "+actualName);
+            logger.info("Unique Name is generated as "+actualName);
+            takeScreenshot("UniqueName");
+        }
+    }
+    public void checkUniqueName()
+    {
+        DeployProductPage deployProduct=new DeployProductPage(driver);
+        RelatedInformationPage relatedInformation=new RelatedInformationPage(driver);
+        deployProduct.navigateToDeployTab();
+        deployProduct.clickAddDeployButton();
+        deployProduct.clickLocationDropdown();
+        deployProduct.selectLocationValueFromDropdown();
+        deployProduct.enterQuantity("1");
+        deployProduct.enterUnitPrice("1");
+        deployProduct.enterProductCost("1");
+        deployProduct.clickAddListButton();
+        deployProduct.clickSaveButton();
+        deployProduct.handleSuccessPopup();
+        relatedInformation.clickRelatedInformationTab();
+
+        String actualName=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//a[@class='editinfo']"),20).trim();
+        if(!createdProductName.equals(actualName))
+        {
+            getTest().log(LogStatus.PASS, "Unique Name is generated as expected. Unique Name is "+actualName);
+            logger.info("Unique Name is generated as expected. Unique Name is "+actualName);
+        }
+        else
+        {
+            getTest().log(LogStatus.FAIL, "Unique Name is not generated as expected");
+            logger.info("Unique Name is not generated as expected");
+            takeScreenshot("UniqueName");
+        }
+    }
     public void verifymandatoryFieldValidationOnAsteriskSymbolField() {
         int i = 0;
         String actualText;

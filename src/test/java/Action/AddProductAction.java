@@ -144,12 +144,19 @@ public class AddProductAction
         addProductPage.enterProductCode();
         addProductPage.uploadDocument();
         addProductPage.enterDescription();
-        addProductPage.clickTheCheckBox();
         addProductPage.enterStockValueForompany();
         addProductPage.enterStockValueForEmployee();
         addProductPage.clickSaveButton();
         addProductPage.handleSuccessPopup();
     }
+        public void verifyNotUniqueName()
+        {
+            addProductPage.checkNotUniqueName();
+        }
+        public void verifyUniqueName()
+        {
+            addProductPage.checkUniqueName();
+        }
 
     public void deployTab()
     {

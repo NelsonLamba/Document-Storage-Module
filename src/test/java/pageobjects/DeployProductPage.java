@@ -106,7 +106,7 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void verifyDepolyProductAddButton() {
-        WebElement addButton = findElementVisibility(By.cssSelector(".theme-primary>span>a>i"), 15);
+        WebElement addButton = findElementVisibility(By.cssSelector("#ancDeployItems"), 15);
         if (addButton != null) {
             getTest().log(LogStatus.PASS, "\"Deploy Product Add Button\" is displayed in the Deploy product page");
             logger.info("\"Deploy Product Add Button\" is displayed in the Deploy product page");
@@ -204,8 +204,8 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void verifyNextPage() {
-        waitForVisibilityOfElement(By.xpath("//div[@class='theme-primary partition-full']//span[text()='Related Information']"), 20);
-        WebElement relatedInformationHeader = findElementVisibility(By.xpath("//div[@class='theme-primary partition-full']//span[text()='Related Information']"), 15);
+        waitForVisibilityOfElement(By.xpath("//div[@aria-labelledby=\"RelatedInformation-tab\"]//h5//span"), 20);
+        WebElement relatedInformationHeader = findElementVisibility(By.xpath("//div[@aria-labelledby='RelatedInformation-tab']//span[text()='Related Information']"), 15);
         if (relatedInformationHeader != null) {
             getTest().log(LogStatus.PASS, "\"Related Information page\" is displayed when click Next button in \"Deploy Product page\"");
             logger.info("\"Related Information page\" is displayed when click Next button in \"Deploy Product page\"");
@@ -268,7 +268,7 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void enterVendor(String vendor) {
-        enter(By.cssSelector("div>input#Vendor"), "Test Vendor", "Vendor", 15);
+        enter(By.cssSelector("div>input#Vendor"), vendor, "Vendor", 15);
     }
 
     public void enterProductCost(String productCost) {
@@ -314,6 +314,7 @@ public class DeployProductPage extends WebBasePage {
     public void handleSuccessPopup() {
         waitForVisibilityOfElement(By.cssSelector("div.alert-success"), 20);
         click(By.cssSelector("#closenotifymessage"), "Close Popup", 15);
+        wairForLoader(20);
     }
 
     public void verifyCreatedDeployProduct() {
@@ -448,6 +449,7 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void make100PageSize() {
+        findElementVisibility(By.cssSelector("select#pageSize"),20).isEnabled();
         selectValueWithValue(By.cssSelector("select#pageSize"), "100", "Page Size", 15);
         wairForLoader(20);
     }
@@ -473,6 +475,8 @@ public class DeployProductPage extends WebBasePage {
         String text1;
         String text2;
         String locator = (locationType.equals("parent")) ? ".scrollbar>li>a>span" : "ul.child>li>a>div";
+        waitForVisibilityOfElement(By.cssSelector(locator),20);
+        int locationCount=findMultipleElement(By.cssSelector(locator),20).size();
         List<WebElement> locations = findMultipleElement(By.cssSelector(locator), 15);
         for (WebElement actualElement : locations) {
             List<String> expectedLocationNames = (locationType.equals("parent")) ? parentLocationNameList : childLocationNameList;
@@ -555,7 +559,7 @@ public class DeployProductPage extends WebBasePage {
 
     public void verifyModelFieldValidation() {
         String modelName = prop.getProperty("alphaNumericModelName");
-        enterModel(modelName);
+        enter(By.cssSelector("input#Model"),modelName,"Model Name",15);
         String actualText = findElementVisibility(By.cssSelector("div>input#Model"), 15).getAttribute("value");
         if (modelName.equals(actualText)) {
             getTest().log(LogStatus.PASS, "Model Name field is accept alpha numeric character as expected. Accepted value : " + actualText);
@@ -572,11 +576,11 @@ public class DeployProductPage extends WebBasePage {
         enterManufacturer(manufacturerName);
         String actualText = findElementVisibility(By.cssSelector("div>input#Manufacturer"), 15).getAttribute("value");
         if (manufacturerName.equals(actualText)) {
-            getTest().log(LogStatus.PASS, "Manufaturer Name field is accept the data as expected. Accepted value : " + actualText);
-            logger.info("Manufaturer Name field is accept the data as expected. Accepted value : " + actualText);
+            getTest().log(LogStatus.PASS, "Manufacturer Name field is accept the data as expected. Accepted value : " + actualText);
+            logger.info("Manufacturer Name field is accept the data as expected. Accepted value : " + actualText);
         } else {
-            getTest().log(LogStatus.FAIL, "Manufaturer Name field is not working as expected. It accept the Value \"" + manufacturerName + "\"");
-            logger.info("Manufaturer Naem field is not working as expected. It accept the Value \"" + manufacturerName + "\"");
+            getTest().log(LogStatus.FAIL, "Manufacturer Name field is not working as expected. It accept the Value \"" + manufacturerName + "\"");
+            logger.info("Manufacturer Naem field is not working as expected. It accept the Value \"" + manufacturerName + "\"");
             takeScreenshot("ManufacturerName");
         }
     }
@@ -588,11 +592,11 @@ public class DeployProductPage extends WebBasePage {
             clickAddListButton();
             WebElement manufacturerError = findElementVisibility(By.xpath("//input[@id='Manufacturer']//parent::div//span[@for='Manufacturer']"), 5);
             if (manufacturerError != null) {
-                getTest().log(LogStatus.PASS, "Manufaturer Name field displayed the error message as expected for the charc \"" + str + "\"");
-                logger.info("Manufaturer Name field displayed the error message as expected for the charc \"" + str + "\"");
+                getTest().log(LogStatus.PASS, "Manufacturer Name field displayed the error message as expected for the character \"" + str + "\"");
+                logger.info("Manufacturer Name field displayed the error message as expected for the character \"" + str + "\"");
             } else {
-                getTest().log(LogStatus.FAIL, "Manufaturer Name field is not displayed the error message as expected for the charc \"" + str + "\"");
-                logger.info("Manufaturer Name field is not displayed the error message as expected for the charc \"" + str + "\"");
+                getTest().log(LogStatus.FAIL, "Manufacturer Name field is not displayed the error message as expected for the character \"" + str + "\"");
+                logger.info("Manufacturer Name field is not displayed the error message as expected for the character \"" + str + "\"");
                 takeScreenshot("ManufacturerSpclCharRej");
             }
         }
@@ -605,11 +609,11 @@ public class DeployProductPage extends WebBasePage {
             clickAddListButton();
             WebElement manufacturerError = findElementVisibility(By.xpath("//input[@id='Manufacturer']//parent::div//span[@for='Manufacturer']"), 5);
             if (manufacturerError == null) {
-                getTest().log(LogStatus.PASS, "Manufaturer Name field accepts the value \"" + str + "\" as expected");
-                logger.info("Manufaturer Name field accepts the value \"" + str + "\" as expected");
+                getTest().log(LogStatus.PASS, "Manufacturer Name field accepts the value \"" + str + "\" as expected");
+                logger.info("Manufacturer Name field accepts the value \"" + str + "\" as expected");
             } else {
-                getTest().log(LogStatus.FAIL, "Manufaturer Name field displayed the error message for the charc special character \"" + str + "\"");
-                logger.info("Manufaturer Name field displayed the error message for the charc special character \"" + str + "\"");
+                getTest().log(LogStatus.FAIL, "Manufacturer Name field displayed the error message for the special character \"" + str + "\"");
+                logger.info("Manufacturer Name field displayed the error message for the special character \"" + str + "\"");
                 takeScreenshot("ManufacturerSpclAcc");
             }
         }
@@ -854,20 +858,21 @@ public class DeployProductPage extends WebBasePage {
 
     public String selectDate(String date) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("d/MMM/yyyy");
+        DateTimeFormatter monthName = DateTimeFormatter.ofPattern("M");
         LocalDateTime now = LocalDateTime.now();
-        String currentDate = dtf.format(now);
+        String monthChar = monthName.format(now);
         inputDate = (date.equals("Old")) ? dtf.format(now.minusDays(1)) : (date.equals("Future")) ? dtf.format(now.plusDays(1)) : dtf.format(now);
         String[] inputDateArray = inputDate.split("/");
         String day = inputDateArray[0];
         String month = inputDateArray[1];
         String year = inputDateArray[2];
-        click(By.cssSelector(".picker-switch"), "Mont&Year popup", 15);
+        click(By.cssSelector(".picker-switch"), "Month & Year popup", 25);
         click(By.cssSelector("[title='Select Year']"), "Year popup", 15);
         click(By.xpath("//span[contains(@class,'year') and text()='" + year + "']"), "Year Value", 15);
         click(By.xpath("//span[contains(@class,'month') and text()='" + month + "']"), "Month Value", 15);
-        String dayClass = findElementVisibility(By.xpath("//td[contains(@class,'day') and text()='" + day + "']"), 15).getAttribute("class");
+        String dayClass = findElementVisibility(By.xpath("//td[@data-day='"+monthChar+"/"+day+"/"+year+"']"), 15).getAttribute("class");
         if (!dayClass.contains("disabled")) {
-            findElementClickable(By.xpath("//td[contains(@class,'day') and text()='" + day + "']"), 15).click();
+            findElementClickable(By.xpath("//td[@data-day='"+monthChar+"/"+day+"/"+year+"']"), 15).click();
         }
         return dayClass;
     }
@@ -1024,11 +1029,11 @@ public class DeployProductPage extends WebBasePage {
             clickAddListButton();
             WebElement refPurchaseOrderError = findElementVisibility(By.xpath("//input[@id='InvoiceNumber']//parent::div//span[@for='PurchaseOrder']"), 5);
             if (refPurchaseOrderError == null) {
-                getTest().log(LogStatus.PASS, "Inoice Number field accepts the value \"" + str + "\" as expected");
-                logger.info("Inoice Number field accepts the value \"" + str + "\" as expected");
+                getTest().log(LogStatus.PASS, "Invoice Number field accepts the value \"" + str + "\" as expected");
+                logger.info("Invoice Number field accepts the value \"" + str + "\" as expected");
             } else {
-                getTest().log(LogStatus.FAIL, "Inoice Number field displayed the error message for the charc special character \"" + str + "\"");
-                logger.info("Inoice Number field displayed the error message for the charc special character \"" + str + "\"");
+                getTest().log(LogStatus.FAIL, "Invoice Number field displayed the error message for the charc special character \"" + str + "\"");
+                logger.info("Invoice Number field displayed the error message for the charc special character \"" + str + "\"");
                 takeScreenshot("InvoiceNumber");
             }
         }
@@ -1039,13 +1044,13 @@ public class DeployProductPage extends WebBasePage {
         for (String str : specialCharReject) {
             enterInvoiceNumber(str);
             clickAddListButton();
-            WebElement refPurchaseOrderError = findElementVisibility(By.xpath("//input[@id='InvoiceNumber']//parent::div//span[@for='PurchaseOrder']"), 5);
+            WebElement refPurchaseOrderError = findElementVisibility(By.xpath("//input[@id='InvoiceNumber']//parent::div//span[@for='InvoiceNumber']"), 5);
             if (refPurchaseOrderError != null) {
-                getTest().log(LogStatus.PASS, "Inoice Number field displayed the error message as expected for the charc \"" + str + "\"");
-                logger.info("Inoice Number field displayed the error message as expected for the charc \"" + str + "\"");
+                getTest().log(LogStatus.PASS, "Invoice Number field displayed the error message as expected for the charc \"" + str + "\"");
+                logger.info("Invoice Number field displayed the error message as expected for the charc \"" + str + "\"");
             } else {
-                getTest().log(LogStatus.FAIL, "Inoice Number field is not displayed the error message as expected for the charc \"" + str + "\"");
-                logger.info("Inoice Number field is not displayed the error message as expected for the charc \"" + str + "\"");
+                getTest().log(LogStatus.FAIL, "Invoice Number field is not displayed the error message as expected for the charc \"" + str + "\"");
+                logger.info("Invoice Number field is not displayed the error message as expected for the charc \"" + str + "\"");
                 takeScreenshot("InvoiceNumber");
             }
         }
@@ -1068,7 +1073,7 @@ public class DeployProductPage extends WebBasePage {
     public void verifyInsurerNameAlphaNumeric() {
         String insurarName = prop.getProperty("insurerNameAlphaNumeric");
         enterInsurarName(insurarName);
-        String actualText = findElementVisibility(By.cssSelector("div>input#InsurerName"), 15).getText();
+        String actualText = findElementVisibility(By.cssSelector("div>input#InsurerName"), 15).getAttribute("value");
         if (insurarName.equals(actualText)) {
             getTest().log(LogStatus.PASS, "Insurar Name field is accept the data with alpha numeric character");
             logger.info("Insurar Name field is accept the data with alpha numeric character");
@@ -1115,11 +1120,23 @@ public class DeployProductPage extends WebBasePage {
         }
     }
 
-    public void verifyProductLifeMandatory() {
-        int beforeDepreciationRule = findMultipleElement(By.xpath("//form[@id='AdddEditeploy']//div[@class='row']//span[@class='text-danger']"), 15).size();
+    public void verifyProductLifeAsteriskSymbol() {
+        int beforeDepreciationRule = findMultipleElement(By.xpath("//div[@class='modal-content']//label//span[text()='*']"), 15).size();
         selectDepreciationRule();
-        int afterDepreciationRule = findMultipleElement(By.xpath("//form[@id='AdddEditeploy']//div[@class='row']//span[@class='text-danger']"), 15).size();
+        int afterDepreciationRule = findMultipleElement(By.xpath("//div[@class='modal-content']//label//span[text()='*']"), 15).size();
         if (beforeDepreciationRule < afterDepreciationRule) {
+            getTest().log(LogStatus.PASS, "Product Life field displays asterisk symbol after selecting depreciation rule");
+            logger.info("Product Life field displays asterisk symbol after selecting depreciation rule");
+        } else {
+            getTest().log(LogStatus.FAIL, "Product Life field is not displayed asterisk symbol after selecting depreciation rule");
+            logger.info("Product Life field is not displayed asterisk symbol after selecting depreciation rule");
+            takeScreenshot("ProductLife");
+        }
+    }
+    public void verifyProductLifeMandatoryError() {
+        clickAddListButton();
+        String productLifeError=findElementVisibility(By.xpath("//input[@id='ItemLife']//parent::div//span[@class='invalid-feedback']"),20).getText();
+        if (productLifeError.contains("Product Life")) {
             getTest().log(LogStatus.PASS, "Product Life field is displayed as mandatory after selecting depreciation rule");
             logger.info("Product Life field is displayed as mandatory after selecting depreciation rule");
         } else {
@@ -1148,11 +1165,11 @@ public class DeployProductPage extends WebBasePage {
         enterProductLife(year);
         String actualText = findElementVisibility(By.cssSelector("div>input#ItemLife"), 15).getAttribute("value");
         if (!actualText.equals(year)) {
-            getTest().log(LogStatus.PASS, "Product Life field accepts the data with alpha numeric character as expected. Entered date : " + year);
-            logger.info("Product Life field accepts the data with alpha numeric character as expected. Entered date : " + year);
+            getTest().log(LogStatus.PASS, "Product Life field is not accepts the data with alpha numeric character as expected. Accepted data : " + actualText);
+            logger.info("Product Life field is not accepts the data with alpha numeric character as expected. Accepted data : " + actualText);
         } else {
-            getTest().log(LogStatus.FAIL, "Product Life field does not accepts the data with alpha numeric character as expected. Entered date : " + year);
-            logger.info("Product Life field does not accepts the data with alpha numeric character as expected. Entered date : " + year);
+            getTest().log(LogStatus.FAIL, "Product Life field accepts the data with alpha numeric character as expected. Accepted data : " + actualText);
+            logger.info("Product Life field accepts the data with alpha numeric character as expected. Accepted data : " + actualText);
             takeScreenshot("ProductLife");
         }
     }
@@ -1239,19 +1256,19 @@ public class DeployProductPage extends WebBasePage {
         }
     }
 
-    public void verifyDeployList(String modelName) {
+    public void verifyDeployList() {
+        String modelName=modelNameFromPopup;
         waitForVisibilityOfElement(By.xpath("//div[@class='row']//div[1]//div//table[@id='example']//tbody//tr//td[4]"), 15);
-        String expectedModelName = modelName;
         List<WebElement> modelInList = findMultipleElement(By.xpath("//div[@class='row']//div[1]//div//table[@id='example']//tbody//tr//td[4]"), 15);
         for (WebElement element : modelInList) {
-            if (element.getText().equals(expectedModelName)) {
+            if (element.getText().equals(modelName)) {
                 getTest().log(LogStatus.PASS, "Created product is displayed in the \"Deploy Product\" list when click on the add to list button");
                 logger.info("Created product is displayed in the \"Deploy Product\" list when click on the add to list button");
                 break;
             } else {
                 getTest().log(LogStatus.FAIL, "Created product is not displayed in the \"Deploy Product\" list when click on the add to list button");
                 logger.info("Created product is not displayed in the \"Deploy Product\" list when click on the add to list button");
-                takeScreenshot(expectedModelName);
+                takeScreenshot(modelName);
             }
         }
     }
@@ -1282,7 +1299,6 @@ public class DeployProductPage extends WebBasePage {
         WebElement closeButton = findElementPresence(By.xpath("//div[@role='dialog']//div//div/div//button"), 15);
         if (closeButton != null) {
             click(By.xpath("//div[@role='dialog' and(contains(@style,'display: block'))]//button"), "Close", 20);
-            //clickByJavascript(By.xpath("//div[@role='dialog']//div//div/div//button"), "Close", 20);
         } else {
             getTest().log(LogStatus.FAIL, "Pop up close button is not visible");
             logger.info("Pop up close button is not visible");
@@ -1339,10 +1355,10 @@ public class DeployProductPage extends WebBasePage {
                 logger.info("Previous page is not displayed as expected when click on the \"Previous\" pagination button");
                 takeScreenshot("PaginationPrevious");
             }
-            waitForVisibilityOfElement(By.xpath("//a[@class='page-link next' and text()='Last ']"), 20);
+            waitForVisibilityOfElement(By.xpath("//a[@class='page-link last' and text()='Last ']"), 20);
             recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
             lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
-            click(By.xpath("//a[@class='page-link next' and text()='Last ']"), "Pagination Last", 15);
+            click(By.xpath("//a[@class='page-link last' and text()='Last ']"), "Pagination Last", 15);
             wairForLoader(20);
             waitForInVisibilityOfElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
             String[] lastPagePaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");

@@ -108,10 +108,14 @@ public class CompanySetupPage extends WebBasePage {
         }else
         {
             if (option) {
+                boolean depreciationOption=findElementPresence(By.id("IsDepreciableN"),15).isSelected();
+                if(depreciationOption)
+                {
+                    click(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider round']"), "Product Cost No", 15);
+                }
                 click(By.xpath("//input[@id='IsItemCostN']//parent::label//span[@class='slider round']"), "Product Cost No", 15);
                 saveProductTypeChange();
                 wairForLoader(20);
-                confirmationPopup();
                 deployProduct.handleSuccessPopup();
             }
         }
@@ -147,6 +151,11 @@ public class CompanySetupPage extends WebBasePage {
         if(depriciation)
         {
             if (!option) {
+                boolean productCost=findElementPresence(By.id("IsItemCostN"),15).isSelected();
+                if(!productCost)
+                {
+                    click(By.xpath("//input[@id='IsItemCostN']//parent::label//span[@class='slider round']"), "Product Cost Yes", 15);
+                }
                 click(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider round']"), "Product Cost Yes", 15);
                 saveProductTypeChange();
                 wairForLoader(20);

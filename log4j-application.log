@@ -7456,3 +7456,1756 @@ Allowed File Types:.doc,.pdf,.docx,.txt,.jpg
 2020-12-29 12:13:32,758  INFO [main] User Login Page:212 -  Text displayed is  - Product has been successfully added.
 2020-12-29 12:13:33,403  INFO [main] User Login Page:96 - Close Popup clicked 
 2020-12-29 12:13:33,403  INFO [main] User Login Page:449 - Error Message is not Displayed as expected
+2020-12-30 10:36:58,197  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 10:36:58,587  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 10:36:58,949  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 10:37:02,782  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 10:37:35,091  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 10:37:39,166  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 10:37:59,167  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 10:37:59,541  INFO [main] Company setup page:75 - Menu Search entered with value - Location
+2020-12-30 10:38:00,582  INFO [main] Company setup page:96 - Side Bar Location clicked 
+2020-12-30 10:38:02,507  INFO [main] Company setup page:175 - Scroll to this element - Add Location
+2020-12-30 10:38:03,984  INFO [main] Company setup page:96 - Add Location clicked 
+2020-12-30 10:38:07,081  INFO [main] Company setup page:96 - Parent Location Dropdown clicked 
+2020-12-30 10:38:07,566  INFO [main] Company setup page:96 - Parent Location Value clicked 
+2020-12-30 10:38:07,980  INFO [main] Company setup page:75 - Location Name entered with value - Child20201230103657
+2020-12-30 10:38:08,456  INFO [main] Company setup page:75 - Address Line1 entered with value - Address Line1
+2020-12-30 10:38:08,815  INFO [main] Company setup page:75 - City entered with value - City
+2020-12-30 10:38:09,686  INFO [main] Company setup page:142 - Country selected with value - India
+2020-12-30 10:38:10,060  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 10:38:11,256  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 10:43:55,645  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 10:43:56,072  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 10:43:56,440  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 10:44:14,255  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 10:44:14,618  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 10:44:18,825  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 10:44:33,597  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 10:44:34,155  INFO [main] Company setup page:75 - Menu Search entered with value - Location
+2020-12-30 10:44:35,053  INFO [main] Company setup page:96 - Side Bar Location clicked 
+2020-12-30 10:44:37,867  INFO [main] Company setup page:175 - Scroll to this element - Add Location
+2020-12-30 10:44:39,303  INFO [main] Company setup page:96 - Add Location clicked 
+2020-12-30 10:44:43,098  INFO [main] Company setup page:96 - Parent Location Dropdown clicked 
+2020-12-30 10:44:43,575  INFO [main] Company setup page:96 - Parent Location Value clicked 
+2020-12-30 10:44:44,018  INFO [main] Company setup page:75 - Location Name entered with value - Child20201230104354
+2020-12-30 10:44:44,372  INFO [main] Company setup page:75 - Address Line1 entered with value - Address Line1
+2020-12-30 10:44:44,790  INFO [main] Company setup page:75 - City entered with value - City
+2020-12-30 10:44:45,575  INFO [main] Company setup page:142 - Country selected with value - India
+2020-12-30 10:44:45,940  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 10:44:46,788  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 10:44:47,038  INFO [main] Company setup page:126 - Page Size selected with value - 100
+2020-12-30 10:44:49,002  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:44:49,114  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:44:49,180  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:44:49,254  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:44:49,366  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:44:49,433  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:44:49,495  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:44:49,556  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:44:49,616  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:44:49,677  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:44:50,037  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 10:44:50,415  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 10:45:05,358  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 10:45:13,180  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 10:45:13,751  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 10:45:16,180  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 10:45:17,450  INFO [main] Company setup page:96 - Location Dropdown clicked 
+2020-12-30 10:45:17,598  INFO [main] Company setup page:491 - Expected parent location "Location2" location is not present in location dropdown
+2020-12-30 10:45:18,233  INFO [main] Company setup page:486 - Expected parent location "Location2" location is present in both setup and location dropdown
+2020-12-30 10:45:18,296  INFO [main] Company setup page:486 - Expected parent location "Location3" location is present in both setup and location dropdown
+2020-12-30 10:45:18,351  INFO [main] Company setup page:486 - Expected parent location "Location4" location is present in both setup and location dropdown
+2020-12-30 10:45:18,399  INFO [main] Company setup page:486 - Expected parent location "Location5" location is present in both setup and location dropdown
+2020-12-30 10:45:18,440  INFO [main] Company setup page:486 - Expected parent location "Location6" location is present in both setup and location dropdown
+2020-12-30 10:45:18,475  INFO [main] Company setup page:486 - Expected parent location "Location7" location is present in both setup and location dropdown
+2020-12-30 10:45:18,507  INFO [main] Company setup page:486 - Expected parent location "Location8" location is present in both setup and location dropdown
+2020-12-30 10:45:18,539  INFO [main] Company setup page:486 - Expected parent location "Location9" location is present in both setup and location dropdown
+2020-12-30 10:45:18,557  INFO [main] Company setup page:486 - Expected parent location "New Jersey" location is present in both setup and location dropdown
+2020-12-30 10:45:18,567  INFO [main] Company setup page:486 - Expected parent location "New york" location is present in both setup and location dropdown
+2020-12-30 10:49:33,137  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 10:49:33,490  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 10:49:33,838  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 10:49:37,109  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 10:49:47,541  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 10:49:50,853  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 10:50:01,981  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 10:50:02,367  INFO [main] Company setup page:75 - Menu Search entered with value - Location
+2020-12-30 10:50:03,321  INFO [main] Company setup page:96 - Side Bar Location clicked 
+2020-12-30 10:50:05,718  INFO [main] Company setup page:175 - Scroll to this element - Add Location
+2020-12-30 10:50:07,180  INFO [main] Company setup page:96 - Add Location clicked 
+2020-12-30 10:50:10,155  INFO [main] Company setup page:96 - Parent Location Dropdown clicked 
+2020-12-30 10:50:10,671  INFO [main] Company setup page:96 - Parent Location Value clicked 
+2020-12-30 10:50:11,069  INFO [main] Company setup page:75 - Location Name entered with value - Child20201230104932
+2020-12-30 10:50:11,494  INFO [main] Company setup page:75 - Address Line1 entered with value - Address Line1
+2020-12-30 10:50:11,855  INFO [main] Company setup page:75 - City entered with value - City
+2020-12-30 10:50:12,639  INFO [main] Company setup page:142 - Country selected with value - India
+2020-12-30 10:50:13,023  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 10:50:13,883  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 10:50:14,103  INFO [main] Company setup page:126 - Page Size selected with value - 100
+2020-12-30 10:50:17,608  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:17,702  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:17,760  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:17,818  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:17,877  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:17,936  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:18,015  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:18,075  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:18,135  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:18,196  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:18,259  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:18,330  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:18,433  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:18,509  INFO [main] Company setup page:227 -  get attribute value is  - parentbasemaster
+2020-12-30 10:50:18,579  INFO [main] Company setup page:227 -  get attribute value is  - ullocation
+2020-12-30 10:50:18,641  INFO [main] Company setup page:227 -  get attribute value is  - parentbasemaster
+2020-12-30 10:50:18,704  INFO [main] Company setup page:227 -  get attribute value is  - parentbasemaster
+2020-12-30 10:50:18,770  INFO [main] Company setup page:227 -  get attribute value is  - parentbasemaster
+2020-12-30 10:50:18,829  INFO [main] Company setup page:227 -  get attribute value is  - parentbasemaster
+2020-12-30 10:50:19,182  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 10:50:19,521  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 10:50:38,331  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 10:50:55,801  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 10:50:56,363  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 10:50:57,992  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 10:50:59,148  INFO [main] Company setup page:96 - Location Dropdown clicked 
+2020-12-30 10:50:59,362  INFO [main] Company setup page:488 - Expected parent location "Locaiton10" location is present in both setup and location dropdown
+2020-12-30 10:50:59,445  INFO [main] Company setup page:488 - Expected parent location "Locaiton8" location is present in both setup and location dropdown
+2020-12-30 10:50:59,520  INFO [main] Company setup page:488 - Expected parent location "Location1" location is present in both setup and location dropdown
+2020-12-30 10:50:59,590  INFO [main] Company setup page:488 - Expected parent location "Location11" location is present in both setup and location dropdown
+2020-12-30 10:50:59,657  INFO [main] Company setup page:488 - Expected parent location "Location2" location is present in both setup and location dropdown
+2020-12-30 10:50:59,716  INFO [main] Company setup page:488 - Expected parent location "Location3" location is present in both setup and location dropdown
+2020-12-30 10:50:59,767  INFO [main] Company setup page:488 - Expected parent location "Location4" location is present in both setup and location dropdown
+2020-12-30 10:50:59,814  INFO [main] Company setup page:488 - Expected parent location "Location5" location is present in both setup and location dropdown
+2020-12-30 10:50:59,855  INFO [main] Company setup page:488 - Expected parent location "Location6" location is present in both setup and location dropdown
+2020-12-30 10:50:59,888  INFO [main] Company setup page:488 - Expected parent location "Location7" location is present in both setup and location dropdown
+2020-12-30 10:50:59,915  INFO [main] Company setup page:488 - Expected parent location "Location8" location is present in both setup and location dropdown
+2020-12-30 10:50:59,940  INFO [main] Company setup page:488 - Expected parent location "Location9" location is present in both setup and location dropdown
+2020-12-30 10:50:59,963  INFO [main] Company setup page:488 - Expected parent location "New Jersey" location is present in both setup and location dropdown
+2020-12-30 10:50:59,975  INFO [main] Company setup page:488 - Expected parent location "New york" location is present in both setup and location dropdown
+2020-12-30 10:51:00,122  INFO [main] Company setup page:488 - Expected child location "Auto Child Location" location is present in both setup and location dropdown
+2020-12-30 10:51:00,138  INFO [main] Company setup page:488 - Expected child location "Child Location1" location is present in both setup and location dropdown
+2020-12-30 10:51:00,172  INFO [main] Company setup page:488 - Expected child location "Child20201230104932" location is present in both setup and location dropdown
+2020-12-30 10:51:00,200  INFO [main] Company setup page:488 - Expected child location "Second Child Location" location is present in both setup and location dropdown
+2020-12-30 10:51:00,211  INFO [main] Company setup page:488 - Expected child location "ChildLocation2" location is present in both setup and location dropdown
+2020-12-30 11:00:20,468  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 11:00:20,894  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 11:00:21,193  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 11:00:33,362  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 11:00:44,043  INFO [main] User Login Page:99 - Ful Menu not clicked
+2020-12-30 11:01:01,496  INFO [main] DeployProduct-verifyModelandVendorManufaturerFiels:75 - Method - verifyModelandVendorManufaturerFiels failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyModelandVendorManufaturerFiels_20201230110101.png
+2020-12-30 11:04:54,937  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 11:04:55,315  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 11:04:55,674  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 11:05:00,983  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 11:05:16,409  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 11:05:20,666  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 11:05:36,893  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 11:05:45,133  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 11:05:45,693  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 11:05:48,148  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 11:05:48,860  INFO [main] User Login Page:75 - Model entered with value - A1b2C320201230110454
+2020-12-30 11:05:48,892  INFO [main] User Login Page:227 -  get attribute value is  - A1b2C320201230110454
+2020-12-30 11:05:48,922  INFO [main] User Login Page:568 - Model Name field is not accept alpha numeric character as expected. It accept the Value "A1b2C3"
+2020-12-30 11:05:49,692  INFO [main] User Login Page:75 - Vendor entered with value - Test Vendor
+2020-12-30 11:05:49,729  INFO [main] User Login Page:630 - Vendor Name field is not accept the alpha numeric characters as expected. It accept the Value "A1b2C3"
+2020-12-30 11:05:50,447  INFO [main] User Login Page:75 - Manufacturer entered with value - A1b2C3
+2020-12-30 11:05:50,481  INFO [main] User Login Page:579 - Manufaturer Name field is accept the data as expected. Accepted value : A1b2C3
+2020-12-30 11:05:50,767  INFO [main] User Login Page:75 - Manufacturer entered with value - @
+2020-12-30 11:05:51,288  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:05:51,326  INFO [main] User Login Page:615 - Manufaturer Name field displayed the error message for the charc special character "@"
+2020-12-30 11:05:52,015  INFO [main] User Login Page:75 - Manufacturer entered with value - #
+2020-12-30 11:05:52,522  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:05:52,547  INFO [main] User Login Page:615 - Manufaturer Name field displayed the error message for the charc special character "#"
+2020-12-30 11:05:53,262  INFO [main] User Login Page:75 - Manufacturer entered with value - $
+2020-12-30 11:05:53,694  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:05:53,719  INFO [main] User Login Page:615 - Manufaturer Name field displayed the error message for the charc special character "$"
+2020-12-30 11:05:54,470  INFO [main] User Login Page:75 - Manufacturer entered with value - <
+2020-12-30 11:05:54,877  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:05:54,907  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "<"
+2020-12-30 11:05:55,289  INFO [main] User Login Page:75 - Manufacturer entered with value - {
+2020-12-30 11:05:55,718  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:05:55,741  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "{"
+2020-12-30 11:05:56,135  INFO [main] User Login Page:75 - Manufacturer entered with value - }
+2020-12-30 11:05:56,583  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:05:56,613  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "}"
+2020-12-30 11:05:56,937  INFO [main] User Login Page:75 - Manufacturer entered with value - %
+2020-12-30 11:05:57,418  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:05:57,441  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "%"
+2020-12-30 11:05:57,791  INFO [main] User Login Page:75 - Manufacturer entered with value - [
+2020-12-30 11:05:58,215  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:05:58,253  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "["
+2020-12-30 11:05:58,601  INFO [main] User Login Page:75 - Manufacturer entered with value - ]
+2020-12-30 11:05:59,013  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:05:59,037  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "]"
+2020-12-30 11:05:59,406  INFO [main] User Login Page:75 - Manufacturer entered with value - (
+2020-12-30 11:05:59,886  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:05:59,907  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "("
+2020-12-30 11:06:00,299  INFO [main] User Login Page:75 - Manufacturer entered with value - )
+2020-12-30 11:06:00,752  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:06:00,774  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc ")"
+2020-12-30 11:06:01,160  INFO [main] User Login Page:75 - Manufacturer entered with value - ?:
+2020-12-30 11:06:01,591  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:06:01,614  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "?:"
+2020-12-30 11:06:02,025  INFO [main] User Login Page:75 - Manufacturer entered with value - |'
+2020-12-30 11:06:02,465  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:06:02,491  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "|'"
+2020-12-30 11:06:02,807  INFO [main] User Login Page:75 - Manufacturer entered with value - ;
+2020-12-30 11:06:03,270  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:06:03,292  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc ";"
+2020-12-30 11:06:03,640  INFO [main] User Login Page:75 - Manufacturer entered with value - =
+2020-12-30 11:06:04,071  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:06:04,098  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "="
+2020-12-30 11:06:04,468  INFO [main] User Login Page:75 - Manufacturer entered with value - &#
+2020-12-30 11:06:04,877  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:06:04,901  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "&#"
+2020-12-30 11:06:05,275  INFO [main] User Login Page:75 - Manufacturer entered with value - |
+2020-12-30 11:06:05,726  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:06:05,752  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "|"
+2020-12-30 11:06:06,123  INFO [main] User Login Page:75 - Manufacturer entered with value - &+
+2020-12-30 11:06:06,536  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:06:06,560  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "&+"
+2020-12-30 11:10:01,421  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 11:10:01,871  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 11:10:02,263  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 11:10:08,595  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 11:10:19,236  INFO [main] User Login Page:99 - Ful Menu not clicked
+2020-12-30 11:10:33,780  INFO [main] DeployProduct-verifyModelandVendorManufaturerFiels:75 - Method - verifyModelandVendorManufaturerFiels failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyModelandVendorManufaturerFiels_20201230111033.png
+2020-12-30 11:13:07,805  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 11:13:08,199  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 11:13:08,518  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 11:13:20,439  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 11:13:20,790  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 11:13:23,603  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 11:13:38,494  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 11:13:43,025  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 11:13:43,635  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 11:13:46,101  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 11:14:02,082  INFO [main] User Login Page:75 - Model entered with value - A1b2C320201230111306
+2020-12-30 11:14:02,815  INFO [main] User Login Page:227 -  get attribute value is  - A1b2C320201230111306
+2020-12-30 11:15:55,118  INFO [main] User Login Page:75 - Model Name entered with value - A1b2C3
+2020-12-30 11:16:08,833  INFO [main] User Login Page:565 - Model Name field is accept alpha numeric character as expected. Accepted value : A1b2C3
+2020-12-30 11:16:32,931  INFO [main] User Login Page:75 - Vendor entered with value - Test Vendor
+2020-12-30 11:17:14,436  INFO [main] User Login Page:627 - Vendor Name field is accept the alpha numeric characters as expected. Accepted value : A1b2C3
+2020-12-30 11:17:33,357  INFO [main] User Login Page:75 - Manufacturer entered with value - A1b2C3
+2020-12-30 11:17:38,358  INFO [main] User Login Page:579 - Manufaturer Name field is accept the data as expected. Accepted value : A1b2C3
+2020-12-30 11:17:44,995  INFO [main] User Login Page:75 - Manufacturer entered with value - @
+2020-12-30 11:17:46,231  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:17:46,905  INFO [main] User Login Page:615 - Manufaturer Name field displayed the error message for the charc special character "@"
+2020-12-30 11:17:49,506  INFO [main] User Login Page:75 - Manufacturer entered with value - #
+2020-12-30 11:17:50,599  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:17:51,221  INFO [main] User Login Page:615 - Manufaturer Name field displayed the error message for the charc special character "#"
+2020-12-30 11:17:53,510  INFO [main] User Login Page:75 - Manufacturer entered with value - $
+2020-12-30 11:17:54,565  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:17:55,206  INFO [main] User Login Page:615 - Manufaturer Name field displayed the error message for the charc special character "$"
+2020-12-30 11:19:40,170  INFO [main] User Login Page:75 - Manufacturer entered with value - <
+2020-12-30 11:19:41,258  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:19:41,890  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "<"
+2020-12-30 11:19:42,857  INFO [main] User Login Page:75 - Manufacturer entered with value - {
+2020-12-30 11:19:43,890  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:19:44,508  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "{"
+2020-12-30 11:19:45,479  INFO [main] User Login Page:75 - Manufacturer entered with value - }
+2020-12-30 11:19:46,598  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:19:47,267  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "}"
+2020-12-30 11:19:48,301  INFO [main] User Login Page:75 - Manufacturer entered with value - %
+2020-12-30 11:19:49,373  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:19:50,005  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "%"
+2020-12-30 11:19:50,924  INFO [main] User Login Page:75 - Manufacturer entered with value - [
+2020-12-30 11:19:51,995  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:19:52,628  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "["
+2020-12-30 11:19:53,618  INFO [main] User Login Page:75 - Manufacturer entered with value - ]
+2020-12-30 11:19:54,690  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:19:55,322  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "]"
+2020-12-30 11:19:56,294  INFO [main] User Login Page:75 - Manufacturer entered with value - (
+2020-12-30 11:19:57,375  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:19:57,998  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "("
+2020-12-30 11:19:58,948  INFO [main] User Login Page:75 - Manufacturer entered with value - )
+2020-12-30 11:19:59,981  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:20:00,605  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc ")"
+2020-12-30 11:20:01,608  INFO [main] User Login Page:75 - Manufacturer entered with value - ?:
+2020-12-30 11:20:02,711  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:20:03,328  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "?:"
+2020-12-30 11:20:04,315  INFO [main] User Login Page:75 - Manufacturer entered with value - |'
+2020-12-30 11:20:05,380  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:20:06,020  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "|'"
+2020-12-30 11:20:06,969  INFO [main] User Login Page:75 - Manufacturer entered with value - ;
+2020-12-30 11:20:08,058  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:20:08,697  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc ";"
+2020-12-30 11:20:09,681  INFO [main] User Login Page:75 - Manufacturer entered with value - =
+2020-12-30 11:20:10,818  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:20:11,482  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "="
+2020-12-30 11:20:12,433  INFO [main] User Login Page:75 - Manufacturer entered with value - &#
+2020-12-30 11:20:13,521  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:20:14,154  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "&#"
+2020-12-30 11:20:15,088  INFO [main] User Login Page:75 - Manufacturer entered with value - |
+2020-12-30 11:20:16,175  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:20:16,830  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "|"
+2020-12-30 11:20:17,817  INFO [main] User Login Page:75 - Manufacturer entered with value - &+
+2020-12-30 11:20:18,851  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:20:19,546  INFO [main] User Login Page:595 - Manufaturer Name field displayed the error message as expected for the charc "&+"
+2020-12-30 11:29:18,731  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 11:29:19,143  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 11:29:19,492  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 11:31:30,464  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 11:32:18,564  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 11:32:18,912  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 11:32:19,266  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 11:33:12,880  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 11:33:13,244  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 11:33:23,910  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 11:34:37,333  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 11:34:46,496  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 11:34:47,106  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 11:34:49,672  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 11:34:51,109  INFO [main] User Login Page:75 - Model Name entered with value - A1b2C3
+2020-12-30 11:34:51,146  INFO [main] User Login Page:565 - Model Name field is accept alpha numeric character as expected. Accepted value : A1b2C3
+2020-12-30 11:34:51,537  INFO [main] User Login Page:75 - Vendor entered with value - A1b2C3
+2020-12-30 11:34:51,567  INFO [main] User Login Page:627 - Vendor Name field is accept the alpha numeric characters as expected. Accepted value : A1b2C3
+2020-12-30 11:34:51,933  INFO [main] User Login Page:75 - Manufacturer entered with value - A1b2C3
+2020-12-30 11:34:51,962  INFO [main] User Login Page:579 - Manufacturer Name field is accept the data as expected. Accepted value : A1b2C3
+2020-12-30 11:34:52,296  INFO [main] User Login Page:75 - Manufacturer entered with value - @
+2020-12-30 11:34:52,821  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:34:52,860  INFO [main] User Login Page:615 - Manufaturer Name field displayed the error message for the charc special character "@"
+2020-12-30 11:34:53,594  INFO [main] User Login Page:75 - Manufacturer entered with value - #
+2020-12-30 11:34:54,057  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:34:54,088  INFO [main] User Login Page:615 - Manufaturer Name field displayed the error message for the charc special character "#"
+2020-12-30 11:34:54,809  INFO [main] User Login Page:75 - Manufacturer entered with value - $
+2020-12-30 11:34:55,237  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:34:55,262  INFO [main] User Login Page:615 - Manufaturer Name field displayed the error message for the charc special character "$"
+2020-12-30 11:34:55,996  INFO [main] User Login Page:75 - Manufacturer entered with value - <
+2020-12-30 11:34:56,432  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:34:56,469  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "<"
+2020-12-30 11:34:56,852  INFO [main] User Login Page:75 - Manufacturer entered with value - {
+2020-12-30 11:34:57,273  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:34:57,297  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "{"
+2020-12-30 11:34:57,622  INFO [main] User Login Page:75 - Manufacturer entered with value - }
+2020-12-30 11:34:58,058  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:34:58,084  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "}"
+2020-12-30 11:34:58,444  INFO [main] User Login Page:75 - Manufacturer entered with value - %
+2020-12-30 11:34:58,887  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:34:58,921  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "%"
+2020-12-30 11:34:59,283  INFO [main] User Login Page:75 - Manufacturer entered with value - [
+2020-12-30 11:34:59,752  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:34:59,790  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "["
+2020-12-30 11:35:00,129  INFO [main] User Login Page:75 - Manufacturer entered with value - ]
+2020-12-30 11:35:00,537  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:35:00,564  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "]"
+2020-12-30 11:35:00,910  INFO [main] User Login Page:75 - Manufacturer entered with value - (
+2020-12-30 11:35:01,373  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:35:01,398  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "("
+2020-12-30 11:35:01,767  INFO [main] User Login Page:75 - Manufacturer entered with value - )
+2020-12-30 11:35:02,216  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:35:02,237  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc ")"
+2020-12-30 11:35:02,591  INFO [main] User Login Page:75 - Manufacturer entered with value - ?:
+2020-12-30 11:35:03,024  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:35:03,047  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "?:"
+2020-12-30 11:35:03,429  INFO [main] User Login Page:75 - Manufacturer entered with value - |'
+2020-12-30 11:35:03,848  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:35:03,885  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "|'"
+2020-12-30 11:35:04,266  INFO [main] User Login Page:75 - Manufacturer entered with value - ;
+2020-12-30 11:35:04,675  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:35:04,699  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc ";"
+2020-12-30 11:35:05,061  INFO [main] User Login Page:75 - Manufacturer entered with value - =
+2020-12-30 11:35:05,461  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:35:05,481  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "="
+2020-12-30 11:35:05,874  INFO [main] User Login Page:75 - Manufacturer entered with value - &#
+2020-12-30 11:35:06,273  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:35:06,298  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "&#"
+2020-12-30 11:35:06,648  INFO [main] User Login Page:75 - Manufacturer entered with value - |
+2020-12-30 11:35:07,075  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:35:07,113  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "|"
+2020-12-30 11:35:07,500  INFO [main] User Login Page:75 - Manufacturer entered with value - &+
+2020-12-30 11:35:07,923  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 11:35:07,946  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the charc "&+"
+2020-12-30 11:48:48,883  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 11:48:49,336  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 11:48:49,730  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 11:48:53,753  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 11:49:07,863  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 11:49:13,455  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 11:49:24,908  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 11:49:25,530  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 11:49:26,445  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 11:49:27,248  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 11:49:40,860  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 11:50:35,269  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 11:50:59,269  INFO [main] Company setup page:96 - Product Cost Yes clicked 
+2020-12-30 11:51:03,675  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 11:51:34,940  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 11:51:41,017  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 11:51:43,433  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 11:52:12,834  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 11:52:24,499  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 11:52:25,675  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 11:52:38,394  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 11:53:06,562  INFO [main] Company setup page:640 - Product Cost field is enabled when Product Cost toggle is set as "Yes" in the company setup page
+2020-12-30 11:53:21,636  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 11:53:26,913  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 11:53:29,219  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 11:53:43,419  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 11:55:28,424  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 11:55:29,989  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 11:55:40,653  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 11:56:00,769  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 11:56:24,844  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 11:56:49,516  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 11:57:13,453  INFO [main] Company setup page:96 - Product Cost No clicked 
+2020-12-30 11:57:17,368  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 11:57:39,210  INFO [main] Company setup page:99 - Confirmation Ok not clicked
+2020-12-30 11:58:58,225  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 11:58:58,627  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 11:58:58,978  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 11:59:08,587  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 11:59:26,651  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 11:59:30,604  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 11:59:41,922  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 11:59:42,378  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 11:59:43,374  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 11:59:44,551  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 12:00:00,827  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 12:00:21,657  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 12:00:22,588  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 12:00:23,100  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 12:00:42,499  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 12:01:00,973  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 12:01:01,550  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 12:01:02,962  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 12:01:03,560  INFO [main] Company setup page:640 - Product Cost field is enabled when Product Cost toggle is set as "Yes" in the company setup page
+2020-12-30 12:01:04,008  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 12:01:04,377  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 12:01:04,691  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 12:01:20,904  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 12:01:21,403  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 12:01:22,685  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 12:01:24,550  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 12:01:40,320  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 12:02:01,331  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 12:02:02,422  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 12:02:03,589  INFO [main] Company setup page:96 - Product Cost No clicked 
+2020-12-30 12:02:04,107  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 12:02:06,860  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 12:02:22,082  INFO [main] Company setup page:99 - Product Cost No not clicked
+2020-12-30 12:02:31,495  INFO [main] DeployProduct-verifyProductCostField:75 - Method - verifyProductCostField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductCostField_20201230120231.png
+2020-12-30 12:05:11,338  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 12:05:11,717  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 12:05:12,095  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 12:05:15,061  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 12:05:29,021  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 12:05:38,116  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 12:05:54,149  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 12:05:54,599  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 12:05:55,489  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 12:05:56,774  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 12:06:13,689  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 12:06:34,515  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 12:06:35,436  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 12:06:46,051  INFO [main] Company setup page:99 - Asset Management not clicked
+2020-12-30 12:06:58,178  INFO [main] DeployProduct-verifyProductCostField:75 - Method - verifyProductCostField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductCostField_20201230120657.png
+2020-12-30 12:07:38,962  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 12:07:39,358  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 12:07:39,707  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 12:08:11,679  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 12:08:12,069  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 12:08:24,029  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 12:09:08,622  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 12:09:09,050  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 12:09:09,939  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 12:09:12,777  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 12:09:26,666  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 12:09:47,776  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 12:09:48,757  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 12:09:49,442  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 12:10:21,878  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 12:10:37,352  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 12:10:37,906  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 12:10:40,280  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 12:10:41,002  INFO [main] Company setup page:640 - Product Cost field is enabled when Product Cost toggle is set as "Yes" in the company setup page
+2020-12-30 12:10:41,472  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 12:10:41,815  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 12:10:42,744  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 12:10:51,781  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 12:10:52,192  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 12:10:53,179  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 12:10:55,474  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 12:11:10,197  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 12:11:31,263  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 12:11:32,363  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 12:11:33,553  INFO [main] Company setup page:96 - Product Cost No clicked 
+2020-12-30 12:11:34,038  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 12:11:38,476  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 12:11:38,517  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 12:11:40,287  INFO [main] DeployProduct-verifyProductCostField:75 - Method - verifyProductCostField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductCostField_20201230121139.png
+2020-12-30 12:16:34,367  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 12:16:34,780  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 12:16:35,088  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 12:16:57,592  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 12:16:57,964  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 12:17:04,707  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 12:17:19,955  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 12:17:20,510  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 12:17:21,469  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 12:17:22,761  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 12:17:34,145  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 12:17:54,741  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 12:17:55,988  INFO [main] Company setup page:96 - Product Cost No clicked 
+2020-12-30 12:17:56,499  INFO [main] Company setup page:96 - Product Cost No clicked 
+2020-12-30 12:17:56,986  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 12:17:59,842  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 12:18:00,159  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 12:18:00,536  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 12:18:18,375  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 12:18:26,274  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 12:18:26,807  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 12:18:28,242  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 12:18:29,908  INFO [main] Company setup page:649 - Product Cost field is disabled when product type is set as "No" in the company setup page
+2020-12-30 12:18:30,410  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 12:18:30,868  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 12:18:32,784  INFO [main] Company setup page:78 - AssetCost not entered with value - 123456
+2020-12-30 12:18:33,484  INFO [main] DeployProduct-verifyProductCostField:75 - Method - verifyProductCostField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductCostField_20201230121833.png
+2020-12-30 12:26:14,632  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 12:26:15,019  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 12:26:15,381  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 12:26:25,587  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 12:26:25,930  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 12:26:30,507  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 12:26:39,473  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 12:26:48,312  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 12:26:48,871  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 12:26:51,223  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 12:26:51,534  INFO [main] User Login Page:957 - User have option to select the "Product Order Date"
+2020-12-30 12:26:51,586  INFO [main] User Login Page:969 - User have option to select the "Invoice Date"
+2020-12-30 12:26:52,127  INFO [main] User Login Page:175 - Scroll to this element - Order Date
+2020-12-30 12:26:53,356  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 12:26:53,767  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 12:26:54,105  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 12:26:54,456  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 12:26:54,801  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 12:26:55,149  INFO [main] User Login Page:948 - Current date is not selected for "Order" date field
+2020-12-30 12:26:56,028  INFO [main] User Login Page:175 - Scroll to this element - Order Date
+2020-12-30 12:26:57,088  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 12:26:57,403  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 12:26:57,715  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 12:26:58,101  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 12:26:58,491  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 12:26:58,758  INFO [main] User Login Page:890 - Not able to select Old date for "Order" date field
+2020-12-30 12:26:59,623  INFO [main] User Login Page:175 - Scroll to this element - Order Date
+2020-12-30 12:27:00,667  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 12:27:00,965  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 12:27:01,287  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 12:27:01,619  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 12:27:01,939  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 12:27:01,978  INFO [main] User Login Page:911 - Not able to select Future Date as expected for "Order" date field
+2020-12-30 12:34:56,908  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 12:34:57,342  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 12:34:57,683  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 12:35:00,721  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 12:35:22,421  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 12:35:31,109  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 12:35:46,793  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 12:35:58,428  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 12:35:59,006  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 12:36:01,423  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 12:36:02,244  INFO [main] User Login Page:957 - User have option to select the "Product Order Date"
+2020-12-30 12:36:02,297  INFO [main] User Login Page:969 - User have option to select the "Invoice Date"
+2020-12-30 12:36:02,855  INFO [main] User Login Page:175 - Scroll to this element - Order Date
+2020-12-30 12:36:04,064  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 12:36:53,149  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 12:36:55,349  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 12:37:04,684  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 12:37:13,679  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 12:50:46,719  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 12:50:47,157  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 12:50:47,570  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 12:50:53,057  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 12:51:09,673  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 12:51:23,056  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 12:51:35,696  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 12:51:58,258  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 12:51:58,789  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 12:52:00,125  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 12:52:00,822  INFO [main] User Login Page:958 - User have option to select the "Product Order Date"
+2020-12-30 12:52:00,856  INFO [main] User Login Page:970 - User have option to select the "Invoice Date"
+2020-12-30 12:52:01,400  INFO [main] User Login Page:175 - Scroll to this element - Order Date
+2020-12-30 12:52:02,626  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 12:52:25,439  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 12:52:27,143  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 12:52:28,779  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 12:52:30,314  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 12:53:58,034  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 12:53:58,493  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 12:53:58,879  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 12:54:06,336  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 12:54:17,861  INFO [main] User Login Page:99 - Ful Menu not clicked
+2020-12-30 12:56:03,881  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 12:56:04,348  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 12:56:04,699  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 12:56:12,378  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 12:56:23,747  INFO [main] User Login Page:99 - Ful Menu not clicked
+2020-12-30 12:56:31,636  INFO [main] DeployProduct-verifyProductOrderDateField:75 - Method - verifyProductOrderDateField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductOrderDateField_20201230125631.png
+2020-12-30 12:58:07,499  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 12:58:07,946  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 12:58:08,287  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 12:58:15,849  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 12:58:26,987  INFO [main] User Login Page:99 - Ful Menu not clicked
+2020-12-30 12:58:34,270  INFO [main] DeployProduct-verifyProductOrderDateField:75 - Method - verifyProductOrderDateField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductOrderDateField_20201230125833.png
+2020-12-30 12:59:12,357  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 12:59:12,763  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 12:59:13,127  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 12:59:15,994  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 12:59:23,702  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 12:59:24,493  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 12:59:34,445  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 12:59:39,842  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 12:59:40,532  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 12:59:42,048  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 12:59:42,470  INFO [main] User Login Page:958 - User have option to select the "Product Order Date"
+2020-12-30 12:59:42,523  INFO [main] User Login Page:970 - User have option to select the "Invoice Date"
+2020-12-30 12:59:43,066  INFO [main] User Login Page:175 - Scroll to this element - Order Date
+2020-12-30 12:59:44,265  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 12:59:55,349  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 12:59:57,307  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 12:59:58,795  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 13:00:00,911  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 13:00:39,320  INFO [main] User Login Page:946 - Current date is selected as expected for "Order" date field
+2020-12-30 13:00:42,613  INFO [main] User Login Page:175 - Scroll to this element - Order Date
+2020-12-30 13:00:44,403  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 13:01:01,565  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 13:01:02,954  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 13:01:04,674  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 13:01:07,096  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 13:01:29,328  INFO [main] User Login Page:888 - Old Date was selected as expected for "Order" date field
+2020-12-30 13:01:33,424  INFO [main] User Login Page:175 - Scroll to this element - Order Date
+2020-12-30 13:01:35,168  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 13:01:58,646  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 13:02:00,096  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 13:02:01,431  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 13:02:03,274  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 13:02:27,110  INFO [main] User Login Page:912 - Not able to select Future Date as expected for "Order" date field
+2020-12-30 13:10:28,551  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 13:10:28,955  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 13:10:29,314  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 13:10:49,370  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 13:10:49,780  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 13:10:55,261  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 13:11:02,022  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 13:11:02,474  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 13:11:03,413  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 13:11:04,054  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 13:11:10,089  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 13:11:31,208  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 13:11:32,149  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 13:11:32,654  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 13:11:42,876  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 13:11:50,761  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 13:11:51,349  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 13:11:53,024  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 13:11:53,922  INFO [main] Company setup page:672 - Insurance Reference Number field is disabled when product type is set as "No" in the company setup page
+2020-12-30 13:11:53,982  INFO [main] Company setup page:718 - Insurer Name field is disabled when product type is set as "No" in the company setup page
+2020-12-30 13:11:55,036  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 13:11:55,321  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 13:11:56,196  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 13:12:00,967  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 13:12:01,405  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 13:12:02,484  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 13:12:03,137  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 13:12:09,994  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 13:12:30,984  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 13:12:32,135  INFO [main] Company setup page:96 - Product Cost Yes clicked 
+2020-12-30 13:12:32,664  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 13:12:34,823  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 13:12:35,131  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 13:12:35,488  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 13:12:40,009  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 13:12:44,756  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 13:12:45,369  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 13:12:47,419  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 13:12:47,807  INFO [main] Company setup page:663 - Insurance Reference Number field is enabled when Insurance Policy toggle is set as "Yes" in the company setup page
+2020-12-30 13:12:47,857  INFO [main] Company setup page:709 - Insurer Name field is enabled when Insurance Policy toggle is set as "Yes" in the company setup page
+2020-12-30 13:12:48,338  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 13:12:48,819  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 13:12:49,517  INFO [main] Company setup page:75 - Insurance Reference Number entered with value - Abc123
+2020-12-30 13:12:49,600  INFO [main] Company setup page:1064 - Insurance Ref Number field accepts the data with alpha numeric character as expected. Entered Date : Abc123
+2020-12-30 13:12:50,025  INFO [main] Company setup page:75 - InsurerName entered with value - Abc123
+2020-12-30 13:12:50,058  INFO [main] Company setup page:1081 - Insurar Name field is not working as expected. It accept the Value "Abc123"
+2020-12-30 13:15:55,314  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 13:15:55,727  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 13:15:56,082  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 13:16:09,453  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 13:16:09,826  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 13:16:10,787  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 13:16:14,812  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 13:16:15,269  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 13:16:16,205  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 13:16:16,859  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 13:16:23,301  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 13:16:44,058  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 13:16:44,975  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 13:16:45,542  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 13:16:59,696  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 13:17:05,511  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 13:17:06,070  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 13:17:07,515  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 13:17:07,950  INFO [main] Company setup page:663 - Insurance Reference Number field is enabled when Insurance Policy toggle is set as "Yes" in the company setup page
+2020-12-30 13:17:07,995  INFO [main] Company setup page:709 - Insurer Name field is enabled when Insurance Policy toggle is set as "Yes" in the company setup page
+2020-12-30 13:17:17,977  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 13:17:19,309  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 13:17:21,278  INFO [main] Company setup page:75 - Insurance Reference Number entered with value - Abc123
+2020-12-30 13:17:21,316  INFO [main] Company setup page:1064 - Insurance Ref Number field accepts the data with alpha numeric character as expected. Entered Date : Abc123
+2020-12-30 13:17:31,175  INFO [main] Company setup page:75 - InsurerName entered with value - Abc123
+2020-12-30 13:18:08,196  INFO [main] Company setup page:1081 - Insurar Name field is not working as expected. It accept the Value "Abc123"
+2020-12-30 13:18:40,075  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 13:18:40,477  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 13:18:40,846  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 13:18:42,340  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 13:18:55,160  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 13:18:56,074  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 13:19:00,274  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 13:19:00,736  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 13:19:01,821  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 13:19:02,428  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 13:19:07,543  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 13:19:28,532  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 13:19:29,334  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 13:19:30,456  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 13:19:40,533  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 13:19:47,208  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 13:19:47,778  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 13:19:49,226  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 13:19:49,595  INFO [main] Company setup page:663 - Insurance Reference Number field is enabled when Insurance Policy toggle is set as "Yes" in the company setup page
+2020-12-30 13:19:49,656  INFO [main] Company setup page:709 - Insurer Name field is enabled when Insurance Policy toggle is set as "Yes" in the company setup page
+2020-12-30 13:19:50,121  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 13:19:57,325  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 13:19:58,042  INFO [main] Company setup page:75 - Insurance Reference Number entered with value - Abc123
+2020-12-30 13:19:58,079  INFO [main] Company setup page:1064 - Insurance Ref Number field accepts the data with alpha numeric character as expected. Entered Date : Abc123
+2020-12-30 13:20:02,292  INFO [main] Company setup page:75 - InsurerName entered with value - Abc123
+2020-12-30 13:20:08,810  INFO [main] Company setup page:1078 - Insurar Name field is accept the data with alpha numeric character
+2020-12-30 13:34:41,722  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 13:34:42,154  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 13:34:42,487  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 13:34:47,829  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 13:35:17,657  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 13:35:22,777  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 13:35:32,193  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 13:35:32,815  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 13:35:33,777  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 13:35:34,450  INFO [main] Company setup page:212 -  Text displayed is  - Food Product
+2020-12-30 13:35:44,033  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 13:36:05,004  INFO [main] Company setup page:175 - Scroll to this element - ProductCost Toggle
+2020-12-30 13:36:06,233  INFO [main] Company setup page:96 - Product Cost Yes clicked 
+2020-12-30 13:36:06,767  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 13:36:09,710  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 13:36:10,078  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 13:36:10,461  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 13:36:22,313  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 13:36:28,089  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 13:36:28,739  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 13:36:30,058  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 13:36:30,383  INFO [main] Company setup page:686 - Insurance Date field is enabled when Insurance Policy toggle is set as "Yes" in the company setup page
+2020-12-30 13:36:30,884  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 13:36:31,331  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 13:36:31,882  INFO [main] Company setup page:175 - Scroll to this element - Order Date
+2020-12-30 13:36:33,159  INFO [main] Company setup page:96 - Order Date clicked 
+2020-12-30 13:36:33,524  INFO [main] Company setup page:96 - Mont&Year popup clicked 
+2020-12-30 13:36:33,883  INFO [main] Company setup page:96 - Year popup clicked 
+2020-12-30 13:36:34,266  INFO [main] Company setup page:96 - Year Value clicked 
+2020-12-30 13:36:34,625  INFO [main] Company setup page:96 - Month Value clicked 
+2020-12-30 13:36:34,803  INFO [main] Company setup page:946 - Current date is selected as expected for "Insurance" date field
+2020-12-30 13:36:35,339  INFO [main] Company setup page:175 - Scroll to this element - Order Date
+2020-12-30 13:36:36,430  INFO [main] Company setup page:96 - Order Date clicked 
+2020-12-30 13:36:36,732  INFO [main] Company setup page:96 - Mont&Year popup clicked 
+2020-12-30 13:36:37,067  INFO [main] Company setup page:96 - Year popup clicked 
+2020-12-30 13:36:37,435  INFO [main] Company setup page:96 - Year Value clicked 
+2020-12-30 13:36:37,775  INFO [main] Company setup page:96 - Month Value clicked 
+2020-12-30 13:36:38,095  INFO [main] Company setup page:929 - Future Date is selected for "Insurance" date field
+2020-12-30 13:47:55,914  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 13:47:56,332  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 13:47:56,692  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 13:48:21,041  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 13:48:21,417  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 13:48:28,099  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 13:48:49,154  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 13:48:59,078  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 13:48:59,686  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 13:49:02,068  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 13:49:02,619  INFO [main] User Login Page:175 - Scroll to this element - Order Date
+2020-12-30 13:49:03,904  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 13:49:04,309  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 13:49:04,668  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 13:49:05,060  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 13:49:05,423  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 13:49:05,615  INFO [main] User Login Page:946 - Current date is selected as expected for "Warranty" date field
+2020-12-30 13:49:06,162  INFO [main] User Login Page:175 - Scroll to this element - Order Date
+2020-12-30 13:49:07,192  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 13:49:07,526  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 13:49:07,837  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 13:49:08,171  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 13:49:08,551  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 13:49:08,583  INFO [main] User Login Page:900 - Not able to select Past Date as expected for "Warranty" date field
+2020-12-30 13:49:08,871  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 13:49:09,170  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 13:49:09,537  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 13:49:09,886  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 13:49:10,273  INFO [main] User Login Page:929 - Future Date is selected for "Warranty" date field
+2020-12-30 15:20:59,084  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 15:20:59,500  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 15:20:59,813  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 15:21:04,958  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 15:21:24,137  INFO [main] User Login Page:99 - Ful Menu not clicked
+2020-12-30 15:21:33,216  INFO [main] DeployProduct-verifyProductLifeField:75 - Method - verifyProductLifeField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductLifeField_20201230152132.png
+2020-12-30 15:22:06,524  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 15:22:06,913  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 15:22:07,238  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 15:22:08,868  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 15:22:29,827  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 15:22:34,724  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 15:22:47,381  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 15:22:56,076  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 15:22:56,730  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 15:23:12,441  INFO [main] User Login Page:99 - Add Deploy not clicked
+2020-12-30 15:23:36,407  INFO [main] DeployProduct-verifyProductLifeField:75 - Method - verifyProductLifeField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductLifeField_20201230152336.png
+2020-12-30 15:24:27,834  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 15:24:28,271  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 15:24:28,581  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 15:24:32,034  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 15:24:42,508  INFO [main] User Login Page:99 - Ful Menu not clicked
+2020-12-30 15:24:51,885  INFO [main] DeployProduct-verifyProductLifeField:75 - Method - verifyProductLifeField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductLifeField_20201230152451.png
+2020-12-30 15:25:50,972  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 15:25:51,364  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 15:25:51,723  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 15:25:58,549  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 15:26:09,917  INFO [main] User Login Page:99 - Ful Menu not clicked
+2020-12-30 15:26:45,253  INFO [main] DeployProduct-verifyProductLifeField:75 - Method - verifyProductLifeField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductLifeField_20201230152644.png
+2020-12-30 15:27:42,682  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 15:27:43,065  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 15:27:43,451  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 15:27:47,819  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 15:30:06,546  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 15:30:12,764  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 15:30:35,514  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 15:30:48,592  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 15:30:49,832  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 15:30:56,564  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 15:31:13,898  INFO [main] User Login Page:111 - Depreciation Rule selected with value - 1
+2020-12-30 15:31:31,620  INFO [main] User Login Page:111 - Depreciation Rule selected with value - 1
+2020-12-30 15:40:27,509  INFO [main] User Login Page:111 - Depreciation Rule selected with value - 1
+2020-12-30 15:41:22,338  INFO [main] User Login Page:1128 - Product Life field displays asterisk symbol after selecting depreciation rule
+2020-12-30 15:41:30,405  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 15:42:54,244  INFO [main] User Login Page:1143 - Product Life field is not displayed as mandatory after selecting depreciation rule
+2020-12-30 15:43:52,600  INFO [main] User Login Page:75 - Product Life entered with value - 2
+2020-12-30 15:43:53,348  INFO [main] User Login Page:1154 - Product Life field accepts the data with only numeric value as expected. Entered Data : 2
+2020-12-30 15:44:16,719  INFO [main] User Login Page:75 - Product Life entered with value - Abc123
+2020-12-30 15:44:17,569  INFO [main] User Login Page:1168 - Product Life field accepts the data with alpha numeric character as expected. Entered date : Abc123
+2020-12-30 15:45:32,643  INFO [main] User Login Page:75 - Product Life entered with value - Abc123
+2020-12-30 15:46:45,441  INFO [main] User Login Page:75 - Product Life entered with value - Abc123
+2020-12-30 15:46:46,181  INFO [main] User Login Page:1177 - Product Life field is not accepts the data with alpha numeric character as expected. Entered date : Abc123
+2020-12-30 15:47:58,468  INFO [main] User Login Page:75 - Product Life entered with value - Abc123
+2020-12-30 15:47:59,192  INFO [main] User Login Page:1177 - Product Life field is not accepts the data with alpha numeric character as expected. Accepted data : 123
+2020-12-30 15:51:04,910  INFO [main] User Login Page:75 - Product Life entered with value - 12345
+2020-12-30 15:51:15,166  INFO [main] User Login Page:1182 - Product Life field not accepts the data with more than 3 digits as expected Accepted Data : 123
+2020-12-30 15:57:57,383  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 15:57:57,794  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 15:57:58,147  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 15:58:13,471  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 15:58:30,381  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 15:58:44,132  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 15:59:13,314  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 15:59:42,876  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 15:59:43,449  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 15:59:44,803  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 15:59:47,356  INFO [main] User Login Page:96 - Location Dropdown clicked 
+2020-12-30 15:59:47,933  INFO [main] User Login Page:75 - Quantity entered with value - 10
+2020-12-30 15:59:48,314  INFO [main] User Login Page:75 - Unit Price entered with value - 10
+2020-12-30 15:59:48,728  INFO [main] User Login Page:75 - Model entered with value - MN20201230155756
+2020-12-30 15:59:48,760  INFO [main] User Login Page:228 -  get attribute value is  - MN20201230155756
+2020-12-30 15:59:49,214  INFO [main] User Login Page:75 - Manufacturer entered with value - Test Manufaturer
+2020-12-30 15:59:49,619  INFO [main] User Login Page:75 - Vendor entered with value - Test Vendor
+2020-12-30 15:59:49,990  INFO [main] User Login Page:75 - AssetCost entered with value - 100
+2020-12-30 15:59:50,386  INFO [main] User Login Page:75 - PurchaseOrder entered with value - 1
+2020-12-30 15:59:50,938  INFO [main] User Login Page:176 - Scroll to this element - Order Date
+2020-12-30 15:59:52,146  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 15:59:52,475  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 15:59:52,791  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 15:59:53,165  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 15:59:53,520  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 15:59:54,058  INFO [main] User Login Page:75 - Invoice Number entered with value - 123456
+2020-12-30 15:59:54,603  INFO [main] User Login Page:176 - Scroll to this element - Invoice Date
+2020-12-30 15:59:55,794  INFO [main] User Login Page:96 - Invoice Date clicked 
+2020-12-30 15:59:56,107  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 15:59:56,414  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 15:59:56,760  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 15:59:57,083  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 15:59:57,777  INFO [main] User Login Page:176 - Scroll to this element - Order Date
+2020-12-30 15:59:59,036  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 15:59:59,348  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 15:59:59,636  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 15:59:59,950  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 16:00:00,285  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 16:00:01,118  INFO [main] User Login Page:176 - Scroll to this element - Order Date
+2020-12-30 16:00:02,342  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 16:00:02,671  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 16:00:02,965  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 16:00:03,302  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 16:00:03,627  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 16:00:04,158  INFO [main] User Login Page:112 - Depreciation Rule selected with value - 1
+2020-12-30 16:00:04,563  INFO [main] User Login Page:75 - Product Life entered with value - 2
+2020-12-30 16:00:04,917  INFO [main] User Login Page:75 - Salvage Cost entered with value - 10
+2020-12-30 16:00:04,969  INFO [main] User Login Page:1250 - Add to list button is present as clickable
+2020-12-30 16:00:05,413  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:00:05,509  INFO [main] User Login Page:1265 - Created product is displayed in the "Deploy Product" list when click on the add to list button
+2020-12-30 16:01:41,357  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:01:41,737  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:01:42,078  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:01:48,145  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:02:05,028  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 16:02:13,740  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 16:02:33,475  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 16:02:45,831  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 16:02:46,416  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 16:02:50,351  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 16:02:51,315  INFO [main] User Login Page:176 - Scroll to this element - Invoice Date
+2020-12-30 16:02:52,517  INFO [main] User Login Page:96 - Invoice Date clicked 
+2020-12-30 16:02:52,911  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 16:02:53,226  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 16:02:53,571  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 16:02:53,910  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 16:02:54,136  INFO [main] User Login Page:946 - Current date is selected as expected for "Invoice" date field
+2020-12-30 16:02:54,682  INFO [main] User Login Page:176 - Scroll to this element - Invoice Date
+2020-12-30 16:02:55,713  INFO [main] User Login Page:96 - Invoice Date clicked 
+2020-12-30 16:02:56,062  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 16:02:56,367  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 16:02:56,717  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 16:02:57,010  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 16:02:57,265  INFO [main] User Login Page:888 - Old Date was selected as expected for "Invoice" date field
+2020-12-30 16:02:57,793  INFO [main] User Login Page:176 - Scroll to this element - Invoice Date
+2020-12-30 16:02:58,860  INFO [main] User Login Page:96 - Invoice Date clicked 
+2020-12-30 16:02:59,142  INFO [main] User Login Page:96 - Mont&Year popup clicked 
+2020-12-30 16:02:59,454  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 16:02:59,799  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 16:03:00,096  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 16:03:00,128  INFO [main] User Login Page:912 - Not able to select Future Date as expected for "Invoice" date field
+2020-12-30 16:09:34,998  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:09:35,435  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:09:35,778  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:09:45,323  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:09:56,676  INFO [main] User Login Page:99 - Ful Menu not clicked
+2020-12-30 16:10:15,654  INFO [main] DeployProduct-verifyInvoiceNumberField:75 - Method - verifyInvoiceNumberField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyInvoiceNumberField_20201230161015.png
+2020-12-30 16:27:59,545  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:27:59,944  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:28:00,288  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:28:08,227  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:28:31,863  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 16:28:39,216  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 16:29:11,352  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 16:29:11,739  INFO [main] Company setup page:75 - Menu Search entered with value - Location
+2020-12-30 16:29:13,042  INFO [main] Company setup page:96 - Side Bar Location clicked 
+2020-12-30 16:29:15,778  INFO [main] Company setup page:176 - Scroll to this element - Add Location
+2020-12-30 16:29:17,329  INFO [main] Company setup page:96 - Add Location clicked 
+2020-12-30 16:29:20,738  INFO [main] Company setup page:96 - Parent Location Dropdown clicked 
+2020-12-30 16:29:21,168  INFO [main] Company setup page:96 - Parent Location Value clicked 
+2020-12-30 16:29:21,580  INFO [main] Company setup page:75 - Location Name entered with value - Child20201230162758
+2020-12-30 16:29:22,039  INFO [main] Company setup page:75 - Address Line1 entered with value - Address Line1
+2020-12-30 16:29:22,406  INFO [main] Company setup page:75 - City entered with value - City
+2020-12-30 16:29:23,387  INFO [main] Company setup page:143 - Country selected with value - India
+2020-12-30 16:29:23,765  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 16:29:24,998  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 16:29:25,223  INFO [main] Company setup page:127 - Page Size selected with value - 100
+2020-12-30 16:29:25,993  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:29:26,052  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:29:26,137  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:29:26,199  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:29:26,272  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:29:26,340  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:29:26,403  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:29:26,464  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:29:26,542  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:29:26,600  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:29:26,963  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 16:29:27,311  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 16:29:57,193  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 16:30:12,384  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 16:30:12,969  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 16:30:15,744  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 16:30:16,960  INFO [main] Company setup page:96 - Location Dropdown clicked 
+2020-12-30 16:30:17,170  INFO [main] Company setup page:493 - Expected parent location "Location2" location is not present in location dropdown
+2020-12-30 16:30:17,806  INFO [main] Company setup page:488 - Expected parent location "Location2" location is present in both setup and location dropdown
+2020-12-30 16:30:17,868  INFO [main] Company setup page:488 - Expected parent location "Location3" location is present in both setup and location dropdown
+2020-12-30 16:30:17,935  INFO [main] Company setup page:488 - Expected parent location "Location4" location is present in both setup and location dropdown
+2020-12-30 16:30:17,984  INFO [main] Company setup page:488 - Expected parent location "Location5" location is present in both setup and location dropdown
+2020-12-30 16:30:18,024  INFO [main] Company setup page:488 - Expected parent location "Location6" location is present in both setup and location dropdown
+2020-12-30 16:30:18,059  INFO [main] Company setup page:488 - Expected parent location "Location7" location is present in both setup and location dropdown
+2020-12-30 16:30:18,087  INFO [main] Company setup page:488 - Expected parent location "Location8" location is present in both setup and location dropdown
+2020-12-30 16:30:18,110  INFO [main] Company setup page:488 - Expected parent location "Location9" location is present in both setup and location dropdown
+2020-12-30 16:30:18,126  INFO [main] Company setup page:488 - Expected parent location "New Jersey" location is present in both setup and location dropdown
+2020-12-30 16:30:18,136  INFO [main] Company setup page:488 - Expected parent location "New york" location is present in both setup and location dropdown
+2020-12-30 16:30:30,579  INFO [main] User Login Page:197 - Logout menu click by JS
+2020-12-30 16:30:39,117  INFO [main] User Login Page:197 - Logout click by JS
+2020-12-30 16:30:39,563  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:30:39,940  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:30:40,258  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:30:41,398  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:31:06,683  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 16:31:08,157  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 16:31:29,619  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 16:31:48,694  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 16:31:49,279  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 16:31:50,596  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 16:31:51,006  INFO [main] User Login Page:75 - Model Name entered with value - A1b2C3
+2020-12-30 16:31:51,041  INFO [main] User Login Page:565 - Model Name field is accept alpha numeric character as expected. Accepted value : A1b2C3
+2020-12-30 16:31:51,403  INFO [main] User Login Page:75 - Vendor entered with value - A1b2C3
+2020-12-30 16:31:51,430  INFO [main] User Login Page:627 - Vendor Name field is accept the alpha numeric characters as expected. Accepted value : A1b2C3
+2020-12-30 16:31:51,831  INFO [main] User Login Page:75 - Manufacturer entered with value - A1b2C3
+2020-12-30 16:31:51,857  INFO [main] User Login Page:579 - Manufacturer Name field is accept the data as expected. Accepted value : A1b2C3
+2020-12-30 16:31:52,197  INFO [main] User Login Page:75 - Manufacturer entered with value - @
+2020-12-30 16:31:52,642  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:31:52,684  INFO [main] User Login Page:615 - Manufacturer Name field displayed the error message for the charc special character "@"
+2020-12-30 16:31:53,362  INFO [main] User Login Page:75 - Manufacturer entered with value - #
+2020-12-30 16:31:53,801  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:31:53,867  INFO [main] User Login Page:615 - Manufacturer Name field displayed the error message for the charc special character "#"
+2020-12-30 16:31:54,590  INFO [main] User Login Page:75 - Manufacturer entered with value - $
+2020-12-30 16:31:55,058  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:31:55,096  INFO [main] User Login Page:615 - Manufacturer Name field displayed the error message for the charc special character "$"
+2020-12-30 16:31:55,852  INFO [main] User Login Page:75 - Manufacturer entered with value - <
+2020-12-30 16:31:56,288  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:31:56,309  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "<"
+2020-12-30 16:31:56,628  INFO [main] User Login Page:75 - Manufacturer entered with value - {
+2020-12-30 16:31:57,077  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:31:57,110  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "{"
+2020-12-30 16:31:57,498  INFO [main] User Login Page:75 - Manufacturer entered with value - }
+2020-12-30 16:31:57,979  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:31:57,999  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "}"
+2020-12-30 16:31:58,373  INFO [main] User Login Page:75 - Manufacturer entered with value - %
+2020-12-30 16:31:58,863  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:31:58,899  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "%"
+2020-12-30 16:31:59,271  INFO [main] User Login Page:75 - Manufacturer entered with value - [
+2020-12-30 16:31:59,699  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:31:59,723  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "["
+2020-12-30 16:32:00,089  INFO [main] User Login Page:75 - Manufacturer entered with value - ]
+2020-12-30 16:32:00,518  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:32:00,557  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "]"
+2020-12-30 16:32:00,943  INFO [main] User Login Page:75 - Manufacturer entered with value - (
+2020-12-30 16:32:01,364  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:32:01,387  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "("
+2020-12-30 16:32:01,751  INFO [main] User Login Page:75 - Manufacturer entered with value - )
+2020-12-30 16:32:02,233  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:32:02,262  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character ")"
+2020-12-30 16:32:02,644  INFO [main] User Login Page:75 - Manufacturer entered with value - ?:
+2020-12-30 16:32:03,110  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:32:03,132  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "?:"
+2020-12-30 16:32:03,515  INFO [main] User Login Page:75 - Manufacturer entered with value - |'
+2020-12-30 16:32:03,945  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:32:03,985  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "|'"
+2020-12-30 16:32:04,304  INFO [main] User Login Page:75 - Manufacturer entered with value - ;
+2020-12-30 16:32:04,746  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:32:04,770  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character ";"
+2020-12-30 16:32:05,140  INFO [main] User Login Page:75 - Manufacturer entered with value - =
+2020-12-30 16:32:05,609  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:32:05,637  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "="
+2020-12-30 16:32:06,032  INFO [main] User Login Page:75 - Manufacturer entered with value - &#
+2020-12-30 16:32:06,482  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:32:06,505  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "&#"
+2020-12-30 16:32:06,864  INFO [main] User Login Page:75 - Manufacturer entered with value - |
+2020-12-30 16:32:07,342  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:32:07,374  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "|"
+2020-12-30 16:32:07,752  INFO [main] User Login Page:75 - Manufacturer entered with value - &+
+2020-12-30 16:32:08,216  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 16:32:08,237  INFO [main] User Login Page:595 - Manufacturer Name field displayed the error message as expected for the character "&+"
+2020-12-30 16:32:20,510  INFO [main] User Login Page:197 - Logout menu click by JS
+2020-12-30 16:32:26,840  INFO [main] User Login Page:197 - Logout click by JS
+2020-12-30 16:32:27,281  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:32:27,659  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:32:28,009  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:32:29,290  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:32:39,647  INFO [main] Company setup page:99 - Ful Menu not clicked
+2020-12-30 16:33:05,521  INFO [main] DeployProduct-verifyProductCostField:75 - Method - verifyProductCostField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductCostField_20201230163305.png
+2020-12-30 16:33:17,807  INFO [main] User Login Page:197 - Logout menu click by JS
+2020-12-30 16:33:23,753  INFO [main] User Login Page:197 - Logout click by JS
+2020-12-30 16:33:24,202  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:33:24,598  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:33:24,927  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:33:53,250  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:33:53,599  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 16:33:54,053  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 16:34:18,954  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 16:34:19,287  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 16:34:29,647  INFO [main] User Login Page:99 - Deploy Tab not clicked
+2020-12-30 16:34:30,414  INFO [main] DeployProduct-verifyProductOrderDateField:75 - Method - verifyProductOrderDateField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductOrderDateField_20201230163430.png
+2020-12-30 16:34:42,820  INFO [main] User Login Page:197 - Logout menu click by JS
+2020-12-30 16:34:51,024  INFO [main] User Login Page:197 - Logout click by JS
+2020-12-30 16:34:51,450  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:34:51,871  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:34:52,209  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:34:53,723  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:35:24,725  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 16:35:25,088  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 16:35:47,620  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 16:36:02,284  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 16:36:02,597  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 16:36:09,356  INFO [main] DeployProduct-verifyInvoiceDateField:75 - Method - verifyInvoiceDateField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyInvoiceDateField_20201230163609.png
+2020-12-30 16:36:21,594  INFO [main] User Login Page:197 - Logout menu click by JS
+2020-12-30 16:36:26,961  INFO [main] User Login Page:197 - Logout click by JS
+2020-12-30 16:36:27,369  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:36:27,758  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:36:28,089  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:36:29,430  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:36:40,714  INFO [main] Company setup page:99 - Ful Menu not clicked
+2020-12-30 16:36:49,068  INFO [main] DeployProduct-verifyInsurenceFields:75 - Method - verifyInsurenceFields failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyInsurenceFields_20201230163648.png
+2020-12-30 16:37:01,432  INFO [main] User Login Page:197 - Logout menu click by JS
+2020-12-30 16:37:08,037  INFO [main] User Login Page:197 - Logout click by JS
+2020-12-30 16:37:08,452  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:37:08,821  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:37:09,157  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:42:30,539  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:42:30,908  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:42:31,223  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:42:36,363  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:43:10,014  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 16:43:25,601  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 16:43:59,336  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 16:45:56,304  INFO [main] Company setup page:75 - Menu Search entered with value - Location
+2020-12-30 16:45:57,818  INFO [main] Company setup page:96 - Side Bar Location clicked 
+2020-12-30 16:49:08,980  INFO [main] Company setup page:176 - Scroll to this element - Add Location
+2020-12-30 16:49:11,944  INFO [main] Company setup page:96 - Add Location clicked 
+2020-12-30 16:49:16,048  INFO [main] Company setup page:96 - Parent Location Dropdown clicked 
+2020-12-30 16:49:17,172  INFO [main] Company setup page:96 - Parent Location Value clicked 
+2020-12-30 16:49:18,191  INFO [main] Company setup page:75 - Location Name entered with value - Child20201230164229
+2020-12-30 16:49:19,228  INFO [main] Company setup page:75 - Address Line1 entered with value - Address Line1
+2020-12-30 16:49:20,253  INFO [main] Company setup page:75 - City entered with value - City
+2020-12-30 16:49:21,867  INFO [main] Company setup page:143 - Country selected with value - India
+2020-12-30 16:49:22,939  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 16:49:25,660  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 16:49:37,497  INFO [main] Company setup page:127 - Page Size selected with value - 100
+2020-12-30 16:49:47,418  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:49:48,905  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:49:50,361  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:49:51,764  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:49:53,312  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:49:54,851  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:49:56,259  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:49:57,732  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:49:59,180  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:50:00,615  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:50:02,034  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:50:03,460  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:50:04,879  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:50:06,343  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:50:07,746  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:50:09,141  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:50:10,527  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:50:11,984  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:50:13,382  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:50:23,804  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 16:50:25,988  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 16:51:00,962  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 16:51:01,967  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 16:51:12,920  INFO [main] Company setup page:99 - Deploy Tab not clicked
+2020-12-30 16:52:41,966  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:52:42,336  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:52:42,637  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:52:50,362  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:53:06,673  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 16:53:08,911  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 16:53:14,687  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 16:53:15,130  INFO [main] Company setup page:75 - Menu Search entered with value - Location
+2020-12-30 16:53:16,227  INFO [main] Company setup page:96 - Side Bar Location clicked 
+2020-12-30 16:53:17,247  INFO [main] Company setup page:127 - Page Size selected with value - 100
+2020-12-30 16:53:18,569  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:18,631  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:18,691  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:18,753  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:18,818  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:18,878  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:18,937  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:18,997  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:19,067  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:19,136  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:19,196  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:19,254  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:19,320  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:19,385  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:53:19,474  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:53:19,538  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:53:19,602  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:53:19,659  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:53:19,717  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:53:20,084  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 16:53:21,354  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 16:53:49,631  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 16:54:04,988  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 16:54:05,569  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 16:54:07,338  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 16:54:09,761  INFO [main] Company setup page:96 - Location Dropdown clicked 
+2020-12-30 16:54:09,982  INFO [main] Company setup page:489 - Expected parent location "Locaiton10" location is present in both setup and location dropdown
+2020-12-30 16:54:10,071  INFO [main] Company setup page:489 - Expected parent location "Locaiton8" location is present in both setup and location dropdown
+2020-12-30 16:54:10,148  INFO [main] Company setup page:489 - Expected parent location "Location1" location is present in both setup and location dropdown
+2020-12-30 16:54:10,224  INFO [main] Company setup page:489 - Expected parent location "Location11" location is present in both setup and location dropdown
+2020-12-30 16:54:10,292  INFO [main] Company setup page:489 - Expected parent location "Location2" location is present in both setup and location dropdown
+2020-12-30 16:54:10,353  INFO [main] Company setup page:489 - Expected parent location "Location3" location is present in both setup and location dropdown
+2020-12-30 16:54:10,406  INFO [main] Company setup page:489 - Expected parent location "Location4" location is present in both setup and location dropdown
+2020-12-30 16:54:10,469  INFO [main] Company setup page:489 - Expected parent location "Location5" location is present in both setup and location dropdown
+2020-12-30 16:54:10,510  INFO [main] Company setup page:489 - Expected parent location "Location6" location is present in both setup and location dropdown
+2020-12-30 16:54:10,545  INFO [main] Company setup page:489 - Expected parent location "Location7" location is present in both setup and location dropdown
+2020-12-30 16:54:10,573  INFO [main] Company setup page:489 - Expected parent location "Location8" location is present in both setup and location dropdown
+2020-12-30 16:54:10,596  INFO [main] Company setup page:489 - Expected parent location "Location9" location is present in both setup and location dropdown
+2020-12-30 16:54:10,612  INFO [main] Company setup page:489 - Expected parent location "New Jersey" location is present in both setup and location dropdown
+2020-12-30 16:54:10,625  INFO [main] Company setup page:489 - Expected parent location "New york" location is present in both setup and location dropdown
+2020-12-30 16:54:10,789  INFO [main] Company setup page:489 - Expected child location "Auto Child Location" location is present in both setup and location dropdown
+2020-12-30 16:54:10,805  INFO [main] Company setup page:489 - Expected child location "Child Location1" location is present in both setup and location dropdown
+2020-12-30 16:54:10,837  INFO [main] Company setup page:489 - Expected child location "Child20201230164229" location is present in both setup and location dropdown
+2020-12-30 16:54:10,860  INFO [main] Company setup page:489 - Expected child location "Second Child Location" location is present in both setup and location dropdown
+2020-12-30 16:54:10,870  INFO [main] Company setup page:489 - Expected child location "ChildLocation2" location is present in both setup and location dropdown
+2020-12-30 16:55:14,226  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:55:14,623  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:55:14,956  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:55:22,755  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:57:37,115  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 16:57:39,264  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 16:57:51,152  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 16:57:51,526  INFO [main] Company setup page:75 - Menu Search entered with value - Location
+2020-12-30 16:57:52,546  INFO [main] Company setup page:96 - Side Bar Location clicked 
+2020-12-30 16:57:54,224  INFO [main] Company setup page:176 - Scroll to this element - Add Location
+2020-12-30 16:57:55,641  INFO [main] Company setup page:96 - Add Location clicked 
+2020-12-30 16:57:59,535  INFO [main] Company setup page:96 - Parent Location Dropdown clicked 
+2020-12-30 16:58:00,026  INFO [main] Company setup page:96 - Parent Location Value clicked 
+2020-12-30 16:58:00,445  INFO [main] Company setup page:75 - Location Name entered with value - Child20201230165513
+2020-12-30 16:58:00,829  INFO [main] Company setup page:75 - Address Line1 entered with value - Address Line1
+2020-12-30 16:58:01,164  INFO [main] Company setup page:75 - City entered with value - City
+2020-12-30 16:58:01,961  INFO [main] Company setup page:143 - Country selected with value - India
+2020-12-30 16:58:02,299  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 16:58:03,079  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 16:58:23,922  INFO [main] Company setup page:127 - Page Size selected with value - 100
+2020-12-30 16:58:25,736  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:25,794  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:25,853  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:25,925  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:26,007  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:26,067  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:26,123  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:26,181  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:26,248  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:26,305  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:26,361  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:26,420  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:26,480  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:26,536  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:58:26,595  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 16:58:26,651  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:58:26,731  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:58:26,796  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:58:26,858  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:58:26,918  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 16:58:27,272  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 16:58:27,589  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 16:58:41,569  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 16:58:41,929  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 16:58:52,530  INFO [main] Company setup page:99 - Deploy Tab not clicked
+2020-12-30 16:58:53,302  INFO [main] DeployProduct-verifyLocationDropdownValues:75 - Method - verifyLocationDropdownValues failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyLocationDropdownValues_20201230165852.png
+2020-12-30 16:59:33,765  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 16:59:34,161  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 16:59:34,502  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 16:59:40,133  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 16:59:46,262  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 16:59:46,592  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 17:00:42,398  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:00:42,804  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:00:43,184  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:01:01,582  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:01:02,015  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:01:09,710  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 17:01:27,546  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 17:01:27,961  INFO [main] Company setup page:75 - Menu Search entered with value - Location
+2020-12-30 17:01:28,886  INFO [main] Company setup page:96 - Side Bar Location clicked 
+2020-12-30 17:01:30,798  INFO [main] Company setup page:176 - Scroll to this element - Add Location
+2020-12-30 17:01:32,739  INFO [main] Company setup page:96 - Add Location clicked 
+2020-12-30 17:01:37,567  INFO [main] Company setup page:96 - Parent Location Dropdown clicked 
+2020-12-30 17:01:38,125  INFO [main] Company setup page:96 - Parent Location Value clicked 
+2020-12-30 17:01:38,598  INFO [main] Company setup page:75 - Location Name entered with value - Child20201230170041
+2020-12-30 17:01:39,063  INFO [main] Company setup page:75 - Address Line1 entered with value - Address Line1
+2020-12-30 17:01:39,472  INFO [main] Company setup page:75 - City entered with value - City
+2020-12-30 17:01:40,306  INFO [main] Company setup page:143 - Country selected with value - India
+2020-12-30 17:01:40,703  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 17:01:41,598  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 17:02:01,955  INFO [main] Company setup page:127 - Page Size selected with value - 100
+2020-12-30 17:02:04,817  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:04,877  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:04,940  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,005  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,065  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,146  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,216  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,278  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,340  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,401  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,461  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,520  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,582  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,646  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 17:02:05,703  INFO [main] Company setup page:228 -  get attribute value is  - ullocation
+2020-12-30 17:02:05,764  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 17:02:05,825  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 17:02:05,888  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 17:02:05,951  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 17:02:06,021  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 17:02:06,087  INFO [main] Company setup page:228 -  get attribute value is  - parentbasemaster
+2020-12-30 17:02:06,427  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:02:06,811  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 17:02:24,040  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 17:02:41,195  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 17:02:41,749  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 17:02:43,227  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 17:02:45,127  INFO [main] Company setup page:96 - Location Dropdown clicked 
+2020-12-30 17:02:45,334  INFO [main] Company setup page:490 - Expected parent location "Locaiton10" location is present in both setup and location dropdown
+2020-12-30 17:02:45,413  INFO [main] Company setup page:490 - Expected parent location "Locaiton8" location is present in both setup and location dropdown
+2020-12-30 17:02:45,486  INFO [main] Company setup page:490 - Expected parent location "Location1" location is present in both setup and location dropdown
+2020-12-30 17:02:45,565  INFO [main] Company setup page:490 - Expected parent location "Location11" location is present in both setup and location dropdown
+2020-12-30 17:02:45,626  INFO [main] Company setup page:490 - Expected parent location "Location2" location is present in both setup and location dropdown
+2020-12-30 17:02:45,683  INFO [main] Company setup page:490 - Expected parent location "Location3" location is present in both setup and location dropdown
+2020-12-30 17:02:45,739  INFO [main] Company setup page:490 - Expected parent location "Location4" location is present in both setup and location dropdown
+2020-12-30 17:02:45,788  INFO [main] Company setup page:490 - Expected parent location "Location5" location is present in both setup and location dropdown
+2020-12-30 17:02:45,844  INFO [main] Company setup page:490 - Expected parent location "Location6" location is present in both setup and location dropdown
+2020-12-30 17:02:45,877  INFO [main] Company setup page:490 - Expected parent location "Location7" location is present in both setup and location dropdown
+2020-12-30 17:02:45,905  INFO [main] Company setup page:490 - Expected parent location "Location8" location is present in both setup and location dropdown
+2020-12-30 17:02:45,926  INFO [main] Company setup page:490 - Expected parent location "Location9" location is present in both setup and location dropdown
+2020-12-30 17:02:45,942  INFO [main] Company setup page:490 - Expected parent location "New Jersey" location is present in both setup and location dropdown
+2020-12-30 17:02:45,952  INFO [main] Company setup page:490 - Expected parent location "New york" location is present in both setup and location dropdown
+2020-12-30 17:02:46,100  INFO [main] Company setup page:490 - Expected child location "Auto Child Location" location is present in both setup and location dropdown
+2020-12-30 17:02:46,116  INFO [main] Company setup page:490 - Expected child location "Child Location1" location is present in both setup and location dropdown
+2020-12-30 17:02:46,143  INFO [main] Company setup page:490 - Expected child location "Child20201230164229" location is present in both setup and location dropdown
+2020-12-30 17:02:46,183  INFO [main] Company setup page:490 - Expected child location "Child20201230165513" location is present in both setup and location dropdown
+2020-12-30 17:02:46,233  INFO [main] Company setup page:490 - Expected child location "Child20201230170041" location is present in both setup and location dropdown
+2020-12-30 17:02:46,255  INFO [main] Company setup page:490 - Expected child location "Second Child Location" location is present in both setup and location dropdown
+2020-12-30 17:02:46,265  INFO [main] Company setup page:490 - Expected child location "ChildLocation2" location is present in both setup and location dropdown
+2020-12-30 17:04:02,033  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:04:02,458  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:04:02,795  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:04:07,077  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:04:30,215  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 17:04:43,407  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 17:05:04,441  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 17:05:17,066  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 17:05:17,652  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 17:05:20,004  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 17:05:20,649  INFO [main] User Login Page:75 - Model Name entered with value - A1b2C3
+2020-12-30 17:05:20,685  INFO [main] User Login Page:567 - Model Name field is accept alpha numeric character as expected. Accepted value : A1b2C3
+2020-12-30 17:05:21,128  INFO [main] User Login Page:75 - Vendor entered with value - A1b2C3
+2020-12-30 17:05:21,160  INFO [main] User Login Page:629 - Vendor Name field is accept the alpha numeric characters as expected. Accepted value : A1b2C3
+2020-12-30 17:05:21,511  INFO [main] User Login Page:75 - Manufacturer entered with value - A1b2C3
+2020-12-30 17:05:21,540  INFO [main] User Login Page:581 - Manufacturer Name field is accept the data as expected. Accepted value : A1b2C3
+2020-12-30 17:05:21,882  INFO [main] User Login Page:75 - Manufacturer entered with value - @
+2020-12-30 17:05:22,357  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:22,398  INFO [main] User Login Page:617 - Manufacturer Name field displayed the error message for the charc special character "@"
+2020-12-30 17:05:23,162  INFO [main] User Login Page:75 - Manufacturer entered with value - #
+2020-12-30 17:05:23,554  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:23,583  INFO [main] User Login Page:617 - Manufacturer Name field displayed the error message for the charc special character "#"
+2020-12-30 17:05:24,242  INFO [main] User Login Page:75 - Manufacturer entered with value - $
+2020-12-30 17:05:24,696  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:24,730  INFO [main] User Login Page:617 - Manufacturer Name field displayed the error message for the charc special character "$"
+2020-12-30 17:05:25,451  INFO [main] User Login Page:75 - Manufacturer entered with value - <
+2020-12-30 17:05:25,879  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:25,904  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "<"
+2020-12-30 17:05:26,227  INFO [main] User Login Page:75 - Manufacturer entered with value - {
+2020-12-30 17:05:26,661  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:26,694  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "{"
+2020-12-30 17:05:27,078  INFO [main] User Login Page:75 - Manufacturer entered with value - }
+2020-12-30 17:05:27,506  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:27,531  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "}"
+2020-12-30 17:05:27,874  INFO [main] User Login Page:75 - Manufacturer entered with value - %
+2020-12-30 17:05:28,317  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:28,354  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "%"
+2020-12-30 17:05:28,703  INFO [main] User Login Page:75 - Manufacturer entered with value - [
+2020-12-30 17:05:29,170  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:29,196  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "["
+2020-12-30 17:05:29,563  INFO [main] User Login Page:75 - Manufacturer entered with value - ]
+2020-12-30 17:05:29,990  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:30,015  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "]"
+2020-12-30 17:05:30,390  INFO [main] User Login Page:75 - Manufacturer entered with value - (
+2020-12-30 17:05:30,826  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:30,851  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "("
+2020-12-30 17:05:31,226  INFO [main] User Login Page:75 - Manufacturer entered with value - )
+2020-12-30 17:05:31,690  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:31,726  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character ")"
+2020-12-30 17:05:32,105  INFO [main] User Login Page:75 - Manufacturer entered with value - ?:
+2020-12-30 17:05:32,581  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:32,603  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "?:"
+2020-12-30 17:05:32,996  INFO [main] User Login Page:75 - Manufacturer entered with value - |'
+2020-12-30 17:05:33,412  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:33,447  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "|'"
+2020-12-30 17:05:33,821  INFO [main] User Login Page:75 - Manufacturer entered with value - ;
+2020-12-30 17:05:34,271  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:34,294  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character ";"
+2020-12-30 17:05:34,632  INFO [main] User Login Page:75 - Manufacturer entered with value - =
+2020-12-30 17:05:35,104  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:35,125  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "="
+2020-12-30 17:05:35,522  INFO [main] User Login Page:75 - Manufacturer entered with value - &#
+2020-12-30 17:05:35,898  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:35,922  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "&#"
+2020-12-30 17:05:36,300  INFO [main] User Login Page:75 - Manufacturer entered with value - |
+2020-12-30 17:05:36,721  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:36,745  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "|"
+2020-12-30 17:05:37,131  INFO [main] User Login Page:75 - Manufacturer entered with value - &+
+2020-12-30 17:05:37,576  INFO [main] User Login Page:96 - Add to List clicked 
+2020-12-30 17:05:37,600  INFO [main] User Login Page:597 - Manufacturer Name field displayed the error message as expected for the character "&+"
+2020-12-30 17:07:57,957  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:07:58,343  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:07:58,724  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:08:04,697  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:08:26,462  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:08:34,071  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 17:08:57,567  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 17:08:57,962  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 17:08:58,981  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 17:09:00,185  INFO [main] Company setup page:213 -  Text displayed is  - Food Product
+2020-12-30 17:09:13,686  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 17:09:34,370  INFO [main] Company setup page:176 - Scroll to this element - ProductCost Toggle
+2020-12-30 17:09:35,312  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:09:35,784  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 17:09:54,544  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 17:10:08,186  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 17:10:08,743  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 17:10:10,898  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 17:10:11,728  INFO [main] Company setup page:642 - Product Cost field is enabled when Product Cost toggle is set as "Yes" in the company setup page
+2020-12-30 17:10:12,226  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 17:10:28,761  INFO [main] Company setup page:84 - AssetCost not entered with value - 123456
+2020-12-30 17:10:29,857  INFO [main] DeployProduct-verifyProductCostField:75 - Method - verifyProductCostField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductCostField_20201230171029.png
+2020-12-30 17:11:55,235  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:11:55,639  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:11:55,966  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:12:04,631  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:12:15,714  INFO [main] Company setup page:99 - Ful Menu not clicked
+2020-12-30 17:12:17,694  INFO [main] DeployProduct-verifyProductCostField:75 - Method - verifyProductCostField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductCostField_20201230171217.png
+2020-12-30 17:13:03,247  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:13:03,664  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:13:04,029  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:13:11,372  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:13:17,038  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:13:17,344  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 17:13:32,665  INFO [main] Company setup page:99 - Company Setup Sub Menu not clicked
+2020-12-30 17:13:33,324  INFO [main] DeployProduct-verifyProductCostField:75 - Method - verifyProductCostField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductCostField_20201230171333.png
+2020-12-30 17:14:22,996  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:14:23,411  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:14:23,763  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:14:30,832  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:15:37,706  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:16:07,637  INFO [main] Company setup page:99 - Company Setup menu not clicked
+2020-12-30 17:16:08,324  INFO [main] DeployProduct-verifyProductCostField:75 - Method - verifyProductCostField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductCostField_20201230171608.png
+2020-12-30 17:16:37,303  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:16:37,691  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:16:38,036  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:16:53,001  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:16:53,408  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:16:58,635  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 17:17:09,070  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 17:17:09,525  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 17:17:10,546  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 17:17:11,348  INFO [main] Company setup page:213 -  Text displayed is  - Food Product
+2020-12-30 17:17:22,248  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 17:17:43,343  INFO [main] Company setup page:176 - Scroll to this element - ProductCost Toggle
+2020-12-30 17:17:44,207  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:17:44,716  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 17:18:06,304  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 17:18:29,003  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 17:18:29,627  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 17:18:31,146  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 17:18:32,015  INFO [main] Company setup page:642 - Product Cost field is enabled when Product Cost toggle is set as "Yes" in the company setup page
+2020-12-30 17:18:32,562  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 17:18:33,089  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 17:18:34,992  INFO [main] Company setup page:75 - AssetCost entered with value - 123456
+2020-12-30 17:18:35,019  INFO [main] Company setup page:735 - Product Cost field accepts the data with only numbers as expected
+2020-12-30 17:18:35,329  INFO [main] Company setup page:75 - AssetCost entered with value - Ab@#
+2020-12-30 17:18:35,357  INFO [main] Company setup page:749 - Product Cost field does not accept the data with character and special character as expected
+2020-12-30 17:18:35,697  INFO [main] Company setup page:75 - AssetCost entered with value - 1
+2020-12-30 17:18:36,214  INFO [main] Company setup page:96 - Add to List clicked 
+2020-12-30 17:18:52,566  INFO [main] Company setup page:764 - Product Cost field accepts the data with minimum of one digit as expected
+2020-12-30 17:18:53,001  INFO [main] Company setup page:75 - AssetCost entered with value - 1234567890
+2020-12-30 17:18:53,024  INFO [main] Company setup page:778 - Product Cost field accepts the data with maximum of 10 digit as expected
+2020-12-30 17:18:53,406  INFO [main] Company setup page:75 - AssetCost entered with value - 1234567890123
+2020-12-30 17:18:53,429  INFO [main] Company setup page:792 - Product Cost field does not accepts the data with more than 10 digit as expected. Accepted Data : 1234567890
+2020-12-30 17:19:15,358  INFO [main] DeployProduct-verifyProductCostField:75 - Method - verifyProductCostField failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyProductCostField_20201230171854.png
+2020-12-30 17:20:26,301  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:20:26,711  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:20:27,052  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:20:32,235  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:20:46,397  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:20:53,904  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 17:21:02,574  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 17:21:03,202  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 17:21:04,144  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 17:21:09,781  INFO [main] Company setup page:213 -  Text displayed is  - Food Product
+2020-12-30 17:21:20,624  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 17:21:41,236  INFO [main] Company setup page:176 - Scroll to this element - ProductCost Toggle
+2020-12-30 17:21:42,141  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:21:42,706  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 17:21:50,993  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 17:21:59,437  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 17:21:59,987  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 17:22:01,521  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 17:22:02,491  INFO [main] Company setup page:642 - Product Cost field is enabled when Product Cost toggle is set as "Yes" in the company setup page
+2020-12-30 17:22:03,204  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 17:22:03,685  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 17:22:04,315  INFO [main] Company setup page:75 - AssetCost entered with value - 123456
+2020-12-30 17:22:04,344  INFO [main] Company setup page:735 - Product Cost field accepts the data with only numbers as expected
+2020-12-30 17:22:04,700  INFO [main] Company setup page:75 - AssetCost entered with value - Ab@#
+2020-12-30 17:22:04,731  INFO [main] Company setup page:749 - Product Cost field does not accept the data with character and special character as expected
+2020-12-30 17:22:05,073  INFO [main] Company setup page:75 - AssetCost entered with value - 1
+2020-12-30 17:22:05,543  INFO [main] Company setup page:96 - Add to List clicked 
+2020-12-30 17:22:21,959  INFO [main] Company setup page:764 - Product Cost field accepts the data with minimum of one digit as expected
+2020-12-30 17:22:22,383  INFO [main] Company setup page:75 - AssetCost entered with value - 1234567890
+2020-12-30 17:22:22,410  INFO [main] Company setup page:778 - Product Cost field accepts the data with maximum of 10 digit as expected
+2020-12-30 17:22:22,847  INFO [main] Company setup page:75 - AssetCost entered with value - 1234567890123
+2020-12-30 17:22:22,871  INFO [main] Company setup page:792 - Product Cost field does not accepts the data with more than 10 digit as expected. Accepted Data : 1234567890
+2020-12-30 17:22:23,364  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 17:22:23,704  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:22:24,102  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 17:22:35,464  INFO [main] Company setup page:96 - Company Setup Sub Menu clicked 
+2020-12-30 17:22:35,928  INFO [main] Company setup page:75 - Menu Search entered with value - Product Type
+2020-12-30 17:22:36,950  INFO [main] Company setup page:96 - Side Bar Product Type clicked 
+2020-12-30 17:22:38,218  INFO [main] Company setup page:213 -  Text displayed is  - Food Product
+2020-12-30 17:22:44,646  INFO [main] Company setup page:96 - Edit Product Type clicked 
+2020-12-30 17:23:05,616  INFO [main] Company setup page:176 - Scroll to this element - ProductCost Toggle
+2020-12-30 17:23:06,819  INFO [main] Company setup page:96 - Product Cost No clicked 
+2020-12-30 17:23:07,359  INFO [main] Company setup page:96 - Product Cost No clicked 
+2020-12-30 17:23:07,810  INFO [main] Company setup page:96 - Save clicked 
+2020-12-30 17:23:10,042  INFO [main] Company setup page:96 - Close Popup clicked 
+2020-12-30 17:23:30,768  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:23:32,212  INFO [main] Company setup page:96 - Asset Management clicked 
+2020-12-30 17:23:43,640  INFO [main] Company setup page:96 - Manage Product clicked 
+2020-12-30 17:23:58,276  INFO [main] Company setup page:96 - Product clicked 
+2020-12-30 17:23:58,846  INFO [main] Company setup page:96 - Deploy Tab clicked 
+2020-12-30 17:23:59,998  INFO [main] Company setup page:96 - Add Deploy clicked 
+2020-12-30 17:24:00,592  INFO [main] Company setup page:651 - Product Cost field is disabled when product type is set as "No" in the company setup page
+2020-12-30 17:24:01,798  INFO [main] Company setup page:96 - Close clicked 
+2020-12-30 17:25:03,117  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:25:03,527  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:25:03,866  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:25:07,435  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:25:17,365  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 17:25:23,080  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 17:25:41,591  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 17:25:56,118  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 17:25:56,647  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 17:25:59,082  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 17:25:59,677  INFO [main] User Login Page:960 - User have option to select the "Product Order Date"
+2020-12-30 17:25:59,726  INFO [main] User Login Page:972 - User have option to select the "Invoice Date"
+2020-12-30 17:26:00,269  INFO [main] User Login Page:176 - Scroll to this element - Order Date
+2020-12-30 17:26:01,502  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 17:26:01,799  INFO [main] User Login Page:96 - Month & Year popup clicked 
+2020-12-30 17:26:02,134  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 17:26:02,485  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 17:26:02,843  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 17:26:03,035  INFO [main] User Login Page:948 - Current date is selected as expected for "Order" date field
+2020-12-30 17:26:03,576  INFO [main] User Login Page:176 - Scroll to this element - Order Date
+2020-12-30 17:26:04,645  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 17:26:04,987  INFO [main] User Login Page:96 - Month & Year popup clicked 
+2020-12-30 17:26:05,313  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 17:26:05,676  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 17:26:06,026  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 17:26:06,276  INFO [main] User Login Page:890 - Old Date was selected as expected for "Order" date field
+2020-12-30 17:26:06,813  INFO [main] User Login Page:176 - Scroll to this element - Order Date
+2020-12-30 17:26:07,843  INFO [main] User Login Page:96 - Order Date clicked 
+2020-12-30 17:26:08,166  INFO [main] User Login Page:96 - Month & Year popup clicked 
+2020-12-30 17:26:08,475  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 17:26:08,848  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 17:26:09,205  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 17:26:09,253  INFO [main] User Login Page:914 - Not able to select Future Date as expected for "Order" date field
+2020-12-30 17:26:49,570  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:26:49,913  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:26:50,219  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:27:05,592  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:27:06,002  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 17:27:09,032  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 17:27:18,830  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 17:27:26,148  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 17:27:26,727  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 17:27:29,250  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 17:27:29,918  INFO [main] User Login Page:176 - Scroll to this element - Invoice Date
+2020-12-30 17:27:31,153  INFO [main] User Login Page:96 - Invoice Date clicked 
+2020-12-30 17:27:31,512  INFO [main] User Login Page:96 - Month & Year popup clicked 
+2020-12-30 17:27:31,825  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 17:27:32,185  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 17:27:32,538  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 17:27:32,764  INFO [main] User Login Page:948 - Current date is selected as expected for "Invoice" date field
+2020-12-30 17:27:33,300  INFO [main] User Login Page:176 - Scroll to this element - Invoice Date
+2020-12-30 17:27:34,308  INFO [main] User Login Page:96 - Invoice Date clicked 
+2020-12-30 17:27:34,599  INFO [main] User Login Page:96 - Month & Year popup clicked 
+2020-12-30 17:27:34,939  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 17:27:35,335  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 17:27:35,700  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 17:27:35,949  INFO [main] User Login Page:890 - Old Date was selected as expected for "Invoice" date field
+2020-12-30 17:27:36,489  INFO [main] User Login Page:176 - Scroll to this element - Invoice Date
+2020-12-30 17:27:37,562  INFO [main] User Login Page:96 - Invoice Date clicked 
+2020-12-30 17:27:37,911  INFO [main] User Login Page:96 - Month & Year popup clicked 
+2020-12-30 17:27:38,212  INFO [main] User Login Page:96 - Year popup clicked 
+2020-12-30 17:27:38,553  INFO [main] User Login Page:96 - Year Value clicked 
+2020-12-30 17:27:38,928  INFO [main] User Login Page:96 - Month Value clicked 
+2020-12-30 17:27:38,957  INFO [main] User Login Page:914 - Not able to select Future Date as expected for "Invoice" date field
+2020-12-30 17:29:13,349  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:29:13,681  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:29:14,029  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:29:16,522  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:29:23,463  INFO [main] Company setup page:96 - Ful Menu clicked 
+2020-12-30 17:29:23,815  INFO [main] Company setup page:96 - Company Setup menu clicked 
+2020-12-30 17:29:39,185  INFO [main] Company setup page:99 - Company Setup Sub Menu not clicked
+2020-12-30 17:29:41,305  INFO [main] DeployProduct-verifyInsurenceFields:75 - Method - verifyInsurenceFields failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyInsurenceFields_20201230172940.png
+2020-12-30 17:30:06,967  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:30:07,368  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:30:07,707  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:31:27,321  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:31:27,731  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:31:28,050  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:31:30,047  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:31:37,768  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 17:31:41,982  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 17:31:53,453  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 17:32:00,038  INFO [main] User Login Page:96 - Product clicked 
+2020-12-30 17:32:00,598  INFO [main] User Login Page:96 - Deploy Tab clicked 
+2020-12-30 17:32:02,968  INFO [main] User Login Page:96 - Add Deploy clicked 
+2020-12-30 17:32:03,601  INFO [main] User Login Page:75 - Insurance Reference Number entered with value - Abc123
+2020-12-30 17:32:03,637  INFO [main] User Login Page:1066 - Insurance Ref Number field accepts the data with alpha numeric character as expected. Entered Date : Abc123
+2020-12-30 17:32:03,999  INFO [main] User Login Page:75 - InsurerName entered with value - Abc123
+2020-12-30 17:32:04,028  INFO [main] User Login Page:1080 - Insurar Name field is accept the data with alpha numeric character
+2020-12-30 17:57:15,524  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:57:15,922  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:57:16,282  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:57:20,126  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:59:15,629  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 17:59:16,050  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 17:59:16,409  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 17:59:38,012  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 17:59:38,434  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 17:59:44,639  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 17:59:55,429  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 18:00:05,118  INFO [main] User Login Page:96 - Add New clicked 
+2020-12-30 18:00:05,486  INFO [main] User Login Page:112 - Product Type selected with value - 1
+2020-12-30 18:00:06,017  INFO [main] User Login Page:75 - Product Name entered with value - AT20201230175915
+2020-12-30 18:00:06,279  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-30 18:00:06,544  INFO [main] User Login Page:112 - status selected with value - 1
+2020-12-30 18:00:06,794  INFO [main] User Login Page:112 - Audit selected with value - 1
+2020-12-30 18:00:07,028  INFO [main] User Login Page:112 - Image frequency selected with value - 1
+2020-12-30 18:00:07,266  INFO [main] User Login Page:112 - calibration selected with value - 1
+2020-12-30 18:00:07,311  INFO [main] User Login Page:228 -  get attribute value is  - 5644
+2020-12-30 18:00:07,711  INFO [main] User Login Page:75 - product code entered with value - 175915
+2020-12-30 18:00:08,320  INFO [main] User Login Page:358 - Upload document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\55565.jpg
+2020-12-30 18:00:09,233  INFO [main] User Login Page:75 - description entered with value - The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy.
+2020-12-30 18:00:11,407  INFO [main] User Login Page:197 - unique name click by JS
+2020-12-30 18:00:11,794  INFO [main] User Login Page:75 - For company entered with value - 10000
+2020-12-30 18:00:12,204  INFO [main] User Login Page:75 - For company entered with value - 25474
+2020-12-30 18:00:28,025  INFO [main] User Login Page:96 - Save clicked 
+2020-12-30 18:00:28,653  INFO [main] User Login Page:96 - Close Popup clicked 
+2020-12-30 18:00:28,737  INFO [main] User Login Page:213 -  Text displayed is  - AT20201230175915
+2020-12-30 18:00:28,774  INFO [main] User Login Page:213 -  Text displayed is  - 5644175915
+2020-12-30 18:00:28,774  INFO [main] User Login Page:277 - Added Product is saved in the product list page and product list page is also displayed
+2020-12-30 18:00:28,805  INFO [main] User Login Page:213 -  Text displayed is  - 5644175915
+2020-12-30 18:00:28,805  INFO [main] User Login Page:289 - Entered Product code is displayed with the combination of Product type + Product code as 5644175915
+2020-12-30 18:00:40,313  INFO [main] User Login Page:96 - Product Name clicked 
+2020-12-30 18:01:01,790  INFO [main] Related information page:99 - Product not clicked
+2020-12-30 18:01:09,146  INFO [main] AddProduct-verifyUniqueName:75 - Method - verifyUniqueName failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyUniqueName_20201230180108.png
+2020-12-30 18:03:11,842  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 18:03:12,246  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 18:03:12,598  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 18:03:20,271  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 18:03:50,937  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 18:03:58,014  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 18:04:16,214  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 18:04:26,370  INFO [main] User Login Page:96 - Add New clicked 
+2020-12-30 18:04:26,715  INFO [main] User Login Page:112 - Product Type selected with value - 1
+2020-12-30 18:04:27,136  INFO [main] User Login Page:75 - Product Name entered with value - AT20201230180311
+2020-12-30 18:04:27,398  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-30 18:04:27,680  INFO [main] User Login Page:112 - status selected with value - 1
+2020-12-30 18:04:27,936  INFO [main] User Login Page:112 - Audit selected with value - 1
+2020-12-30 18:04:28,209  INFO [main] User Login Page:112 - Image frequency selected with value - 1
+2020-12-30 18:04:28,445  INFO [main] User Login Page:112 - calibration selected with value - 1
+2020-12-30 18:04:28,477  INFO [main] User Login Page:228 -  get attribute value is  - 5644
+2020-12-30 18:04:28,849  INFO [main] User Login Page:75 - product code entered with value - 180311
+2020-12-30 18:04:29,479  INFO [main] User Login Page:358 - Upload document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\55565.jpg
+2020-12-30 18:04:30,386  INFO [main] User Login Page:75 - description entered with value - The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy.
+2020-12-30 18:04:32,594  INFO [main] User Login Page:197 - unique name click by JS
+2020-12-30 18:04:32,978  INFO [main] User Login Page:75 - For company entered with value - 10000
+2020-12-30 18:04:33,363  INFO [main] User Login Page:75 - For company entered with value - 25474
+2020-12-30 18:04:44,698  INFO [main] User Login Page:96 - Save clicked 
+2020-12-30 18:04:45,331  INFO [main] User Login Page:96 - Close Popup clicked 
+2020-12-30 18:04:45,421  INFO [main] User Login Page:213 -  Text displayed is  - AT20201230180311
+2020-12-30 18:04:45,456  INFO [main] User Login Page:213 -  Text displayed is  - 5644180311
+2020-12-30 18:04:45,457  INFO [main] User Login Page:277 - Added Product is saved in the product list page and product list page is also displayed
+2020-12-30 18:04:45,487  INFO [main] User Login Page:213 -  Text displayed is  - 5644180311
+2020-12-30 18:04:45,487  INFO [main] User Login Page:289 - Entered Product code is displayed with the combination of Product type + Product code as 5644180311
+2020-12-30 18:05:01,368  INFO [main] User Login Page:96 - Product Name clicked 
+2020-12-30 18:06:04,620  INFO [main] Related information page:96 - Product clicked 
+2020-12-30 18:06:15,532  INFO [main] Related information page:96 - Deploy Tab clicked 
+2020-12-30 18:06:29,647  INFO [main] Related information page:96 - Add Deploy clicked 
+2020-12-30 18:07:25,737  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 18:07:26,159  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 18:07:26,526  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 18:07:43,921  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 18:07:44,284  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 18:07:47,452  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 18:07:55,279  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 18:08:03,070  INFO [main] User Login Page:96 - Add New clicked 
+2020-12-30 18:08:03,416  INFO [main] User Login Page:112 - Product Type selected with value - 1
+2020-12-30 18:08:03,828  INFO [main] User Login Page:75 - Product Name entered with value - AT20201230180725
+2020-12-30 18:08:04,187  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-30 18:08:04,445  INFO [main] User Login Page:112 - status selected with value - 1
+2020-12-30 18:08:04,700  INFO [main] User Login Page:112 - Audit selected with value - 1
+2020-12-30 18:08:04,939  INFO [main] User Login Page:112 - Image frequency selected with value - 1
+2020-12-30 18:08:05,181  INFO [main] User Login Page:112 - calibration selected with value - 1
+2020-12-30 18:08:05,214  INFO [main] User Login Page:228 -  get attribute value is  - 5644
+2020-12-30 18:08:05,580  INFO [main] User Login Page:75 - product code entered with value - 180725
+2020-12-30 18:08:06,228  INFO [main] User Login Page:358 - Upload document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\55565.jpg
+2020-12-30 18:08:07,147  INFO [main] User Login Page:75 - description entered with value - The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy.
+2020-12-30 18:08:09,346  INFO [main] User Login Page:197 - unique name click by JS
+2020-12-30 18:08:09,729  INFO [main] User Login Page:75 - For company entered with value - 10000
+2020-12-30 18:08:10,105  INFO [main] User Login Page:75 - For company entered with value - 25474
+2020-12-30 18:08:21,169  INFO [main] User Login Page:96 - Save clicked 
+2020-12-30 18:08:21,928  INFO [main] User Login Page:96 - Close Popup clicked 
+2020-12-30 18:08:22,018  INFO [main] User Login Page:213 -  Text displayed is  - AT20201230180725
+2020-12-30 18:08:22,052  INFO [main] User Login Page:213 -  Text displayed is  - 5644180725
+2020-12-30 18:08:22,053  INFO [main] User Login Page:277 - Added Product is saved in the product list page and product list page is also displayed
+2020-12-30 18:08:22,081  INFO [main] User Login Page:213 -  Text displayed is  - 5644180725
+2020-12-30 18:08:22,081  INFO [main] User Login Page:289 - Entered Product code is displayed with the combination of Product type + Product code as 5644180725
+2020-12-30 18:08:31,689  INFO [main] User Login Page:96 - Product Name clicked 
+2020-12-30 18:08:32,235  INFO [main] Related information page:96 - Deploy Tab clicked 
+2020-12-30 18:08:33,733  INFO [main] Related information page:96 - Add Deploy clicked 
+2020-12-30 18:08:34,661  INFO [main] Related information page:96 - Location Dropdown clicked 
+2020-12-30 18:08:35,267  INFO [main] Related information page:75 - Quantity entered with value - 1
+2020-12-30 18:08:35,646  INFO [main] Related information page:75 - Unit Price entered with value - 1
+2020-12-30 18:08:36,020  INFO [main] Related information page:75 - AssetCost entered with value - 1
+2020-12-30 18:08:36,506  INFO [main] Related information page:96 - Add to List clicked 
+2020-12-30 18:08:36,959  INFO [main] Related information page:96 - Save clicked 
+2020-12-30 18:08:37,831  INFO [main] Related information page:96 - Close Popup clicked 
+2020-12-30 18:08:58,777  INFO [main] Related information page:96 - related Information button clicked 
+2020-12-30 18:09:00,677  INFO [main] Related information page:213 -  Text displayed is  - AT20201230180725_1
+2020-12-30 18:09:00,677  INFO [main] Related information page:540 - Unique Name is generated as expected. Unique Name is AT20201230180725_1
+2020-12-30 18:09:55,828  INFO [main] User Login Page:75 - User Name entered with value - safiya@yopmail.com
+2020-12-30 18:09:56,278  INFO [main] User Login Page:75 - Password entered with value - talygen@123
+2020-12-30 18:09:56,623  INFO [main] User Login Page:96 - Privacy Policy clicked 
+2020-12-30 18:10:07,845  INFO [main] User Login Page:96 - Login clicked 
+2020-12-30 18:10:08,361  INFO [main] User Login Page:96 - Ful Menu clicked 
+2020-12-30 18:10:10,637  INFO [main] User Login Page:96 - Asset Management clicked 
+2020-12-30 18:10:21,597  INFO [main] User Login Page:96 - Manage Product clicked 
+2020-12-30 18:10:26,489  INFO [main] User Login Page:96 - Add New clicked 
+2020-12-30 18:10:26,857  INFO [main] User Login Page:112 - Product Type selected with value - 1
+2020-12-30 18:10:27,421  INFO [main] User Login Page:75 - Product Name entered with value - IAT20201230180955
+2020-12-30 18:10:27,681  INFO [main] User Login Page:112 - Barcode type selected with value - 1
+2020-12-30 18:10:27,937  INFO [main] User Login Page:112 - status selected with value - 1
+2020-12-30 18:10:28,282  INFO [main] User Login Page:112 - Audit selected with value - 1
+2020-12-30 18:10:28,658  INFO [main] User Login Page:112 - Image frequency selected with value - 1
+2020-12-30 18:10:28,905  INFO [main] User Login Page:112 - calibration selected with value - 1
+2020-12-30 18:10:28,937  INFO [main] User Login Page:228 -  get attribute value is  - 5644
+2020-12-30 18:10:29,344  INFO [main] User Login Page:75 - product code entered with value - 180955
+2020-12-30 18:10:30,017  INFO [main] User Login Page:358 - Upload document uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\55565.jpg
+2020-12-30 18:10:30,953  INFO [main] User Login Page:75 - description entered with value - The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy.
+2020-12-30 18:10:31,344  INFO [main] User Login Page:75 - For company entered with value - 10000
+2020-12-30 18:10:31,766  INFO [main] User Login Page:75 - For company entered with value - 25474
+2020-12-30 18:10:39,232  INFO [main] User Login Page:96 - Save clicked 
+2020-12-30 18:10:39,828  INFO [main] User Login Page:96 - Close Popup clicked 
+2020-12-30 18:10:44,864  INFO [main] Related information page:96 - Product clicked 
+2020-12-30 18:10:45,444  INFO [main] Related information page:96 - Deploy Tab clicked 
+2020-12-30 18:10:46,854  INFO [main] Related information page:96 - Add Deploy clicked 
+2020-12-30 18:10:48,689  INFO [main] Related information page:96 - Location Dropdown clicked 
+2020-12-30 18:10:49,310  INFO [main] Related information page:75 - Quantity entered with value - 1
+2020-12-30 18:10:49,707  INFO [main] Related information page:75 - Unit Price entered with value - 1
+2020-12-30 18:10:50,108  INFO [main] Related information page:75 - AssetCost entered with value - 1
+2020-12-30 18:10:50,596  INFO [main] Related information page:96 - Add to List clicked 
+2020-12-30 18:10:51,034  INFO [main] Related information page:96 - Save clicked 
+2020-12-30 18:10:51,832  INFO [main] Related information page:96 - Close Popup clicked 
+2020-12-30 18:11:12,786  INFO [main] Related information page:96 - related Information button clicked 
+2020-12-30 18:11:13,736  INFO [main] Related information page:213 -  Text displayed is  - Main Product5009_1
+2020-12-30 18:11:13,737  INFO [main] Related information page:516 - Unique Name is generated as Main Product5009_1

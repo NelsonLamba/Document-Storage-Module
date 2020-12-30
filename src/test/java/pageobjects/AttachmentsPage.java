@@ -33,9 +33,9 @@ public class AttachmentsPage extends WebBasePage {
 
     public void navigateToAttachmentTab()
     {
-        WebElement attachmentTab=findElementClickable(By.xpath("//div[@class='left-menu-tab']//ul[@id='myTab']//li//a[text()='Attachments ']"),20);
+        WebElement attachmentTab=findElementClickable(By.xpath("//ul[@id='myTab']//li//a[text()='Attachments ']"),20);
         if(attachmentTab!=null) {
-            click(By.xpath("//div[@class='left-menu-tab']//ul[@id='myTab']//li//a[text()='Attachments ']"), "Attachments Tab", 15);
+            click(By.xpath("//ul[@id='myTab']//li//a[text()='Attachments ']"), "Attachments Tab", 15);
             getTest().log(LogStatus.PASS,"User can able to click \"Attachment Tab\"");
             logger.info("User can able to click \"Attachment Tab\"");
         }else
@@ -282,16 +282,6 @@ public class AttachmentsPage extends WebBasePage {
     }
     public void clickAddMoreAttachment()
     {
-//            int recordsCount = findMultipleElement(By.xpath("//table[@id='example']//tbody//tr//td//a[@class='deletefile']"), 20).size();
-//            if (recordsCount >= 3) {
-//                while (recordsCount != 0) {
-//                    click(By.xpath("//table[@id='example']//tbody//tr[1]//td//a[@class='deletefile']"), "Delete", 20);
-//                    click(By.cssSelector("button.btn-success"), "Confirmation", 20);
-//                    waitForVisibilityOfElement(By.cssSelector("div.alert-success"), 20);
-//                    click(By.cssSelector("#closenotifymessage"), "Close Popup", 15);
-//                    recordsCount = findMultipleElement(By.xpath("//table[@id='example']//tbody//tr//td//a[@class='deletefile']"), 20).size();
-//                }
-//            }
             click(By.cssSelector("a#addMore"), "Add More", 15);
     }
     public void clickRemoveAttachmentField()
@@ -306,35 +296,9 @@ public class AttachmentsPage extends WebBasePage {
     {
         click(By.cssSelector("a#btnCancel"),"Cancel",15);
     }
-    /*public void closeConfirmationTermsAndCondition()
-    {
-        List <WebElement> termsAndConditionFromTable=findMultipleElement(By.xpath("//table[@id='example']//tbody//tr//td[4]//span"),15);
-        List <String> result=new ArrayList<>();
-        for(WebElement element:termsAndConditionFromTable)
-        {
-            if(element.getText().equals("Yes"))
-            {
-                result.add("true");
-            }
-            else
-            {
-                result.add("false");
-            }
-        }
-        if(result.contains("true"))
-        {
-            click(By.cssSelector("a#btnSave"),"Save",15);
-            waitForVisibilityOfElement(By.cssSelector("div.alert-warning"),20);
-            click(By.cssSelector("div.modal-confirm-footer>button.btn-success"),"Ok",15);
-        }
-        else
-        {
-            click(By.cssSelector("a#btnSave"),"Save",15);
-        }
-    }*/
+
     public void clickSaveButton()
     {
-//        closeConfirmationTermsAndCondition();
         click(By.cssSelector("a#btnSave"),"Save",15);
         wairForLoader(20);
     }

@@ -86,7 +86,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.locationDropdownSearchFuctionality();
         deployProduct.selectAndClearLocation();
     }
-    @Test(priority = 8)
+    @Test(priority = 1)
     public void verifyLocationDropdownValues()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -111,7 +111,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyQuantityField();
     }
-    @Test(priority = 10)
+    @Test(priority = 2)
     public  void verifyModelandVendorManufaturerFiels()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -122,7 +122,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyModelandVendorNameField();
         deployProduct.verifyManufacturerNameField();
     }
-    @Test(priority = 11)
+    @Test(priority = 3)
     public void verifyProductCostField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -134,16 +134,16 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyProductCostFieldBehaviour("enable");
+        deployProduct.navigateToCreateProductPage();
+        deployProduct.verifyProductCostField();
         comapnuSetup.navigateToCompanySetupPage();
         comapnuSetup.changeProductCostToggle(false);
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyProductCostFieldBehaviour("disable");
-        deployProduct.navigateToCreateProductPage();
-        deployProduct.verifyProductCostField();
     }
 
-    @Test(priority = 12)
+   @Test(priority = 12)
     public void verifyReferencePurchaseOrder()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -153,7 +153,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyReferenceField();
     }
-    @Test(priority = 13)
+    @Test(priority = 4)
     public void verifyProductOrderDateField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -176,7 +176,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInvoiceNumberFieldFunctionality();
     }
-    @Test(priority = 15)
+    @Test(priority = 5)
     public void verifyInvoiceDateField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -188,7 +188,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyInvoiceDateAsOldDate();
         deployProduct.verifyInvoiceDateFutureDate();
     }
-    @Test(priority = 16)
+    @Test(priority = 6)
     public void verifyInsurenceFields()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -210,7 +210,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInsuranceNumandInsurerNameField();
     }
-    @Test(priority = 17)
+    @Test(priority = 7)
     public void verifyInsurenceDateField() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
         CompanySetupAction comapnuSetup = new CompanySetupAction(driver);
@@ -229,7 +229,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInsuranceValidDateFunctionality();
     }
-    @Test(priority = 18)
+    @Test(priority = 8)
     public void verifyWarrantyDateField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -237,7 +237,7 @@ public class DeployProduct extends WebTestBase {
         new LoginAction(driver).logoutLogin();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
-        deployProduct.verifySelectedWarrantyDate();
+        deployProduct.verifyCurrentWarrantyDate();
         deployProduct.verifyPastWarrantyDate();
         deployProduct.verifyFutureWarrantyDate();
     }
@@ -260,7 +260,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyDepreciationDropdown();
     }
-    @Test(priority = 20)
+    @Test(priority = 9)
     public void verifyProductLifeField() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
         test = getTest("TC_Asset Management_DeployProduct_100_101_102_103_104");
@@ -269,7 +269,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyProducLifeField();
     }
-    @Test(priority = 21)
+    @Test(priority = 10)
     public void verifySalvageCostField() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
         test = getTest("TC_Asset Management_DeployProduct_105_106_107_108");
@@ -278,7 +278,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifySalvageCostField();
     }
-    @Test(priority = 22)
+    @Test(priority = 11)
     public void verifyAddToListFunctionality()
     {
         DeployProductAction deployProduct = new DeployProductAction(driver);

@@ -12,7 +12,7 @@ public class AddProduct extends WebTestBase
     @Test()
     public void addProductUniqueName()
     {
-        test = getTest("TC_Asset Management_AddProduct_15_21_22_27_28");
+        test = getTest("TC_Asset Management_AddProduct_15_21_27_28");
         AddProductAction addProductAction=new AddProductAction(driver);
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
@@ -21,7 +21,18 @@ public class AddProduct extends WebTestBase
         addProductAction.deployTab();
     }
     @Test()
-    public void addProduct()
+    public void verifyUniqueName()
+    {
+        test = getTest("TC_Asset Management_AddProduct_22");
+        AddProductAction addProductAction=new AddProductAction(driver);
+        new LoginAction(driver).logoutLogin();
+        addProductAction.gotoManageProductPage();
+        addProductAction.addNewButton();
+        addProductAction.addProductUniqueName();
+        addProductAction.verifyUniqueName();
+    }
+    @Test()
+    public void verifyNotUnique()
     {
         test = getTest("TC_Asset Management_AddProduct_23");
         AddProductAction addProductAction=new AddProductAction(driver);
@@ -29,6 +40,7 @@ public class AddProduct extends WebTestBase
         addProductAction.gotoManageProductPage();
         addProductAction.addNewButton();
         addProductAction.addProduct();
+        addProductAction.verifyNotUniqueName();
     }
     @Test()
     public void changeStatusWhileCreatingProduct()
