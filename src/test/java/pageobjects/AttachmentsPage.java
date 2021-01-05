@@ -47,7 +47,7 @@ public class AttachmentsPage extends WebBasePage {
     }
     public void enterAttachmentName()
     {
-        enter(By.cssSelector("#txtAttachment"),prop.getProperty("attachmentNameAlphaNumeric"),"Attachment Name",15);
+        enter(By.cssSelector("#txtAttachment"),prop.getProperty("attachmentNameAlphaNumeric"),"Attachment Name",20);
     }
     public void attachmentNameAlphaNumeric()
     {
@@ -115,8 +115,8 @@ public class AttachmentsPage extends WebBasePage {
     }
     public void verifyClearFileClickable()
     {
-        WebElement clearFile=findElementClickable(By.cssSelector("div>.clear"),20);
-        if(clearFile!=null)
+        boolean actualState=findElementVisibility(By.xpath("//a[contains(@class,'clear actionicons')]"),20).isEnabled();
+        if(actualState)
         {
             clickMinusIcon();
             getTest().log(LogStatus.PASS,"\"Clear File\" is present as clickable and clicked");
@@ -280,6 +280,11 @@ public class AttachmentsPage extends WebBasePage {
     {
         uploadDoc(By.cssSelector("div>input#flFile"), filePath + prop.getProperty("testfileDoc"), "Upload Attachment", 10);
     }
+    public void uploadMoreAttachment()
+    {
+        scrollToWebelement(By.cssSelector("div>input.expenseUpload"),"More Attachments");
+        findElementPresence(By.cssSelector("div>input.expenseUpload"), 20).sendKeys(filePath + prop.getProperty("testfileDoc"));
+    }
     public void clickAddMoreAttachment()
     {
             click(By.cssSelector("a#addMore"), "Add More", 15);
@@ -290,7 +295,7 @@ public class AttachmentsPage extends WebBasePage {
     }
     public void clickMinusIcon()
     {
-        click(By.cssSelector("div>.clear"),"Clear Attachment",15);
+        click(By.xpath("//a[contains(@class,'clear actionicons')]"),"Clear Button",20);
     }
     public void clickCancelButton()
     {
@@ -300,7 +305,7 @@ public class AttachmentsPage extends WebBasePage {
     public void clickSaveButton()
     {
         click(By.cssSelector("a#btnSave"),"Save",15);
-        wairForLoader(20);
+        waitForLoader(20);
     }
     public void clickPreviousButton()
     {
@@ -365,7 +370,7 @@ public class AttachmentsPage extends WebBasePage {
     public void verifyMinusIconFunctionality()
     {
         verifyClearFileClickable();
-        String attachedFileNameAfter=getAtribute(By.cssSelector("div>input#flFile"),"value",15);
+        String attachedFileNameAfter=getAtribute(By.xpath("//input[contains(@class,'expenseUpload')]/following-sibling::div//input"),"value",30);
         if(attachedFileNameAfter.equals(""))
         {
             getTest().log(LogStatus.PASS,"Already attached file is removed as expected when click \"Clear Attachment\" icon");
@@ -395,8 +400,8 @@ public class AttachmentsPage extends WebBasePage {
     }
     public void verifyPreviousButtonFunctionality()
     {
-        waitForVisibilityOfElement(By.xpath("//div[@class='theme-primary partition-full']//span[text()='Related Information']"),20);
-        WebElement relatedInformationPage=findElementVisibility(By.xpath("//div[@class='theme-primary partition-full']//span[text()='Related Information']"),20);
+        waitForVisibilityOfElement(By.xpath("//div[@aria-labelledby='RelatedInformation-tab']//span[text()='Related Information']"),20);
+        WebElement relatedInformationPage=findElementVisibility(By.xpath("//div[@aria-labelledby='RelatedInformation-tab']//span[text()='Related Information']"),20);
         if(relatedInformationPage.isDisplayed())
         {
             getTest().log(LogStatus.PASS,"Related Information page is displayed as expected when click \"Previous\" button");

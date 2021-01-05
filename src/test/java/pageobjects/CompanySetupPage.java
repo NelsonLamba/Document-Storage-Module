@@ -69,19 +69,19 @@ public class CompanySetupPage extends WebBasePage {
         findElementVisibility(By.cssSelector(".customsearchbox>input"),15);
         enter(By.cssSelector(".customsearchbox>input"),"Product Type","Menu Search",15);
         click(By.xpath("//ul[@id='upper']//li//a[text()='Product Type']"),"Side Bar Product Type",15);
-        wairForLoader(20);
+        waitForLoader(20);
     }
     public void sideBarLocation()
     {
         enter(By.cssSelector(".customsearchbox>input"),"Location","Menu Search",15);
         click(By.xpath("//ul[@id='upper']//li//a[text()='Location']"),"Side Bar Location",15);
-        wairForLoader(20);
+        waitForLoader(20);
     }
     public void openEditProductType()
     {
         productType=getText(By.xpath("//table[@id='tblAsset']//tbody//tr[1]//td[4]//a"),15).trim();
         click(By.xpath("//table[@id='tblAsset']//tbody//tr[1]//td[4]//a"),"Edit Product Type",15);
-        wairForLoader(20);
+        waitForLoader(20);
     }
     public void saveProductTypeChange()
     {
@@ -102,7 +102,7 @@ public class CompanySetupPage extends WebBasePage {
             if (!option) {
                 click(By.xpath("//input[@id='IsItemCostN']//parent::label//span[@class='slider round']"), "Product Cost Yes", 15);
                 saveProductTypeChange();
-                wairForLoader(20);
+                waitForLoader(20);
                 deployProduct.handleSuccessPopup();
             }
         }else
@@ -115,7 +115,7 @@ public class CompanySetupPage extends WebBasePage {
                 }
                 click(By.xpath("//input[@id='IsItemCostN']//parent::label//span[@class='slider round']"), "Product Cost No", 15);
                 saveProductTypeChange();
-                wairForLoader(20);
+                waitForLoader(20);
                 deployProduct.handleSuccessPopup();
             }
         }
@@ -130,7 +130,7 @@ public class CompanySetupPage extends WebBasePage {
             if (!option) {
                 click(By.xpath("//input[@id='InsurancePolicyN']//parent::label//span[@class='slider round']"), "Product Cost Yes", 15);
                 saveProductTypeChange();
-                wairForLoader(20);
+                waitForLoader(20);
                 deployProduct.handleSuccessPopup();
             }
         }else
@@ -138,7 +138,7 @@ public class CompanySetupPage extends WebBasePage {
             if (option) {
                 click(By.xpath("//input[@id='InsurancePolicyN']//parent::label//span[@class='slider round']"), "Product Cost No", 15);
                 saveProductTypeChange();
-                wairForLoader(20);
+                waitForLoader(20);
                 deployProduct.handleSuccessPopup();
             }
         }
@@ -158,7 +158,7 @@ public class CompanySetupPage extends WebBasePage {
                 }
                 click(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider round']"), "Product Cost Yes", 15);
                 saveProductTypeChange();
-                wairForLoader(20);
+                waitForLoader(20);
                 deployProduct.handleSuccessPopup();
             }
         }else
@@ -166,7 +166,7 @@ public class CompanySetupPage extends WebBasePage {
             if (option) {
                 click(By.xpath("//span[text()='Deployment Properties:']//following::div[@class='form-group'][9]//div//span[@class='slider round']"), "Product Cost No", 15);
                 saveProductTypeChange();
-                wairForLoader(20);
+                waitForLoader(20);
                 deployProduct.handleSuccessPopup();
             }
         }

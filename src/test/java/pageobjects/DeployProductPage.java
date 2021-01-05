@@ -4,7 +4,6 @@ import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import utils.PropertiesLoader;
 import utils.WebBasePage;
 
@@ -17,7 +16,7 @@ import java.util.List;
 import java.util.Properties;
 
 import static reporting.ComplexReportFactory.getTest;
-import static utils.StaticData.*;
+import static utils.StaticData.createdProductName;
 import static utils.StaticData.locationToSearch;
 
 public class DeployProductPage extends WebBasePage {
@@ -40,7 +39,8 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void clickFullMenuDropDown() {
-        click(By.cssSelector("a#navbarDropdownPortfolio"), "Ful Menu", 10);
+        findElementClickable(By.cssSelector("a#navbarDropdownPortfolio"),20);
+        click(By.cssSelector("a#navbarDropdownPortfolio"), "Ful Menu", 20);
     }
 
     public void clickAssetManagement() {
@@ -48,7 +48,7 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void clickManageProduct() {
-        click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 10);
+        click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 20);
     }
 
     public void navigateToDeployTab() {
@@ -130,7 +130,7 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void verifyPreviousButton() {
-        WebElement nextButton = findElementVisibility(By.cssSelector("a#Previous"), 15);
+        WebElement nextButton = findElementVisibility(By.cssSelector("a#Previous"), 30);
         if (nextButton != null) {
             getTest().log(LogStatus.PASS, "\"Previous Button\" is displayed in the Deploy product page");
             logger.info("\"Previous Button\" is displayed in the Deploy product page");
@@ -147,7 +147,7 @@ public class DeployProductPage extends WebBasePage {
 
     public void clickSearchButton() {
         click(By.cssSelector("a#aSearchAsset"), "Search Button", 15);
-        wairForLoader(20);
+        waitForLoader(20);
     }
 
     public void verifySearchedProduct() {
@@ -166,11 +166,19 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void clickClearSearch() {
-        findElementsVisibility(By.cssSelector("a#aUN_ClearSearch")).click();
+        WebElement ele=findElementVisibility(By.cssSelector("a#aUN_ClearSearch"),30);
+        if(ele!=null)
+        {
+            click(By.cssSelector("a#aUN_ClearSearch"),"Clear Search",20);
+        }else {
+            getTest().log(LogStatus.FAIL,"Clear Button is not found");
+            logger.info("Clear Button is not found");
+            takeScreenshot("ClearButton");
+        }
     }
 
     public void verifyClearedSearch() {
-        wairForLoader(30);
+        waitForLoader(30);
         String searchfield = getAtribute(By.cssSelector("input#assetSearch"), "value", 15);
         if (searchfield.equals("")) {
             logger.info("Search field is cleared successfully");
@@ -222,8 +230,8 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void verifyPreviousPage() {
-        scrollToWebelement(By.xpath("//div[@class='theme-primary partition-full']//span[text()='Create Product']"), "Create Product");
-        WebElement relatedInformationHeader = findElementVisibility(By.xpath("//div[@class='theme-primary partition-full']//span[text()='Create Product']"), 15);
+        scrollToWebelement(By.xpath("//div[@id='myTabContent']//span[text()='Create Product']"), "Create Product");
+        WebElement relatedInformationHeader = findElementVisibility(By.xpath("//div[@id='myTabContent']//span[text()='Create Product']"), 15);
         if (relatedInformationHeader != null) {
             getTest().log(LogStatus.PASS, "\"Create Product page\" is displayed when click previous button in \"Deploy page\"");
             logger.info("\"Create Product page\" is displayed when click previous button in \"Deploy page\"");
@@ -314,7 +322,7 @@ public class DeployProductPage extends WebBasePage {
     public void handleSuccessPopup() {
         waitForVisibilityOfElement(By.cssSelector("div.alert-success"), 20);
         click(By.cssSelector("#closenotifymessage"), "Close Popup", 15);
-        wairForLoader(20);
+        waitForLoader(20);
     }
 
     public void verifyCreatedDeployProduct() {
@@ -451,7 +459,7 @@ public class DeployProductPage extends WebBasePage {
     public void make100PageSize() {
         findElementVisibility(By.cssSelector("select#pageSize"),20).isEnabled();
         selectValueWithValue(By.cssSelector("select#pageSize"), "100", "Page Size", 15);
-        wairForLoader(20);
+        waitForLoader(20);
     }
 
     public void getLocationsFromSetup() {
@@ -857,8 +865,8 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public String selectDate(String date) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("d/MMM/yyyy");
-        DateTimeFormatter monthName = DateTimeFormatter.ofPattern("M");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
+        DateTimeFormatter monthName = DateTimeFormatter.ofPattern("MM");
         LocalDateTime now = LocalDateTime.now();
         String monthChar = monthName.format(now);
         inputDate = (date.equals("Old")) ? dtf.format(now.minusDays(1)) : (date.equals("Future")) ? dtf.format(now.plusDays(1)) : dtf.format(now);
@@ -1324,11 +1332,11 @@ public class DeployProductPage extends WebBasePage {
         int totalRecordCount = Integer.parseInt(defaultpaginationText[5]);
         WebElement paginationNavigator = findElementVisibility(By.xpath("//div[@class='nu-paging']//li//ul"), 15);
         if (paginationNavigator != null) {
-            int recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
-            String lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            int recordCount=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"),15).size();
+            String lastRecord=getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
             click(By.xpath("//a[@class='page-link next' and text()='Next']"), "Pagination Next", 15);
-            wairForLoader(20);
-            waitForInVisibilityOfElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            waitForLoader(20);
+            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
             String[] nextPaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int nextPageStartRecordCount = Integer.parseInt(nextPaginationText[1]);
             if (nextPageStartRecordCount == defaultEndCount + 1) {
@@ -1340,11 +1348,11 @@ public class DeployProductPage extends WebBasePage {
                 takeScreenshot("PaginationNext");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link previous' and text()='Prev']"), 20);
-            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
-            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
-            click(By.xpath("//a[@class='page-link previous' and text()='Prev']"), " Pagination Previous", 15);
-            wairForLoader(20);
-            waitForInVisibilityOfElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            recordCount=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"),15).size();
+            lastRecord=getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            click(By.xpath("//a[@class='page-link previous' and text()='Prev']"), " Pagination Previous", 30);
+            waitForLoader(20);
+            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
             String[] previousPaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int previousPageEndCount = Integer.parseInt(previousPaginationText[3]);
             if (previousPageEndCount == nextPageStartRecordCount - 1) {
@@ -1356,11 +1364,11 @@ public class DeployProductPage extends WebBasePage {
                 takeScreenshot("PaginationPrevious");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link last' and text()='Last ']"), 20);
-            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
-            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
-            click(By.xpath("//a[@class='page-link last' and text()='Last ']"), "Pagination Last", 15);
-            wairForLoader(20);
-            waitForInVisibilityOfElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            recordCount=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"),15).size();
+            lastRecord=getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            click(By.xpath("//a[@class='page-link last' and text()='Last ']"), "Pagination Last", 30);
+            waitForLoader(20);
+            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
             String[] lastPagePaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int lastPageEndCount = Integer.parseInt(lastPagePaginationText[3]);
             if (lastPageEndCount == totalRecordCount) {
@@ -1372,11 +1380,11 @@ public class DeployProductPage extends WebBasePage {
                 takeScreenshot("PaginationLast");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link  first' and text()='First ']"), 20);
-            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
-            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
-            click(By.xpath("//a[@class='page-link  first' and text()='First ']"), "Pagination First", 15);
-            wairForLoader(20);
-            waitForInVisibilityOfElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            recordCount=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"),15).size();
+            lastRecord=getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            click(By.xpath("//a[@class='page-link  first' and text()='First ']"), "Pagination First", 30);
+            waitForLoader(20);
+            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
             String[] firstPagePaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int firstPageStartRecordCount = Integer.parseInt(firstPagePaginationText[1]);
             if (firstPageStartRecordCount == defaultStartRecordCount) {
@@ -1392,11 +1400,11 @@ public class DeployProductPage extends WebBasePage {
     public void selectrecordPagination() {
         String selectRecordPage = prop.getProperty("selectRecordPage");
         selectValueWithValue(By.cssSelector("#pageSize"), selectRecordPage, "Page size", 10);
-        waitForLoad(20);
-        Select checkrecord = new Select(driver.findElement(By.cssSelector("select#pageSize")));
-        String selectedOption = checkrecord.getFirstSelectedOption().getText();
+        waitForLoader(30);
+        staticWait(2000);
+        String selectedOption = findElementVisibility(By.xpath("//select[@id='pageSize']//option[@selected='selected']"),20).getText();
         int checkRecord = Integer.parseInt(selectedOption);
-        int recordCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 20).size();
+        int recordCount = findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"), 20).size();
 
         if (checkRecord == Integer.parseInt(selectRecordPage) && recordCount <= checkRecord) {
             getTest().log(LogStatus.PASS, "Records are displayed as expected based on the selected page size");

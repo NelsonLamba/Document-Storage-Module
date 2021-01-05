@@ -148,6 +148,7 @@ public class AddProductAction
         addProductPage.enterStockValueForEmployee();
         addProductPage.clickSaveButton();
         addProductPage.handleSuccessPopup();
+        addProductPage.goBackToAddProductPage();
     }
         public void verifyNotUniqueName()
         {

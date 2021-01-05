@@ -491,7 +491,6 @@ public class AddProductPage extends WebBasePage {
     {
         DeployProductPage deployProduct=new DeployProductPage(driver);
         RelatedInformationPage relatedInformation=new RelatedInformationPage(driver);
-        deployProduct.openProduct();
         deployProduct.navigateToDeployTab();
         deployProduct.clickAddDeployButton();
         deployProduct.clickLocationDropdown();

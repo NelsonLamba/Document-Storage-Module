@@ -20,6 +20,7 @@ import static utils.StaticData.createdProductName;
 public class RelatedInformationPage extends WebBasePage {
 
     WebDriver driver;
+    public static String inputDate;
 
     public RelatedInformationPage(WebDriver driver) {
         super(driver, "Related information page");
@@ -29,7 +30,7 @@ public class RelatedInformationPage extends WebBasePage {
     private final static String FILE_NAME = System.getProperty("user.dir") + "\\src\\main\\resources\\testdata.properties";
     String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\testfiles\\";
     private static Properties prop = new PropertiesLoader(FILE_NAME).load();
-    String searchUniqueName = createdProductName;
+    String searchUniqueName = "";
     String pattern = "yyyyMMddHHmmss";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
     String dateValue = simpleDateFormat.format(new Date());
@@ -123,18 +124,18 @@ public class RelatedInformationPage extends WebBasePage {
     }
 
     public void searchUniqueName() {
+        searchUniqueName=findElementVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td[3]//a"),20).getText().trim();
         enter(By.cssSelector("input#relatedAssetSearch"), searchUniqueName, "UniqueName", 10);
     }
 
     public void clickSearchIcon() {
-        click(By.cssSelector("a#aRelatedSearchAsset"), "searchicon", 10);
-        wairForLoader(20);
+        click(By.cssSelector("a#aRelatedSearchAsset"), "Search Icon", 10);
+        waitForLoader(20);
     }
 
     public void verifyUniqueNameSearch() {
-        int rowCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 20).size();
         String resultName = getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[@class='editinfo']"), 20).trim();
-        if (resultName.contains(searchUniqueName)) {
+        if (resultName.equals(searchUniqueName)) {
             getTest().log(LogStatus.PASS, "Searched unique name is displayed as expected");
             logger.info("Searched unique name is displayed as expected");
         } else {
@@ -146,18 +147,18 @@ public class RelatedInformationPage extends WebBasePage {
 
     public void clickResetIcon() {
         waitForVisibilityOfElement(By.cssSelector("a#aUN_ClearSearch"), 20);
-        click(By.cssSelector("a#aUN_ClearSearch"), "clickResetIcon", 20);
+        click(By.cssSelector("a#aUN_ClearSearch"), "Click Reset Icon", 20);
     }
 
     public void checksearchBarisEmpty() {
         String searchField = findElementVisibility(By.cssSelector("input#relatedAssetSearch"), 10).getAttribute("value");
         if (searchField != null && searchField.equals("")) {
-            getTest().log(LogStatus.PASS, "The  Searchbar is Empty in the Related information page");
-            logger.info("The  Searchbar is Empty in the Related information page");
+            getTest().log(LogStatus.PASS, "The Searchbar is Empty in the Related information page after clicked the Reset button");
+            logger.info("The  Searchbar is Empty in the Related information page after clicked the Reset button");
 
         } else {
-            getTest().log(LogStatus.FAIL, "The  Searchbar is not Empty in the Related information page");
-            logger.info("The  Searchbar is not Empty in the Related information page");
+            getTest().log(LogStatus.FAIL, "The Searchbar is not Empty in the Related information page after clicked the Reset button");
+            logger.info("The Searchbar is not Empty in the Related information page after clicked the Reset button");
             takeScreenshot("SearchBar");
         }
     }
@@ -598,20 +599,22 @@ public class RelatedInformationPage extends WebBasePage {
     }
 
     public String selectDate(String date) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("d/MMM/yyyy");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
+        DateTimeFormatter monthName = DateTimeFormatter.ofPattern("MM");
         LocalDateTime now = LocalDateTime.now();
-        String inputDate = (date.equals("Old")) ? dtf.format(now.minusDays(1)) : (date.equals("Future")) ? dtf.format(now.plusDays(1)) : dtf.format(now);
+        String monthChar = monthName.format(now);
+        inputDate = (date.equals("Old")) ? dtf.format(now.minusDays(1)) : (date.equals("Future")) ? dtf.format(now.plusDays(1)) : dtf.format(now);
         String[] inputDateArray = inputDate.split("/");
         String day = inputDateArray[0];
         String month = inputDateArray[1];
         String year = inputDateArray[2];
-        click(By.cssSelector(".picker-switch"), "Mont&Year popup", 15);
+        click(By.cssSelector(".picker-switch"), "Month & Year popup", 25);
         click(By.cssSelector("[title='Select Year']"), "Year popup", 15);
         click(By.xpath("//span[contains(@class,'year') and text()='" + year + "']"), "Year Value", 15);
         click(By.xpath("//span[contains(@class,'month') and text()='" + month + "']"), "Month Value", 15);
-        String dayClass = findElementVisibility(By.xpath("//td[contains(@class,'day') and text()='" + day + "']"), 15).getAttribute("class");
+        String dayClass = findElementVisibility(By.xpath("//td[@data-day='"+monthChar+"/"+day+"/"+year+"']"), 15).getAttribute("class");
         if (!dayClass.contains("disabled")) {
-            findElementClickable(By.xpath("//td[contains(@class,'day') and text()='" + day + "']"), 15).click();
+            findElementClickable(By.xpath("//td[@data-day='"+monthChar+"/"+day+"/"+year+"']"), 15).click();
         }
         return dayClass;
     }
@@ -944,7 +947,7 @@ public class RelatedInformationPage extends WebBasePage {
     public void checkpendingCheckoutPageheaders() {
         int i = 0;
         List<String> expecteListHeader = new ArrayList<>();
-        expecteListHeader.add("Item Name");
+        expecteListHeader.add("Unique Name");
         expecteListHeader.add("From Time");
         expecteListHeader.add("To Time");
         expecteListHeader.add("Check Out Request By");
@@ -969,6 +972,96 @@ public class RelatedInformationPage extends WebBasePage {
                     takeScreenshot(expected.toString());
                 }
             }
+        }
+    }
+    public void verifyPaginationFunctionalities() {
+        String[] defaultpaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
+        int defaultStartRecordCount = Integer.parseInt(defaultpaginationText[1]);
+        int defaultEndCount = Integer.parseInt(defaultpaginationText[3]);
+        int totalRecordCount = Integer.parseInt(defaultpaginationText[5]);
+        WebElement paginationNavigator = findElementVisibility(By.xpath("//div[@class='nu-paging']//li//ul"), 15);
+        if (paginationNavigator != null) {
+            int recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
+            String lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            click(By.xpath("//a[@class='page-link next' and text()='Next']"), "Pagination Next", 15);
+            waitForLoader(20);
+            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            String[] nextPaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
+            int nextPageStartRecordCount = Integer.parseInt(nextPaginationText[1]);
+            if (nextPageStartRecordCount == defaultEndCount + 1) {
+                getTest().log(LogStatus.PASS, "Next page is displayed as expected when click on the \"Next\" pagination button");
+                logger.info("Next page is displayed as expected when click on the \"Next\" pagination button");
+            } else {
+                getTest().log(LogStatus.FAIL, "Next page is not displayed as expected when click on the \"Next\" pagination button");
+                logger.info("Next page is not displayed as expected when click on the \"Next\" pagination button");
+                takeScreenshot("PaginationNext");
+            }
+            waitForVisibilityOfElement(By.xpath("//a[@class='page-link previous' and text()='Prev']"), 20);
+            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
+            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            click(By.xpath("//a[@class='page-link previous' and text()='Prev']"), " Pagination Previous", 30);
+            waitForLoader(20);
+            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            String[] previousPaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
+            int previousPageEndCount = Integer.parseInt(previousPaginationText[3]);
+            if (previousPageEndCount == nextPageStartRecordCount - 1) {
+                getTest().log(LogStatus.PASS, "Previous page is displayed as expected when click on the \"Previous\" pagination button");
+                logger.info("Previous page is displayed as expected when click on the \"Previous\" pagination button");
+            } else {
+                getTest().log(LogStatus.FAIL, "Previous page is not displayed as expected when click on the \"Previous\" pagination button");
+                logger.info("Previous page is not displayed as expected when click on the \"Previous\" pagination button");
+                takeScreenshot("PaginationPrevious");
+            }
+            waitForVisibilityOfElement(By.xpath("//a[@class='page-link last' and text()='Last ']"), 20);
+            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
+            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            click(By.xpath("//a[@class='page-link last' and text()='Last ']"), "Pagination Last", 30);
+            waitForLoader(20);
+            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            String[] lastPagePaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
+            int lastPageEndCount = Integer.parseInt(lastPagePaginationText[3]);
+            if (lastPageEndCount == totalRecordCount) {
+                getTest().log(LogStatus.PASS, "Last page is displayed as expected when click on the \"Last\" pagination button");
+                logger.info("Last page is displayed as expected when click on the \"Last\" pagination button");
+            } else {
+                getTest().log(LogStatus.FAIL, "Last page is not displayed as expected when click on the \"Last\" pagination button");
+                logger.info("Last page is not displayed as expected when click on the \"Last\" pagination button");
+                takeScreenshot("PaginationLast");
+            }
+            waitForVisibilityOfElement(By.xpath("//a[@class='page-link  first' and text()='First ']"), 20);
+            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
+            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            click(By.xpath("//a[@class='page-link  first' and text()='First ']"), "Pagination First", 30);
+            waitForLoader(20);
+            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            String[] firstPagePaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
+            int firstPageStartRecordCount = Integer.parseInt(firstPagePaginationText[1]);
+            if (firstPageStartRecordCount == defaultStartRecordCount) {
+                getTest().log(LogStatus.PASS, "First page is displayed as expected when click on the \"First\" pagination button");
+                logger.info("First page is displayed as expected when click on the \"First\" pagination button");
+            } else {
+                getTest().log(LogStatus.FAIL, "First page is not displayed as expected when click on the \"First\" pagination button");
+                logger.info("First page is not displayed as expected when click on the \"First\" pagination button");
+                takeScreenshot("PaginationFirst");
+            }
+        }
+    }
+    public void selectrecordPagination() {
+        String selectRecordPage = prop.getProperty("selectRecordPage");
+        selectValueWithValue(By.cssSelector("#pageSize"), selectRecordPage, "Page size", 10);
+        waitForLoader(20);
+        String selectedOption = getText(By.xpath("//select[@id='pageSize']//option[@selected='selected']"),20);
+        int checkRecord = Integer.parseInt(selectedOption);
+        int recordCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 20).size();
+
+        if (checkRecord == Integer.parseInt(selectRecordPage) && recordCount <= checkRecord) {
+            getTest().log(LogStatus.PASS, "Records are displayed as expected based on the selected page size");
+            logger.info("Records are displayed as expected based on the selected page size");
+
+        } else {
+            getTest().log(LogStatus.FAIL, "Records are not displayed as expected based on the selected page size");
+            logger.info("Records are not displayed as expected based on the selected page size");
+            takeScreenshot("Records");
         }
     }
 }

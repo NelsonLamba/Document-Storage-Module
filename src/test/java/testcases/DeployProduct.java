@@ -86,7 +86,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.locationDropdownSearchFuctionality();
         deployProduct.selectAndClearLocation();
     }
-    @Test(priority = 1)
+    @Test(priority = 8)
     public void verifyLocationDropdownValues()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -111,7 +111,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyQuantityField();
     }
-    @Test(priority = 2)
+    @Test(priority = 10)
     public  void verifyModelandVendorManufaturerFiels()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -122,7 +122,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyModelandVendorNameField();
         deployProduct.verifyManufacturerNameField();
     }
-    @Test(priority = 3)
+    @Test(priority = 11)
     public void verifyProductCostField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -153,7 +153,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyReferenceField();
     }
-    @Test(priority = 4)
+    @Test(priority = 13)
     public void verifyProductOrderDateField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -176,7 +176,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInvoiceNumberFieldFunctionality();
     }
-    @Test(priority = 5)
+    @Test(priority = 15)
     public void verifyInvoiceDateField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -188,7 +188,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyInvoiceDateAsOldDate();
         deployProduct.verifyInvoiceDateFutureDate();
     }
-    @Test(priority = 6)
+    @Test(priority = 16)
     public void verifyInsurenceFields()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -210,7 +210,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInsuranceNumandInsurerNameField();
     }
-    @Test(priority = 7)
+    @Test(priority = 17)
     public void verifyInsurenceDateField() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
         CompanySetupAction comapnuSetup = new CompanySetupAction(driver);
@@ -229,7 +229,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInsuranceValidDateFunctionality();
     }
-    @Test(priority = 8)
+    @Test(priority = 18)
     public void verifyWarrantyDateField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
@@ -260,7 +260,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyDepreciationDropdown();
     }
-    @Test(priority = 9)
+    @Test(priority = 20)
     public void verifyProductLifeField() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
         test = getTest("TC_Asset Management_DeployProduct_100_101_102_103_104");
@@ -269,7 +269,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyProducLifeField();
     }
-    @Test(priority = 10)
+    @Test(priority = 21)
     public void verifySalvageCostField() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
         test = getTest("TC_Asset Management_DeployProduct_105_106_107_108");
@@ -278,7 +278,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifySalvageCostField();
     }
-    @Test(priority = 11)
+    @Test(priority = 22)
     public void verifyAddToListFunctionality()
     {
         DeployProductAction deployProduct = new DeployProductAction(driver);

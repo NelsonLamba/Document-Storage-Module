@@ -147,9 +147,8 @@ public void viewHistoryPageValidations()
 
     public void paginationfunctionality()
     {
-        DeployProductPage deployProductPage=new DeployProductPage(driver);
-        deployProductPage.selectrecordPagination();
-        deployProductPage.verifyPaginationFunctionalities();
+        relatedInformationPage.selectrecordPagination();
+        relatedInformationPage.verifyPaginationFunctionalities();
     }
 
 

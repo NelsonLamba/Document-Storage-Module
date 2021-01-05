@@ -66,16 +66,6 @@ public class WaitStatement {
         return null;
     }
 
-    public boolean waitForInVisibilityOfElement(final By by,int time) {
-
-        WebDriverWait wait = new WebDriverWait(driver, time);
-        try {
-            return wait.until(ExpectedConditions.invisibilityOf(driver.findElement(by)));
-        } catch (Exception e) {
-            return false;
-        }
-
-    }
     public WebElement waitForVisibilityOfElement(final By by,int time) {
 
         WebDriverWait wait = new WebDriverWait(driver, time);
@@ -99,5 +89,14 @@ public class WaitStatement {
             }
         }
         return true;
+    }
+
+    public void waitForElementInVisibility(final By by, int time) {
+        WebDriverWait wait = new WebDriverWait(driver, time);
+        try {
+            WebElement ele = findElementsVisibility(by);
+            wait.until(ExpectedConditions.invisibilityOf(ele));
+        } catch (Exception e) {
+        }
     }
 }

@@ -27,7 +27,8 @@ public class AttachmentsAction {
     {
         attachment.verifyPlusIconFunctionality();
         attachment.verifyCrossIconFunctionality();
-        attachment.uploadAttachment();
+        attachment.verifyAddMoreFileClickable();
+        attachment.uploadMoreAttachment();
         attachment.verifyMinusIconFunctionality();
     }
     public void nameCheckBoxUpload()

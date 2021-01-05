@@ -3,23 +3,15 @@ package utils;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import java.lang.reflect.Method;
 
 import java.io.*;
-import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
 
 import static reporting.ComplexReportFactory.getTest;
 
@@ -42,26 +34,24 @@ public class WebBasePage extends WaitStatement {
         getTest().log(LogStatus.PASS, "Url opened - " + url);
     }
     public List<WebElement> findMultipleElement(By by, int time) {
-        WebElement element = findElementVisibility(by, time);
-        List<WebElement> elements=new ArrayList<>();
-        if (element != null) {
-            waitForVisibilityOfElement(by, time);
-            elements = driver.findElements(by);
-            return elements;
-        } else {
-            getTest().log(LogStatus.FAIL, "Element not found : " + by);
-            logger.info("Element not found : " + by);
-            takeScreenshot(new Object() {}.getClass().getEnclosingMethod().getName());
-            Assert.fail("Element not found : " + by);
-            return elements;
-        }
+            staticWait(2000);
+            WebElement element = findElementVisibility(by, time);
+            List<WebElement> elements = new ArrayList<>();
+            if (element != null) {
+                waitForVisibilityOfElement(by, time);
+                elements = driver.findElements(by);
+                return elements;
+            } else {
+                getTest().log(LogStatus.FAIL, "Element not found : " + by);
+                logger.info("Element not found : " + by);
+                takeScreenshot(new Object() {
+                }.getClass().getEnclosingMethod().getName());
+                return elements;
+            }
     }
 
-    public void wairForLoader(int time) {
-        WebElement element = findElementVisibility(By.cssSelector(".lds-ring"), time);
-        if (element != null) {
-            waitForInVisibilityOfElement(By.cssSelector(".lds-ring"), time);
-        }
+    public void waitForLoader(int time) {
+        waitForElementInVisibility(By.cssSelector(".lds-ring"), time);
     }
 
     public void enter(By by, String value, String name, int time) {
@@ -151,10 +141,15 @@ public class WebBasePage extends WaitStatement {
 
     public void scrollDown() {
         staticWait(2000);
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        logger.info("Page scroll down");
-        staticWait(2000);
+        try {
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+            logger.info("Page scroll down");
+        }
+        catch(Exception e){
+
+        }
+            staticWait(2000);
     }
 
     public void staticWait(int time) {
@@ -335,9 +330,9 @@ public class WebBasePage extends WaitStatement {
     }
 
     public void waitTillNewFile(String path, int previousFileCount) {
-        staticWait(3000);
+        staticWait(5000);
         int timeCount = 1;
-        for (timeCount = 1; timeCount < 20; timeCount++) {
+        for (timeCount = 1; timeCount < 30; timeCount++) {
             if (countNumberOfFilesInFolder(path) > previousFileCount) {
                 getTest().log(LogStatus.PASS, "PDF downloaded...");
                 break;
