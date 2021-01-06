@@ -48,17 +48,15 @@ public class AddProductPage extends WebBasePage {
     public String defaultPcode;
 
     public void clickFullMenuDropDown() {
-        click(By.cssSelector("a#navbarDropdownPortfolio"), "Ful Menu", 10);
+        click(By.cssSelector("a#navbarDropdownPortfolio"), "Ful Menu", 30);
     }
 
-    public void clickAssetManagement()
-    {
-        click(By.xpath("//div//li[@data-name='Asset']"), "Asset Management", 10);
+    public void clickAssetManagement() {
+        click(By.xpath("//div//li[@data-name='Asset']"), "Asset Management", 30);
     }
 
-    public void clickManageProduct()
-    {
-        click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 10);
+    public void clickManageProduct() {
+        click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 30);
     }
 
     public void clickAddNewButton() {
@@ -106,9 +104,10 @@ public class AddProductPage extends WebBasePage {
         enter(By.cssSelector("div>input#Name"), itemNameRandomValue, "Product Name", 10);
         createdProductName = itemNameRandomValue;
     }
+
     public void enterItemName() {
         itemNameRandomValue = prop.getProperty("productName") + dateValue;
-        enter(By.cssSelector("div>input#Name"), "I"+itemNameRandomValue, "Product Name", 10);
+        enter(By.cssSelector("div>input#Name"), "I" + itemNameRandomValue, "Product Name", 10);
         createdProductName = itemNameRandomValue;
     }
 
@@ -160,7 +159,7 @@ public class AddProductPage extends WebBasePage {
     public void changeProductStatus() {
         String pStatus = prop.getProperty("pStatus");
         selectValueWithText(By.cssSelector("select#StatusId"), pStatus, "status", 10);
-        String expectedValue = getAtribute(By.xpath("//select[@id='StatusId']//option[text()='"+pStatus+"']"), "value", 10);
+        String expectedValue = getAtribute(By.xpath("//select[@id='StatusId']//option[text()='" + pStatus + "']"), "value", 10);
         String actualValue = getAtribute(By.cssSelector("select#StatusId"), "value", 10);
         if (expectedValue.equals(actualValue)) {
             getTest().log(LogStatus.PASS, "Status is changed successfully to " + pStatus);
@@ -252,15 +251,14 @@ public class AddProductPage extends WebBasePage {
     }
 
     public void goBackToAddProductPage() {
-        WebElement element=findElementVisibility(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[5]"),15);
-        if(element!=null) {
+        WebElement element = findElementVisibility(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[5]"), 15);
+        if (element != null) {
             try {
                 click(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[5]"), "Product Name", 10);
-            }catch (Exception e){
+            } catch (Exception e) {
                 clickByJavascript(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[5]"), "Product Name", 10);
             }
-        }else
-        {
+        } else {
             getTest().log(LogStatus.FAIL, "ProductPage is not displayed");
             logger.info("ProductPage is not displayed");
             takeScreenshot("ProductPage");
@@ -295,18 +293,18 @@ public class AddProductPage extends WebBasePage {
     }
 
     public void handleSuccessPopup() {
-        waitForVisibilityOfElement(By.cssSelector("div.alert-success"),20);
-        click(By.cssSelector("#closenotifymessage"),"Close Popup",15);
+        waitForVisibilityOfElement(By.cssSelector("div.alert-success"), 20);
+        click(By.cssSelector("#closenotifymessage"), "Close Popup", 15);
     }
 
     public void uploadInvalidDoc() {
         scrollDown();
         uploadDoc(By.cssSelector("input#flFileDisplay"), filePath + prop.getProperty("testfiletiff"), "Upload document", 20);
     }
-    public void verifyErrorMessageForInvalidDoc()
-    {
-        waitForVisibilityOfElement(By.xpath("//div[@id='notifymessage' and @style='display: flex;']"),20);
-        String documentErrorMsg = prop.getProperty("testfiletiff")+Errors.uploadValidDocuments;
+
+    public void verifyErrorMessageForInvalidDoc() {
+        waitForVisibilityOfElement(By.xpath("//div[@id='notifymessage' and @style='display: flex;']"), 20);
+        String documentErrorMsg = prop.getProperty("testfiletiff") + Errors.uploadValidDocuments;
         String docErrorMsg = getText(By.xpath("//div[@role='alert']/span"), 10);
         if (documentErrorMsg.equals(docErrorMsg)) {
             getTest().log(LogStatus.PASS, "Error Message is successfully displayed in uploading document field on Addproduct page");
@@ -317,13 +315,14 @@ public class AddProductPage extends WebBasePage {
             logger.info("Error Message is not displayed in uploading document field on Addproduct page");
             takeScreenshot("Document");
         }
-        click(By.xpath("//div[@role='alert']/button[@id='closenotifymessage']"),"Close Alert Message",10);
+        click(By.xpath("//div[@role='alert']/button[@id='closenotifymessage']"), "Close Alert Message", 10);
     }
+
     public void uploadDocValidation() {
         uploadDoc(By.cssSelector("input#flFileDisplay"), filePath + prop.getProperty("testfilejpg"), "uploaded document", 10);
-        String docName = getAtribute(By.xpath("//div[@class='custom-file']//div//input[@type='text']"), "value",20);
+        String docName = getAtribute(By.xpath("//div[@class='custom-file']//div//input[@type='text']"), "value", 20);
         uploadDoc(By.cssSelector("input#flFileDisplay"), filePath + prop.getProperty("testfilePDF"), "Upload document", 10);
-        String doc2Name = getAtribute(By.xpath("//div[@class='custom-file']//div//input[@type='text']"), "value",20);
+        String doc2Name = getAtribute(By.xpath("//div[@class='custom-file']//div//input[@type='text']"), "value", 20);
         if (!docName.equals("") && !doc2Name.equals("")) {
             if (docName.equals(doc2Name)) {
                 getTest().log(LogStatus.FAIL, "Newly uploaded Document is not reflected");
@@ -396,7 +395,7 @@ public class AddProductPage extends WebBasePage {
 
     public void productNameErrorMsgValidation() {
         String errorMsgs = productNameReuired;
-        scrollToWebelement(By.xpath("//input[@id='Name']//parent::div//span[contains(@class,'invalid-feedback')]"),"Product Name");
+        scrollToWebelement(By.xpath("//input[@id='Name']//parent::div//span[contains(@class,'invalid-feedback')]"), "Product Name");
         String pNameErrorMsg = getText(By.xpath("//input[@id='Name']//parent::div//span[contains(@class,'invalid-feedback')]"), 15);
         if (errorMsgs.equals(pNameErrorMsg)) {
             getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product name field as " + errorMsgs);
@@ -411,7 +410,7 @@ public class AddProductPage extends WebBasePage {
 
     public void productTypeValidation() {
         String errorMsgs = productTypeRequired;
-        scrollToWebelement(By.xpath("//select[@id='AssetTypeId']"),"Product Type");
+        scrollToWebelement(By.xpath("//select[@id='AssetTypeId']"), "Product Type");
         String productTypeErrorMsg = getText(By.xpath("//select[@id='AssetTypeId']//parent::div//span[@class='invalid-feedback']"), 10);
         if (errorMsgs.equals(productTypeErrorMsg)) {
             getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product type field as " + errorMsgs);
@@ -435,31 +434,29 @@ public class AddProductPage extends WebBasePage {
         selectValueWithText(By.cssSelector("div>select#AssetTypeId"), pType, "product type", 20);
     }
 
-    public void enterDuplicateProductCode()
-    {
+    public void enterDuplicateProductCode() {
         enter(By.cssSelector("div>input#ItemCode"), proCode, "product code", 10);
     }
+
     public void duplicateProductCodeValidation() {
-            WebElement duplicateError=findElementVisibility(By.cssSelector(".alert-dismissible"),30);
-            if(duplicateError!=null) {
-                String pCodeErrorMsg = getText(By.cssSelector(".alert-dismissible>span"), 20);
-                if (pCodeErrorMsg.equals(Errors.duplicateProductCode)) {
-                    getTest().log(LogStatus.PASS, "Error Message is successfully displayed on product code field as " + pCodeErrorMsg);
-                    logger.info("Error Message is successfully displayed on product code field as " + pCodeErrorMsg);
-                } else {
-                    handleSuccessPopup();
-                    getTest().log(LogStatus.FAIL, "Error Message is not displayed as expected for product code field");
-                    logger.info("Error Message is not Displayed as expected");
-                    takeScreenshot("ProductCode");
-                }
-            }
-            else
-            {
-                getTest().log(LogStatus.FAIL, "Error message for Duplicate product code is not displayed and product is created");
-                logger.info("Error message for Duplicate product code is not displayed and product is created");
+        WebElement duplicateError = findElementVisibility(By.cssSelector(".alert-dismissible"), 30);
+        if (duplicateError != null) {
+            String pCodeErrorMsg = getText(By.cssSelector(".alert-dismissible>span"), 20);
+            if (pCodeErrorMsg.equals(Errors.duplicateProductCode)) {
+                getTest().log(LogStatus.PASS, "Error Message is successfully displayed on product code field as " + pCodeErrorMsg);
+                logger.info("Error Message is successfully displayed on product code field as " + pCodeErrorMsg);
+            } else {
+                handleSuccessPopup();
+                getTest().log(LogStatus.FAIL, "Error Message is not displayed as expected for product code field");
+                logger.info("Error Message is not Displayed as expected");
                 takeScreenshot("ProductCode");
             }
+        } else {
+            getTest().log(LogStatus.FAIL, "Error message for Duplicate product code is not displayed and product is created");
+            logger.info("Error message for Duplicate product code is not displayed and product is created");
+            takeScreenshot("ProductCode");
         }
+    }
 
     public void mandatoryFieldValidations() {
         int i = 0;
@@ -487,15 +484,42 @@ public class AddProductPage extends WebBasePage {
 
     }
 
-    public void checkNotUniqueName()
-    {
-        DeployProductPage deployProduct=new DeployProductPage(driver);
-        RelatedInformationPage relatedInformation=new RelatedInformationPage(driver);
+    public void checkNotUniqueName() {
+        DeployProductPage deployProduct = new DeployProductPage(driver);
+        RelatedInformationPage relatedInformation = new RelatedInformationPage(driver);
         deployProduct.navigateToDeployTab();
         deployProduct.clickAddDeployButton();
         deployProduct.clickLocationDropdown();
         deployProduct.selectLocationValueFromDropdown();
-        deployProduct.enterQuantity("1");
+        deployProduct.enterModel("Model");
+        deployProduct.enterQuantity(prop.getProperty("notUniqueNameQuantity"));
+        deployProduct.enterUnitPrice("5");
+        deployProduct.enterProductCost("5");
+        deployProduct.clickAddListButton();
+        deployProduct.clickSaveButton();
+        deployProduct.handleSuccessPopup();
+        relatedInformation.clickRelatedInformationTab();
+
+        String actualProductCount = getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td[4]//span"), 20).trim();
+        if (actualProductCount.equals(prop.getProperty("notUniqueNameQuantity"))) {
+            getTest().log(LogStatus.PASS, "Product is created with non unique name as expected. And created product quantity is " + actualProductCount);
+            logger.info("Product is created with non unique name as expected. And created product quantity is " + actualProductCount);
+        } else {
+            getTest().log(LogStatus.FAIL, "Product is created with unique name when disable the Unique name toggle");
+            logger.info("Product is created with unique name when disable the Unique name toggle");
+            takeScreenshot("NotUniqueName");
+        }
+    }
+
+    public void checkUniqueName() {
+        DeployProductPage deployProduct = new DeployProductPage(driver);
+        RelatedInformationPage relatedInformation = new RelatedInformationPage(driver);
+        deployProduct.navigateToDeployTab();
+        deployProduct.clickAddDeployButton();
+        deployProduct.clickLocationDropdown();
+        deployProduct.selectLocationValueFromDropdown();
+        deployProduct.enterQuantity(prop.getProperty("uniqueNameQuantity"));
+        deployProduct.enterModel("Model");
         deployProduct.enterUnitPrice("1");
         deployProduct.enterProductCost("1");
         deployProduct.clickAddListButton();
@@ -503,48 +527,17 @@ public class AddProductPage extends WebBasePage {
         deployProduct.handleSuccessPopup();
         relatedInformation.clickRelatedInformationTab();
 
-        String actualName=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//a[@class='editinfo']"),20).trim();
-        if(createdProductName.equals(actualName))
-        {
-            getTest().log(LogStatus.PASS, "Unique Name is not generated as expected");
-            logger.info("Unique Name is not generated as expected");
-        }
-        else
-        {
-            getTest().log(LogStatus.FAIL, "Unique Name is generated as "+actualName);
-            logger.info("Unique Name is generated as "+actualName);
+        int actualProductCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 20).size();
+        if (actualProductCount == (Integer.parseInt(prop.getProperty("uniqueNameQuantity")))) {
+            getTest().log(LogStatus.PASS, "Product is created with unique name as expected. Total no.of product created with unique name is " + actualProductCount);
+            logger.info("Product is created with unique name as expected. Total no.of product created with unique name is " + actualProductCount);
+        } else {
+            getTest().log(LogStatus.FAIL, "Product is not created with unique name as expected when enable the Unique name toggle");
+            logger.info("Product is not created with unique name as expected when enable the Unique name toggle");
             takeScreenshot("UniqueName");
         }
     }
-    public void checkUniqueName()
-    {
-        DeployProductPage deployProduct=new DeployProductPage(driver);
-        RelatedInformationPage relatedInformation=new RelatedInformationPage(driver);
-        deployProduct.navigateToDeployTab();
-        deployProduct.clickAddDeployButton();
-        deployProduct.clickLocationDropdown();
-        deployProduct.selectLocationValueFromDropdown();
-        deployProduct.enterQuantity("1");
-        deployProduct.enterUnitPrice("1");
-        deployProduct.enterProductCost("1");
-        deployProduct.clickAddListButton();
-        deployProduct.clickSaveButton();
-        deployProduct.handleSuccessPopup();
-        relatedInformation.clickRelatedInformationTab();
 
-        String actualName=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//a[@class='editinfo']"),20).trim();
-        if(!createdProductName.equals(actualName))
-        {
-            getTest().log(LogStatus.PASS, "Unique Name is generated as expected. Unique Name is "+actualName);
-            logger.info("Unique Name is generated as expected. Unique Name is "+actualName);
-        }
-        else
-        {
-            getTest().log(LogStatus.FAIL, "Unique Name is not generated as expected");
-            logger.info("Unique Name is not generated as expected");
-            takeScreenshot("UniqueName");
-        }
-    }
     public void verifymandatoryFieldValidationOnAsteriskSymbolField() {
         int i = 0;
         String actualText;
@@ -559,7 +552,7 @@ public class AddProductPage extends WebBasePage {
             } else {
                 getTest().log(LogStatus.FAIL, "The Asterisk symbol is not displayed for " + expected + " field");
                 logger.info("The Asterisk symbol is not displayed for " + expected + " field");
-                scrollToWebelement(By.xpath("//label[text()='" + expected + ":']//span"),expected.toString());
+                scrollToWebelement(By.xpath("//label[text()='" + expected + ":']//span"), expected.toString());
                 takeScreenshot(expected.toString());
             }
             List<WebElement> expectedElements = errorMessageLocator;

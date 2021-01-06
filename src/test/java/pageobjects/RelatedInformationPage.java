@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import utils.Drivers;
 import utils.PropertiesLoader;
 import utils.WebBasePage;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -19,25 +20,23 @@ import static utils.StaticData.createdProductName;
 
 public class RelatedInformationPage extends WebBasePage {
 
-    WebDriver driver;
+    private final static String FILE_NAME = System.getProperty("user.dir") + "\\src\\main\\resources\\testdata.properties";
     public static String inputDate;
+    static String changeUniqueNameRandomValue;
+    private static Properties prop = new PropertiesLoader(FILE_NAME).load();
+    WebDriver driver;
+    String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\testfiles\\";
+    String searchUniqueName = "";
+    String pattern = "yyyyMMddHHmmss";
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+    String dateValue = simpleDateFormat.format(new Date());
+    String barcodeFileName;
+
 
     public RelatedInformationPage(WebDriver driver) {
         super(driver, "Related information page");
         this.driver = driver;
     }
-
-    private final static String FILE_NAME = System.getProperty("user.dir") + "\\src\\main\\resources\\testdata.properties";
-    String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\testfiles\\";
-    private static Properties prop = new PropertiesLoader(FILE_NAME).load();
-    String searchUniqueName = "";
-    String pattern = "yyyyMMddHHmmss";
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-    String dateValue = simpleDateFormat.format(new Date());
-    static String changeUniqueNameRandomValue;
-
-
-    String barcodeFileName;
 
     public void clickFullMenu() {
         click(By.cssSelector("a#navbarDropdownPortfolio"), "Full Menu", 15);
@@ -57,7 +56,7 @@ public class RelatedInformationPage extends WebBasePage {
     }
 
     public void clickRelatedProduct() {
-        String productName=createdProductName;
+        String productName = createdProductName;
         click(By.xpath("//table[@id='tablelistingdata']//tbody//tr//td//a[normalize-space(text())='" + productName + "']"), "Product", 20);
     }
 
@@ -124,7 +123,7 @@ public class RelatedInformationPage extends WebBasePage {
     }
 
     public void searchUniqueName() {
-        searchUniqueName=findElementVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td[3]//a"),20).getText().trim();
+        searchUniqueName = findElementVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td[3]//a"), 20).getText().trim();
         enter(By.cssSelector("input#relatedAssetSearch"), searchUniqueName, "UniqueName", 10);
     }
 
@@ -570,7 +569,7 @@ public class RelatedInformationPage extends WebBasePage {
     }
 
     public void editsave() {
-        click(By.cssSelector("a#ancSaveRelatedInfo"), "downloadBarImage", 10);
+        click(By.cssSelector("a#ancSaveRelatedInfo"), "Save Button", 10);
     }
 
     public void editGPS() {
@@ -612,9 +611,9 @@ public class RelatedInformationPage extends WebBasePage {
         click(By.cssSelector("[title='Select Year']"), "Year popup", 15);
         click(By.xpath("//span[contains(@class,'year') and text()='" + year + "']"), "Year Value", 15);
         click(By.xpath("//span[contains(@class,'month') and text()='" + month + "']"), "Month Value", 15);
-        String dayClass = findElementVisibility(By.xpath("//td[@data-day='"+monthChar+"/"+day+"/"+year+"']"), 15).getAttribute("class");
+        String dayClass = findElementVisibility(By.xpath("//td[@data-day='" + monthChar + "/" + day + "/" + year + "']"), 15).getAttribute("class");
         if (!dayClass.contains("disabled")) {
-            findElementClickable(By.xpath("//td[@data-day='"+monthChar+"/"+day+"/"+year+"']"), 15).click();
+            findElementClickable(By.xpath("//td[@data-day='" + monthChar + "/" + day + "/" + year + "']"), 15).click();
         }
         return dayClass;
     }
@@ -974,6 +973,7 @@ public class RelatedInformationPage extends WebBasePage {
             }
         }
     }
+
     public void verifyPaginationFunctionalities() {
         String[] defaultpaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
         int defaultStartRecordCount = Integer.parseInt(defaultpaginationText[1]);
@@ -981,11 +981,11 @@ public class RelatedInformationPage extends WebBasePage {
         int totalRecordCount = Integer.parseInt(defaultpaginationText[5]);
         WebElement paginationNavigator = findElementVisibility(By.xpath("//div[@class='nu-paging']//li//ul"), 15);
         if (paginationNavigator != null) {
-            int recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
-            String lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            int recordCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 15).size();
+            String lastRecord = getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[" + recordCount + "]//td[3]//a"), 15).trim();
             click(By.xpath("//a[@class='page-link next' and text()='Next']"), "Pagination Next", 15);
             waitForLoader(20);
-            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='" + lastRecord + "']"), 30);
             String[] nextPaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int nextPageStartRecordCount = Integer.parseInt(nextPaginationText[1]);
             if (nextPageStartRecordCount == defaultEndCount + 1) {
@@ -997,11 +997,11 @@ public class RelatedInformationPage extends WebBasePage {
                 takeScreenshot("PaginationNext");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link previous' and text()='Prev']"), 20);
-            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
-            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            recordCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 15).size();
+            lastRecord = getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[" + recordCount + "]//td[3]//a"), 15).trim();
             click(By.xpath("//a[@class='page-link previous' and text()='Prev']"), " Pagination Previous", 30);
             waitForLoader(20);
-            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='" + lastRecord + "']"), 30);
             String[] previousPaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int previousPageEndCount = Integer.parseInt(previousPaginationText[3]);
             if (previousPageEndCount == nextPageStartRecordCount - 1) {
@@ -1013,11 +1013,11 @@ public class RelatedInformationPage extends WebBasePage {
                 takeScreenshot("PaginationPrevious");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link last' and text()='Last ']"), 20);
-            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
-            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            recordCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 15).size();
+            lastRecord = getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[" + recordCount + "]//td[3]//a"), 15).trim();
             click(By.xpath("//a[@class='page-link last' and text()='Last ']"), "Pagination Last", 30);
             waitForLoader(20);
-            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='" + lastRecord + "']"), 30);
             String[] lastPagePaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int lastPageEndCount = Integer.parseInt(lastPagePaginationText[3]);
             if (lastPageEndCount == totalRecordCount) {
@@ -1029,11 +1029,11 @@ public class RelatedInformationPage extends WebBasePage {
                 takeScreenshot("PaginationLast");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link  first' and text()='First ']"), 20);
-            recordCount=findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"),15).size();
-            lastRecord=getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            recordCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 15).size();
+            lastRecord = getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[" + recordCount + "]//td[3]//a"), 15).trim();
             click(By.xpath("//a[@class='page-link  first' and text()='First ']"), "Pagination First", 30);
             waitForLoader(20);
-            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            waitForElementInVisibility(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr//td//a[normalize-space(text())='" + lastRecord + "']"), 30);
             String[] firstPagePaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int firstPageStartRecordCount = Integer.parseInt(firstPagePaginationText[1]);
             if (firstPageStartRecordCount == defaultStartRecordCount) {
@@ -1044,13 +1044,20 @@ public class RelatedInformationPage extends WebBasePage {
                 logger.info("First page is not displayed as expected when click on the \"First\" pagination button");
                 takeScreenshot("PaginationFirst");
             }
+        } else {
+            getTest().log(LogStatus.PASS, "Pagination section is not displayed since the record count is " + totalRecordCount);
+            logger.info("Pagination section is not displayed since the record count is " + totalRecordCount);
         }
     }
+
     public void selectrecordPagination() {
         String selectRecordPage = prop.getProperty("selectRecordPage");
+        waitForLoader(20);
+        staticWait(2000);
         selectValueWithValue(By.cssSelector("#pageSize"), selectRecordPage, "Page size", 10);
         waitForLoader(20);
-        String selectedOption = getText(By.xpath("//select[@id='pageSize']//option[@selected='selected']"),20);
+        staticWait(2000);
+        String selectedOption = getText(By.xpath("//select[@id='pageSize']//option[@selected='selected']"), 20);
         int checkRecord = Integer.parseInt(selectedOption);
         int recordCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 20).size();
 
@@ -1063,5 +1070,8 @@ public class RelatedInformationPage extends WebBasePage {
             logger.info("Records are not displayed as expected based on the selected page size");
             takeScreenshot("Records");
         }
+        selectValueWithValue(By.cssSelector("#pageSize"), "10", "Page size", 10);
+        waitForLoader(20);
+        staticWait(2000);
     }
 }

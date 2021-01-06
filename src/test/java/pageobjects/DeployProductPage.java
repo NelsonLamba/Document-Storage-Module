@@ -39,7 +39,7 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void clickFullMenuDropDown() {
-        findElementClickable(By.cssSelector("a#navbarDropdownPortfolio"),20);
+        findElementClickable(By.cssSelector("a#navbarDropdownPortfolio"), 20);
         click(By.cssSelector("a#navbarDropdownPortfolio"), "Ful Menu", 20);
     }
 
@@ -152,26 +152,30 @@ public class DeployProductPage extends WebBasePage {
 
     public void verifySearchedProduct() {
         List<WebElement> searchedProduct = findMultipleElement(By.cssSelector("table#deployItemsTable>tbody>tr>td>a"), 20);
+        List<String> results = new ArrayList<>();
         for (WebElement locators : searchedProduct) {
             if (locators.getText().equals(locationToSearch)) {
-                getTest().log(LogStatus.PASS, "Searched location list is Displayed");
-                logger.info("Searched location list is Displayed");
-                break;
+                results.add("true");
             } else {
-                getTest().log(LogStatus.FAIL, "Searched location list is not Displayed");
-                logger.info("Searched location list is not Displayed");
-                takeScreenshot("SearchedLoc");
+                results.add("false");
             }
+        }
+        if (results.contains("false")) {
+            getTest().log(LogStatus.FAIL, "Searched location list is not Displayed");
+            logger.info("Searched location list is not Displayed");
+            takeScreenshot("SearchedLoc");
+        } else {
+            getTest().log(LogStatus.PASS, "Searched location list is Displayed");
+            logger.info("Searched location list is Displayed");
         }
     }
 
     public void clickClearSearch() {
-        WebElement ele=findElementVisibility(By.cssSelector("a#aUN_ClearSearch"),30);
-        if(ele!=null)
-        {
-            click(By.cssSelector("a#aUN_ClearSearch"),"Clear Search",20);
-        }else {
-            getTest().log(LogStatus.FAIL,"Clear Button is not found");
+        WebElement ele = findElementVisibility(By.cssSelector("a#aUN_ClearSearch"), 30);
+        if (ele != null) {
+            click(By.cssSelector("a#aUN_ClearSearch"), "Clear Search", 20);
+        } else {
+            getTest().log(LogStatus.FAIL, "Clear Button is not found");
             logger.info("Clear Button is not found");
             takeScreenshot("ClearButton");
         }
@@ -192,7 +196,8 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void clickAddDeployButton() {
-        click(By.cssSelector("a#ancDeployItems"), "Add Deploy", 15);
+        waitForVisibilityOfElement(By.cssSelector("a#ancDeployItems"), 60);
+        click(By.cssSelector("a#ancDeployItems"), "Add Deploy", 30);
     }
 
     public void verifyAddDeployProductPage() {
@@ -332,7 +337,7 @@ public class DeployProductPage extends WebBasePage {
         for (WebElement element : deployedProductlist) {
             i++;
             if (element.getText().equals(modelNameFromPopup)) {
-                locationToSearch=getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr[1]//td//a"),20);
+                locationToSearch = getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr[1]//td//a"), 20);
                 getTest().log(LogStatus.PASS, "Created \"Deploy Product\" is displayed in the list");
                 logger.info("Created \"Deploy Product\" is displayed in the list");
                 break;
@@ -413,7 +418,7 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void clickLocationDropdown() {
-        click(By.cssSelector("div#divmultilevelselectLocation>div>div"), "Location Dropdown", 15);
+        clickMultipleTimes(By.cssSelector("div#divmultilevelselectLocation>div>div"), "Location Dropdown", 15);
     }
 
     public void verifyLocationDropdown() {
@@ -457,9 +462,12 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void make100PageSize() {
-        findElementVisibility(By.cssSelector("select#pageSize"),20).isEnabled();
+        findElementVisibility(By.cssSelector("select#pageSize"), 30);
+        scrollToWebelement(By.cssSelector("select#pageSize"), "Page Size");
+        staticWait(3000);
         selectValueWithValue(By.cssSelector("select#pageSize"), "100", "Page Size", 15);
         waitForLoader(20);
+        staticWait(3000);
     }
 
     public void getLocationsFromSetup() {
@@ -483,8 +491,8 @@ public class DeployProductPage extends WebBasePage {
         String text1;
         String text2;
         String locator = (locationType.equals("parent")) ? ".scrollbar>li>a>span" : "ul.child>li>a>div";
-        waitForVisibilityOfElement(By.cssSelector(locator),20);
-        int locationCount=findMultipleElement(By.cssSelector(locator),20).size();
+        waitForVisibilityOfElement(By.cssSelector(locator), 20);
+        int locationCount = findMultipleElement(By.cssSelector(locator), 20).size();
         List<WebElement> locations = findMultipleElement(By.cssSelector(locator), 15);
         for (WebElement actualElement : locations) {
             List<String> expectedLocationNames = (locationType.equals("parent")) ? parentLocationNameList : childLocationNameList;
@@ -497,10 +505,10 @@ public class DeployProductPage extends WebBasePage {
                     logger.info("Expected " + locationType + " location \"" + expectedElement + "\" location is present in both setup and location dropdown");
                     i = 0;
                     break;
-                } else if (i == parentLocationNameList.size() && !actualElement.getText().equals(expectedElement)) {
+                } else if (i == locationCount) {
                     getTest().log(LogStatus.FAIL, "Expected " + locationType + " location \"" + expectedElement + "\" location is not present in location dropdown");
                     logger.info("Expected " + locationType + " location \"" + expectedElement + "\" location is not present in location dropdown");
-                    takeScreenshot("loc"+text2);
+                    takeScreenshot("loc" + text2);
                 }
             }
         }
@@ -516,8 +524,8 @@ public class DeployProductPage extends WebBasePage {
             getTest().log(LogStatus.PASS, "Selected dropdown value is cleared as expected");
             logger.info("Selected dropdown value is cleared as expected");
         } else {
-            getTest().log(LogStatus.FAIL, "Selected dropdown value is cleared as expected");
-            logger.info("Selected dropdown value is cleared as expected");
+            getTest().log(LogStatus.FAIL, "Selected dropdown value is not cleared as expected");
+            logger.info("Selected dropdown value is not cleared as expected");
             takeScreenshot("CearedLoc");
         }
     }
@@ -567,7 +575,7 @@ public class DeployProductPage extends WebBasePage {
 
     public void verifyModelFieldValidation() {
         String modelName = prop.getProperty("alphaNumericModelName");
-        enter(By.cssSelector("input#Model"),modelName,"Model Name",15);
+        enter(By.cssSelector("input#Model"), modelName, "Model Name", 15);
         String actualText = findElementVisibility(By.cssSelector("div>input#Model"), 15).getAttribute("value");
         if (modelName.equals(actualText)) {
             getTest().log(LogStatus.PASS, "Model Name field is accept alpha numeric character as expected. Accepted value : " + actualText);
@@ -878,9 +886,9 @@ public class DeployProductPage extends WebBasePage {
         click(By.cssSelector("[title='Select Year']"), "Year popup", 15);
         click(By.xpath("//span[contains(@class,'year') and text()='" + year + "']"), "Year Value", 15);
         click(By.xpath("//span[contains(@class,'month') and text()='" + month + "']"), "Month Value", 15);
-        String dayClass = findElementVisibility(By.xpath("//td[@data-day='"+monthChar+"/"+day+"/"+year+"']"), 15).getAttribute("class");
+        String dayClass = findElementVisibility(By.xpath("//td[@data-day='" + monthChar + "/" + day + "/" + year + "']"), 15).getAttribute("class");
         if (!dayClass.contains("disabled")) {
-            findElementClickable(By.xpath("//td[@data-day='"+monthChar+"/"+day+"/"+year+"']"), 15).click();
+            findElementClickable(By.xpath("//td[@data-day='" + monthChar + "/" + day + "/" + year + "']"), 15).click();
         }
         return dayClass;
     }
@@ -898,7 +906,7 @@ public class DeployProductPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Not able to select Old date for \"" + field + "\" date field");
             logger.info("Not able to select Old date for \"" + field + "\" date field");
-            takeScreenshot(field+"PastDate");
+            takeScreenshot(field + "PastDate");
         }
     }
 
@@ -910,7 +918,7 @@ public class DeployProductPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Past date can be selected for \"" + field + "\" date field");
             logger.info("Past date can be selected for \"" + field + "\" date field");
-            takeScreenshot(field+"PastDate");
+            takeScreenshot(field + "PastDate");
         }
     }
 
@@ -922,7 +930,7 @@ public class DeployProductPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Future date can be selected for \"" + field + "\" date field");
             logger.info("Future date can be selected for \"" + field + "\" date field");
-            takeScreenshot(field+"FutureDate");
+            takeScreenshot(field + "FutureDate");
         }
     }
 
@@ -939,7 +947,7 @@ public class DeployProductPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Not able to select future date for \"" + field + "\" date field");
             logger.info("Not able to select future date for \"" + field + "\" date field");
-            takeScreenshot(field+"FutureDate");
+            takeScreenshot(field + "FutureDate");
         }
     }
 
@@ -956,7 +964,7 @@ public class DeployProductPage extends WebBasePage {
         } else {
             getTest().log(LogStatus.FAIL, "Current date is not selected for \"" + field + "\" date field");
             logger.info("Current date is not selected for \"" + field + "\" date field");
-            takeScreenshot(field+"CurrentDate");
+            takeScreenshot(field + "CurrentDate");
         }
     }
 
@@ -1141,9 +1149,10 @@ public class DeployProductPage extends WebBasePage {
             takeScreenshot("ProductLife");
         }
     }
+
     public void verifyProductLifeMandatoryError() {
         clickAddListButton();
-        String productLifeError=findElementVisibility(By.xpath("//input[@id='ItemLife']//parent::div//span[@class='invalid-feedback']"),20).getText();
+        String productLifeError = findElementVisibility(By.xpath("//input[@id='ItemLife']//parent::div//span[@class='invalid-feedback']"), 20).getText();
         if (productLifeError.contains("Product Life")) {
             getTest().log(LogStatus.PASS, "Product Life field is displayed as mandatory after selecting depreciation rule");
             logger.info("Product Life field is displayed as mandatory after selecting depreciation rule");
@@ -1265,7 +1274,7 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void verifyDeployList() {
-        String modelName=modelNameFromPopup;
+        String modelName = modelNameFromPopup;
         waitForVisibilityOfElement(By.xpath("//div[@class='row']//div[1]//div//table[@id='example']//tbody//tr//td[4]"), 15);
         List<WebElement> modelInList = findMultipleElement(By.xpath("//div[@class='row']//div[1]//div//table[@id='example']//tbody//tr//td[4]"), 15);
         for (WebElement element : modelInList) {
@@ -1313,6 +1322,7 @@ public class DeployProductPage extends WebBasePage {
             takeScreenshot("Popup");
         }
     }
+
     public void verifyCloseButtonFunctionality() {
         WebElement quantityField = findElementVisibility(By.cssSelector("div>input#Quantity"), 10);
         if (quantityField == null) {
@@ -1332,11 +1342,11 @@ public class DeployProductPage extends WebBasePage {
         int totalRecordCount = Integer.parseInt(defaultpaginationText[5]);
         WebElement paginationNavigator = findElementVisibility(By.xpath("//div[@class='nu-paging']//li//ul"), 15);
         if (paginationNavigator != null) {
-            int recordCount=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"),15).size();
-            String lastRecord=getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            int recordCount = findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"), 15).size();
+            String lastRecord = getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr[" + recordCount + "]//td[2]//span"), 15).trim();
             click(By.xpath("//a[@class='page-link next' and text()='Next']"), "Pagination Next", 15);
             waitForLoader(20);
-            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='" + lastRecord + "']"), 30);
             String[] nextPaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int nextPageStartRecordCount = Integer.parseInt(nextPaginationText[1]);
             if (nextPageStartRecordCount == defaultEndCount + 1) {
@@ -1348,11 +1358,11 @@ public class DeployProductPage extends WebBasePage {
                 takeScreenshot("PaginationNext");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link previous' and text()='Prev']"), 20);
-            recordCount=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"),15).size();
-            lastRecord=getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            recordCount = findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"), 15).size();
+            lastRecord = getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr[" + recordCount + "]//td[2]//span"), 15).trim();
             click(By.xpath("//a[@class='page-link previous' and text()='Prev']"), " Pagination Previous", 30);
             waitForLoader(20);
-            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='" + lastRecord + "']"), 30);
             String[] previousPaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int previousPageEndCount = Integer.parseInt(previousPaginationText[3]);
             if (previousPageEndCount == nextPageStartRecordCount - 1) {
@@ -1364,11 +1374,11 @@ public class DeployProductPage extends WebBasePage {
                 takeScreenshot("PaginationPrevious");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link last' and text()='Last ']"), 20);
-            recordCount=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"),15).size();
-            lastRecord=getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            recordCount = findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"), 15).size();
+            lastRecord = getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr[" + recordCount + "]//td[2]//span"), 15).trim();
             click(By.xpath("//a[@class='page-link last' and text()='Last ']"), "Pagination Last", 30);
             waitForLoader(20);
-            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='" + lastRecord + "']"), 30);
             String[] lastPagePaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int lastPageEndCount = Integer.parseInt(lastPagePaginationText[3]);
             if (lastPageEndCount == totalRecordCount) {
@@ -1380,11 +1390,11 @@ public class DeployProductPage extends WebBasePage {
                 takeScreenshot("PaginationLast");
             }
             waitForVisibilityOfElement(By.xpath("//a[@class='page-link  first' and text()='First ']"), 20);
-            recordCount=findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"),15).size();
-            lastRecord=getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr["+recordCount+"]//td[3]//a"),15).trim();
+            recordCount = findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"), 15).size();
+            lastRecord = getText(By.xpath("//table[@id='deployItemsTable']//tbody//tr[" + recordCount + "]//td[2]//span"), 15).trim();
             click(By.xpath("//a[@class='page-link  first' and text()='First ']"), "Pagination First", 30);
             waitForLoader(20);
-            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='"+lastRecord+"']"),30);
+            waitForElementInVisibility(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td//a[normalize-space(text())='" + lastRecord + "']"), 30);
             String[] firstPagePaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
             int firstPageStartRecordCount = Integer.parseInt(firstPagePaginationText[1]);
             if (firstPageStartRecordCount == defaultStartRecordCount) {
@@ -1395,14 +1405,20 @@ public class DeployProductPage extends WebBasePage {
                 logger.info("First page is not displayed as expected when click on the \"First\" pagination button");
                 takeScreenshot("PaginationFirst");
             }
+        } else {
+            getTest().log(LogStatus.PASS, "Pagination section is not displayed since the record count is " + totalRecordCount);
+            logger.info("Pagination section is not displayed since the record count is " + totalRecordCount);
         }
     }
+
     public void selectrecordPagination() {
         String selectRecordPage = prop.getProperty("selectRecordPage");
+        waitForLoader(20);
+        staticWait(2000);
         selectValueWithValue(By.cssSelector("#pageSize"), selectRecordPage, "Page size", 10);
         waitForLoader(30);
         staticWait(2000);
-        String selectedOption = findElementVisibility(By.xpath("//select[@id='pageSize']//option[@selected='selected']"),20).getText();
+        String selectedOption = getText(By.xpath("//select[@id='pageSize']//option[@selected='selected']"), 30);
         int checkRecord = Integer.parseInt(selectedOption);
         int recordCount = findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr"), 20).size();
 
@@ -1415,5 +1431,8 @@ public class DeployProductPage extends WebBasePage {
             logger.info("Records are not displayed as expected based on the selected page size");
             takeScreenshot("Records");
         }
+        selectValueWithValue(By.cssSelector("#pageSize"), "10", "Page size", 10);
+        waitForLoader(20);
+        staticWait(2000);
     }
 }
