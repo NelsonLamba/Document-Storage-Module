@@ -94,9 +94,9 @@ public class AddProductPage extends WebBasePage {
         enter(By.cssSelector("div>input#Name"), prop.getProperty("productName100Charc"), "Product Name", 10);
     }
 
-    public void enterProductNameOneHundreadOneCharacter() {
-        enter(By.cssSelector("div>input#Name"), prop.getProperty("productName101Charc"), "Product Name", 10);
-        click(By.xpath("//label[@for='BarcodeTypeId']"), "bcarcode", 10);
+    public void enterProductNameOneHundredOneCharacter() {
+        enter(By.cssSelector("div>input#Name"), prop.getProperty("productName101Char"), "Product Name", 10);
+        click(By.xpath("//label[@for='BarcodeTypeId']"), "Barcode", 10);
     }
 
     public void enterUniqueItemName() {
@@ -121,15 +121,15 @@ public class AddProductPage extends WebBasePage {
         String[] specialCharReject = {"<", "{", "}", "%", "[", "]", "(", ")", "?:", "|'", ";", "=", "&#", "|", "&+"};
         for (String str : specialCharReject) {
             enter(By.cssSelector("div>input#Name"), str, "Product Name", 10);
-            click(By.xpath("//label[@for='BarcodeTypeId']"), "bcarcode", 10);
-            WebElement produNameError = findElementVisibility(By.xpath("//input[@id='Name']//parent::div//span[contains(@class,'invalid-feedback')]"), 5);
-            if (produNameError != null) {
-                getTest().log(LogStatus.PASS, "Product Name field displayed the error message as expected for the charc \"" + str + "\"");
-                logger.info("Product Name field displayed the error message as expected for the charc \"" + str + "\"");
+            click(By.xpath("//label[@for='BarcodeTypeId']"), "barcode", 10);
+            WebElement prodNameError = findElementVisibility(By.xpath("//input[@id='Name']//parent::div//span[contains(@class,'invalid-feedback')]"), 5);
+            if (prodNameError != null) {
+                getTest().log(LogStatus.PASS, "Product Name field displayed the error message as expected for the char \"" + str + "\"");
+                logger.info("Product Name field displayed the error message as expected for the char \"" + str + "\"");
             } else {
-                getTest().log(LogStatus.FAIL, "Product Name field is not displayed the error message as expected for the charc \"" + str + "\"");
-                logger.info("Product Name field is not displayed the error message as expected for the charc \"" + str + "\"");
-                takeScreenshot("ProdcutName");
+                getTest().log(LogStatus.FAIL, "Product Name field is not displayed the error message as expected for the char \"" + str + "\"");
+                logger.info("Product Name field is not displayed the error message as expected for the char \"" + str + "\"");
+                takeScreenshot("ProductName");
             }
         }
     }
@@ -185,7 +185,7 @@ public class AddProductPage extends WebBasePage {
     }
 
     public void enterProductCodeSixCharacter() {
-        enter(By.cssSelector("div>input#ItemCode"), prop.getProperty("productCode6Charcter"), "product code", 10);
+        enter(By.cssSelector("div>input#ItemCode"), prop.getProperty("productCode6Character"), "product code", 10);
     }
 
     public void enterProductCode() {
@@ -222,7 +222,7 @@ public class AddProductPage extends WebBasePage {
         clickByJavascript(By.cssSelector("input#CreateUniqueNameListing"), "unique name", 10);
     }
 
-    public void enterStockValueForompany() {
+    public void enterStockValueForCompany() {
         enter(By.cssSelector("input#for_Company"), prop.getProperty("companyStock"), "For company", 10);
     }
 
@@ -237,9 +237,9 @@ public class AddProductPage extends WebBasePage {
         String deployProduct = prop.getProperty("deployTab");
         if (deployProduct.equals(deployTab)) {
             getTest().log(LogStatus.PASS, "Deploy Product Tab page is displayed successfully ");
-            logger.info("Deploy Product Tab page is displayed succfully");
+            logger.info("Deploy Product Tab page is displayed successfully");
         } else {
-            getTest().log(LogStatus.FAIL, "Deploy Product Tab page is not displayed succfully ");
+            getTest().log(LogStatus.FAIL, "Deploy Product Tab page is not displayed successfully ");
             logger.info("Deploy product Tab page is not displayed");
             takeScreenshot("ProductPage");
         }
@@ -307,12 +307,12 @@ public class AddProductPage extends WebBasePage {
         String documentErrorMsg = prop.getProperty("testfiletiff") + Errors.uploadValidDocuments;
         String docErrorMsg = getText(By.xpath("//div[@role='alert']/span"), 10);
         if (documentErrorMsg.equals(docErrorMsg)) {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in uploading document field on Addproduct page");
+            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in uploading document field on Add product page");
             logger.info("Error Message is displayed successfully displayed as " + documentErrorMsg);
 
         } else {
-            getTest().log(LogStatus.FAIL, "Error Message is not displayed in uploading document field on Addproduct page ");
-            logger.info("Error Message is not displayed in uploading document field on Addproduct page");
+            getTest().log(LogStatus.FAIL, "Error Message is not displayed in uploading document field on Add product page ");
+            logger.info("Error Message is not displayed in uploading document field on Add product page");
             takeScreenshot("Document");
         }
         click(By.xpath("//div[@role='alert']/button[@id='closenotifymessage']"), "Close Alert Message", 10);
@@ -362,14 +362,14 @@ public class AddProductPage extends WebBasePage {
     public void productNameValidation() {
         String duplicateNameErrorMsg;
         enter(By.cssSelector("div>input#Name"), pName, "Product Name", 10);
-        click(By.xpath("//label[@for='BarcodeTypeId']"), "bcarcode", 10);
-        String nameerrorMsg = Errors.duplicateItemName;
+        click(By.xpath("//label[@for='BarcodeTypeId']"), "Barcode", 10);
+        String nameErrorMsg = Errors.duplicateItemName;
         duplicateNameErrorMsg = getText(By.xpath("//input[@id='Name']//parent::div//span[contains(@class,'invalid-feedback')]"), 20);
-        if (duplicateNameErrorMsg.equals(nameerrorMsg)) {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product Name field on Addproduct page as " + nameerrorMsg);
-            logger.info("Error Message is successfully displayed as " + nameerrorMsg);
+        if (duplicateNameErrorMsg.equals(nameErrorMsg)) {
+            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product Name field on Add product page as " + nameErrorMsg);
+            logger.info("Error Message is successfully displayed as " + nameErrorMsg);
         } else {
-            getTest().log(LogStatus.FAIL, "Error Message is not displayed in product Name field on Addproduct page");
+            getTest().log(LogStatus.FAIL, "Error Message is not displayed in product Name field on Add product page");
             logger.info("Error Message is not displayed");
             takeScreenshot("ProductName");
         }
@@ -383,11 +383,11 @@ public class AddProductPage extends WebBasePage {
         click(By.cssSelector("input#for_Employee"), "For company", 10);
         String descriptionErrorMsg = getText(By.xpath("//*[@id='Description']//parent::div//span[contains(@class,'invalid-feedback')]"), 10);
         if (descriptionErrorMsg.equals(errorMsg)) {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in description field on Addproduct page as " + errorMsg);
-            logger.info("Error Message is successfully displayed in description field on Addproduct page as " + errorMsg);
+            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in description field on Add product page as " + errorMsg);
+            logger.info("Error Message is successfully displayed in description field on Add product page as " + errorMsg);
         } else {
-            getTest().log(LogStatus.FAIL, "Error Message is Not displayed in description field on Addproduct page");
-            logger.info("Error Message is not displayed in description field on Addproduct page");
+            getTest().log(LogStatus.FAIL, "Error Message is Not displayed in description field on Add product page");
+            logger.info("Error Message is not displayed in description field on Add product page");
             takeScreenshot("Description");
         }
         driver.navigate().refresh();
@@ -402,19 +402,19 @@ public class AddProductPage extends WebBasePage {
             logger.info("Error Message is successfully displayed in product name field as " + errorMsgs);
 
         } else {
-            getTest().log(LogStatus.FAIL, "Error Messgae is not displayed in product name field");
-            logger.info("Error Messgae is not displayed in product name field");
+            getTest().log(LogStatus.FAIL, "Error Message is not displayed in product name field");
+            logger.info("Error Message is not displayed in product name field");
             takeScreenshot("ProductName");
         }
     }
 
     public void productTypeValidation() {
-        String errorMsgs = productTypeRequired;
+        String errorMsg = productTypeRequired;
         scrollToWebelement(By.xpath("//select[@id='AssetTypeId']"), "Product Type");
         String productTypeErrorMsg = getText(By.xpath("//select[@id='AssetTypeId']//parent::div//span[@class='invalid-feedback']"), 10);
-        if (errorMsgs.equals(productTypeErrorMsg)) {
-            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product type field as " + errorMsgs);
-            logger.info("Error Message is successfully displayed in product type field as " + errorMsgs);
+        if (errorMsg.equals(productTypeErrorMsg)) {
+            getTest().log(LogStatus.PASS, "Error Message is successfully displayed in product type field as " + errorMsg);
+            logger.info("Error Message is successfully displayed in product type field as " + errorMsg);
 
         } else {
             getTest().log(LogStatus.FAIL, "Error Messgae is not displayed in product type field");

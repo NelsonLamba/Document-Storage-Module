@@ -48,7 +48,7 @@ public class CompanySetupAction {
         companySetup.openEditProductType();
         companySetup.clickProductCostToggle(productCost);
     }
-    public void changeInsurranceRefNumToggle(boolean policy)
+    public void changeInsuranceRefNumToggle(boolean policy)
     {
         companySetup.sideBarProductType();
         companySetup.openEditProductType();

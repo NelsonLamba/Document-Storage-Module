@@ -72,28 +72,28 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void checkRelatedPageheaders() {
+    public void checkRelatedPageHeaders() {
         int i = 0;
-        List<String> expecteListHeader = new ArrayList<String>();
-        expecteListHeader.add("Location");
-        expecteListHeader.add("Unique Name/Code");
-        expecteListHeader.add("Total Quantity");
-        expecteListHeader.add("Available Quantity");
-        expecteListHeader.add("Barcode");
-        expecteListHeader.add("Serial Number");
-        expecteListHeader.add("Phone No.");
-        expecteListHeader.add("Cost");
-        expecteListHeader.add("Warranty Expiration Date");
-        expecteListHeader.add("Calibration Date");
-        expecteListHeader.add("Audit");
-        expecteListHeader.add("View History");
-        expecteListHeader.add("Status");
-        expecteListHeader.add("Action");
+        List<String> expectedListHeader = new ArrayList<String>();
+        expectedListHeader.add("Location");
+        expectedListHeader.add("Unique Name/Code");
+        expectedListHeader.add("Total Quantity");
+        expectedListHeader.add("Available Quantity");
+        expectedListHeader.add("Barcode");
+        expectedListHeader.add("Serial Number");
+        expectedListHeader.add("Phone No.");
+        expectedListHeader.add("Cost");
+        expectedListHeader.add("Warranty Expiration Date");
+        expectedListHeader.add("Calibration Date");
+        expectedListHeader.add("Audit");
+        expectedListHeader.add("View History");
+        expectedListHeader.add("Status");
+        expectedListHeader.add("Action");
 
         waitForVisibilityOfElement(By.xpath("//table[@id='tblRelatedInfoListing']//tr//th//span"), 50);
         List<WebElement> listHeader = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tr//th//span"), 30);
         for (WebElement actual : listHeader) {
-            List<String> element = expecteListHeader;
+            List<String> element = expectedListHeader;
             for (Object expected : element) {
                 i++;
                 if (actual.getText().equals(expected)) {
@@ -110,14 +110,14 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void checkSearchbarisAvailable() {
+    public void checkSearchBarIsAvailable() {
         WebElement element = findElementVisibility(By.cssSelector("input#relatedAssetSearch"), 80);
         if (element != null) {
-            getTest().log(LogStatus.PASS, "The  Searchbar is displayed in the Related information page");
-            logger.info("The  Searchbar is displayed in the Related information page");
+            getTest().log(LogStatus.PASS, "The  Search bar is displayed in the Related information page");
+            logger.info("The  Search bar is displayed in the Related information page");
         } else {
-            getTest().log(LogStatus.FAIL, "The  Searchbar is not displayed in the Related information page");
-            logger.info("The  Searchbar is not displayed in the Related information page");
+            getTest().log(LogStatus.FAIL, "The  Search bar is not displayed in the Related information page");
+            logger.info("The  Search bar is not displayed in the Related information page");
             takeScreenshot("SearchBar");
         }
     }
@@ -152,12 +152,12 @@ public class RelatedInformationPage extends WebBasePage {
     public void checksearchBarisEmpty() {
         String searchField = findElementVisibility(By.cssSelector("input#relatedAssetSearch"), 10).getAttribute("value");
         if (searchField != null && searchField.equals("")) {
-            getTest().log(LogStatus.PASS, "The Searchbar is Empty in the Related information page after clicked the Reset button");
-            logger.info("The  Searchbar is Empty in the Related information page after clicked the Reset button");
+            getTest().log(LogStatus.PASS, "The Search bar is Empty in the Related information page after clicked the Reset button");
+            logger.info("The  Search bar is Empty in the Related information page after clicked the Reset button");
 
         } else {
-            getTest().log(LogStatus.FAIL, "The Searchbar is not Empty in the Related information page after clicked the Reset button");
-            logger.info("The Searchbar is not Empty in the Related information page after clicked the Reset button");
+            getTest().log(LogStatus.FAIL, "The Search bar is not Empty in the Related information page after clicked the Reset button");
+            logger.info("The Search bar is not Empty in the Related information page after clicked the Reset button");
             takeScreenshot("SearchBar");
         }
     }
@@ -174,13 +174,13 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void clickbarCodePrint() {
+    public void clickBarCodePrint() {
         waitForVisibilityOfElement(By.cssSelector("a#btnBarCodePDF"), 30);
         WebElement element = findElementVisibility(By.cssSelector("a#btnBarCodePDF"), 10);
         if (element != null) {
             click(By.cssSelector("a#btnBarCodePDF"), "clickBarCodePrint", 20);
-            getTest().log(LogStatus.PASS, " clickbarCodePrint element click");
-            logger.info("clickbarCodePrint element clicked");
+            getTest().log(LogStatus.PASS, "Barcode Print element click");
+            logger.info("Barcode Print element click");
         } else {
             getTest().log(LogStatus.FAIL, " Click barcode print element is not click");
             logger.info("Click barcode Print element is not clicked");
@@ -200,7 +200,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void closebarCodePrintpopup() {
+    public void closeBarCodePrintPopup() {
         click(By.xpath("//h5[@class='modal-title' and text()='Barcode']//parent::div//button"), "closeBarCodePrint", 20);
     }
 
@@ -239,9 +239,9 @@ public class RelatedInformationPage extends WebBasePage {
         click(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//a[@class='editinfo']"), "clickuniqueCode", 10);
     }
 
-    public void editUniquename() {
+    public void editUniqueName() {
         changeUniqueNameRandomValue = prop.getProperty("productName") + dateValue;
-        enter(By.cssSelector("input#UniqueName"), changeUniqueNameRandomValue, "Edit Uniquename", 10);
+        enter(By.cssSelector("input#UniqueName"), changeUniqueNameRandomValue, "Edit Unique name", 10);
         String userName = getAtribute(By.cssSelector("input#UniqueName"), "value", 15);
         if (changeUniqueNameRandomValue.equals(userName)) {
             getTest().log(LogStatus.PASS, "UserName field is editable and able change as " + changeUniqueNameRandomValue);
@@ -253,16 +253,16 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void editwarrentyduration() {
+    public void editWarrentyDuration() {
         String duration = prop.getProperty("warrentyduration");
-        enter(By.cssSelector("input#WarrantyDuration"), duration, "Edit Warrenty", 10);
+        enter(By.cssSelector("input#WarrantyDuration"), duration, "Edit Warranty", 10);
         String warrenty = getAtribute(By.cssSelector("input#WarrantyDuration"), "value", 15);
         if (duration.equals(warrenty)) {
-            getTest().log(LogStatus.PASS, "warrentyduration field is editable and able change as " + duration);
-            logger.info("warrentyduration field is editable and able change as " + duration);
+            getTest().log(LogStatus.PASS, "Warranty duration field is editable and able change as " + duration);
+            logger.info("Warranty duration field is editable and able change as " + duration);
         } else {
             getTest().log(LogStatus.FAIL, "UserName field is not editable");
-            logger.info("warrentyduration field is not editable");
+            logger.info("Warranty duration field is not editable");
             takeScreenshot("Warranty");
         }
     }
@@ -284,8 +284,8 @@ public class RelatedInformationPage extends WebBasePage {
     public void editserialnumber() {
         String serialnumber = prop.getProperty("serialnumber");
         enter(By.cssSelector("input#SerialNumber"), serialnumber, "Edit serialnumber", 10);
-        String Snumber = getAtribute(By.cssSelector("input#SerialNumber"), "value", 15);
-        if (serialnumber.equals(Snumber)) {
+        String number = getAtribute(By.cssSelector("input#SerialNumber"), "value", 15);
+        if (serialnumber.equals(number)) {
             getTest().log(LogStatus.PASS, "UserName field is editable and able change as " + serialnumber);
             logger.info("UserName field is editable and able change as " + serialnumber);
         } else {
@@ -295,37 +295,37 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void editLicensekey() {
+    public void editLicenseKey() {
         String licenseKey = prop.getProperty("licensekey");
-        enter(By.cssSelector("input#LicenseKey"), licenseKey, "Edit Licensekey", 10);
+        enter(By.cssSelector("input#LicenseKey"), licenseKey, "Edit License key", 10);
         String licencekey = getAtribute(By.cssSelector("input#LicenseKey"), "value", 10);
         if (licenseKey.equals(licencekey)) {
             getTest().log(LogStatus.PASS, "UserName field is editable and able change as " + licenseKey);
-            logger.info("licencekey field is editable and able change as " + licenseKey);
+            logger.info("Licence key field is editable and able change as " + licenseKey);
         } else {
-            getTest().log(LogStatus.FAIL, "licencekey field is not editable");
-            logger.info("licencekey field is not editable");
+            getTest().log(LogStatus.FAIL, "Licence key field is not editable");
+            logger.info("Licence key field is not editable");
             takeScreenshot("LicenseKey");
         }
     }
 
-    public void editLicensetype() {
+    public void editLicenseType() {
         String licenseType = prop.getProperty("licensetype");
-        enter(By.cssSelector("input#LicenseType"), licenseType, "Edit Licensetype", 10);
-        String licencetype = getAtribute(By.cssSelector("input#LicenseType"), "value", 10);
-        if (licenseType.equals(licencetype)) {
+        enter(By.cssSelector("input#LicenseType"), licenseType, "Edit License type", 10);
+        String licenceType = getAtribute(By.cssSelector("input#LicenseType"), "value", 10);
+        if (licenseType.equals(licenceType)) {
             getTest().log(LogStatus.PASS, "UserName field is editable and able change as " + licenseType);
-            logger.info("licencekey field is editable and able change as " + licenseType);
+            logger.info("licence key field is editable and able change as " + licenseType);
         } else {
-            getTest().log(LogStatus.FAIL, "Licensetype field is not editable");
-            logger.info("Licensetype field is not editable");
+            getTest().log(LogStatus.FAIL, "License type field is not editable");
+            logger.info("License type field is not editable");
             takeScreenshot("LicenseType");
         }
     }
 
     public void editVersion() {
         String version = prop.getProperty("version");
-        enter(By.cssSelector("input#Version"), version, "Edit Versione", 10);
+        enter(By.cssSelector("input#Version"), version, "Edit Version", 10);
         String versions = getAtribute(By.cssSelector("input#Version"), "value", 10);
         if (version.equals(versions)) {
             getTest().log(LogStatus.PASS, "UserName field is editable and able change as " + version);
@@ -432,8 +432,8 @@ public class RelatedInformationPage extends WebBasePage {
             getTest().log(LogStatus.PASS, "ImeiNumber field is editable and able change as " + imeiNumber);
             logger.info("ImeiNumber field is editable and able change as " + imeiNumber);
         } else {
-            getTest().log(LogStatus.FAIL, "ImeiNumber field is not editable");
-            logger.info("ImeiNumber field is not editable");
+            getTest().log(LogStatus.FAIL, "Imei Number field is not editable");
+            logger.info("Imei Number field is not editable");
             takeScreenshot("ImeiNumber");
         }
     }
@@ -454,72 +454,72 @@ public class RelatedInformationPage extends WebBasePage {
 
     public void editphonenumber() {
         String phoneNumber = prop.getProperty("phonenumber");
-        enter(By.cssSelector("input#phonenumber"), phoneNumber, "Edit phonenumber", 10);
+        enter(By.cssSelector("input#phonenumber"), phoneNumber, "Edit phone number", 10);
         String phoneNumberr = getAtribute(By.cssSelector("input#phonenumber"), "value", 10);
         if (phoneNumber.equals(phoneNumberr)) {
-            getTest().log(LogStatus.PASS, "Phonenumber field is editable and able change as " + phoneNumber);
-            logger.info("Phonenumber field is editable and able change as " + phoneNumber);
+            getTest().log(LogStatus.PASS, "Phone number field is editable and able change as " + phoneNumber);
+            logger.info("Phone number field is editable and able change as " + phoneNumber);
         } else {
-            getTest().log(LogStatus.FAIL, "Phonenumber field is not editable");
-            logger.info("Phonenumber field is not editable");
-            takeScreenshot("Phonenumber");
+            getTest().log(LogStatus.FAIL, "Phone number field is not editable");
+            logger.info("Phone number field is not editable");
+            takeScreenshot("Phone number");
         }
     }
 
-    public void editmobileironredsetup() {
-        String mobileIronredSetup = prop.getProperty("mobileironredsetup");
-        enter(By.cssSelector("input#mobileironredsetup"), mobileIronredSetup, "Edit mobileironredsetup", 10);
+    public void editMobileIronredSetup() {
+        String mobileIronedSetup = prop.getProperty("mobileironredsetup");
+        enter(By.cssSelector("input#mobileironredsetup"), mobileIronedSetup, "Edit mobile ironed setup", 10);
         String mobileIronredSetupp = getAtribute(By.cssSelector("input#mobileironredsetup"), "value", 10);
-        if (mobileIronredSetup.equals(mobileIronredSetupp)) {
-            getTest().log(LogStatus.PASS, "Mobileironredsetup field is editable and able change as " + mobileIronredSetup);
-            logger.info("Mobileironredsetup field is editable and able change as " + mobileIronredSetup);
+        if (mobileIronedSetup.equals(mobileIronredSetupp)) {
+            getTest().log(LogStatus.PASS, "Mobile ironed setup field is editable and able change as " + mobileIronedSetup);
+            logger.info("Mobile ironed setup field is editable and able change as " + mobileIronedSetup);
         } else {
-            getTest().log(LogStatus.FAIL, "Mobileironredsetup field is not editable");
-            logger.info("Mobileironredsetup field is not editable");
+            getTest().log(LogStatus.FAIL, "Mobile ironed setup field is not editable");
+            logger.info("Mobile ironed setup field is not editable");
             takeScreenshot("Mobileironredsetup");
         }
     }
 
     public void editAccessoryOn() {
-        String accessoryon = prop.getProperty("accessoryon");
-        enter(By.cssSelector("input#accessoryon"), accessoryon, "Edit accessoryon", 10);
+        String accessoryOn = prop.getProperty("accessoryon");
+        enter(By.cssSelector("input#accessoryon"), accessoryOn, "Edit accessoryon", 10);
         String accessoryonn = getAtribute(By.cssSelector("input#accessoryon"), "value", 10);
-        if (accessoryon.equals(accessoryonn)) {
-            getTest().log(LogStatus.PASS, "Accessoryon field is editable and able change as " + accessoryon);
-            logger.info("Accessoryon field is editable and able change as " + accessoryon);
+        if (accessoryOn.equals(accessoryonn)) {
+            getTest().log(LogStatus.PASS, "Accessory on field is editable and able change as " + accessoryOn);
+            logger.info("Accessory on field is editable and able change as " + accessoryOn);
         } else {
-            getTest().log(LogStatus.FAIL, "Accessoryon field is not editable");
-            logger.info("Accessoryon field is not editable");
+            getTest().log(LogStatus.FAIL, "Accessory on field is not editable");
+            logger.info("Accessory on field is not editable");
             takeScreenshot("Accessoryon");
         }
     }
 
-    public void editmachinename() {
+    public void editMchineName() {
         String machineName = prop.getProperty("machinename");
         enter(By.cssSelector("input#machinename"), machineName, "Edit machinename", 10);
         String machinename = getAtribute(By.cssSelector("input#machinename"), "value", 10);
         if (machineName.equals(machinename)) {
-            getTest().log(LogStatus.PASS, "Machinename field is editable and able change as " + machineName);
-            logger.info("Machinename field is editable and able change as " + machineName);
+            getTest().log(LogStatus.PASS, "Machine name field is editable and able change as " + machineName);
+            logger.info("Machine name field is editable and able change as " + machineName);
         } else {
-            getTest().log(LogStatus.FAIL, "accessoryon field is not editable");
-            logger.info("Machinename field is not editable");
-            takeScreenshot("Machinename");
+            getTest().log(LogStatus.FAIL, "Machine name field is not editable");
+            logger.info("Machine name field is not editable");
+            takeScreenshot("MachineName");
         }
     }
 
-    public void editdivisionname() {
+    public void editDivisionName() {
         String divisionName = prop.getProperty("divisionname");
-        scrollToWebelement(By.cssSelector("input#divisionname"), "editdivision");
-        enter(By.cssSelector("input#divisionname"), divisionName, "Edit divisionname", 10);
-        String divisionnamee = getAtribute(By.cssSelector("input#divisionname"), "value", 10);
-        if (divisionName.equals(divisionnamee)) {
-            getTest().log(LogStatus.PASS, "Divisionname field is editable and able change as " + divisionName);
-            logger.info("Divisionname field is editable and able change as " + divisionName);
+        scrollToWebelement(By.cssSelector("input#divisionname"), "edit division");
+        enter(By.cssSelector("input#divisionname"), divisionName, "Edit division name", 10);
+        String divisionNamee = getAtribute(By.cssSelector("input#divisionname"), "value", 10);
+        if (divisionName.equals(divisionNamee)) {
+            getTest().log(LogStatus.PASS, "Division name field is editable and able change as " + divisionName);
+            logger.info("Division name field is editable and able change as " + divisionName);
         } else {
-            getTest().log(LogStatus.FAIL, "Divisionname field is not editable");
-            logger.info("Divisionname field is not editable");
-            takeScreenshot("Divisionname");
+            getTest().log(LogStatus.FAIL, "Division name field is not editable");
+            logger.info("Division name field is not editable");
+            takeScreenshot("DivisionName");
         }
     }
 
@@ -528,7 +528,7 @@ public class RelatedInformationPage extends WebBasePage {
         selectValueWithText(By.xpath("//div[@id='UN_PopUps']//select[@id='StatusId']"), "Inactive", "Select Status", 10);
     }
 
-    public void nextCalibrationdisabledfield() {
+    public void nextCalibrationDisabledField() {
         driver.findElement(By.cssSelector("input#CalibrationDate")).getAttribute("readonly");
         if (true) {
             getTest().log(LogStatus.PASS, "Next Calibration disabled field is  Disabled");
@@ -540,7 +540,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void nextimagedisabledfield() {
+    public void nextimageDisabledField() {
         driver.findElement(By.cssSelector("#ImageDate")).getAttribute("readonly");
         if (true) {
             getTest().log(LogStatus.PASS, "Next image disabled field is  Disabled");
@@ -552,7 +552,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void editRFIDdisabledfield() {
+    public void editRFIDdisabledField() {
         driver.findElement(By.cssSelector("#RFID")).getAttribute("readonly");
         if (true) {
             getTest().log(LogStatus.PASS, "Edit RFID field is  Disabled");
@@ -564,11 +564,11 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void laptopCarryingBagcheckbox() {
+    public void laptopCarryingBagCheckBox() {
         clickByJavascript(By.xpath("//label[contains(@class,'custom-control-label') and @for='laptopcarrying_bag']"), "laptop bag check box", 10);
     }
 
-    public void editsave() {
+    public void editSave() {
         click(By.cssSelector("a#ancSaveRelatedInfo"), "Save Button", 10);
     }
 
@@ -587,13 +587,13 @@ public class RelatedInformationPage extends WebBasePage {
     }
 
     public void acquisitionDate(String date) {
-        click(By.xpath("//div[@data-target='#AcquisitionDate']"), "acquisitiondate", 10);
+        click(By.xpath("//div[@data-target='#AcquisitionDate']"), "acquisition date", 10);
         selectDate(date);
     }
 
     public void nextAuditDate(String date) {
-        scrollToWebelement(By.xpath("//div[@data-target='#LastAuditDate']"), "auditdate");
-        click(By.xpath("//div[@data-target='#LastAuditDate']"), "auditdate", 10);
+        scrollToWebelement(By.xpath("//div[@data-target='#LastAuditDate']"), "audit date");
+        click(By.xpath("//div[@data-target='#LastAuditDate']"), "audit date", 10);
         selectDate(date);
     }
 
@@ -618,8 +618,8 @@ public class RelatedInformationPage extends WebBasePage {
         return dayClass;
     }
 
-    public void warrentydate(String date) {
-        click(By.xpath("//div[@data-target='#WarrantyExpirationDate']"), "choosewarrentydate", 10);
+    public void warrantyDate(String date) {
+        click(By.xpath("//div[@data-target='#WarrantyExpirationDate']"), "choose warranty date", 10);
         selectDate(date);
     }
 
@@ -689,34 +689,34 @@ public class RelatedInformationPage extends WebBasePage {
 
     }
 
-    public void chooseCalibrationNextdate(String date) {
+    public void chooseCalibrationNextDate(String date) {
 
         click(By.xpath("//div[@data-target='#NextAuditDate']"), "chooseCalibrationNextDate", 10);
         selectDate(date);
     }
 
-    public void selectCalibrationstatus() {
+    public void selectCalibrationStatus() {
         click(By.xpath("//label[@for='rdo_1']/.."), "status", 10);
     }
 
-    public void enterCalibrationcomment() {
+    public void enterCalibrationComment() {
         enter(By.cssSelector("textarea#Comment"), prop.getProperty("enterCalibrationcomment"), "Calibration Comment", 10);
     }
 
-    public void savepostcalibrationComment() {
-        click(By.cssSelector("a#postcomment"), "savepostComment", 10);
+    public void savePostCalibrationComment() {
+        click(By.cssSelector("a#postcomment"), "save post comment", 10);
     }
 
-    public void clickCalibrationcloseicon() {
-        click(By.xpath("//div[@class='modal fade mail-box-pop dialog my-popups ui-draggable show']//following::button"), "closeicon", 10);
+    public void clickCalibrationCloseIcon() {
+        click(By.xpath("//div[@class='modal fade mail-box-pop dialog my-popups ui-draggable show']//following::button"), "close icon", 10);
     }
 
-    public void chooseauditDate(String date) {
+    public void chooseAuditDate(String date) {
         click(By.xpath("//div[@data-target='#AuditDate']"), "chooseAuditStartDate", 10);
         selectDate(date);
     }
 
-    public void chooseauditNextdate(String date) {
+    public void chooseAuditNextdate(String date) {
         click(By.xpath("//div[@data-target='#NextAuditDate']"), "chooseAuditNextDate", 10);
         selectDate(date);
     }
@@ -732,11 +732,11 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void clickauditcloseicon() {
-        click(By.xpath("//div[@class='modal fade mail-box-pop dialog my-popups ui-draggable show']//following::button"), "closeicon", 10);
+    public void clickAuditCloseIcon() {
+        click(By.xpath("//div[@class='modal fade mail-box-pop dialog my-popups ui-draggable show']//following::button"), "close icon", 10);
     }
 
-    public void verifyauditCommentPopup() {
+    public void verifyAuditCommentPopup() {
         String element = getText(By.xpath("//div[@id='UN_PopUps']//label"), 20);
         if (element.contains("Audit")) {
             getTest().log(LogStatus.PASS, "Calibration Comment Popup  Page is  Displayed");
@@ -749,7 +749,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void clickProductpopupPage() {
+    public void clickProductPopupPage() {
         String alertMssg = getText(By.xpath("//div[@role='alert']"), 15);
         if (alertMssg.equals("Related Information has been successfully updated.")) {
             click(By.xpath("//button//span//i[@class='fa fa-times text-secondary']"), "close the alert message", 15);
@@ -764,8 +764,8 @@ public class RelatedInformationPage extends WebBasePage {
         enter(By.cssSelector("textarea#Comment"), prop.getProperty("enterAuditcomment"), "Audit Comment", 10);
     }
 
-    public void savepostauditComment() {
-        click(By.cssSelector("a#postcomment"), "savepostComment", 10);
+    public void savePostAuditComment() {
+        click(By.cssSelector("a#postcomment"), "save post comment", 10);
     }
 
     public void scroll() {
@@ -800,9 +800,9 @@ public class RelatedInformationPage extends WebBasePage {
                 if (successMsg.equals("Related Information has been successfully updated.")) {
                     click(By.xpath("//i[@class='fa fa-times text-secondary']"), "close success message", 15);
                 } else {
-                    getTest().log(LogStatus.FAIL, "Success Messgae is not displayed");
-                    logger.info("Success Messgae is not displayed");
-                    takeScreenshot("SuccessMessgae");
+                    getTest().log(LogStatus.FAIL, "Success Message is not displayed");
+                    logger.info("Success Message is not displayed");
+                    takeScreenshot("SuccessMessage");
                 }
             } else {
                 getTest().log(LogStatus.FAIL, "Confirmation Popup is not displayed");
@@ -817,7 +817,7 @@ public class RelatedInformationPage extends WebBasePage {
             } else {
                 getTest().log(LogStatus.FAIL, "Inactive status is  not changed to Active status as expected");
                 logger.info("Inactive status is not changed to Active status as expected");
-                takeScreenshot("Inactivestatus");
+                takeScreenshot("InactiveStatus");
             }
         }
     }
@@ -828,7 +828,7 @@ public class RelatedInformationPage extends WebBasePage {
         click(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//a[contains(@class,'UpdateItemStatus')]//i"), "Edit status", 40);
         click(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//select[@id='ddlchangeitemsatats']"), "select DD", 10);
         click(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//select[@id='ddlchangeitemsatats']"), "select DD", 10);
-        checkStatusdropdown();
+        checkStatusDropdown();
         int value = (selectedValue.equals("On Hold")) ? 4 : 3;
         selectValueWithIndex(By.cssSelector("#ddlchangeitemsatats"), value, "SelectStatus", 10);
         String confirmationPopup = getText(By.xpath("//div[@class='modal-content my-popups']//div[contains(@class,'body alert alert-warning')]"), 15);
@@ -838,14 +838,14 @@ public class RelatedInformationPage extends WebBasePage {
             if (successMsg.equals("Related Information has been successfully updated.")) {
                 click(By.xpath("//i[@class='fa fa-times text-secondary']"), "close success message", 15);
             } else {
-                getTest().log(LogStatus.FAIL, "Success Messgae is not displayed");
+                getTest().log(LogStatus.FAIL, "Success Message is not displayed");
                 logger.info("Success Messgae is not displayed");
-                takeScreenshot("SuccessMessgae");
+                takeScreenshot("SuccessMessage");
             }
         }
     }
 
-    public void checkStatusdropdown() {
+    public void checkStatusDropdown() {
         String[] expected = {"Select", "Active", "Inactive", "On Hold", "Sold"};
         List<WebElement> options = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//select[@id='ddlchangeitemsatats']//option"), 20);
         int k = 0;
@@ -874,7 +874,7 @@ public class RelatedInformationPage extends WebBasePage {
         checkProjectInformationPage();
         checkProductInformationPageheaders();
         pendingCheckOutList();
-        checkpendingCheckoutPageheaders();
+        checkPendingCheckoutPageHeaders();
         switchToParentTab();
         closeCurrentTab(1);
     }
@@ -894,21 +894,21 @@ public class RelatedInformationPage extends WebBasePage {
 
     public void checkProductInformationPageheaders() {
         int i = 0;
-        List<String> expecteListHeader = new ArrayList();
-        expecteListHeader.add("Product:");
-        expecteListHeader.add("Serial Number:");
-        expecteListHeader.add("Model Name:");
-        expecteListHeader.add("Cost:");
-        expecteListHeader.add("Warranty Duration:");
-        expecteListHeader.add("Unique Name:");
-        expecteListHeader.add("Brand:");
-        expecteListHeader.add("Model Number:");
-        expecteListHeader.add("Warranty Expiration Date:");
+        List<String> expectedListHeader = new ArrayList();
+        expectedListHeader.add("Product:");
+        expectedListHeader.add("Serial Number:");
+        expectedListHeader.add("Model Name:");
+        expectedListHeader.add("Cost:");
+        expectedListHeader.add("Warranty Duration:");
+        expectedListHeader.add("Unique Name:");
+        expectedListHeader.add("Brand:");
+        expectedListHeader.add("Model Number:");
+        expectedListHeader.add("Warranty Expiration Date:");
 
 
         List<WebElement> listHeader = driver.findElements(By.xpath("//div[@id='myTabContent']//div//b"));
         for (WebElement actual : listHeader) {
-            List<String> element = expecteListHeader;
+            List<String> element = expectedListHeader;
             for (Object expected : element) {
                 i++;
                 String txt1 = actual.getText();
@@ -943,19 +943,19 @@ public class RelatedInformationPage extends WebBasePage {
 
     }
 
-    public void checkpendingCheckoutPageheaders() {
+    public void checkPendingCheckoutPageHeaders() {
         int i = 0;
-        List<String> expecteListHeader = new ArrayList<>();
-        expecteListHeader.add("Unique Name");
-        expecteListHeader.add("From Time");
-        expecteListHeader.add("To Time");
-        expecteListHeader.add("Check Out Request By");
-        expecteListHeader.add("Check Out Request Date");
-        expecteListHeader.add("Assign");
-        expecteListHeader.add("Reject");
+        List<String> expectedListHeader = new ArrayList<>();
+        expectedListHeader.add("Unique Name");
+        expectedListHeader.add("From Time");
+        expectedListHeader.add("To Time");
+        expectedListHeader.add("Check Out Request By");
+        expectedListHeader.add("Check Out Request Date");
+        expectedListHeader.add("Assign");
+        expectedListHeader.add("Reject");
         List<WebElement> listHeader = driver.findElements(By.xpath("//table[@id='tblRelatedInfoListing']//thead//tr//th//span"));
         for (WebElement actual : listHeader) {
-            List<String> element = expecteListHeader;
+            List<String> element = expectedListHeader;
             for (Object expected : element) {
                 i++;
                 String txt1 = actual.getText();
@@ -975,10 +975,10 @@ public class RelatedInformationPage extends WebBasePage {
     }
 
     public void verifyPaginationFunctionalities() {
-        String[] defaultpaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
-        int defaultStartRecordCount = Integer.parseInt(defaultpaginationText[1]);
-        int defaultEndCount = Integer.parseInt(defaultpaginationText[3]);
-        int totalRecordCount = Integer.parseInt(defaultpaginationText[5]);
+        String[] defaultPaginationText = getText(By.xpath("//div[@class='nu-paging']//ul//li//span[contains(@class,'ml')]"), 20).split(" ");
+        int defaultStartRecordCount = Integer.parseInt(defaultPaginationText[1]);
+        int defaultEndCount = Integer.parseInt(defaultPaginationText[3]);
+        int totalRecordCount = Integer.parseInt(defaultPaginationText[5]);
         WebElement paginationNavigator = findElementVisibility(By.xpath("//div[@class='nu-paging']//li//ul"), 15);
         if (paginationNavigator != null) {
             int recordCount = findMultipleElement(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr"), 15).size();
@@ -1050,7 +1050,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void selectrecordPagination() {
+    public void selectRecordPagination() {
         String selectRecordPage = prop.getProperty("selectRecordPage");
         waitForLoader(20);
         staticWait(2000);

@@ -1,7 +1,6 @@
 package Action;
 
 import org.openqa.selenium.WebDriver;
-import pageobjects.DeployProductPage;
 import pageobjects.RelatedInformationPage;
 
 public class RelatedInformationAction  {
@@ -12,25 +11,25 @@ public class RelatedInformationAction  {
         this.driver = driver;
         relatedInformationPage=new RelatedInformationPage(driver);
     }
-    public void navigatetoRelatedProduct()
+    public void navigateToRelatedProduct()
     {
         relatedInformationPage.clickFullMenu();
         relatedInformationPage.clickAssertManagement();
         relatedInformationPage.clickManageProduct();
         relatedInformationPage.clickRelatedProduct();
     }
-public void RelatedInformationtab()
+public void RelatedInformationTab()
 {
     relatedInformationPage.clickRelatedInformationTab();
 }
 
     public void checkRelatedPageDetail()
     {
-        relatedInformationPage.checkRelatedPageheaders();
+        relatedInformationPage.checkRelatedPageHeaders();
     }
 
     public void searchProduct() {
-        relatedInformationPage.checkSearchbarisAvailable();
+        relatedInformationPage.checkSearchBarIsAvailable();
         relatedInformationPage.searchUniqueName();
         relatedInformationPage.clickSearchIcon();
         relatedInformationPage.verifyUniqueNameSearch();
@@ -41,44 +40,44 @@ public void RelatedInformationtab()
         relatedInformationPage.clickResetIcon();
         relatedInformationPage.checksearchBarisEmpty();
     }
-public void checkbreadCrumb()
+public void checkBreadCrumb()
     {
     relatedInformationPage.verifyBreadCrumb();
     }
     public void barCodePrint()
     {
-        relatedInformationPage.clickbarCodePrint();
+        relatedInformationPage.clickBarCodePrint();
     }
-    public void verifybarCodePrintPopupPage()
+    public void verifyBarCodePrintPopupPage()
     {
         relatedInformationPage.checkbarCodePrintPopupPage();
-        relatedInformationPage.closebarCodePrintpopup();
+        relatedInformationPage.closeBarCodePrintPopup();
     }
-public void verifydownloadBulkBarCode()
+public void verifyDownloadBulkBarCode()
     {
     relatedInformationPage.downloadBulkBarCode();
     relatedInformationPage.checkDownloadedBulkBarCodePdf();
     }
-    public void clickProductUniqueNameorCode()
+    public void clickProductUniqueNameOrCode()
     {
         relatedInformationPage.clickUniqueCode();
     }
-    public void editUniqueproductdetails()
+    public void editUniqueProductDetails()
     {
-        relatedInformationPage.editUniquename();
-        relatedInformationPage.editwarrentyduration();
+        relatedInformationPage.editUniqueName();
+        relatedInformationPage.editWarrentyDuration();
         relatedInformationPage.acquisitionDate("Future");
-        relatedInformationPage.warrentydate("Future");
+        relatedInformationPage.warrantyDate("Future");
         relatedInformationPage.editcost();
         relatedInformationPage.editserialnumber();
-        relatedInformationPage.editLicensekey();
-        relatedInformationPage.editLicensetype();
+        relatedInformationPage.editLicenseKey();
+        relatedInformationPage.editLicenseType();
         relatedInformationPage.editVersion();
         relatedInformationPage.editInstalledMachine();
         relatedInformationPage.editInstalledPath();
         relatedInformationPage.nextAuditDate("Future");
-        relatedInformationPage.nextCalibrationdisabledfield();
-        relatedInformationPage.nextimagedisabledfield();
+        relatedInformationPage.nextCalibrationDisabledField();
+        relatedInformationPage.nextimageDisabledField();
         relatedInformationPage.editModelName();
         relatedInformationPage.editModelNumber();
         relatedInformationPage.editBrand();
@@ -86,19 +85,19 @@ public void verifydownloadBulkBarCode()
         relatedInformationPage.editImeiNumber();
         relatedInformationPage.editSimNumber();
         relatedInformationPage.editphonenumber();
-        relatedInformationPage.editmobileironredsetup();
+        relatedInformationPage.editMobileIronredSetup();
         relatedInformationPage.editAccessoryOn();
-        relatedInformationPage.editmachinename();
-        relatedInformationPage.editdivisionname();
+        relatedInformationPage.editMchineName();
+        relatedInformationPage.editDivisionName();
         relatedInformationPage.editStatusdrpdown();
         relatedInformationPage.addAttachment();
         relatedInformationPage.editGPS();
-        relatedInformationPage.laptopCarryingBagcheckbox();
-        relatedInformationPage.editRFIDdisabledfield();
-        relatedInformationPage.editsave();
-        relatedInformationPage.clickProductpopupPage();
+        relatedInformationPage.laptopCarryingBagCheckBox();
+        relatedInformationPage.editRFIDdisabledField();
+        relatedInformationPage.editSave();
+        relatedInformationPage.clickProductPopupPage();
     }
-    public void verifyDownladedBarImage()
+    public void verifyDownloadedBarImage()
     {
         relatedInformationPage.downloadBarImageIcon();
         relatedInformationPage.checkDownloadedBarImage();
@@ -110,24 +109,24 @@ public void checkCalibrationCommentPopup(){
 public void enterTheDetailsInCalibrationPopup()
 {
     relatedInformationPage.chooseCalibrationStartDate("Old");
-    relatedInformationPage.chooseCalibrationNextdate("Future");
-    relatedInformationPage.selectCalibrationstatus();
-    relatedInformationPage.enterCalibrationcomment();
-    relatedInformationPage.savepostcalibrationComment();
-    relatedInformationPage.clickCalibrationcloseicon();
+    relatedInformationPage.chooseCalibrationNextDate("Future");
+    relatedInformationPage.selectCalibrationStatus();
+    relatedInformationPage.enterCalibrationComment();
+    relatedInformationPage.savePostCalibrationComment();
+    relatedInformationPage.clickCalibrationCloseIcon();
 }
     public void checkAuditCommentPopup(){
         relatedInformationPage.clickAuditComment();
-        relatedInformationPage.verifyauditCommentPopup();
+        relatedInformationPage.verifyAuditCommentPopup();
     }
     public void enterTheDetailsInAuditCommentPopup()
     {
-        relatedInformationPage.chooseauditDate("Old");
-        relatedInformationPage.chooseauditNextdate("Future");
+        relatedInformationPage.chooseAuditDate("Old");
+        relatedInformationPage.chooseAuditNextdate("Future");
         relatedInformationPage.selectAuditStatus();
         relatedInformationPage.enterAuditComment();
-        relatedInformationPage.savepostauditComment();
-        relatedInformationPage.clickauditcloseicon();
+        relatedInformationPage.savePostAuditComment();
+        relatedInformationPage.clickAuditCloseIcon();
     }
 
     public void statusSection()
@@ -145,9 +144,9 @@ public void viewHistoryPageValidations()
     relatedInformationPage.viewHistoryValidations();
 }
 
-    public void paginationfunctionality()
+    public void paginationFunctionality()
     {
-        relatedInformationPage.selectrecordPagination();
+        relatedInformationPage.selectRecordPagination();
         relatedInformationPage.verifyPaginationFunctionalities();
     }
 

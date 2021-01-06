@@ -80,7 +80,7 @@ public class AddProduct extends WebTestBase
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
         addProductAction.addNewButton();
-        addProductAction.productNamefieldValidation();
+        addProductAction.productNameFieldValidation();
     }
     @Test()
     public void barCode()
@@ -93,7 +93,7 @@ public class AddProduct extends WebTestBase
         addProductAction.dropDownValidation();
     }
     @Test()
-    public void productStatusfieldValidation()
+    public void productStatusFieldValidation()
     {
         test = getTest("TC_Asset Management_AddProduct_2");
         AddProductAction addProductAction=new AddProductAction(driver);
@@ -140,7 +140,7 @@ public class AddProduct extends WebTestBase
         new LoginAction(driver).logoutLogin();
         addProductAction.gotoManageProductPage();
         addProductAction.addNewButton();
-        addProductAction.errorMsgValidationOnDescriptiopn();
+        addProductAction.errorMsgValidationOnDescription();
     }
     @Test()
     public void descriptionFieldValidation()

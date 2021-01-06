@@ -2,7 +2,6 @@ package testcases;
 
 import Action.LoginAction;
 import Action.RelatedInformationAction;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.WebTestBase;
 
@@ -13,131 +12,131 @@ public class RelatedInformation extends WebTestBase {
     public void checkRelatedPageDetail(){
         test = getTest("TC_Asset Management_RelatedInformation_115");
         new LoginAction(driver).logoutLogin();
-        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.checkRelatedPageDetail();
+        RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.checkRelatedPageDetail();
     }
 
     @Test
     public void validationOnSearchField(){
         test = getTest("TC_Asset Management_RelatedInformation_116_117_118_119");
-        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
+        RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.searchProduct();
-        relatedinfo.verifyResetTable();
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.searchProduct();
+        relatedInfo.verifyResetTable();
 
     }
 
    @Test()
     public void ValidationOfBreadCrumbs(){
         test = getTest("TC_Asset Management_RelatedInformation_120");
-        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
+        RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.checkbreadCrumb();
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.checkBreadCrumb();
 
 
     }
     @Test()
     public void barCodePrintValidation(){
         test = getTest("TC_Asset Management_RelatedInformation_121");
-        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
+        RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.barCodePrint();
-        relatedinfo.verifybarCodePrintPopupPage();
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.barCodePrint();
+        relatedInfo.verifyBarCodePrintPopupPage();
 
     }
     @Test
     public void downloadBulkBarCodeAndVerifyDownloadedFile(){
         test = getTest("TC_Asset Management_RelatedInformation_122");
-        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
+        RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.verifydownloadBulkBarCode();
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.verifyDownloadBulkBarCode();
 
     }
   @Test
-    public void checkAndEditProductUniqueNameorCode(){
+    public void checkAndEditProductUniqueNameOrCode(){
         test = getTest("TC_Asset Management_RelatedInformation_123");
-        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
+        RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.clickProductUniqueNameorCode();
-        relatedinfo.editUniqueproductdetails();
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.clickProductUniqueNameOrCode();
+        relatedInfo.editUniqueProductDetails();
 
     }
     @Test
     public void downloadBarImageAndVerifyDownloadedFile(){
         test = getTest("TC_Asset Management_RelatedInformation_124");
-        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
+        RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.verifyDownladedBarImage();
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.verifyDownloadedBarImage();
 
 
     }
     @Test
-    public void verifyCalibrationCommentpopup(){
+    public void verifyCalibrationCommentPopup(){
         test = getTest("TC_Asset Management_RelatedInformation_125_126");
-        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
+        RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.checkCalibrationCommentPopup();
-        relatedinfo.enterTheDetailsInCalibrationPopup();
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.checkCalibrationCommentPopup();
+        relatedInfo.enterTheDetailsInCalibrationPopup();
 
     }
     @Test
     public void verifyAuditCommentpopup(){
         test = getTest("TC_Asset Management_RelatedInformation_127_128");
-        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
+        RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.checkAuditCommentPopup();
-        relatedinfo.enterTheDetailsInAuditCommentPopup();
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.checkAuditCommentPopup();
+        relatedInfo.enterTheDetailsInAuditCommentPopup();
 
 
     }
     @Test
     public void editAndChangeStatus(){
         test = getTest("TC_Asset Management_RelatedInformation_129_132");
-        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
+        RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.statusSection();
-        relatedinfo.selectStatusDropDown();
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.statusSection();
+        relatedInfo.selectStatusDropDown();
 
     }
     @Test
     public void viewHistoryPageValidations()
     {
         test = getTest("TC_Asset Management_RelatedInformation_130_131");
-       RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
+       RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.viewHistoryPageValidations();
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.viewHistoryPageValidations();
 
     }
     @Test
     public void verifyPagination(){
         test = getTest("TC_Asset Management_RelatedInformation_133");
-        RelatedInformationAction relatedinfo=new RelatedInformationAction(driver);
+        RelatedInformationAction relatedInfo=new RelatedInformationAction(driver);
         new LoginAction(driver).logoutLogin();
-        relatedinfo.navigatetoRelatedProduct();
-        relatedinfo.RelatedInformationtab();
-        relatedinfo.paginationfunctionality();
+        relatedInfo.navigateToRelatedProduct();
+        relatedInfo.RelatedInformationTab();
+        relatedInfo.paginationFunctionality();
     }
 
 }

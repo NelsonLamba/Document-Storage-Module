@@ -58,9 +58,9 @@ public class AddProductAction
         addProductPage.enterProductNameWithOneCharacter();
         addProductPage.entertProductNameWithSpecialCharacter();
     }
-    public void productNamefieldValidation()
+    public void productNameFieldValidation()
     {
-        addProductPage.enterProductNameOneHundreadOneCharacter();
+        addProductPage.enterProductNameOneHundredOneCharacter();
     }
 
     public void validationOnProductCode()
@@ -78,7 +78,7 @@ public class AddProductAction
         addProductPage.verifyErrorMessageForInvalidDoc();
         addProductPage.uploadDocValidation();
     }
-    public void errorMsgValidationOnDescriptiopn()
+    public void errorMsgValidationOnDescription()
     {
         addProductPage.errorMsgValidationOnDescription();
     }
@@ -124,7 +124,7 @@ public class AddProductAction
         addProductPage.uploadDocument();
         addProductPage.enterDescription();
         addProductPage.clickTheCheckBox();
-        addProductPage.enterStockValueForompany();
+        addProductPage.enterStockValueForCompany();
         addProductPage.enterStockValueForEmployee();
         addProductPage.clickSaveButton();
         addProductPage.handleSuccessPopup();
@@ -144,7 +144,7 @@ public class AddProductAction
         addProductPage.enterProductCode();
         addProductPage.uploadDocument();
         addProductPage.enterDescription();
-        addProductPage.enterStockValueForompany();
+        addProductPage.enterStockValueForCompany();
         addProductPage.enterStockValueForEmployee();
         addProductPage.clickSaveButton();
         addProductPage.handleSuccessPopup();

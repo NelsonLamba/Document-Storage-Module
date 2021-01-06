@@ -55,13 +55,13 @@ public class AttachmentsPage extends WebBasePage {
         String actualText=getAtribute(By.cssSelector("#txtAttachment"),"value",15);
         if(actualText.equals(prop.getProperty("attachmentNameAlphaNumeric")))
         {
-            getTest().log(LogStatus.PASS,"\"Attachement Name\" field accepted the alpha numeric data as expected and Accepted Data : "+actualText);
-            logger.info("\"Attachement Name\" field accepted the alpha numeric data as expected and Accepted Data : "+actualText);
+            getTest().log(LogStatus.PASS,"\"Attachment Name\" field accepted the alpha numeric data as expected and Accepted Data : "+actualText);
+            logger.info("\"Attachment Name\" field accepted the alpha numeric data as expected and Accepted Data : "+actualText);
         }
         else
         {
-            getTest().log(LogStatus.FAIL,"\"Attachement Name\" field not accepts the alpha numeric data as expected and Entered Data : "+prop.getProperty("attachmentNameAlphaNumeric"));
-            logger.info("\"Attachement Name\" field not accepts the alpha numeric data as expected and Entered Data : "+prop.getProperty("attachmentNameAlphaNumeric"));
+            getTest().log(LogStatus.FAIL,"\"Attachment Name\" field not accepts the alpha numeric data as expected and Entered Data : "+prop.getProperty("attachmentNameAlphaNumeric"));
+            logger.info("\"Attachment Name\" field not accepts the alpha numeric data as expected and Entered Data : "+prop.getProperty("attachmentNameAlphaNumeric"));
             takeScreenshot("AttachmentName");
         }
     }
@@ -340,13 +340,13 @@ public class AttachmentsPage extends WebBasePage {
         int attachmentNameFieldCountAfter=findMultipleElement(By.cssSelector("#txtAttachment"),15).size();
         if(attachmentNameFieldCountBefore<attachmentNameFieldCountAfter)
         {
-            getTest().log(LogStatus.PASS,"Field for add more attachment is displayed when click on the \"Add More Attchment\" icon");
-            logger.info("Field for add more attachment is displayed when click on the \"Add More Attchment\" icon");
+            getTest().log(LogStatus.PASS,"Field for add more attachment is displayed when click on the \"Add More Attachment\" icon");
+            logger.info("Field for add more attachment is displayed when click on the \"Add More Attachment\" icon");
         }
         else
         {
-            getTest().log(LogStatus.FAIL,"Field for add more attachment is not displayed when click on the \"Add More Attchment\" icon");
-            logger.info("Field for add more attachment is not displayed when click on the \"Add More Attchment\" icon");
+            getTest().log(LogStatus.FAIL,"Field for add more attachment is not displayed when click on the \"Add More Attachment\" icon");
+            logger.info("Field for add more attachment is not displayed when click on the \"Add More Attachment\" icon");
             takeScreenshot("MoreAttachment");
         }
     }
@@ -357,13 +357,13 @@ public class AttachmentsPage extends WebBasePage {
         int attachmentNameFieldCountAfter=findMultipleElement(By.cssSelector("#txtAttachment"),15).size();
         if(attachmentNameFieldCountBefore>attachmentNameFieldCountAfter)
         {
-            getTest().log(LogStatus.PASS,"Additional attachment field is not displayed as expected when click on the \"Remove More Attchment\" icon");
-            logger.info("Additional attachment field is not displayed as expected when click on the \"Remove More Attchment\" icon");
+            getTest().log(LogStatus.PASS,"Additional attachment field is not displayed as expected when click on the \"Remove More Attachment\" icon");
+            logger.info("Additional attachment field is not displayed as expected when click on the \"Remove More Attachment\" icon");
         }
         else
         {
-            getTest().log(LogStatus.FAIL,"Additional attachment field is not displayed as expected when click on the \"Remove More Attchment\" icon");
-           logger.info("Additional attachment field is not displayed as expected when click on the \"Remove More Attchment\" icon");
+            getTest().log(LogStatus.FAIL,"Additional attachment field is not displayed as expected when click on the \"Remove More Attachment\" icon");
+           logger.info("Additional attachment field is not displayed as expected when click on the \"Remove More Attachment\" icon");
            takeScreenshot("AdditionAttachment");
         }
     }

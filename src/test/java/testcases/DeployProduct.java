@@ -3,7 +3,6 @@ package testcases;
 import Action.CompanySetupAction;
 import Action.DeployProductAction;
 import Action.LoginAction;
-import Action.RelatedInformationAction;
 import org.testng.annotations.Test;
 import utils.WebTestBase;
 
@@ -90,13 +89,13 @@ public class DeployProduct extends WebTestBase {
     public void verifyLocationDropdownValues()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        CompanySetupAction comapnuSetup=new CompanySetupAction(driver);
+        CompanySetupAction companySetup=new CompanySetupAction(driver);
         test = getTest("TC_Asset Management_DeployProduct_49_51");
         new LoginAction(driver).logoutLogin();
-        comapnuSetup.navigateToCompanySetupPage();
-        comapnuSetup.navigateSideBarLocation();
-        comapnuSetup.createChildLocation();
-        comapnuSetup.getAllLocationList();
+        companySetup.navigateToCompanySetupPage();
+        companySetup.navigateSideBarLocation();
+        companySetup.createChildLocation();
+        companySetup.getAllLocationList();
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyLocationDropdownValues();
@@ -112,7 +111,7 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyQuantityField();
     }
     @Test(priority = 10)
-    public  void verifyModelandVendorManufaturerFiels()
+    public  void verifyModelAndVendorManufacturerFields()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
         test = getTest("TC_Asset Management_DeployProduct_58_59_60_61");
@@ -126,18 +125,18 @@ public class DeployProduct extends WebTestBase {
     public void verifyProductCostField()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        CompanySetupAction comapnuSetup=new CompanySetupAction(driver);
+        CompanySetupAction companySetup=new CompanySetupAction(driver);
         test = getTest("TC_Asset Management_DeployProduct_62_63_64_65_66_67_68");
         new LoginAction(driver).logoutLogin();
-        comapnuSetup.navigateToCompanySetupPage();
-        comapnuSetup.changeProductCostToggle(true);
+        companySetup.navigateToCompanySetupPage();
+        companySetup.changeProductCostToggle(true);
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyProductCostFieldBehaviour("enable");
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyProductCostField();
-        comapnuSetup.navigateToCompanySetupPage();
-        comapnuSetup.changeProductCostToggle(false);
+        companySetup.navigateToCompanySetupPage();
+        companySetup.changeProductCostToggle(false);
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyProductCostFieldBehaviour("disable");
@@ -189,20 +188,20 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyInvoiceDateFutureDate();
     }
     @Test(priority = 16)
-    public void verifyInsurenceFields()
+    public void verifyInsuranceFields()
     {
         DeployProductAction deployProduct=new DeployProductAction(driver);
-        CompanySetupAction comapnuSetup=new CompanySetupAction(driver);
+        CompanySetupAction companySetup=new CompanySetupAction(driver);
         test = getTest("TC_Asset Management_DeployProduct_81_82_83_84_85_86");
         new LoginAction(driver).logoutLogin();
-        comapnuSetup.navigateToCompanySetupPage();
-        comapnuSetup.changeInsurranceRefNumToggle(false);
+        companySetup.navigateToCompanySetupPage();
+        companySetup.changeInsuranceRefNumToggle(false);
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInsurenceRefNumFieldBehaviour("disable");
         deployProduct.verifyInsurerNameFieldBehaviour("disable");
-        comapnuSetup.navigateToCompanySetupPage();
-        comapnuSetup.changeInsurranceRefNumToggle(true);
+        companySetup.navigateToCompanySetupPage();
+        companySetup.changeInsuranceRefNumToggle(true);
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInsurenceRefNumFieldBehaviour("enable");
@@ -211,18 +210,18 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyInsuranceNumandInsurerNameField();
     }
     @Test(priority = 17)
-    public void verifyInsurenceDateField() {
+    public void verifyInsuranceDateField() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
-        CompanySetupAction comapnuSetup = new CompanySetupAction(driver);
+        CompanySetupAction companySetup = new CompanySetupAction(driver);
         test = getTest("TC_Asset Management_DeployProduct_87_88_89_90_91");
         new LoginAction(driver).logoutLogin();
-        comapnuSetup.navigateToCompanySetupPage();
-        comapnuSetup.changeInsurranceRefNumToggle(false);
+        companySetup.navigateToCompanySetupPage();
+        companySetup.changeInsuranceRefNumToggle(false);
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInsurenceDateFieldBehaviour("disable");
-        comapnuSetup.navigateToCompanySetupPage();
-        comapnuSetup.changeInsurranceRefNumToggle(true);
+        companySetup.navigateToCompanySetupPage();
+        companySetup.changeInsuranceRefNumToggle(true);
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyInsurenceDateFieldBehaviour("enable");
@@ -242,18 +241,18 @@ public class DeployProduct extends WebTestBase {
         deployProduct.verifyFutureWarrantyDate();
     }
     @Test(priority = 19)
-    public void verifyInsurenceDateFieldBehaviour() {
+    public void verifyInsuranceDateFieldBehaviour() {
         DeployProductAction deployProduct = new DeployProductAction(driver);
-        CompanySetupAction comapnuSetup = new CompanySetupAction(driver);
+        CompanySetupAction companySetup = new CompanySetupAction(driver);
         test = getTest("TC_Asset Management_DeployProduct_95_96_97_98_99");
         new LoginAction(driver).logoutLogin();
-        comapnuSetup.navigateToCompanySetupPage();
-        comapnuSetup.changeDepreciationToggle(false);
+        companySetup.navigateToCompanySetupPage();
+        companySetup.changeDepreciationToggle(false);
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyDepreciationRuleFieldBehaviour("disable");
-        comapnuSetup.navigateToCompanySetupPage();
-        comapnuSetup.changeDepreciationToggle(true);
+        companySetup.navigateToCompanySetupPage();
+        companySetup.changeDepreciationToggle(true);
         deployProduct.navigateToDeployProductPage();
         deployProduct.navigateToCreateProductPage();
         deployProduct.verifyDepreciationRuleFieldBehaviour("enable");

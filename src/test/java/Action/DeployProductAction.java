@@ -2,7 +2,6 @@ package Action;
 
 import org.openqa.selenium.WebDriver;
 import pageobjects.DeployProductPage;
-import testcases.RelatedInformation;
 import utils.PropertiesLoader;
 
 import java.util.Properties;
@@ -90,7 +89,7 @@ public class DeployProductAction {
     {
         deployProduct.clearUnitPriceField();
         deployProduct.clickAddListButton();
-        deployProduct.verifymandatoryFieldValidation();
+        deployProduct.verifyMandatoryFieldValidation();
     }
     public void locationDropdownVerification()
     {
@@ -99,7 +98,7 @@ public class DeployProductAction {
     }
     public void locationDropdownSearchFuctionality()
     {
-        deployProduct.verifySearchFieldinLocationDropdown();
+        deployProduct.verifySearchFieldInLocationDropdown();
         deployProduct.enterInLocationSearch(prop.getProperty("dropdownLocationToSearch"));
         deployProduct.verifyLocationSearch(prop.getProperty("dropdownLocationToSearch"));
     }
@@ -119,7 +118,7 @@ public class DeployProductAction {
     public void verifyQuantityField()
     {
         deployProduct.verifyQuantityMinimumChar();
-        deployProduct.verifyQuantityCharandSpclChar();
+        deployProduct.verifyQuantityCharAndSpclChar();
         deployProduct.verifyQuantityMaxChar();
     }
     public void verifyModelandVendorNameField()
@@ -243,7 +242,7 @@ public class DeployProductAction {
     }
     public void verifyDepreciationDropdown()
     {
-        deployProduct.verifyDepreciarionDropdown();
+        deployProduct.verifyDepreciationDropdown();
     }
     public void verifyProducLifeField()
     {
@@ -312,7 +311,7 @@ public class DeployProductAction {
     }
     public void verifyPagination()
     {
-        deployProduct.selectrecordPagination();
+        deployProduct.selectRecordPagination();
         deployProduct.verifyPaginationFunctionalities();
     }
 
