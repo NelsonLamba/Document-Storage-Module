@@ -31,6 +31,7 @@ public class RelatedInformationPage extends WebBasePage {
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
     String dateValue = simpleDateFormat.format(new Date());
     String barcodeFileName;
+    int filesInDirectory;
 
 
     public RelatedInformationPage(WebDriver driver) {
@@ -188,7 +189,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void checkbarCodePrintPopupPage() {
+    public void checkBarCodePrintPopupPage() {
         String element = getText(By.xpath("//div[contains(@class,'modal-header')]//h5[text()='Barcode']"), 30);
         if (element.contains("Barcode")) {
             getTest().log(LogStatus.PASS, "Barcode print popup is Displayed");
@@ -212,8 +213,9 @@ public class RelatedInformationPage extends WebBasePage {
             dir.delete();
         }
         waitForVisibilityOfElement(By.cssSelector("a#btnBarCode"), 30);
+        File[] dir2 = new File(downloadPath).listFiles();
+        filesInDirectory=dir2.length;
         click(By.cssSelector("a#btnBarCode"), "downloadBulkBarCode", 10);
-        waitTillNewFile(downloadPath, 0);
     }
 
     public void checkDownloadedBulkBarCodePdf() {
@@ -221,7 +223,7 @@ public class RelatedInformationPage extends WebBasePage {
         String fileName = prop.getProperty("downloadedPdf");
         File dir = new File(downloadPath + fileName);
         File dir2 = new File(downloadPath);
-        waitTillNewFile(dir2.toString(), 0);
+        waitTillNewFile(dir2.toString(), filesInDirectory);
         boolean dirContents = dir.exists();
         if (dirContents) {
             getTest().log(LogStatus.PASS, "Downloaded File is Exist");
@@ -253,7 +255,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void editWarrentyDuration() {
+    public void editWarrantyDuration() {
         String duration = prop.getProperty("warrentyduration");
         enter(By.cssSelector("input#WarrantyDuration"), duration, "Edit Warranty", 10);
         String warrenty = getAtribute(By.cssSelector("input#WarrantyDuration"), "value", 15);
@@ -267,7 +269,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void editcost() {
+    public void editCost() {
         String cost = prop.getProperty("cost");
         enter(By.cssSelector("input#Cost"), cost, "Edit cost", 10);
         String Cost = getAtribute(By.cssSelector("input#Cost"), "value", 15);
@@ -281,7 +283,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void editserialnumber() {
+    public void editSerialNumber() {
         String serialnumber = prop.getProperty("serialnumber");
         enter(By.cssSelector("input#SerialNumber"), serialnumber, "Edit serialnumber", 10);
         String number = getAtribute(By.cssSelector("input#SerialNumber"), "value", 15);
@@ -298,8 +300,8 @@ public class RelatedInformationPage extends WebBasePage {
     public void editLicenseKey() {
         String licenseKey = prop.getProperty("licensekey");
         enter(By.cssSelector("input#LicenseKey"), licenseKey, "Edit License key", 10);
-        String licencekey = getAtribute(By.cssSelector("input#LicenseKey"), "value", 10);
-        if (licenseKey.equals(licencekey)) {
+        String licenceKey = getAtribute(By.cssSelector("input#LicenseKey"), "value", 10);
+        if (licenseKey.equals(licenceKey)) {
             getTest().log(LogStatus.PASS, "UserName field is editable and able change as " + licenseKey);
             logger.info("Licence key field is editable and able change as " + licenseKey);
         } else {
@@ -452,7 +454,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void editphonenumber() {
+    public void editPhoneNumber() {
         String phoneNumber = prop.getProperty("phonenumber");
         enter(By.cssSelector("input#phonenumber"), phoneNumber, "Edit phone number", 10);
         String phoneNumberr = getAtribute(By.cssSelector("input#phonenumber"), "value", 10);
@@ -466,7 +468,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void editMobileIronredSetup() {
+    public void editMobileIronedSetup() {
         String mobileIronedSetup = prop.getProperty("mobileironredsetup");
         enter(By.cssSelector("input#mobileironredsetup"), mobileIronedSetup, "Edit mobile ironed setup", 10);
         String mobileIronredSetupp = getAtribute(By.cssSelector("input#mobileironredsetup"), "value", 10);
@@ -494,7 +496,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void editMchineName() {
+    public void editMachineName() {
         String machineName = prop.getProperty("machinename");
         enter(By.cssSelector("input#machinename"), machineName, "Edit machinename", 10);
         String machinename = getAtribute(By.cssSelector("input#machinename"), "value", 10);
@@ -524,7 +526,7 @@ public class RelatedInformationPage extends WebBasePage {
     }
 
 
-    public void editStatusdrpdown() {
+    public void editStatusDropDown() {
         selectValueWithText(By.xpath("//div[@id='UN_PopUps']//select[@id='StatusId']"), "Inactive", "Select Status", 10);
     }
 
@@ -540,7 +542,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
     }
 
-    public void nextimageDisabledField() {
+    public void nextImageDisabledField() {
         driver.findElement(By.cssSelector("#ImageDate")).getAttribute("readonly");
         if (true) {
             getTest().log(LogStatus.PASS, "Next image disabled field is  Disabled");
@@ -639,8 +641,9 @@ public class RelatedInformationPage extends WebBasePage {
         if (dir.exists()) {
             dir.delete();
         }
+        File[] dir2 = new File(downloadPath).listFiles();
+        filesInDirectory=dir2.length;
         click(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//i[@title='Download Barcode']"), "downloadBarImage", 20);
-        waitTillNewFile(downloadPath, 0);
     }
 
     public void checkDownloadedBarImage() {
@@ -650,7 +653,7 @@ public class RelatedInformationPage extends WebBasePage {
         String fileName = barcodeFileName + ".png";
         File dir = new File(downloadPath + fileName);
         File dir2 = new File(downloadPath);
-        waitTillNewFile(dir2.toString(), 0);
+        waitTillNewFile(dir2.toString(),filesInDirectory);
         boolean dirContents = dir.exists();
         if (dirContents) {
             getTest().log(LogStatus.PASS, "Downloaded File is Exist");
@@ -660,9 +663,7 @@ public class RelatedInformationPage extends WebBasePage {
             logger.info("Downloaded File is not Exist");
             takeScreenshot("Downloaded");
         }
-
     }
-
 
     public void clickCalibrationComment() {
         scroll();

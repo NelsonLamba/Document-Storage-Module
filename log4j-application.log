@@ -18850,3 +18850,307 @@ Session ID: 1061f7c1041287111c5ca3111430656b
 2021-01-06 16:50:47,234  INFO [main] Company setup page:509 - Expected child location "Child20210106164922" location is present in both setup and location dropdown
 2021-01-06 16:50:47,264  INFO [main] Company setup page:509 - Expected child location "Second Child Location" location is present in both setup and location dropdown
 2021-01-06 16:50:47,274  INFO [main] Company setup page:509 - Expected child location "ChildLocation2" location is present in both setup and location dropdown
+2021-01-07 10:29:23,552  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 10:29:23,972  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 10:29:24,293  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 10:29:39,942  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 10:29:40,359  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-01-07 10:29:41,422  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-01-07 10:29:53,255  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 10:29:58,303  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 10:29:58,902  INFO [main] User Login Page:88 - Attachments Tab clicked 
+2021-01-07 10:29:58,903  INFO [main] User Login Page:40 - User can able to click "Attachment Tab"
+2021-01-07 10:29:59,250  INFO [main] User Login Page:70 - Attachment Name entered with value - Attach123
+2021-01-07 10:29:59,874  INFO [main] User Login Page:373 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2021-01-07 10:30:04,915  INFO [main] User Login Page:88 - Save clicked 
+2021-01-07 10:30:04,969  INFO [main] User Login Page:139 - "Save Button" is present as clickable and clicked
+2021-01-07 10:30:05,574  INFO [main] User Login Page:88 - Close Popup clicked 
+2021-01-07 10:30:10,630  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 10:30:11,218  INFO [main] User Login Page:88 - Attachments Tab clicked 
+2021-01-07 10:30:11,218  INFO [main] User Login Page:40 - User can able to click "Attachment Tab"
+2021-01-07 10:30:11,789  INFO [main] User Login Page:189 - Scroll to this element - Download
+2021-01-07 10:30:13,324  INFO [main] User Login Page:88 - Download clicked 
+2021-01-07 10:30:13,327  INFO [main] User Login Page:229 - "Download Icon" is present as clickable and clicked
+2021-01-07 10:30:18,329  INFO [main] User Login Page:427 - File is downloaded and exist in the folder
+2021-01-07 10:30:20,966  INFO [main] User Login Page:88 - Delete clicked 
+2021-01-07 10:30:20,968  INFO [main] User Login Page:245 - "Delete Icon" is present as clickable and clicked
+2021-01-07 10:30:21,316  INFO [main] User Login Page:88 - Ok clicked 
+2021-01-07 10:30:22,582  INFO [main] User Login Page:88 - Close Popup clicked 
+2021-01-07 10:30:24,699  INFO [main] User Login Page:441 - Attachment is removed from the list as expected when click on the "Delete" icon
+2021-01-07 10:31:32,193  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 10:31:32,592  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 10:31:32,930  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 10:31:35,700  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 10:31:42,245  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-01-07 10:31:43,611  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-01-07 10:31:50,171  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 10:31:55,658  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 10:31:56,251  INFO [main] User Login Page:88 - Attachments Tab clicked 
+2021-01-07 10:31:56,252  INFO [main] User Login Page:40 - User can able to click "Attachment Tab"
+2021-01-07 10:32:17,905  INFO [main] User Login Page:98 - Product not clicked
+2021-01-07 10:32:18,695  INFO [main] Attachment-verifyDownloadAndDeleteFunctions:75 - Method - verifyDownloadAndDeleteFunctions failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyDownloadAndDeleteFunctions_20210107103218.png
+2021-01-07 10:33:02,189  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 10:33:02,634  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 10:33:02,941  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 10:33:12,213  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 10:33:12,627  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-01-07 10:33:15,088  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-01-07 10:33:25,353  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 10:33:33,088  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 10:33:33,647  INFO [main] User Login Page:88 - Attachments Tab clicked 
+2021-01-07 10:33:33,648  INFO [main] User Login Page:40 - User can able to click "Attachment Tab"
+2021-01-07 10:33:33,998  INFO [main] User Login Page:70 - Attachment Name entered with value - Attach123
+2021-01-07 10:33:34,599  INFO [main] User Login Page:373 - Upload Attachment uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\file-sample_100kB.doc
+2021-01-07 10:33:40,956  INFO [main] User Login Page:88 - Save clicked 
+2021-01-07 10:33:41,012  INFO [main] User Login Page:139 - "Save Button" is present as clickable and clicked
+2021-01-07 10:33:41,557  INFO [main] User Login Page:88 - Close Popup clicked 
+2021-01-07 10:33:45,906  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 10:33:46,529  INFO [main] User Login Page:88 - Attachments Tab clicked 
+2021-01-07 10:33:46,530  INFO [main] User Login Page:40 - User can able to click "Attachment Tab"
+2021-01-07 10:33:47,140  INFO [main] User Login Page:189 - Scroll to this element - Download
+2021-01-07 10:34:28,975  INFO [main] User Login Page:88 - Download clicked 
+2021-01-07 10:34:40,742  INFO [main] User Login Page:229 - "Download Icon" is present as clickable and clicked
+2021-01-07 10:36:27,642  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:32,922  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:35,946  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:41,424  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:48,401  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:48,902  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:49,404  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:49,905  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:50,407  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:50,908  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:51,409  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:51,911  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:52,412  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:52,914  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:53,415  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:53,917  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:54,418  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:54,919  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:55,421  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:55,922  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:56,424  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:56,947  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:57,449  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:57,950  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:58,452  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:58,953  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:59,454  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:36:59,956  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:00,457  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:00,959  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:01,460  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:01,962  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:02,463  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:02,965  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:03,466  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:03,967  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:04,469  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:04,970  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:05,472  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:05,973  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:06,475  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:06,976  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:07,477  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:07,979  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:08,480  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:08,982  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:09,483  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:09,985  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:10,501  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:11,018  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:11,519  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:12,021  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:12,522  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:13,023  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:13,524  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:14,026  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:14,527  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:15,029  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:15,530  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:16,031  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:16,533  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:17,034  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:17,536  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:18,037  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:18,538  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:19,040  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:19,541  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:20,043  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:20,544  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:21,046  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:21,547  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:22,048  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:22,550  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:23,051  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:23,553  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:24,054  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:24,556  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:25,057  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:25,558  INFO [main] User Login Page:357 - countNumberOfFilesInFolder(path) - 0 previousFileCount - 0
+2021-01-07 10:37:25,558  INFO [main] User Login Page:430 - File is not exist in the folder
+2021-01-07 10:37:50,392  INFO [main] User Login Page:88 - Delete clicked 
+2021-01-07 10:37:50,393  INFO [main] User Login Page:245 - "Delete Icon" is present as clickable and clicked
+2021-01-07 10:38:30,960  INFO [main] User Login Page:98 - Ok not clicked
+2021-01-07 10:38:45,821  INFO [main] Attachment-verifyDownloadAndDeleteFunctions:75 - Method - verifyDownloadAndDeleteFunctions failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyDownloadAndDeleteFunctions_20210107103845.png
+2021-01-07 10:52:29,453  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 10:52:29,814  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 10:52:30,109  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 10:52:32,796  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 10:52:43,803  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 10:52:46,614  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 10:52:53,923  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 10:52:59,275  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 10:52:59,863  INFO [main] User Login Page:88 - related Information button clicked 
+2021-01-07 10:53:02,661  INFO [main] User Login Page:227 -  Text displayed is  - AT20210106184247
+2021-01-07 10:53:04,404  INFO [main] User Login Page:88 - downloadBarImage clicked 
+2021-01-07 10:53:14,410  INFO [main] User Login Page:663 - Downloaded File is Exist
+2021-01-07 10:55:29,375  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 10:55:29,723  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 10:55:30,016  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 10:55:33,551  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 10:55:44,028  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 10:55:45,135  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 10:56:00,166  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 10:56:04,428  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 10:56:05,011  INFO [main] User Login Page:88 - related Information button clicked 
+2021-01-07 10:56:06,407  INFO [main] User Login Page:227 -  Text displayed is  - AT20210106184247
+2021-01-07 10:56:11,410  INFO [main] User Login Page:665 - Downloaded File is not Exist
+2021-01-07 10:59:47,390  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 10:59:47,745  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 10:59:48,048  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 10:59:56,978  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 10:59:57,334  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 10:59:57,903  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:00:06,224  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 11:00:11,429  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 11:00:11,985  INFO [main] User Login Page:88 - related Information button clicked 
+2021-01-07 11:00:13,369  INFO [main] User Login Page:227 -  Text displayed is  - AT20210106184247
+2021-01-07 11:00:14,990  INFO [main] User Login Page:88 - downloadBarImage clicked 
+2021-01-07 11:00:19,992  INFO [main] User Login Page:662 - Downloaded File is Exist
+2021-01-07 11:13:01,086  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:13:01,437  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:13:01,774  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:13:05,404  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:13:17,350  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:13:17,682  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:13:27,953  INFO [main] User Login Page:98 - Manage Product not clicked
+2021-01-07 11:13:28,613  INFO [main] RelatedInformation-downloadBarImageAndVerifyDownloadedFile:75 - Method - downloadBarImageAndVerifyDownloadedFile failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\downloadBarImageAndVerifyDownloadedFile_20210107111328.png
+2021-01-07 11:13:58,999  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:13:59,394  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:13:59,734  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:14:15,641  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:14:16,011  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:14:21,113  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:14:30,929  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 11:14:37,048  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 11:14:37,654  INFO [main] User Login Page:88 - related Information button clicked 
+2021-01-07 11:14:39,770  INFO [main] User Login Page:227 -  Text displayed is  - AT20210106184247
+2021-01-07 11:14:40,167  INFO [main] RelatedInformation-downloadBarImageAndVerifyDownloadedFile:75 - Method - downloadBarImageAndVerifyDownloadedFile failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\downloadBarImageAndVerifyDownloadedFile_20210107111439.png
+2021-01-07 11:16:09,278  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:16:09,668  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:16:10,017  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:16:13,953  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:16:20,323  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:16:20,720  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:16:31,003  INFO [main] User Login Page:98 - Manage Product not clicked
+2021-01-07 11:16:31,727  INFO [main] RelatedInformation-downloadBarImageAndVerifyDownloadedFile:75 - Method - downloadBarImageAndVerifyDownloadedFile failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\downloadBarImageAndVerifyDownloadedFile_20210107111631.png
+2021-01-07 11:17:00,468  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:17:00,856  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:17:01,212  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:17:04,242  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:17:13,505  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:17:18,823  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:17:36,645  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 11:17:45,973  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 11:17:46,563  INFO [main] User Login Page:88 - related Information button clicked 
+2021-01-07 11:17:49,335  INFO [main] User Login Page:227 -  Text displayed is  - AT20210106184247
+2021-01-07 11:17:51,133  INFO [main] User Login Page:88 - downloadBarImage clicked 
+2021-01-07 11:17:56,136  INFO [main] User Login Page:662 - Downloaded File is Exist
+2021-01-07 11:30:56,713  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:30:57,108  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:30:57,453  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:31:00,416  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:31:07,436  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:31:08,822  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:31:15,889  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 11:31:36,219  INFO [main] User Login Page:98 - Product not clicked
+2021-01-07 11:32:28,495  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:32:28,874  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:32:29,167  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:32:38,462  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:32:38,846  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:32:40,205  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:32:48,357  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 11:32:52,587  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 11:32:53,169  INFO [main] User Login Page:88 - related Information button clicked 
+2021-01-07 11:32:55,551  INFO [main] User Login Page:227 -  Text displayed is  - AT20210106184247
+2021-01-07 11:32:55,954  INFO [main] RelatedInformation-downloadBarImageAndVerifyDownloadedFile:75 - Method - downloadBarImageAndVerifyDownloadedFile failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\downloadBarImageAndVerifyDownloadedFile_20210107113255.png
+2021-01-07 11:33:58,503  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:33:58,895  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:33:59,250  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:34:02,263  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:34:12,492  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:34:15,455  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:34:28,304  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 11:34:32,878  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 11:34:33,458  INFO [main] User Login Page:88 - related Information button clicked 
+2021-01-07 11:34:35,098  INFO [main] User Login Page:227 -  Text displayed is  - AT20210106184247
+2021-01-07 11:34:36,837  INFO [main] User Login Page:88 - downloadBarImage clicked 
+2021-01-07 11:34:41,842  INFO [main] User Login Page:349 - Error Occurred. java.lang.NullPointerException
+2021-01-07 11:34:42,671  INFO [main] RelatedInformation-downloadBarImageAndVerifyDownloadedFile:75 - Method - downloadBarImageAndVerifyDownloadedFile failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\downloadBarImageAndVerifyDownloadedFile_20210107113442.png
+2021-01-07 11:35:51,260  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:35:51,656  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:35:51,990  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:36:03,393  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:36:03,766  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:36:06,208  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:36:14,518  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 11:36:20,463  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 11:36:21,008  INFO [main] User Login Page:88 - related Information button clicked 
+2021-01-07 11:36:23,510  INFO [main] User Login Page:227 -  Text displayed is  - AT20210106184247
+2021-01-07 11:36:25,365  INFO [main] User Login Page:88 - downloadBarImage clicked 
+2021-01-07 11:36:31,157  INFO [main] RelatedInformation-downloadBarImageAndVerifyDownloadedFile:75 - Method - downloadBarImageAndVerifyDownloadedFile failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\downloadBarImageAndVerifyDownloadedFile_20210107113630.png
+2021-01-07 11:38:53,196  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:38:53,598  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:38:53,934  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:39:04,357  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:39:04,762  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:39:05,623  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:39:12,231  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 11:39:17,822  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 11:39:18,384  INFO [main] User Login Page:88 - related Information button clicked 
+2021-01-07 11:39:20,107  INFO [main] User Login Page:227 -  Text displayed is  - AT20210106184247
+2021-01-07 11:39:21,896  INFO [main] User Login Page:88 - downloadBarImage clicked 
+2021-01-07 11:39:26,898  INFO [main] User Login Page:349 - Error Occurred. java.lang.NullPointerException
+2021-01-07 11:39:27,634  INFO [main] RelatedInformation-downloadBarImageAndVerifyDownloadedFile:75 - Method - downloadBarImageAndVerifyDownloadedFile failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\downloadBarImageAndVerifyDownloadedFile_20210107113927.png
+2021-01-07 11:42:15,255  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:42:15,631  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:42:15,963  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:42:19,601  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:42:29,717  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:42:30,027  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:42:40,422  INFO [main] User Login Page:98 - Manage Product not clicked
+2021-01-07 11:42:41,177  INFO [main] RelatedInformation-downloadBarImageAndVerifyDownloadedFile:75 - Method - downloadBarImageAndVerifyDownloadedFile failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\downloadBarImageAndVerifyDownloadedFile_20210107114240.png
+2021-01-07 11:43:05,635  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:43:05,977  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:43:06,274  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:43:09,469  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:43:16,454  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:43:16,765  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:43:27,465  INFO [main] User Login Page:98 - Manage Product not clicked
+2021-01-07 11:43:28,140  INFO [main] RelatedInformation-downloadBarImageAndVerifyDownloadedFile:75 - Method - downloadBarImageAndVerifyDownloadedFile failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\downloadBarImageAndVerifyDownloadedFile_20210107114327.png
+2021-01-07 11:43:50,604  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-07 11:43:51,022  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-07 11:43:51,353  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-07 11:44:05,783  INFO [main] User Login Page:88 - Login clicked 
+2021-01-07 11:44:06,150  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-01-07 11:44:09,730  INFO [main] User Login Page:88 - clickAssertManagement clicked 
+2021-01-07 11:44:18,729  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-01-07 11:44:23,745  INFO [main] User Login Page:88 - Product clicked 
+2021-01-07 11:44:24,319  INFO [main] User Login Page:88 - related Information button clicked 
+2021-01-07 11:44:25,776  INFO [main] User Login Page:227 -  Text displayed is  - AT20210106184247
+2021-01-07 11:44:27,503  INFO [main] User Login Page:88 - downloadBarImage clicked 
+2021-01-07 11:44:32,504  INFO [main] User Login Page:349 - File directory not found. G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\downloadedFiles
+2021-01-07 11:44:33,297  INFO [main] RelatedInformation-downloadBarImageAndVerifyDownloadedFile:75 - Method - downloadBarImageAndVerifyDownloadedFile failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\downloadBarImageAndVerifyDownloadedFile_20210107114432.png

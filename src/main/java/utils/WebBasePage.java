@@ -340,7 +340,17 @@ public class WebBasePage extends WaitStatement {
     }
 
     public int countNumberOfFilesInFolder(String path) {
-        return Objects.requireNonNull(new File(path).list()).length;
+        try {
+            return Objects.requireNonNull(new File(path).list()).length;
+        }
+        catch (NullPointerException e)
+        {
+            getTest().log(LogStatus.FAIL,"File directory not found. "+path);
+            logger.info("File directory not found. "+path);
+            takeScreenshot("DirectoryNotFound");
+            Assert.fail("" + e);
+            return 0;
+        }
     }
 
     public void waitTillNewFile(String path, int previousFileCount) {
@@ -357,7 +367,6 @@ public class WebBasePage extends WaitStatement {
                 logger.info("countNumberOfFilesInFolder(path) - " + countNumberOfFilesInFolder(path) + " previousFileCount - " + previousFileCount);
             }
         } catch (Exception e) {
-            e.printStackTrace();
             takeScreenshot("WaitTillNewFile");
             Assert.fail("" + e);
         }

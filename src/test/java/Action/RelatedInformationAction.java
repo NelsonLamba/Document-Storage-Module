@@ -50,7 +50,7 @@ public void checkBreadCrumb()
     }
     public void verifyBarCodePrintPopupPage()
     {
-        relatedInformationPage.checkbarCodePrintPopupPage();
+        relatedInformationPage.checkBarCodePrintPopupPage();
         relatedInformationPage.closeBarCodePrintPopup();
     }
 public void verifyDownloadBulkBarCode()
@@ -65,11 +65,11 @@ public void verifyDownloadBulkBarCode()
     public void editUniqueProductDetails()
     {
         relatedInformationPage.editUniqueName();
-        relatedInformationPage.editWarrentyDuration();
+        relatedInformationPage.editWarrantyDuration();
         relatedInformationPage.acquisitionDate("Future");
         relatedInformationPage.warrantyDate("Future");
-        relatedInformationPage.editcost();
-        relatedInformationPage.editserialnumber();
+        relatedInformationPage.editCost();
+        relatedInformationPage.editSerialNumber();
         relatedInformationPage.editLicenseKey();
         relatedInformationPage.editLicenseType();
         relatedInformationPage.editVersion();
@@ -77,19 +77,19 @@ public void verifyDownloadBulkBarCode()
         relatedInformationPage.editInstalledPath();
         relatedInformationPage.nextAuditDate("Future");
         relatedInformationPage.nextCalibrationDisabledField();
-        relatedInformationPage.nextimageDisabledField();
+        relatedInformationPage.nextImageDisabledField();
         relatedInformationPage.editModelName();
         relatedInformationPage.editModelNumber();
         relatedInformationPage.editBrand();
         relatedInformationPage.editBillNumber();
         relatedInformationPage.editImeiNumber();
         relatedInformationPage.editSimNumber();
-        relatedInformationPage.editphonenumber();
-        relatedInformationPage.editMobileIronredSetup();
+        relatedInformationPage.editPhoneNumber();
+        relatedInformationPage.editMobileIronedSetup();
         relatedInformationPage.editAccessoryOn();
-        relatedInformationPage.editMchineName();
+        relatedInformationPage.editMachineName();
         relatedInformationPage.editDivisionName();
-        relatedInformationPage.editStatusdrpdown();
+        relatedInformationPage.editStatusDropDown();
         relatedInformationPage.addAttachment();
         relatedInformationPage.editGPS();
         relatedInformationPage.laptopCarryingBagCheckBox();
