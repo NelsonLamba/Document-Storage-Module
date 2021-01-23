@@ -375,7 +375,7 @@ public class WebBasePage extends WaitStatement {
 
     public void uploadDoc(By by, String value, String name, int time) {
         try {
-            WebElement element = findElementVisibility(by, time);
+            WebElement element = findElementPresence(by, time);
             staticWait(500);
             element.sendKeys(value);
             getTest().log(LogStatus.PASS, name + " uploaded with value - " + value);
@@ -414,7 +414,6 @@ public class WebBasePage extends WaitStatement {
         }
 
     }
-
     public boolean multipleClick(WebElement element, int count) {
         for (int cl = 1; cl <= count; cl++) {
             try {
@@ -427,6 +426,6 @@ public class WebBasePage extends WaitStatement {
         }
         return false;
     }
-
 }
+
 

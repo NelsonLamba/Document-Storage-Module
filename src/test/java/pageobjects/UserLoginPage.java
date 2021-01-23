@@ -47,7 +47,19 @@ public class UserLoginPage extends WebBasePage
     }
     public void clickLogin()
     {
-        click(By.cssSelector("input#btnLogin"),"Login",10);
+
+        String actualUserName=getAtribute(By.xpath("//input[@id='username']"),"value",20);
+        String actualPassword=getAtribute(By.xpath("//input[@id='password']"),"value",20);
+        if(actualUserName.equals(userName) && actualPassword.equals(password)) {
+            click(By.cssSelector("input#btnLogin"), "Login", 10);
+        }
+        else
+        {
+            enterUserName();
+            enterPassword();
+            acceptPrivacyPolicy();
+            clickLogin();
+        }
     }
 
     public void forcefulLogOutLogin(){

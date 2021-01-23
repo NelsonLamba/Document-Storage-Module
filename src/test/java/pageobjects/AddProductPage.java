@@ -88,6 +88,10 @@ public class AddProductPage extends WebBasePage {
 
     public void selectProductType() {
         selectValueWithIndex(By.cssSelector("div>select#AssetTypeId"), 1, "Product Type", 10);
+        WebElement element = findElementVisibility(By.xpath("//div[@id='notifymessage']//div[@role='alert']"), 30);
+        if (element != null) {
+            click(By.cssSelector("button#closenotifymessage"), "Close success message", 20);
+        }
     }
 
     public void enterProductNameHundredCharacter() {

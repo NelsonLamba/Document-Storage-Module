@@ -9,4 +9,6 @@ public class Errors
     public static final String duplicateItemName="Product Name already exists";
     public static final String duplicateProductCode="Product Code already exists";
     public static final String descriptionErrorMsg="Only 250 characters allowed in Description";
+    public static final String importexcelfieldValidation="File is required";
+    public static final String uploadValidFile="is not a valid file to upload. Only .xls file types are allowed to upload.";
 }

@@ -196,7 +196,7 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void clickAddDeployButton() {
-        waitForVisibilityOfElement(By.cssSelector("a#ancDeployItems"), 60);
+        findElementClickable(By.cssSelector("a#ancDeployItems"), 60);
         click(By.cssSelector("a#ancDeployItems"), "Add Deploy", 30);
     }
 
