@@ -15,8 +15,6 @@ public class ComplexReportFactory {
 
 	private synchronized static ExtentReports getExtentReport() {
 		if (reporter == null) {
-			// you can get the file name and other parameters here from a
-			// config file or global variables
 			reporter = new ExtentReports("reports/AutomationReport.html", true, NetworkMode.OFFLINE);
 		}
 		return reporter;
@@ -24,7 +22,6 @@ public class ComplexReportFactory {
 
 	public synchronized static ExtentTest getTest(String testName, String testDescription) {
 
-		// if this test has already been created return
 		if (!nameToTestMap.containsKey(testName)) {
 			Long threadID = Thread.currentThread().getId();
             ExtentTest test = getExtentReport().startTest(testName, testDescription);

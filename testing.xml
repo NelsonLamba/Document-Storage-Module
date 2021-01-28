@@ -4,8 +4,12 @@
 
     <test name="TestName">
         <classes>
-            <!--<class name="testcases.ProductType"/>-->
+            <class name="testcases.ProductType"/>
             <class name="testcases.ProductListing"/>
+            <class name="testcases.ProductTransfer"/>
+            <class name="testcases.InTransit"/>
+            <class name="testcases.ProductContainerTest"/>
+            <class name="testcases.NewProductTypeRequest"/>
         </classes>
     </test>
 

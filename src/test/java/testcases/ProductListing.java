@@ -12,7 +12,7 @@ public class ProductListing extends WebTestBase {
 
     @Test(priority = 1)
     public void productListHeaderAndCheckBox() {
-        test = getTest("TC_Asset Management_AddProduct_175_176_177_178_182");
+        test = getTest("TC_Asset Management_ProductListing_175_176_177_178_182");
 
         ProductListingAction productListing = new ProductListingAction(driver);
         AddProductAction addProduct = new AddProductAction(driver);
@@ -30,7 +30,7 @@ public class ProductListing extends WebTestBase {
 
     @Test(priority = 2)
     public void productListPaginationAndDelete() {
-        test = getTest("TC_Asset Management_AddProduct_179_180");
+        test = getTest("TC_Asset Management_ProductListing_179_180");
 
         ProductListingAction productListing = new ProductListingAction(driver);
         AddProductAction addProduct = new AddProductAction(driver);
@@ -44,7 +44,7 @@ public class ProductListing extends WebTestBase {
 
     @Test(priority = 3)
     public void verifyProductSortAndEditPage() {
-        test = getTest("TC_Asset Management_AddProduct_181_183");
+        test = getTest("TC_Asset Management_ProductListing_181_183");
 
         ProductListingAction productListing = new ProductListingAction(driver);
         AddProductAction addProduct = new AddProductAction(driver);
@@ -57,8 +57,8 @@ public class ProductListing extends WebTestBase {
     }
 
     @Test(priority = 4)
-    public void verifyExpandAndSearchFuntion() {
-        test = getTest("TC_Asset Management_AddProduct_184_185_186_187");
+    public void verifyExpandAndSearchFunction() {
+        test = getTest("TC_Asset Management_ProductListing_184_185_186_187");
 
         ProductListingAction productListing = new ProductListingAction(driver);
         AddProductAction addProduct = new AddProductAction(driver);
@@ -72,7 +72,7 @@ public class ProductListing extends WebTestBase {
 
     @Test(priority = 5)
     public void verifyMoreActions() {
-        test = getTest("TC_Asset Management_AddProduct_188_189_190");
+        test = getTest("TC_Asset Management_ProductListing_188_189_190");
 
         ProductListingAction productListing = new ProductListingAction(driver);
         AddProductAction addProduct = new AddProductAction(driver);
@@ -88,7 +88,7 @@ public class ProductListing extends WebTestBase {
 
     @Test(priority = 6)
     public void verifyDepreciationPageFunctions() {
-        test = getTest("TC_Asset Management_AddProduct_191_192_193_194_195");
+        test = getTest("TC_Asset Management_ProductListing_191_192_193_194_195");
 
         ProductListingAction productListing = new ProductListingAction(driver);
         AddProductAction addProduct = new AddProductAction(driver);
@@ -103,7 +103,7 @@ public class ProductListing extends WebTestBase {
 
     @Test(priority = 7)
     public void verifyDepreciationPaginationFunction() {
-        test = getTest("TC_Asset Management_AddProduct_196");
+        test = getTest("TC_Asset Management_ProductListing_196");
 
         ProductListingAction productListing = new ProductListingAction(driver);
         AddProductAction addProduct = new AddProductAction(driver);
@@ -116,7 +116,7 @@ public class ProductListing extends WebTestBase {
 
     @Test(priority = 8)
     public void importProductPageFunctionOne() {
-        test = getTest("TC_Asset Management_AddProduct_197_198_199_200");
+        test = getTest("TC_Asset Management_ProductListing_197_198_199_200");
 
         ProductListingAction productListing = new ProductListingAction(driver);
         AddProductAction addProduct = new AddProductAction(driver);
@@ -129,7 +129,7 @@ public class ProductListing extends WebTestBase {
 
     @Test(priority = 9)
     public void importProductPageFunctionTwo() {
-        test = getTest("TC_Asset Management_AddProduct_201_202_203_204_205_206");
+        test = getTest("TC_Asset Management_ProductListing_201_202_203_204_205_206");
 
         ProductListingAction productListing = new ProductListingAction(driver);
         AddProductAction addProduct = new AddProductAction(driver);
@@ -143,7 +143,7 @@ public class ProductListing extends WebTestBase {
 
     @Test(priority = 10)
     public void importProductPageFunctionThree() {
-        test = getTest("TC_Asset Management_AddProduct_207");
+        test = getTest("TC_Asset Management_ProductListing_207");
 
         ProductListingAction productListing = new ProductListingAction(driver);
         AddProductAction addProduct = new AddProductAction(driver);
@@ -156,7 +156,7 @@ public class ProductListing extends WebTestBase {
 
     @Test(priority = 11)
     public void verifyAddProductScreenFunction() {
-        test = getTest("TC_Asset Management_AddProduct_208_209");
+        test = getTest("TC_Asset Management_ProductListing_208_209");
 
         ProductListingAction productListing = new ProductListingAction(driver);
         AddProductAction addProduct = new AddProductAction(driver);

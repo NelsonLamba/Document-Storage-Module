@@ -40,15 +40,26 @@ public class DeployProductPage extends WebBasePage {
 
     public void clickFullMenuDropDown() {
         findElementClickable(By.cssSelector("a#navbarDropdownPortfolio"), 20);
-        click(By.cssSelector("a#navbarDropdownPortfolio"), "Ful Menu", 20);
+        click(By.cssSelector("a#navbarDropdownPortfolio"), "Full Menu", 20);
     }
 
     public void clickAssetManagement() {
-        click(By.cssSelector("#menuitem3 > a"), "Asset Management", 10);
+        WebElement assetManagementMenu = findElementVisibility(By.xpath("//a[text()='Asset Management ']"), 15);
+        if (assetManagementMenu != null) {
+            click(By.xpath("//a[text()='Asset Management ']"), "Asset Management", 10);
+        } else {
+            clickFullMenuDropDown();
+            clickAssetManagement();
+        }
     }
 
     public void clickManageProduct() {
-        click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 20);
+        WebElement manageProductMenu = findElementVisibility(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), 15);
+        if (manageProductMenu != null) {
+            click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 20);
+        } else {
+            clickAssetManagement();
+        }
     }
 
     public void navigateToDeployTab() {

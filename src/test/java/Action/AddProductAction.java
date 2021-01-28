@@ -56,7 +56,7 @@ public class AddProductAction
         addProductPage.enterProductNameHundredCharacter();
         addProductPage.enterProductNameWithAlphaNumeric();
         addProductPage.enterProductNameWithOneCharacter();
-        addProductPage.entertProductNameWithSpecialCharacter();
+        addProductPage.enterProductNameWithSpecialCharacter();
     }
     public void productNameFieldValidation()
     {

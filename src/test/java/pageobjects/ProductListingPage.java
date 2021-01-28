@@ -19,7 +19,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import static reporting.ComplexReportFactory.getTest;
+import static utils.Errors.productImportConfirmation;
 import static utils.StaticData.*;
 
 public class ProductListingPage extends WebBasePage {
@@ -28,7 +30,7 @@ public class ProductListingPage extends WebBasePage {
     private final static String FILE_NAME = System.getProperty("user.dir") + "\\src\\main\\resources\\testdata.properties";
     private static Properties prop = new PropertiesLoader(FILE_NAME).load();
     String testFilePath = System.getProperty("user.dir") + "\\src\\main\\resources\\testfiles\\";
-    List<String> productsToDelete=new ArrayList<>();
+    List<String> productsToDelete = new ArrayList<>();
     String pattern = "yyyyMMddHHmm";
     String patternTwo = "ddHHmmss";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -51,11 +53,11 @@ public class ProductListingPage extends WebBasePage {
                 if (actualText.equals(expectedHeader)) {
                     getTest().log(LogStatus.PASS, "The expected header name \"" + actualText + "\" is displayed in the table");
                     logger.info("The expected header name \"" + actualText + "\" is displayed in the table");
-                    iteration=0;
+                    iteration = 0;
                     break;
                 } else if (iteration == expectedHeaders.length) {
-                    getTest().log(LogStatus.FAIL, "The expected header name \"" + actualText + "\" is not displayed as expected");
-                    logger.info("The expected header name \"" + actualText + "\" is not displayed as expected");
+                    getTest().log(LogStatus.FAIL, "The expected header name \"" + actualText + "\" is not displayed");
+                    logger.info("The expected header name \"" + actualText + "\" is not displayed");
                     takeScreenshot("HeaderName");
                 }
             }
@@ -89,9 +91,9 @@ public class ProductListingPage extends WebBasePage {
         deployProductPage.clickNextButton();
         productToAssign = getText(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//a[@class='editinfo']"), 20).trim();
     }
-    public void navigateToAttachmentPage()
-    {
-        click(By.xpath("//ul[@id='myTab']//a[text()=' Attachments ']"),"Attachments Tab",20);
+
+    public void navigateToAttachmentPage() {
+        click(By.xpath("//ul[@id='myTab']//a[text()=' Attachments ']"), "Attachments Tab", 20);
     }
 
     public void navigateToProductAssignmentPage() {
@@ -107,7 +109,7 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void selectAssignProductLocation() {
-        scrollToWebelement(By.xpath("//div[@data-toggle='dropdown']"),"Location Dropdown");
+        scrollToWebelement(By.xpath("//div[@data-toggle='dropdown']"), "Location Dropdown");
         click(By.xpath("//div[@data-toggle='dropdown']"), "Location Dropdown", 20);
         click(By.xpath("//a[@data-text='" + productLocationToAssign + "']"), "Location Value", 25);
     }
@@ -117,30 +119,30 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void selectAssignProductName() {
-        scrollToWebelement(By.cssSelector("div>select#AssetCatalogFilter"),"Product Name");
+        scrollToWebelement(By.cssSelector("div>select#AssetCatalogFilter"), "Product Name");
+        findElementPresence(By.xpath("//select[@id='AssetCatalogFilter']//option[text()='" + productNameToAssign + "']"), 40);
         selectValueWithText(By.cssSelector("div>select#AssetCatalogFilter"), productNameToAssign, "Product Name", 20);
     }
 
     public void selectAssignProduct() {
         String[] ch = productToAssign.split("");
         enter(By.cssSelector("input#txtAssetItems"), ch[0], "Products", 20);
-        click(By.xpath("//div[@class='unique_dynamicdatalist']//li[text()='"+productToAssign+"']"), "Product", 20);
+        click(By.xpath("//div[@class='unique_dynamicdatalist']//li[text()='" + productToAssign + "']"), "Product", 20);
     }
 
     public void searchAssignProduct() {
         click(By.cssSelector("a#Searchassest"), "Search Button", 20);
     }
 
-    public void clickTermsAndCondition()
-    {
-        WebElement  termsAndCondition=findElementVisibility(By.xpath("//table[@id='tblassestgroupinfodetails']//tbody//tr[1]//td[6]//span[text()='N/A']"),20);
-        if(termsAndCondition == null)
-        {
-            click(By.xpath("//table[@id='tblassestgroupinfodetails']//tbody//tr[1]//td[6]//div"),"Terms and Condition",20);
+    public void clickTermsAndCondition() {
+        WebElement termsAndCondition = findElementVisibility(By.xpath("//table[@id='tblassestgroupinfodetails']//tbody//tr[1]//td[6]//span[text()='N/A']"), 20);
+        if (termsAndCondition == null) {
+            click(By.xpath("//table[@id='tblassestgroupinfodetails']//tbody//tr[1]//td[6]//div"), "Terms and Condition", 20);
         }
     }
+
     public void addAssignProductToList() {
-        scrollToWebelement(By.cssSelector("td#lastrow1>a.ancaddtodata"),"Add Assign Button");
+        scrollToWebelement(By.cssSelector("td#lastrow1>a.ancaddtodata"), "Add Assign Button");
         click(By.cssSelector("td#lastrow1>a.ancaddtodata"), "Add To Item", 20);
         waitForLoader(20);
     }
@@ -156,14 +158,14 @@ public class ProductListingPage extends WebBasePage {
 
     public void disabledCheckBox() {
         WebElement element = findElementPresence(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//td[1]//input[@disabled]"), 20);
-            if (element != null) {
-                getTest().log(LogStatus.PASS, "Check box of the assigned product is not clickable as expected");
-                logger.info("Check box of the assigned product is not clickable as expected");
-            } else {
-                getTest().log(LogStatus.FAIL, "Check box of the assigned product is displayed as clickable");
-                logger.info("Check box of the assigned product is displayed as clickable");
-                takeScreenshot("CheckBox");
-            }
+        if (element != null) {
+            getTest().log(LogStatus.PASS, "Check box of the assigned product is not clickable as expected");
+            logger.info("Check box of the assigned product is not clickable as expected");
+        } else {
+            getTest().log(LogStatus.FAIL, "Check box of the assigned product is displayed as clickable");
+            logger.info("Check box of the assigned product is displayed as clickable");
+            takeScreenshot("CheckBox");
+        }
     }
 
     public void enabledCheckBox() {
@@ -183,7 +185,7 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void selectCheckBox() {
-        click(By.xpath("//table[@id='example']//td[normalize-space(text())='" + productNameToAssign+ "']/../td//div"), "Check Box", 20);
+        click(By.xpath("//table[@id='example']//td[normalize-space(text())='" + productNameToAssign + "']/../td//div"), "Check Box", 20);
     }
 
     public void clickReturnProduct() {
@@ -214,18 +216,16 @@ public class ProductListingPage extends WebBasePage {
             takeScreenshot("DeleteButton");
         }
     }
+
     public void verifyGreenStripe() {
         String script = "return window.getComputedStyle(document.querySelector('tr:nth-child(2)>td.text-center:nth-child(1)'),':after').getPropertyValue('background-color')";
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         String content = (String) js.executeScript(script);
-        if(content.equals("rgb(1, 151, 4)"))
-        {
-            getTest().log(LogStatus.PASS,"Green color stripe is displayed as expected when create product with unique name");
+        if (content.equals("rgb(1, 151, 4)")) {
+            getTest().log(LogStatus.PASS, "Green color stripe is displayed as expected when create product with unique name");
             logger.info("Green color stripe is displayed as expected when create product with unique name");
-        }
-        else
-        {
-            getTest().log(LogStatus.FAIL,"Green color stripe is not displayed as expected when create product with unique name");
+        } else {
+            getTest().log(LogStatus.FAIL, "Green color stripe is not displayed as expected when create product with unique name");
             logger.info("Green color stripe is not displayed as expected when create product with unique name");
             takeScreenshot("GreenStrip");
         }
@@ -331,22 +331,20 @@ public class ProductListingPage extends WebBasePage {
         }
     }
 
-    public void bulkDeleteFunctionality()
-    {
+    public void bulkDeleteFunctionality() {
         int recordCheckBox = findMultipleElement(By.xpath("//table[@id='tablelistingdata']//tbody//tr//input[@name='DeleteInputs']//parent::div"), 30).size();
-        if(recordCheckBox!=0) {
+        if (recordCheckBox != 0) {
             selectBulkRecordToDelete();
             clickDeleteIcon();
             confirmationOfDelete();
             handleSuccessPopup();
             verifyDeletedProducts();
-        }
-        else
-        {
-            getTest().log(LogStatus.PASS,"There is no enough data to perform bulk delete function");
+        } else {
+            getTest().log(LogStatus.PASS, "There is no enough data to perform bulk delete function");
             logger.info("There is no enough data to perform bulk delete function");
         }
     }
+
     public void selectBulkRecordToDelete() {
         List<WebElement> records = findMultipleElement(By.xpath("//table[@id='tablelistingdata']//tbody//tr//input[@name='DeleteInputs']//parent::div"), 30);
         int iteration = 1;
@@ -354,7 +352,7 @@ public class ProductListingPage extends WebBasePage {
             if (ele.isEnabled()) {
                 iteration++;
                 ele.click();
-                String productNameToDelete=getText(By.xpath("//table[@id='tablelistingdata']//tbody//tr["+iteration+"]/td//a[@id='ancEditAssetType']//span"), 30).trim();
+                String productNameToDelete = getText(By.xpath("//table[@id='tablelistingdata']//tbody//tr[" + iteration + "]/td//a[@id='ancEditAssetType']//span"), 30).trim();
                 productsToDelete.add(productNameToDelete);
                 if (productsToDelete.size() == 2) {
                     break;
@@ -368,7 +366,9 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void confirmationOfDelete() {
-        click(By.xpath("//div[contains(@class,'modal-confirm-footer')]//button[@title='OK']"), "Confirm OK", 40);
+        findElementClickable(By.xpath("//div[contains(@class,'modal-confirm-footer')]/button[contains(@class,'success')]"), 30);
+        click(By.xpath("//div[contains(@class,'modal-confirm-footer')]/button[contains(@class,'success')]"), "Confirm OK", 40);
+        waitForLoader(20);
     }
 
     public void verifyDeletedProducts() {
@@ -381,8 +381,8 @@ public class ProductListingPage extends WebBasePage {
                     getTest().log(LogStatus.PASS, "Deleted Product - " + str + " is not displayed in the list as expected");
                     logger.info("Deleted Product - " + str + " is not displayed in the list as expected");
                 } else if (elements.size() == iteration) {
-                    getTest().log(LogStatus.FAIL, "Deleted Product - " + str + " is not removed from the list as expected");
-                    logger.info("Deleted Product - " + str + " is not removed from the list as expected");
+                    getTest().log(LogStatus.FAIL, "Deleted Product - " + str + " is not removed from the list");
+                    logger.info("Deleted Product - " + str + " is not removed from the list");
                     takeScreenshot("DeletedProduct");
                 }
             }
@@ -413,7 +413,7 @@ public class ProductListingPage extends WebBasePage {
             getTest().log(LogStatus.PASS, "The Product edit page is displayed when click on the product name");
             logger.info("The Product edit page is displayed when click on the product name");
         } else {
-            getTest().log(LogStatus.PASS, "The Product page is not displayed when click on the product name");
+            getTest().log(LogStatus.FAIL, "The Product page is not displayed when click on the product name");
             logger.info("The Product edit page is not displayed when click on the product name");
             takeScreenshot("ProductEditPage");
         }
@@ -425,8 +425,8 @@ public class ProductListingPage extends WebBasePage {
             getTest().log(LogStatus.PASS, "\"Image not Available\" is displayed as expected when product created without uploading image");
             logger.info("\"Image not Available\" is displayed as expected when product created without uploading image");
         } else {
-            getTest().log(LogStatus.FAIL, "\"Image not Available\" is not displayed as expected when product created without uploading image");
-            logger.info("\"Image not Available\" is not displayed as expected when product created without uploading image");
+            getTest().log(LogStatus.FAIL, "\"Image not Available\" is not displayed when product created without uploading image");
+            logger.info("\"Image not Available\" is not displayed when product created without uploading image");
             takeScreenshot("ImgNotAvailable");
         }
     }
@@ -603,8 +603,10 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void selectValueFromLocationDropDown() {
+        clickExpandAllButton();
         click(By.xpath("//div[contains(@class,'CompantLocationdd')]/div"), "Location Dropdown", 20);
         locationToSearch = findMultipleElement(By.xpath("//a[contains(@class,'CompantLocationdd-option')]//span"), 30).get(0).getText();
+        scrollUpDown("up");
         findMultipleElement(By.xpath("//a[contains(@class,'CompantLocationdd-option')]"), 30).get(0).click();
     }
 
@@ -614,24 +616,8 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void clickResetButton() {
-        findElementClickable(By.cssSelector("a.clearsearchtext"),30);
+        findElementClickable(By.cssSelector("a.clearsearchtext"), 30);
         click(By.cssSelector("a.clearsearchtext"), "Clear Button", 20);
-    }
-
-    public void storeSearchedData(List<String> result) {
-        click(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//td[5]//span"), "Searched Product", 20);
-        click(By.xpath("//ul[@id='myTab']//a[text()=' Deploy Product']"), "Deploy tab", 20);
-        List<WebElement> locationList = findMultipleElement(By.xpath("//table[@id='deployItemsTable']//tbody//tr//td[1]//a"), 30);
-        int iteration = 0;
-        for (WebElement ele : locationList) {
-            iteration++;
-            if (ele.getText().equals(locationToSearch)) {
-                result.add("true");
-            } else if (iteration == locationList.size()) {
-                result.add("false");
-            }
-        }
-        navigateToManageProductPage();
     }
 
     public void verifySearchedLocation() {
@@ -644,20 +630,20 @@ public class ProductListingPage extends WebBasePage {
             for (WebElement ele : locationList) {
                 iteration++;
                 if (ele.getText().equals(locationToSearch)) {
-                    getTest().log(LogStatus.PASS,"Searched Location are displayed as expected");
+                    getTest().log(LogStatus.PASS, "Searched Location are displayed as expected");
                     logger.info("Searched Location are displayed as expected");
                     break;
                 } else if (iteration == locationList.size()) {
-                    getTest().log(LogStatus.FAIL,"Searched Location are not displayed as expected");
-                    logger.info("Searched Location are not displayed as expected");
+                    getTest().log(LogStatus.FAIL, "Searched Location are not displayed");
+                    logger.info("Searched Location are not displayed");
+                    takeScreenshot("SearchedLocation");
                 }
             }
             navigateToManageProductPage();
-        }
-        else
-        {
-            getTest().log(LogStatus.PASS,"No data is displayed to verify the searched location");
-            logger.info("No data is displayed to verify the searched location");
+        } else {
+            getTest().log(LogStatus.FAIL, "Searched Location are not displayed");
+            logger.info("Searched Location are not displayed");
+            takeScreenshot("SearchedLocation");
         }
     }
 
@@ -673,8 +659,8 @@ public class ProductListingPage extends WebBasePage {
             getTest().log(LogStatus.PASS, "Searched Product is displayed as expected when search with product name / code");
             logger.info("Searched Product is displayed as expected when search with product name / code");
         } else {
-            getTest().log(LogStatus.PASS, "Searched Product is not displayed as expected when search with product name / code");
-            logger.info("Searched Product is not displayed as expected when search with product name / code");
+            getTest().log(LogStatus.FAIL, "Searched Product is not displayed when search with product name / code");
+            logger.info("Searched Product is not displayed when search with product name / code");
             takeScreenshot("SearchedProduct");
         }
     }
@@ -686,8 +672,8 @@ public class ProductListingPage extends WebBasePage {
             getTest().log(LogStatus.PASS, "Entered product name is cleared as expected when click on the reset button");
             logger.info("Entered product name is cleared as expected when click on the reset button");
         } else {
-            getTest().log(LogStatus.FAIL, "Entered product name is not cleared as expected when click on the reset button");
-            logger.info("Entered product name is not cleared as expected when click on the reset button");
+            getTest().log(LogStatus.FAIL, "Entered product name is not cleared when click on the reset button");
+            logger.info("Entered product name is not cleared when click on the reset button");
             takeScreenshot("ProductNameField");
         }
         click(By.xpath("//span[text()='Product Name/Code ']"), "Produt Name Search field", 30);
@@ -732,14 +718,13 @@ public class ProductListingPage extends WebBasePage {
             getTest().log(LogStatus.PASS, "Searched status are displayed as expected when search with status field");
             logger.info("Searched status are displayed as expected when search with status field");
         } else {
-            getTest().log(LogStatus.FAIL, "Searched status are not displayed as expected when search with status field");
-            logger.info("Searched status are not displayed as expected when search with status field");
+            getTest().log(LogStatus.FAIL, "Searched status are not displayed when search with status field");
+            logger.info("Searched status are not displayed when search with status field");
             takeScreenshot("SearchedStatus");
         }
     }
 
     public void clickExpandAllButton() {
-        click(By.xpath("//div[@class='bottom_filter_button']//a"), "Expand All", 20);
         click(By.xpath("//div[@class='bottom_filter_button']//a"), "Expand All", 20);
     }
 
@@ -779,14 +764,14 @@ public class ProductListingPage extends WebBasePage {
             getTest().log(LogStatus.PASS, fieldName + " field is displayed as expected when click expand all button");
             logger.info(fieldName + " field is displayed as expected when click expand all button");
         } else {
-            getTest().log(LogStatus.FAIL, "Location dropdown field is not displayed as expected when click expand all button");
-            logger.info("Location dropdown field is not displayed as expected when click expand all button");
+            getTest().log(LogStatus.FAIL, "Location dropdown field is not displayed when click expand all button");
+            logger.info("Location dropdown field is not displayed when click expand all button");
             takeScreenshot("LocationDropdown");
         }
     }
 
     public void clickMoreIcon() {
-        findElementVisibility(By.xpath("//div[@class='chat_popup chat-btn-hide']"),60);
+        findElementVisibility(By.xpath("//div[@class='chat_popup chat-btn-hide']"), 60);
         click(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//span[@class='actions mobileaction']"), "More Icon", 20);
     }
 
@@ -818,6 +803,7 @@ public class ProductListingPage extends WebBasePage {
                 } else if (iteration == expectedHeader.size()) {
                     getTest().log(LogStatus.FAIL, "Expected Header Name " + ele.getText().trim() + " is not displayed in the popup");
                     logger.info("Expected Header Name " + ele.getText().trim() + " is not displayed in the popup");
+                    takeScreenshot("HeaderName");
                 }
             }
         }
@@ -838,8 +824,8 @@ public class ProductListingPage extends WebBasePage {
             getTest().log(LogStatus.PASS, "Product Assignment page is displayed as expected when click \"Product Page History Option\"");
             logger.info("Product Assignment page is displayed as expected when click \"Product Page History Option\"");
         } else {
-            getTest().log(LogStatus.FAIL, "Product Assignment page is not displayed as expected when click \"Product Page History Option\"");
-            logger.info("Product Assignment page is not displayed as expected when click \"Product Page History Option\"");
+            getTest().log(LogStatus.FAIL, "Product Assignment page is not displayed when click \"Product Page History Option\"");
+            logger.info("Product Assignment page is not displayed when click \"Product Page History Option\"");
             takeScreenshot("ProductAssignmentPage");
         }
     }
@@ -870,8 +856,9 @@ public class ProductListingPage extends WebBasePage {
                 logger.info("Attachment popup is displayed but there is no record");
             }
         } else {
-            getTest().log(LogStatus.PASS, "Attachment popup is not displayed as expected when click Attachment option");
-            logger.info("Attachment popup is not displayed as expected when click Attachment option");
+            getTest().log(LogStatus.FAIL, "Attachment popup is not displayed when click Attachment option");
+            logger.info("Attachment popup is not displayed when click Attachment option");
+            takeScreenshot("AttachmentPopup");
         }
     }
 
@@ -911,8 +898,8 @@ public class ProductListingPage extends WebBasePage {
             getTest().log(LogStatus.PASS, "Depreciation page is displayed as expected when click on the \"Depreciation Menu\"");
             logger.info("Depreciation page is displayed as expected when click on the \"Depreciation Menu\"");
         } else {
-            getTest().log(LogStatus.FAIL, "Depreciation page is not displayed as expected when click on the \"Depreciation Menu\"");
-            logger.info("Depreciation page is not displayed as expected when click on the \"Depreciation Menu\"");
+            getTest().log(LogStatus.FAIL, "Depreciation page is not displayed when click on the \"Depreciation Menu\"");
+            logger.info("Depreciation page is not displayed when click on the \"Depreciation Menu\"");
             takeScreenshot("DepreciationPage");
         }
     }
@@ -928,8 +915,8 @@ public class ProductListingPage extends WebBasePage {
                 getTest().log(LogStatus.PASS, "Home page is displayed as expected when click \"Home\" in the breadcrumb");
                 logger.info("Home page is displayed as expected when click \"Home\" in the breadcrumb");
             } else {
-                getTest().log(LogStatus.FAIL, "Home page is not displayed as expected when click \"Home\" in the breadcrumb");
-                logger.info("Home page is not displayed as expected when click \"Home\" in the breadcrumb");
+                getTest().log(LogStatus.FAIL, "Home page is not displayed aswhen click \"Home\" in the breadcrumb");
+                logger.info("Home page is not displayed when click \"Home\" in the breadcrumb");
                 takeScreenshot("HomePage");
             }
         } else {
@@ -976,6 +963,8 @@ public class ProductListingPage extends WebBasePage {
     public void verifySearchedDepreciationList() {
         String[] selectedDate = getAtribute(By.cssSelector("input#depreciationDate"), "value", 30).split("/");
         String expectedYear = selectedDate[2];
+        waitForLoader(20);
+        findElementPresence(By.xpath("//table[contains(@class,'table table-bordered')]//tr[2]//th[21]//span"), 40);
         String[] depreciation = getText(By.xpath("//table[contains(@class,'table table-bordered')]//tr[2]//th[21]//span"), 30).split("-");
         String actualYear = depreciation[1];
         if (expectedYear.equals(actualYear)) {
@@ -1004,16 +993,12 @@ public class ProductListingPage extends WebBasePage {
         }
     }
 
-    public void paginationFunctionality()
-    {
-        int depreciationCount=findMultipleElement(By.xpath("//table[contains(@class,'table table-bordered')]//tbody//tr//td//span[@data-relatedinfoid]"),40).size();
-        if(depreciationCount!=0)
-        {
+    public void paginationFunctionality() {
+        int depreciationCount = findMultipleElement(By.xpath("//table[contains(@class,'table table-bordered')]//tbody//tr//td//span[@data-relatedinfoid]"), 40).size();
+        if (depreciationCount != 0) {
             verifyDepreciationPaginationFunction();
-        }
-        else
-        {
-            getTest().log(LogStatus.PASS,"There is no enough data to perform pagination on depreciation search result");
+        } else {
+            getTest().log(LogStatus.PASS, "There is no enough data to perform pagination on depreciation search result");
             logger.info("There is no enough data to perform pagination on depreciation search result");
         }
     }
@@ -1138,9 +1123,9 @@ public class ProductListingPage extends WebBasePage {
         String downloadPath = Drivers.path;
         String fileName = prop.getProperty("importProductSampleFile");
         File dir = new File(downloadPath + fileName);
-            if (dir.exists()) {
-                dir.delete();
-            }
+        if (dir.exists()) {
+            dir.delete();
+        }
         File[] dirContent = new File(downloadPath).listFiles();
         int filesInDirectory = dirContent.length;
 
@@ -1160,13 +1145,13 @@ public class ProductListingPage extends WebBasePage {
         }
     }
 
-    public void storeDuplicatePCode()
-    {
+    public void storeDuplicatePCode() {
         String productCode = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]//span"), 30);
-        int endIndex=productCode.length();
-        int startIndex=endIndex-6;
+        int endIndex = productCode.length();
+        int startIndex = endIndex - 6;
         duplicateProductCode = productCode.substring(startIndex, endIndex);
     }
+
     public void importSampleFile() {
         enter(By.cssSelector("input#flFile"), testFilePath + prop.getProperty("importProductSampleFile"), "Import Sample File", 20);
     }
@@ -1181,63 +1166,62 @@ public class ProductListingPage extends WebBasePage {
 
     public void verifyConfirmationPopup() {
         String actualConfirmation = getText(By.xpath("//div[contains(@class,'notifybox')]/div"), 30);
-        if (actualConfirmation.equals(prop.getProperty("productImportConfirmation"))) {
+        if (actualConfirmation.equals(productImportConfirmation)) {
             getTest().log(LogStatus.PASS, "Confirmation popup is displayed as expected when click on import from excel file button");
             logger.info("Confirmation popup is displayed as expected when click on import from excel file button");
         } else {
-            getTest().log(LogStatus.FAIL, "Confirmation popup is not displayed as expected when click on import from excel file button");
-            logger.info("Confirmation popup is not displayed as expected when click on import from excel file button");
+            getTest().log(LogStatus.FAIL, "Confirmation popup is not displayed when click on import from excel file button");
+            logger.info("Confirmation popup is not displayed when click on import from excel file button");
             takeScreenshot("ConfirmationPopup");
         }
     }
 
     public void selectProductType() {
-        int rowCount=findMultipleElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr//td[1]//select"),30).size();
-        for(int i=1;i<=rowCount;i++) {
-            selectValueWithIndex(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr["+i+"]//td[1]//select"), 1, "Imported Product Type", 20);
-            Select select = new Select(driver.findElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr["+i+"]//td[1]//select")));
+        int rowCount = findMultipleElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr//td[1]//select"), 30).size();
+        for (int i = 1; i <= rowCount; i++) {
+            selectValueWithIndex(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr[" + i + "]//td[1]//select"), 1, "Imported Product Type", 20);
+            Select select = new Select(driver.findElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr[" + i + "]//td[1]//select")));
             WebElement option = select.getFirstSelectedOption();
             String defaultItem = option.getText();
             if (!defaultItem.equals("Select")) {
-                getTest().log(LogStatus.PASS, "User can able to Select the product type from the dropdown for the imported product in the row - "+i);
-                logger.info("User can able to Select the product type from the dropdown for the imported product in the row - "+i);
+                getTest().log(LogStatus.PASS, "User can able to Select the product type from the dropdown for the imported product in the row - " + i);
+                logger.info("User can able to Select the product type from the dropdown for the imported product in the row - " + i);
             } else {
-                getTest().log(LogStatus.FAIL, "User not able to Select the product type from the dropdown for the imported product in the row - "+i);
-                logger.info("User not able to Select the product type from the dropdown for the imported product in the row "+i);
+                getTest().log(LogStatus.FAIL, "User not able to Select the product type from the dropdown for the imported product in the row - " + i);
+                logger.info("User not able to Select the product type from the dropdown for the imported product in the row " + i);
                 takeScreenshot("ProductTypeDropdown");
             }
         }
     }
 
-    public void enterProductName()
-    {
-        int rowCount=findMultipleElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr//td[1]//select"),30).size();
-        for(int i=1;i<=rowCount;i++) {
-            enter(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr["+i+"]//td//input[@id='Item_Name']"), "P"+i+ dateValue, "Imported Product Name", 20);
+    public void enterProductName() {
+        int rowCount = findMultipleElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr//td[1]//select"), 30).size();
+        for (int i = 1; i <= rowCount; i++) {
+            enter(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr[" + i + "]//td//input[@id='Item_Name']"), "P" + i + dateValue, "Imported Product Name", 20);
         }
     }
 
     public void verifyUniqueProductCodeField() {
-        int rowCount=findMultipleElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr//td[1]//select"),30).size();
-        for(int i=1;i<=rowCount;i++) {
-            enter(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr["+i+"]//td[4]//input"), duplicateProductCode, "Prodcut Code", 30);
-            String actualProductCode = getAtribute(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr["+i+"]//td[4]//input"), "value", 20);
+        int rowCount = findMultipleElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr//td[1]//select"), 30).size();
+        for (int i = 1; i <= rowCount; i++) {
+            enter(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr[" + i + "]//td[4]//input"), duplicateProductCode, "Prodcut Code", 30);
+            String actualProductCode = getAtribute(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr[" + i + "]//td[4]//input"), "value", 20);
             if (actualProductCode.equals(duplicateProductCode)) {
-                getTest().log(LogStatus.PASS, "User can able to enter the Product Code in the list for the imported product in row - "+i);
-                logger.info("User can able to enter the Product Code in the list for the imported product in row - "+i);
+                getTest().log(LogStatus.PASS, "User can able to enter the Product Code in the list for the imported product in row - " + i);
+                logger.info("User can able to enter the Product Code in the list for the imported product in row - " + i);
             } else {
-                getTest().log(LogStatus.FAIL, "User not able to enter the Product Code in the list for the imported product in row - "+i);
-                logger.info("User not able to enter the Product Code in the list for the imported product in row - "+i);
+                getTest().log(LogStatus.FAIL, "User not able to enter the Product Code in the list for the imported product in row - " + i);
+                logger.info("User not able to enter the Product Code in the list for the imported product in row - " + i);
                 takeScreenshot("ProductCodeField");
             }
         }
     }
 
     public void verifyUniqueProductCode() {
-        int j=0;
-        for(int i=2;i<=3;i++) {
+        int j = 0;
+        for (int i = 2; i <= 3; i++) {
             j++;
-            String productCode = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr["+i+"]/td[4]//span"), 30);
+            String productCode = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[" + i + "]/td[4]//span"), 30);
             int endIndex = productCode.length();
             int startIndex = endIndex - 6;
             int actualProductCode = Integer.parseInt(productCode.substring(startIndex, endIndex));
@@ -1246,26 +1230,26 @@ public class ProductListingPage extends WebBasePage {
                 getTest().log(LogStatus.PASS, "Imported product is added to the list with unique product code as expected");
                 logger.info("Imported product is added to the list with unique product code as expected");
             } else {
-                getTest().log(LogStatus.FAIL, "Imported product is not added to the list with unique product code as expected");
-                logger.info("Imported product is not added to the list with unique product code as expected");
+                getTest().log(LogStatus.FAIL, "Imported product is not added to the list with unique product code");
+                logger.info("Imported product is not added to the list with unique product code");
                 takeScreenshot("UniqueCodeField");
             }
         }
     }
 
     public void selectLocation() {
-        int rowCount=findMultipleElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr//td[1]//select"),30).size();
-        for(int i=1;i<=rowCount;i++) {
-            selectValueWithIndex(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr["+i+"]//td[11]//select"), 1, "Imported Product Location", 20);
-            Select select = new Select(driver.findElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr["+i+"]//td[11]//select")));
+        int rowCount = findMultipleElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr//td[1]//select"), 30).size();
+        for (int i = 1; i <= rowCount; i++) {
+            selectValueWithIndex(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr[" + i + "]//td[11]//select"), 1, "Imported Product Location", 20);
+            Select select = new Select(driver.findElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr[" + i + "]//td[11]//select")));
             WebElement option = select.getFirstSelectedOption();
             String defaultItem = option.getText();
             if (!defaultItem.equals("Select")) {
-                getTest().log(LogStatus.PASS, "User can able to Select the location from the dropdown for the imported product in the row - "+i);
-                logger.info("User can able to Select the location from the dropdown for the imported product in the row - "+i);
+                getTest().log(LogStatus.PASS, "User can able to Select the location from the dropdown for the imported product in the row - " + i);
+                logger.info("User can able to Select the location from the dropdown for the imported product in the row - " + i);
             } else {
-                getTest().log(LogStatus.FAIL, "User not able to Select the location from the dropdown for the imported product in the row - "+i);
-                logger.info("User not able to Select the location from the dropdown for the imported product in the row - "+i);
+                getTest().log(LogStatus.FAIL, "User not able to Select the location from the dropdown for the imported product in the row - " + i);
+                logger.info("User not able to Select the location from the dropdown for the imported product in the row - " + i);
                 takeScreenshot("LocationDropdown");
             }
         }
@@ -1359,8 +1343,8 @@ public class ProductListingPage extends WebBasePage {
             getTest().log(LogStatus.PASS, "User Guide screen is displayed as expected when click on the User Guide Link");
             logger.info("User Guide screen is displayed as expected when click on the User Guide Link");
         } else {
-            getTest().log(LogStatus.FAIL, "User Guide screen is not displayed as expected when click on the User Guide Link");
-            logger.info("User Guide screen is not displayed as expected when click on the User Guide Link");
+            getTest().log(LogStatus.FAIL, "User Guide screen is not displayed when click on the User Guide Link");
+            logger.info("User Guide screen is not displayed when click on the User Guide Link");
             takeScreenshot("UserGuideScreen");
         }
     }

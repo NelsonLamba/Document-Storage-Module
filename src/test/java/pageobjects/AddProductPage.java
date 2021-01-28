@@ -1,7 +1,6 @@
 package pageobjects;
 
 import com.relevantcodes.extentreports.LogStatus;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,14 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import testcases.DeployProduct;
 import utils.Errors;
 import utils.PropertiesLoader;
 import utils.WebBasePage;
 
-import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
@@ -45,18 +41,30 @@ public class AddProductPage extends WebBasePage {
         this.driver = driver;
     }
 
-    public String defaultPcode;
+    public String defaultPCode;
 
     public void clickFullMenuDropDown() {
-        click(By.cssSelector("a#navbarDropdownPortfolio"), "Ful Menu", 30);
+        findElementClickable(By.cssSelector("a#navbarDropdownPortfolio"), 20);
+        click(By.cssSelector("a#navbarDropdownPortfolio"), "Ful Menu", 20);
     }
 
     public void clickAssetManagement() {
-        click(By.xpath("//div//li[@data-name='Asset']"), "Asset Management", 30);
+        WebElement assetManagementMenu = findElementVisibility(By.xpath("//a[text()='Asset Management ']"), 15);
+        if (assetManagementMenu != null) {
+            click(By.xpath("//a[text()='Asset Management ']"), "Asset Management", 10);
+        } else {
+            clickFullMenuDropDown();
+            clickAssetManagement();
+        }
     }
 
     public void clickManageProduct() {
-        click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 30);
+        WebElement manageProductMenu = findElementVisibility(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), 15);
+        if (manageProductMenu != null) {
+            click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 20);
+        } else {
+            clickAssetManagement();
+        }
     }
 
     public void clickAddNewButton() {
@@ -67,15 +75,16 @@ public class AddProductPage extends WebBasePage {
         click(By.cssSelector("div>select#BarcodeTypeId"), "Product Type", 15);
         List<WebElement> barcodeOption = driver.findElements(By.xpath("//select[@id='BarcodeTypeId']//option"));
         int i = 0;
-        String expectedCodeType[] = {"Select", "Barcode", "QR"};
-        for (WebElement element : barcodeOption) {
-            for (String expected : expectedCodeType) {
+        String[] expectedCodeType = {"Select", "Barcode", "QR"};
+        for (String expected : expectedCodeType) {
+            for (WebElement element : barcodeOption) {
                 i++;
                 if (element.getText().equals(expected)) {
                     getTest().log(LogStatus.PASS, "BarCode Dropdown values are displayed as expected");
                     logger.info("BarCode Dropdown values are displayed as expected");
+                    i = 0;
                     break;
-                } else if (i == expectedCodeType.length && !element.getText().equals(expected)) {
+                } else if (i == barcodeOption.size()) {
                     getTest().log(LogStatus.FAIL, "BarCode Dropdown values are Not Displayed");
                     logger.info("BarCode Dropdown values are not displayed");
                     takeScreenshot("BarCode");
@@ -120,7 +129,7 @@ public class AddProductPage extends WebBasePage {
 
     }
 
-    public void entertProductNameWithSpecialCharacter() {
+    public void enterProductNameWithSpecialCharacter() {
         enter(By.cssSelector("div>input#Name"), prop.getProperty("ProductNameSpecialCharacter"), "Product Name", 10);
         String[] specialCharReject = {"<", "{", "}", "%", "[", "]", "(", ")", "?:", "|'", ";", "=", "&#", "|", "&+"};
         for (String str : specialCharReject) {
@@ -194,7 +203,7 @@ public class AddProductPage extends WebBasePage {
 
     public void enterProductCode() {
         productCode = dateValue.substring(8, 14);
-        defaultPcode = getAtribute(By.cssSelector("input#txtitemtypecode"), "value", 30);
+        defaultPCode = getAtribute(By.cssSelector("input#txtitemtypecode"), "value", 30);
         enter(By.cssSelector("div>input#ItemCode"), productCode, "product code", 10);
     }
 
@@ -274,7 +283,7 @@ public class AddProductPage extends WebBasePage {
         String productName = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[5]"), 15);
         createdProductName = productName;
         String productCodeApp = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]"), 15);
-        if (itemNameRandomValue.equals(productName) && (defaultPcode + productCode).equals(productCodeApp)) {
+        if (itemNameRandomValue.equals(productName) && (defaultPCode + productCode).equals(productCodeApp)) {
             getTest().log(LogStatus.PASS, "Added Product is saved in the product list page and product list page is also displayed");
             logger.info("Added Product is saved in the product list page and product list page is also displayed");
         } else {
@@ -286,9 +295,9 @@ public class AddProductPage extends WebBasePage {
 
     public void defaultProductCodeValidation() {
         String productCodeApp = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]"), 15);
-        if ((defaultPcode + productCode).equals(productCodeApp)) {
-            getTest().log(LogStatus.PASS, "Entered Product code is displayed in the combination of Product type + Product code as " + (defaultPcode + productCode));
-            logger.info("Entered Product code is displayed with the combination of Product type + Product code as " + (defaultPcode + productCode));
+        if ((defaultPCode + productCode).equals(productCodeApp)) {
+            getTest().log(LogStatus.PASS, "Entered Product code is displayed in the combination of Product type + Product code as " + (defaultPCode + productCode));
+            logger.info("Entered Product code is displayed with the combination of Product type + Product code as " + (defaultPCode + productCode));
         } else {
             getTest().log(LogStatus.FAIL, "Entered Product code is not displayed in the combination of Product type + Product code as ");
             logger.info("Entered Product code is not displayed in the combination of Product type + Product code as ");

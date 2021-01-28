@@ -1,6 +1,8 @@
 package Action;
 
 import org.openqa.selenium.WebDriver;
+import pageobjects.AttachmentsPage;
+import pageobjects.DeployProductPage;
 import pageobjects.ProductListingPage;
 
 public class ProductListingAction {
@@ -112,10 +114,15 @@ public class ProductListingAction {
     }
 
     public void verifyAttachmentPage() {
-        AttachmentsAction attachment = new AttachmentsAction(driver);
+        AttachmentsPage attachment = new AttachmentsPage(driver);
+        DeployProductPage deployProduct = new DeployProductPage(driver);
         productListingPage.createNewProduct();
         productListingPage.navigateToAttachmentPage();
-        attachment.addAttachmentToList();
+        attachment.enterAttachmentName();
+        attachment.selectTermsAndConditionsYes();
+        attachment.uploadAttachment();
+        attachment.verifySaveButtonClickable();
+        deployProduct.handleSuccessPopup();
         productListingPage.navigateToViewAttachedFilePage();
         productListingPage.verifyAttachmentPopup();
     }

@@ -19,6 +19,7 @@ public class ProductType extends WebTestBase
         productTypeAction.goToTheProductTypePage();
         productTypeAction.verifyProductTypePage();
     }
+
     @Test(priority = 3)
     public void verifySearchFunctionOnProductTypeListPage()
     {
@@ -29,6 +30,7 @@ public class ProductType extends WebTestBase
         productTypeAction.verifySearchFunctionOnProductTypeListPage();
 
     }
+
     @Test(priority = 4)
     public void changeStatusAndDelete()
     {
@@ -39,6 +41,7 @@ public class ProductType extends WebTestBase
         productTypeAction.changeStatusAndDelete();
 
     }
+
     @Test(priority = 5)
     public void createProductWithImage()
     {
@@ -49,6 +52,7 @@ public class ProductType extends WebTestBase
         productTypeAction.createProductWithImage();
 
     }
+
     @Test(priority = 6)
     public void createProductWithoutImage()
     {
@@ -59,6 +63,7 @@ public class ProductType extends WebTestBase
         productTypeAction.createProductWithoutImage();
 
     }
+
     @Test(priority = 7)
     public void verifyBreadCrumbInImportProductTypeField()
     {
@@ -69,16 +74,18 @@ public class ProductType extends WebTestBase
         productTypeAction.verifyBreadCrumbInImportProductTypeField();
 
     }
+
     @Test(priority = 8)
     public void downloadSampleExcelFileAndVerify()
     {
-        test = getTest("TC_Asset Management_Product_type_//164");
+        test = getTest("TC_Asset Management_Product_type_164");
         ProductTypeAction productTypeAction=new ProductTypeAction(driver);
         new LoginAction(driver).logoutLogin();
         productTypeAction.goToTheProductTypePage();
         productTypeAction.downloadSampleExcelFileAndVerify();
 
     }
+
     @Test(priority = 9)
     public void verifyImportProductTypePageAfterClickingCancel()
     {
@@ -89,49 +96,54 @@ public class ProductType extends WebTestBase
         productTypeAction.verifyImportProductTypeUploadField();
 
     }
+
     @Test(priority = 10)
     public void verifyUploadDocumentField()
     {
-        test = getTest("TC_Asset Management_Product_type_//167_168_169");
+        test = getTest("TC_Asset Management_Product_type_167_168_169");
         ProductTypeAction productTypeAction=new ProductTypeAction(driver);
         new LoginAction(driver).logoutLogin();
         productTypeAction.goToTheProductTypePage();
         productTypeAction.verifyUploadDocumentField();
 
     }
+
     @Test(priority = 11)
     public void verifyUploadDocumentDetails()
     {
-        test = getTest("TC_Asset Management_Product_type_//161");
+        test = getTest("TC_Asset Management_Product_type_161");
         ProductTypeAction productTypeAction=new ProductTypeAction(driver);
         new LoginAction(driver).logoutLogin();
         productTypeAction.goToTheProductTypePage();
         productTypeAction.verifyUploadDocumentDetails();
 
     }
+
     @Test(priority = 12)
     public void verifyUploadedDocumentOnImportProductType()
     {
-        test = getTest("TC_Asset Management_Product_type_//170_171_173");
+        test = getTest("TC_Asset Management_Product_type_170_173");
         ProductTypeAction productTypeAction=new ProductTypeAction(driver);
         new LoginAction(driver).logoutLogin();
         productTypeAction.goToTheProductTypePage();
         productTypeAction.verifyUploadedDocumentOnImportProductType();
 
     }
+
     @Test(priority = 2)
     public void verifyUploadedDocumentOnProductListingPage()
     {
-        test = getTest("TC_Asset Management_Product_type_//172");
+        test = getTest("TC_Asset Management_Product_type__171_172");
         ProductTypeAction productTypeAction=new ProductTypeAction(driver);
         new LoginAction(driver).logoutLogin();
         productTypeAction.goToTheProductTypePage();
         productTypeAction.verifyUploadedDocumentOnProductListingPage();
     }
+
     @Test(priority = 13)
     public void verifyPagination()
     {
-        test = getTest("TC_Asset Management_Product_type_//174");
+        test = getTest("TC_Asset Management_Product_type_174");
         ProductTypeAction productTypeAction=new ProductTypeAction(driver);
         new LoginAction(driver).logoutLogin();
         productTypeAction.goToTheProductTypePage();

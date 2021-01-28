@@ -3,28 +3,27 @@ package Action;
 import org.openqa.selenium.WebDriver;
 import pageobjects.ProductTypePage;
 
-public class ProductTypeAction
-{
+public class ProductTypeAction {
     WebDriver driver;
     ProductTypePage productTypePage;
-    public ProductTypeAction(WebDriver driver)
-    {
-        this.driver=driver;
+
+    public ProductTypeAction(WebDriver driver) {
+        this.driver = driver;
         productTypePage = new ProductTypePage(driver);
     }
-    public void goToTheProductTypePage()
-    {
+
+    public void goToTheProductTypePage() {
         productTypePage.clickFullMenuDropDown();
         productTypePage.clickAssetManagement();
         productTypePage.clickProductType();
     }
-    public void verifyProductTypePage()
-    {
+
+    public void verifyProductTypePage() {
         productTypePage.verifyProductTypeListingPage();
         productTypePage.VerifyBreadCrumbInProductTypePage();
     }
-    public void verifySearchFunctionOnProductTypeListPage()
-    {
+
+    public void verifySearchFunctionOnProductTypeListPage() {
         productTypePage.clickTheCheckBox();
         productTypePage.verifyDeleteButton();
         productTypePage.enterProductNameInSearchBox();
@@ -32,8 +31,12 @@ public class ProductTypeAction
         productTypePage.verifySearchedResult();
         productTypePage.verifySearchBoxAfterReset();
     }
-    public void changeStatusAndDelete()
-    {
+
+    public void changeStatusAndDelete() {
+        productTypePage.clickTheCheckBox();
+        productTypePage.changeStatus();
+        productTypePage.clickConfirmInConfirmationPopup();
+        productTypePage.handelSuccessPopup();
         productTypePage.changeStatusForSingleRecord();
         productTypePage.authorizationPopup();
         productTypePage.clickSelectAllCheckBox();
@@ -53,37 +56,37 @@ public class ProductTypeAction
         productTypePage.handelSuccessPopup();
         productTypePage.verifyAfterDeletingTheAllRecords();
     }
-    public void createProductWithImage()
-    {
+
+    public void createProductWithImage() {
         productTypePage.createProductTypeWithUploadingImage();
         productTypePage.verifyUploadedImageIsDisplayed();
     }
-    public void createProductWithoutImage()
-    {
+
+    public void createProductWithoutImage() {
         productTypePage.createProductTypeWithoutUploadingImage();
         productTypePage.verifyImageNotDisplayed();
     }
-    public void verifyBreadCrumbInImportProductTypeField()
-    {
+
+    public void verifyBreadCrumbInImportProductTypeField() {
         productTypePage.clickImportProductType();
         productTypePage.clickUserGuide();
         productTypePage.verifyUserGuide();
         productTypePage.verifyBreadCrumbOnImportProductType();
     }
-    public void downloadSampleExcelFileAndVerify()
-    {
+
+    public void downloadSampleExcelFileAndVerify() {
         productTypePage.clickImportProductType();
         productTypePage.downloadSampleImportExcelFile();
         productTypePage.verifyDownloadedFile();
     }
-    public void verifyImportProductTypeUploadField()
-    {
+
+    public void verifyImportProductTypeUploadField() {
         productTypePage.clickImportProductType();
         productTypePage.verifyChooseFileButton();
         productTypePage.clickCancelButton();
     }
-    public void verifyUploadDocumentField()
-    {
+
+    public void verifyUploadDocumentField() {
         productTypePage.clickImportProductType();
         productTypePage.uploadImportProductTypeFile();
         productTypePage.verifyDocumentIsUploaded();
@@ -96,21 +99,31 @@ public class ProductTypeAction
         productTypePage.clickConfirmInConfirmationPopup();
         productTypePage.verifyInvalidImportFileValidation();
     }
-    public void verifyUploadDocumentDetails()
-    {
+
+    public void verifyUploadDocumentDetails() {
         productTypePage.clickImportProductType();
         productTypePage.uploadImportProductTypeFile();
         productTypePage.clickImportFromExcelButton();
         productTypePage.clickConfirmInConfirmationPopup();
         productTypePage.ValidateUploadedExcelFile();
     }
-    public void verifyUploadedDocumentOnImportProductType()
-    {
+
+    public void verifyUploadedDocumentOnImportProductType() {
         productTypePage.clickImportProductType();
         productTypePage.uploadImportProductTypeFile();
         productTypePage.clickImportFromExcelButton();
         productTypePage.clickConfirmInConfirmationPopup();
         productTypePage.verifyUploadProductListing();
+        productTypePage.clickCancel();
+        productTypePage.verifyImportedProductAfterCancel();
+
+    }
+
+    public void verifyUploadedDocumentOnProductListingPage() {
+        productTypePage.clickImportProductType();
+        productTypePage.uploadProductTypeFile();
+        productTypePage.clickImportFromExcelButton();
+        productTypePage.clickConfirmInConfirmationPopup();
         productTypePage.changeProductTypeName();
         productTypePage.verifyNameChange();
         productTypePage.changeProductTypeNameTwo();
@@ -119,23 +132,13 @@ public class ProductTypeAction
         productTypePage.verifyCodeChange();
         productTypePage.changeProductTypeCodeTwo();
         productTypePage.verifySecondCodeChange();
-        productTypePage.clickCancel();
-        productTypePage.verifyImportedProductAfterCancel();
-
-    }
-    public void verifyUploadedDocumentOnProductListingPage()
-    {
-        productTypePage.clickImportProductType();
-        productTypePage.uploadProductTypeFile();
-        productTypePage.clickImportFromExcelButton();
-        productTypePage.clickConfirmInConfirmationPopup();
         productTypePage.clickSubmit();
         productTypePage.handelSuccessPopup();
         productTypePage.verifyImportedProductOnProductListingPage();
 
     }
-    public void verifyPagination()
-    {
+
+    public void verifyPagination() {
         productTypePage.verifyPaginationFunctionalities();
     }
 

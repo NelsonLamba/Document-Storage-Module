@@ -33,7 +33,6 @@ public class WebBasePage extends WaitStatement {
         driver.get(url);
         getTest().log(LogStatus.PASS, "Url opened - " + url);
     }
-
     public List<WebElement> findMultipleElement(By by, int time) {
         List<WebElement> elements = new ArrayList<>();
         try {
@@ -264,8 +263,10 @@ public class WebBasePage extends WaitStatement {
         try {
             if (scroll.equalsIgnoreCase("down")) {
                 actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
+                actions.keyUp(Keys.CONTROL).perform();
             } else if (scroll.equalsIgnoreCase("up")) {
                 actions.keyDown(Keys.CONTROL).sendKeys(Keys.HOME).perform();
+                actions.keyUp(Keys.CONTROL).perform();
             }
         } catch (Exception e) {
             e.printStackTrace();

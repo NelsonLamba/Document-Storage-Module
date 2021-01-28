@@ -8,31 +8,29 @@ public class CompanySetupAction {
     WebDriver driver;
     CompanySetupPage companySetup;
 
-    public CompanySetupAction(WebDriver driver)
-    {
-        this.driver=driver;
-        companySetup= new CompanySetupPage(driver);
+    public CompanySetupAction(WebDriver driver) {
+        this.driver = driver;
+        companySetup = new CompanySetupPage(driver);
     }
-    public void navigateToCompanySetupPage()
-    {
-        DeployProductPage deployProduct=new DeployProductPage(driver);
-        deployProduct.clickFullMenuDropDown();
+
+    public void navigateToCompanySetupPage() {
+        companySetup.clickFullMenu();
         companySetup.clickCompanySetupMenu();
         companySetup.clickCompanySetupSubMenu();
     }
-    public void navigateSideBarLocation()
-    {
+
+    public void navigateSideBarLocation() {
         companySetup.sideBarLocation();
     }
-    public void getAllLocationList()
-    {
-        DeployProductPage deployProduct=new DeployProductPage(driver);
+
+    public void getAllLocationList() {
+        DeployProductPage deployProduct = new DeployProductPage(driver);
         deployProduct.make100PageSize();
         deployProduct.getLocationsFromSetup();
     }
-    public void createChildLocation()
-    {
-        DeployProductPage deployProduct=new DeployProductPage(driver);
+
+    public void createChildLocation() {
+        DeployProductPage deployProduct = new DeployProductPage(driver);
         companySetup.clickAddLocationButton();
         companySetup.selectParentLocation();
         companySetup.enterLocationName();
@@ -42,20 +40,20 @@ public class CompanySetupAction {
         companySetup.saveLocation();
         deployProduct.handleSuccessPopup();
     }
-    public void changeProductCostToggle(boolean productCost)
-    {
+
+    public void changeProductCostToggle(boolean productCost) {
         companySetup.sideBarProductType();
         companySetup.openEditProductType();
         companySetup.clickProductCostToggle(productCost);
     }
-    public void changeInsuranceRefNumToggle(boolean policy)
-    {
+
+    public void changeInsuranceRefNumToggle(boolean policy) {
         companySetup.sideBarProductType();
         companySetup.openEditProductType();
         companySetup.clickInsurancePolicyToggle(policy);
     }
-    public void changeDepreciationToggle(boolean depreciation)
-    {
+
+    public void changeDepreciationToggle(boolean depreciation) {
         companySetup.sideBarProductType();
         companySetup.openEditProductType();
         companySetup.clickDepreciationToggle(depreciation);

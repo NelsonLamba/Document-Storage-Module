@@ -39,16 +39,27 @@ public class RelatedInformationPage extends WebBasePage {
         this.driver = driver;
     }
 
-    public void clickFullMenu() {
-        click(By.cssSelector("a#navbarDropdownPortfolio"), "Full Menu", 15);
+    public void clickFullMenuDropDown() {
+        findElementClickable(By.cssSelector("a#navbarDropdownPortfolio"), 20);
+        click(By.cssSelector("a#navbarDropdownPortfolio"), "Full Menu", 20);
     }
 
-    public void clickAssertManagement() {
-        click(By.xpath("//div//li[@data-name='Asset']"), "clickAssertManagement", 15);
+    public void clickAssetManagement() {
+        WebElement assetManagementMenu = findElementVisibility(By.xpath("//a[text()='Asset Management ']"), 15);
+        if (assetManagementMenu != null) {
+            click(By.xpath("//a[text()='Asset Management ']"), "Asset Management", 10);
+        } else {
+            clickFullMenuDropDown();
+        }
     }
 
     public void clickManageProduct() {
-        click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 10);
+        WebElement manageProductMenu = findElementVisibility(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), 15);
+        if (manageProductMenu != null) {
+            click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 20);
+        } else {
+            clickAssetManagement();
+        }
     }
 
     public void clickRelatedInformationTab() {
@@ -214,7 +225,7 @@ public class RelatedInformationPage extends WebBasePage {
         }
         waitForVisibilityOfElement(By.cssSelector("a#btnBarCode"), 30);
         File[] dir2 = new File(downloadPath).listFiles();
-        filesInDirectory=dir2.length;
+        filesInDirectory = dir2.length;
         click(By.cssSelector("a#btnBarCode"), "downloadBulkBarCode", 10);
     }
 
@@ -642,7 +653,7 @@ public class RelatedInformationPage extends WebBasePage {
             dir.delete();
         }
         File[] dir2 = new File(downloadPath).listFiles();
-        filesInDirectory=dir2.length;
+        filesInDirectory = dir2.length;
         click(By.xpath("//table[@id='tblRelatedInfoListing']//tbody//tr[1]//td//i[@title='Download Barcode']"), "downloadBarImage", 20);
     }
 
@@ -653,7 +664,7 @@ public class RelatedInformationPage extends WebBasePage {
         String fileName = barcodeFileName + ".png";
         File dir = new File(downloadPath + fileName);
         File dir2 = new File(downloadPath);
-        waitTillNewFile(dir2.toString(),filesInDirectory);
+        waitTillNewFile(dir2.toString(), filesInDirectory);
         boolean dirContents = dir.exists();
         if (dirContents) {
             getTest().log(LogStatus.PASS, "Downloaded File is Exist");

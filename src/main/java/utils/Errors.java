@@ -11,4 +11,6 @@ public class Errors
     public static final String descriptionErrorMsg="Only 250 characters allowed in Description";
     public static final String importexcelfieldValidation="File is required";
     public static final String uploadValidFile="is not a valid file to upload. Only .xls file types are allowed to upload.";
+    public static final String productImportConfirmation="Do you want to proceed the bulk import from excel ?";
+    public static final String duplicateProdErr= "This value is already selected, please select some other value";
 }

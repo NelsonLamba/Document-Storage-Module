@@ -3,28 +3,27 @@ package Action;
 import org.openqa.selenium.WebDriver;
 import pageobjects.RelatedInformationPage;
 
-public class RelatedInformationAction  {
+public class RelatedInformationAction {
     WebDriver driver;
     RelatedInformationPage relatedInformationPage;
 
     public RelatedInformationAction(WebDriver driver) {
         this.driver = driver;
-        relatedInformationPage=new RelatedInformationPage(driver);
+        relatedInformationPage = new RelatedInformationPage(driver);
     }
-    public void navigateToRelatedProduct()
-    {
-        relatedInformationPage.clickFullMenu();
-        relatedInformationPage.clickAssertManagement();
+
+    public void navigateToRelatedProduct() {
+        relatedInformationPage.clickFullMenuDropDown();
+        relatedInformationPage.clickAssetManagement();
         relatedInformationPage.clickManageProduct();
         relatedInformationPage.clickRelatedProduct();
     }
-public void RelatedInformationTab()
-{
-    relatedInformationPage.clickRelatedInformationTab();
-}
 
-    public void checkRelatedPageDetail()
-    {
+    public void RelatedInformationTab() {
+        relatedInformationPage.clickRelatedInformationTab();
+    }
+
+    public void checkRelatedPageDetail() {
         relatedInformationPage.checkRelatedPageHeaders();
     }
 
@@ -35,35 +34,34 @@ public void RelatedInformationTab()
         relatedInformationPage.verifyUniqueNameSearch();
     }
 
-    public void verifyResetTable()
-    {
+    public void verifyResetTable() {
         relatedInformationPage.clickResetIcon();
         relatedInformationPage.checksearchBarisEmpty();
     }
-public void checkBreadCrumb()
-    {
-    relatedInformationPage.verifyBreadCrumb();
+
+    public void checkBreadCrumb() {
+        relatedInformationPage.verifyBreadCrumb();
     }
-    public void barCodePrint()
-    {
+
+    public void barCodePrint() {
         relatedInformationPage.clickBarCodePrint();
     }
-    public void verifyBarCodePrintPopupPage()
-    {
+
+    public void verifyBarCodePrintPopupPage() {
         relatedInformationPage.checkBarCodePrintPopupPage();
         relatedInformationPage.closeBarCodePrintPopup();
     }
-public void verifyDownloadBulkBarCode()
-    {
-    relatedInformationPage.downloadBulkBarCode();
-    relatedInformationPage.checkDownloadedBulkBarCodePdf();
+
+    public void verifyDownloadBulkBarCode() {
+        relatedInformationPage.downloadBulkBarCode();
+        relatedInformationPage.checkDownloadedBulkBarCodePdf();
     }
-    public void clickProductUniqueNameOrCode()
-    {
+
+    public void clickProductUniqueNameOrCode() {
         relatedInformationPage.clickUniqueCode();
     }
-    public void editUniqueProductDetails()
-    {
+
+    public void editUniqueProductDetails() {
         relatedInformationPage.editUniqueName();
         relatedInformationPage.editWarrantyDuration();
         relatedInformationPage.acquisitionDate("Future");
@@ -97,30 +95,32 @@ public void verifyDownloadBulkBarCode()
         relatedInformationPage.editSave();
         relatedInformationPage.clickProductPopupPage();
     }
-    public void verifyDownloadedBarImage()
-    {
+
+    public void verifyDownloadedBarImage() {
         relatedInformationPage.downloadBarImageIcon();
         relatedInformationPage.checkDownloadedBarImage();
     }
-public void checkCalibrationCommentPopup(){
-    relatedInformationPage.clickCalibrationComment();
-    relatedInformationPage.verifyCommentPopup();
-}
-public void enterTheDetailsInCalibrationPopup()
-{
-    relatedInformationPage.chooseCalibrationStartDate("Old");
-    relatedInformationPage.chooseCalibrationNextDate("Future");
-    relatedInformationPage.selectCalibrationStatus();
-    relatedInformationPage.enterCalibrationComment();
-    relatedInformationPage.savePostCalibrationComment();
-    relatedInformationPage.clickCalibrationCloseIcon();
-}
-    public void checkAuditCommentPopup(){
+
+    public void checkCalibrationCommentPopup() {
+        relatedInformationPage.clickCalibrationComment();
+        relatedInformationPage.verifyCommentPopup();
+    }
+
+    public void enterTheDetailsInCalibrationPopup() {
+        relatedInformationPage.chooseCalibrationStartDate("Old");
+        relatedInformationPage.chooseCalibrationNextDate("Future");
+        relatedInformationPage.selectCalibrationStatus();
+        relatedInformationPage.enterCalibrationComment();
+        relatedInformationPage.savePostCalibrationComment();
+        relatedInformationPage.clickCalibrationCloseIcon();
+    }
+
+    public void checkAuditCommentPopup() {
         relatedInformationPage.clickAuditComment();
         relatedInformationPage.verifyAuditCommentPopup();
     }
-    public void enterTheDetailsInAuditCommentPopup()
-    {
+
+    public void enterTheDetailsInAuditCommentPopup() {
         relatedInformationPage.chooseAuditDate("Old");
         relatedInformationPage.chooseAuditNextdate("Future");
         relatedInformationPage.selectAuditStatus();
@@ -129,23 +129,21 @@ public void enterTheDetailsInCalibrationPopup()
         relatedInformationPage.clickAuditCloseIcon();
     }
 
-    public void statusSection()
-    {
+    public void statusSection() {
         relatedInformationPage.clickEditStatus();
 
     }
-    public void selectStatusDropDown()
-    {
+
+    public void selectStatusDropDown() {
         relatedInformationPage.changeStatus();
 
     }
-public void viewHistoryPageValidations()
-{
-    relatedInformationPage.viewHistoryValidations();
-}
 
-    public void paginationFunctionality()
-    {
+    public void viewHistoryPageValidations() {
+        relatedInformationPage.viewHistoryValidations();
+    }
+
+    public void paginationFunctionality() {
         relatedInformationPage.selectRecordPagination();
         relatedInformationPage.verifyPaginationFunctionalities();
     }
