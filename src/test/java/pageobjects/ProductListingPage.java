@@ -771,13 +771,14 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void clickMoreIcon() {
-        findElementVisibility(By.xpath("//div[@class='chat_popup chat-btn-hide']"), 60);
-        click(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//span[@class='actions mobileaction']"), "More Icon", 20);
+        waitForLoad(5000);
+        click(By.xpath("//div[@class='chat_popup']//i[contains(@class,'arrow-rotate')]"),"Chat Popup Close",30);
+        click(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//span[@class='actions mobileaction']"), "More Icon", 60);
     }
 
     public void navigateToSubStatusPopup() {
         clickMoreIcon();
-        click(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//a[@data-original-title='Sub Status']"), "Sub-status Menu", 30);
+        click(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//a[@data-original-title='Sub Status']"), "Sub-status Menu", 60);
     }
 
     public void verifyFieldsInSubStatusPopup() {

@@ -8,20 +8,16 @@ import org.openqa.selenium.interactions.Actions;
 import utils.PropertiesLoader;
 import utils.WebBasePage;
 
-import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 import static reporting.ComplexReportFactory.getTest;
-import static utils.StaticData.productNameToSearch;
+import static utils.StaticData.location;
 
 public class InTransitPage extends WebBasePage {
     WebDriver driver;
     String productName;
     String locationToSearch;
-    String acceptOrRejectProductName;
+    int countInPopup;
     String transferProdName;
     String transferProdLocation;
     private final static String FILE_NAME = System.getProperty("user.dir") + "\\src\\main\\resources\\testdata.properties";
@@ -221,9 +217,63 @@ public class InTransitPage extends WebBasePage {
         }
     }
 
+    public void addMultipleInTransitReq()
+    {
+        ProductTransferPage productTransfer= new ProductTransferPage(driver);
+        productTransfer.clickProductTransfer();
+        click(By.xpath("//label[text()='Location:']//parent::div//div[@type='button']"), "Location", 20);
+        findMultipleElement(By.xpath("//a[contains(@class,'CompantLocationSelectdd')]"),40).get(0).click();
+        location=getText(By.xpath("//span[contains(@class,'CompantLocationSelectselected')]"),20);
+        for(int i=1;i<=3;i++)
+        {
+            findElementPresence(By.xpath("//select[@id='AssetTypeFilter']//option[2]"),40);
+            selectValueWithIndex(By.xpath("//select[@id='AssetTypeFilter']"),1,"Product Type",20);
+            findElementPresence(By.xpath("//select[@id='AssetCatalogFilter']//option[2]"),40);
+            int productNameCount=findMultipleElement(By.xpath("//select[@id='AssetCatalogFilter']//option"),30).size();
+            if(productNameCount<=2)
+            {
+                findElementPresence(By.xpath("//select[@id='AssetTypeFilter']//option[2]"),40);
+                selectValueWithIndex(By.xpath("//select[@id='AssetTypeFilter']"),2,"Product Type",20);
+            }
+            findElementPresence(By.xpath("//select[@id='AssetCatalogFilter']//option[2]"),40);
+            selectValueWithIndex(By.xpath("//select[@id='AssetCatalogFilter']"),i,"Product Name",20);
+            click(By.xpath("//a[@id='Searchassest']"),"Search",20);
+            waitForLoader(20);
+            click(By.xpath("//table[@id='tblTransferMultipleItems']//tbody//tr[3]//td[1]//div"),"Check box",20);
+            click(By.cssSelector("a#btn_AddRow"),"Add To List",20);
+        }
+        productTransfer.selectToLocation();
+        click(By.xpath("//table[@id='tbltransferiteminfoList']//th//div[contains(@class,'custom-checkbox')]"),"Select All",20);
+        click(By.cssSelector("a#saveBtn"), "Save", 20);
+        waitForLoader(20);
+    }
+    public void getStatusBeforeAcceptOrReject()
+    {
+        ProductListingPage productListing = new ProductListingPage(driver);
+        transferProdName=getText(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td[1]//span"),30);
+        transferProdLocation=getText(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td[3]//span"),30);
+        productListing.navigateToManageProductPage();
+        click(By.xpath("//span[text()='Product Name/Code ']"), "Product Name Search field", 30);
+        enter(By.cssSelector("input#search"), transferProdName, "Product Name To Search", 20);
+        productListing.clickSearchButton();
+        productListing.navigateToSubStatusPopup();
+        WebElement activeStatusCount=findElementVisibility(By.xpath("//td[text()='"+transferProdLocation+"']//parent::tr//td[text()='Active']//parent::tr//td[contains(@class,'single-action')]/span/span"),30);
+        if(activeStatusCount!=null)
+        {
+            String temp=getText(By.xpath("//td[text()='"+transferProdLocation+"']//parent::tr//td[text()='Active']//parent::tr//td[contains(@class,'single-action')]/span/span"),30);
+            countInPopup=Integer.parseInt(temp);
+        }
+        else
+        {
+            countInPopup=0;
+        }
+        click(By.xpath("//div[@aria-describedby='divDialogSubStatus']//button[@class='close']"), "Sub-status close", 30);
+    }
     public void clickAcceptorRejectButton() {
         WebElement actualValue;
         waitForLoader(20);
+        transferProdName=getText(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td[1]//span"),20);
+        transferProdLocation=getText(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td[3]//span"),20);;
         clickByJavascript(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td//a"), "Accept or Reject button", 20);
         actualValue = findElementVisibility(By.xpath("//h5[text()='In-Transit Products']"), 15);
         if (actualValue != null) {
@@ -245,14 +295,12 @@ public class InTransitPage extends WebBasePage {
         chooseAcceptorReject("Reject");
     }
     public void chooseAcceptorReject(String option) {
-        transferProdName=getText(By.xpath("//table[@id='tblViewInTransitList']//tbody//tr[1]//td[1]//span"),20);
-        transferProdLocation=getText(By.xpath("//table[@id='tblViewInTransitList']//tbody//tr[1]//td[3]//span"),20);
         if (option.equals("Accept")) {
             clickByJavascript(By.xpath("//div[text() [normalize-space()='Accept']]"), "Accept Option", 15);
             getTest().log(LogStatus.PASS, "Accept option is Selected");
             logger.info("Accept option is Selected");
         } else if (option.equals("Reject")) {
-            clickByJavascript(By.xpath("//div[text() [normalize-space()='Reject']]"), "Reject Option", 15);
+            clickByJavascript(By.xpath("//div[text() [normalize-space()='Reject']]//input"), "Reject Option", 15);
             getTest().log(LogStatus.PASS, "Reject option is Selected");
             logger.info("Reject option is Selected");
         } else {
@@ -274,37 +322,30 @@ public class InTransitPage extends WebBasePage {
         productListing.clickSearchButton();
         productListing.navigateToSubStatusPopup();
     }
-    public void verifyTransferReqActiveStatus()
-    {
-        WebElement requestStatus=findElementVisibility(By.xpath("//table[@id='tblsubstatuslisting']//tbody//tr//td[text()='Active']//parent::tr//td[text()='"+transferProdLocation+"']"),30);
-        if(requestStatus!=null)
-        {
-            getTest().log(LogStatus.PASS,"Product is transferred to the requested location and status is displayed as Active in the sub status popup");
-            logger.info("Product is transferred to the requested location and status is displayed as Active in the sub status popup");
-        }
-        else
-        {
-            getTest().log(LogStatus.FAIL,"Product is not transferred to the requested location and status is also not changed to Active in the sub status popup");
-            logger.info("Product is not transferred to the requested location and status is also not changed to Active in the sub status popup");
-            takeScreenshot("ProductTransfer");
-        }
-        click(By.xpath("//div[@aria-describedby='divDialogSubStatus']//button[@class='close']"), "Sub-staus close", 30);
+    public void verifyTransferReqActiveStatus() {
+            int actualCount = Integer.parseInt(getText(By.xpath("//td[text()='"+transferProdLocation+"']//parent::tr//td[text()='Active']//parent::tr//td[contains(@class,'single-action')]/span/span"), 20));
+            if (actualCount==countInPopup+1) {
+                getTest().log(LogStatus.PASS, "Product is transferred to the requested location and status is displayed as Active in the sub status popup");
+                logger.info("Product is transferred to the requested location and status is displayed as Active in the sub status popup");
+            } else {
+                getTest().log(LogStatus.FAIL, "Product is not transferred to the requested location and status is also not changed to Active in the sub status popup");
+                logger.info("Product is not transferred to the requested location and status is also not changed to Active in the sub status popup");
+                takeScreenshot("ProductTransferActive");
+            }
+        click(By.xpath("//div[@aria-describedby='divDialogSubStatus']//button[@class='close']"), "Sub-status close", 30);
     }
     public void verifyTransferReqRejectStatus()
     {
-        WebElement requestStatus=findElementVisibility(By.xpath("//table[@id='tblsubstatuslisting']//tbody//tr//td[text()='Rejected']//parent::tr//td[text()='"+transferProdLocation+"']"),30);
-        if(requestStatus!=null)
-        {
-            getTest().log(LogStatus.PASS,"Product is not transferred to the requested location and status is displayed as Rejected in the sub status popup");
-            logger.info("Product is not transferred to the requested location and status is displayed as Rejected in the sub status popup");
-        }
-        else
-        {
-            getTest().log(LogStatus.FAIL,"Product is transferred to the requested location and status is also not changed to Rejected in the sub status popup");
-            logger.info("Product is transferred to the requested location and status is also not changed to Rejected in the sub status popup");
-            takeScreenshot("ProductTransfer");
-        }
-        click(By.xpath("//div[@aria-describedby='divDialogSubStatus']//button[@class='close']"), "Sub-staus close", 30);
+            int actualCount = Integer.parseInt(getText(By.xpath("//td[text()='"+transferProdLocation+"']//parent::tr//td[text()='Active']//parent::tr//td[contains(@class,'single-action')]/span/span"), 20));
+            if (actualCount==countInPopup) {
+                getTest().log(LogStatus.PASS, "Product is not transferred to the requested location when reject the transfer request");
+                logger.info("Product is not transferred to the requested location when reject the transfer request");
+            } else {
+                getTest().log(LogStatus.FAIL, "Product is transferred to the requested location when reject the transfer request");
+                logger.info("Product is transferred to the requested location when reject the transfer request");
+                takeScreenshot("ProductTransferActive");
+            }
+        click(By.xpath("//div[@aria-describedby='divDialogSubStatus']//button[@class='close']"), "Sub-status close", 30);
     }
 
     public void productLocationAscendingOrder() {

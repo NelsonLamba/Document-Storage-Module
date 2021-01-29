@@ -1,9 +1,8 @@
 package testcases;
 
 import Action.LoginAction;
-import Action.ProductTransferAction;
-import Action.ProductTypeAction;
 import org.testng.annotations.Test;
+import pageobjects.DeployProductPage;
 import pageobjects.InTransitPage;
 import utils.WebTestBase;
 
@@ -54,20 +53,22 @@ public class InTransit extends WebTestBase {
         inTransit.verifyInTransitPageHeaders();
     }
 
-    @Test(priority = 4)
+    @Test(priority = 6)
     public void acceptOrReject() {
         test = getTest("TC_Asset Management_InTransit_list_244_245_246_247_248");
         LoginAction login = new LoginAction(driver);
         InTransitPage inTransit = new InTransitPage(driver);
-        ProductTransferAction productTransfer = new ProductTransferAction(driver);
         login.logoutLogin();
         inTransit.navigateToInTransitPage();
+        inTransit.getStatusBeforeAcceptOrReject();
+        inTransit.clickInTransitLink();
         inTransit.clickAcceptorRejectButton();
         inTransit.selectAcceptOption();
         inTransit.saveAcceptorReject();
         inTransit.navigateToSubStatusPopup();
         inTransit.verifyTransferReqActiveStatus();
-        productTransfer.verifyAfterProductIsMovedToTheLocation();
+        inTransit.navigateToInTransitPage();
+        inTransit.getStatusBeforeAcceptOrReject();inTransit.clickInTransitLink();
         inTransit.clickAcceptorRejectButton();
         inTransit.selectRejectOption();
         inTransit.saveAcceptorReject();
@@ -75,18 +76,23 @@ public class InTransit extends WebTestBase {
         inTransit.verifyTransferReqRejectStatus();
     }
 
-    @Test(priority = 5)
+    @Test(priority = 4)
     public void sortedLocations() {
         test = getTest("TC_Asset Management_InTransit_list_249");
         LoginAction login = new LoginAction(driver);
         InTransitPage inTransit = new InTransitPage(driver);
+        DeployProductPage deployProduct = new DeployProductPage(driver);
         login.logoutLogin();
+        deployProduct.clickFullMenuDropDown();
+        deployProduct.clickAssetManagement();
+        deployProduct.clickManageProduct();
+        inTransit.addMultipleInTransitReq();
         inTransit.navigateToInTransitPage();
         inTransit.productLocationAscendingOrder();
         inTransit.productLocationDescendingOrder();
     }
 
-    @Test(priority = 6)
+    @Test(priority = 5)
     public void verifyPagination() {
         test = getTest("TC_Asset Management_InTransit_list_250");
         LoginAction login = new LoginAction(driver);
