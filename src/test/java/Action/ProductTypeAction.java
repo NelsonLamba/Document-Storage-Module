@@ -38,7 +38,9 @@ public class ProductTypeAction {
         productTypePage.clickConfirmInConfirmationPopup();
         productTypePage.handelSuccessPopup();
         productTypePage.changeStatusForSingleRecord();
-        productTypePage.authorizationPopup();
+        productTypePage.statusChangeConfirmationPopup();
+        productTypePage.handelSuccessPopup();
+        productTypePage.verifyChangedStatus();
         productTypePage.clickSelectAllCheckBox();
         productTypePage.changeStatusToInActive();
         productTypePage.clickConfirmInConfirmationPopup();

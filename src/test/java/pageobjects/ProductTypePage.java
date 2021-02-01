@@ -27,21 +27,22 @@ public class ProductTypePage extends WebBasePage {
     String pattern = "yyyyMMddHHmmss";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
     String dateValue = simpleDateFormat.format(new Date());
-    public static String pName;
-    public static String changePName;
-    public static String changePNameTwo;
-    static String itemNameRandomValue;
-    static String productTypeNameRandomValue;
-    static String containerNameRandomValue;
-    static String productCode;
-    static String productTypeCode;
-    static String changeProductTypeCode;
-    static String changeProductTypeTwoCode;
+    String pName;
+    String changePName;
+    String changePNameTwo;
+    String itemNameRandomValue;
+    String productTypeNameRandomValue;
+    String containerNameRandomValue;
+    String productCode;
+    String productTypeCode;
+    String changeProductTypeCode;
+    String changeProductTypeTwoCode;
     String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\testfiles\\";
-    static String fileName;
-    public static String proTypeCode;
-    public static String prodTypeCode;
-    public static String prodTypeDescription;
+    String fileName;
+    String proTypeCode;
+    String prodTypeCode;
+    String prodTypeDescription;
+    String statusOfRecord;
     int filesInDirectory;
     List<String> productsToDelete = new ArrayList<>();
 
@@ -193,28 +194,55 @@ public class ProductTypePage extends WebBasePage {
 
     public void verifyStatusIsChangedToActive() {
         List<WebElement> elements = findMultipleElement(By.xpath("//table[@id='tblAsset']/tbody/tr/td[7]//select//option[@selected='selected']"), 50);
-        List<String> actualStatus = new ArrayList<>();
+        List<String> result = new ArrayList<>();
         for (WebElement element : elements) {
             String status = element.getText().trim();
-            actualStatus.add(status);
+            if(status.equalsIgnoreCase("Active"))
+            {
+             result.add("true");
+            }
+            else
+            {
+                result.add("false");
+            }
         }
-        if (actualStatus.contains("Active")) {
+        if (!result.contains("false")) {
             getTest().log(LogStatus.PASS, "Status is changed to Active for all the records");
             logger.info("Status is changed to Active for all the records");
+        }
+        else
+        {
+            getTest().log(LogStatus.FAIL, "Status is not changed to Active for all the records");
+            logger.info("Status is not changed to Active for all the records");
+            scrollToWebelement(By.xpath("//table[@id='tblAsset']/tbody/tr[1]/td[7]//select"),"Status Popup");
+            takeScreenshot("ChangedStatus");
         }
 
     }
 
     public void verifyStatusIsChangedToInActive() {
         List<WebElement> elements = findMultipleElement(By.xpath("//table[@id='tblAsset']/tbody/tr/td[7]//select//option[@selected='selected']"), 50);
-        List<String> actualStatus = new ArrayList<>();
+        List<String> result = new ArrayList<>();
         for (WebElement element : elements) {
             String status = element.getText().trim();
-            actualStatus.add(status);
+            if(status.equalsIgnoreCase("Inactive")) {
+                result.add("true");
+            }
+            else
+            {
+                result.add("false");
+            }
         }
-        if (actualStatus.contains("Inactive")) {
+        if (!result.contains("false")) {
             getTest().log(LogStatus.PASS, "Status is changed to Inactive for all the records");
             logger.info("Status is changed to Inactive for all the records");
+        }
+        else
+        {
+            getTest().log(LogStatus.FAIL, "Status is not changed to Inactive for all the records");
+            logger.info("Status is not changed to Inactive for all the records");
+            scrollToWebelement(By.xpath("//table[@id='tblAsset']/tbody/tr[1]/td[7]//select"),"Status Popup");
+            takeScreenshot("ChangedStatus");
         }
 
     }
@@ -1008,10 +1036,10 @@ public class ProductTypePage extends WebBasePage {
     }
 
     public void changeStatusForSingleRecord() {
-        Select select = new Select(driver.findElement(By.xpath("//table[@id='tblAsset']/tbody/tr/td[7]//select")));
+        Select select = new Select(driver.findElement(By.xpath("//table[@id='tblAsset']/tbody/tr[1]/td[7]//select")));
         WebElement option = select.getFirstSelectedOption();
-        String status = option.getText();
-        if (status.equals("Inactive")) {
+        statusOfRecord = option.getText();
+        if (statusOfRecord.equals("Inactive")) {
             selectValueWithIndex(By.xpath("//table[@id='tblAsset']/tbody/tr/td[7]//select"), 0, "Status", 20);
         } else {
             selectValueWithIndex(By.xpath("//table[@id='tblAsset']/tbody/tr/td[7]//select"), 1, "Status", 20);
@@ -1029,21 +1057,31 @@ public class ProductTypePage extends WebBasePage {
         }
     }
 
-    public void authorizationPopup() {
-        waitForVisibilityOfElement(By.xpath("//div[contains(@class,'notifybox')]//div"), 30);
-        String msg = getText(By.xpath("//div[contains(@class,'notifybox')]//div"), 50).trim();
-        if (msg.equals("Sorry, You are not authorized to access this section")) {
-            getTest().log(LogStatus.FAIL, "User is not able able change the status for single data , since the Error messgae is displayed as  " + msg);
-            logger.info("User is not able able change the status for single data , since the Error messgae is displayed as  " + msg);
-            takeScreenshot("Authorization popup");
-            findElementClickable(By.xpath("//button[text()=' OK']"), 30);
+    public void statusChangeConfirmationPopup() {
+        WebElement statusChangeConfirmation=findElementVisibility(By.xpath("//div[text()='Are you sure to update this record?']"),60);
+        if (statusChangeConfirmation!=null) {
             click(By.xpath("//button[text()=' OK']"), "OK", 20);
         } else {
-            clickConfirmInConfirmationPopup();
-            handelSuccessPopup();
+            getTest().log(LogStatus.FAIL, "Confirmation for status change is not displayed");
+            logger.info("Confirmation for status change is not displayed");
+            takeScreenshot("ConfirmationPopup");
         }
     }
 
+    public void verifyChangedStatus() {
+        Select select = new Select(driver.findElement(By.xpath("//table[@id='tblAsset']/tbody/tr/td[7]//select")));
+        WebElement option = select.getFirstSelectedOption();
+        String actualStatus = option.getText();
+        if (!actualStatus.equalsIgnoreCase(statusOfRecord)) {
+            getTest().log(LogStatus.PASS, "The status for the single record is changed as expected when change from the dropdown along with the record");
+            logger.info("The status for the single record is changed as expected when change from the dropdown along with the record");
+        } else {
+            getTest().log(LogStatus.FAIL, "The status for the single record is not changed, when change from the dropdown along with the record");
+            logger.info("The status for the single record is not changed, when change from the dropdown along with the record");
+            scrollToWebelement(By.xpath("//table[@id='tblAsset']/tbody/tr[1]/td[7]//select"),"Status Popup");
+            takeScreenshot("ChangedStatus");
+        }
+    }
     public void openTheCreatedProductType() {
         click(By.xpath("//table[@id='tblAsset']/tbody/tr/td[4]/a"), "Product Name", 30);
     }

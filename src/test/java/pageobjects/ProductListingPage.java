@@ -15,6 +15,7 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.List;
@@ -964,11 +965,14 @@ public class ProductListingPage extends WebBasePage {
     public void verifySearchedDepreciationList() {
         String[] selectedDate = getAtribute(By.cssSelector("input#depreciationDate"), "value", 30).split("/");
         String expectedYear = selectedDate[2];
+        int expectedMonthNum = Integer.parseInt(selectedDate[0]);
+        String expectedMonth= Month.of(expectedMonthNum).name();
+        String expectedHeaderName=expectedMonth+"-"+expectedYear;
         waitForLoader(20);
         findElementPresence(By.xpath("//table[contains(@class,'table table-bordered')]//tr[2]//th[21]//span"), 40);
-        String[] depreciation = getText(By.xpath("//table[contains(@class,'table table-bordered')]//tr[2]//th[21]//span"), 30).split("-");
-        String actualYear = depreciation[1];
-        if (expectedYear.equals(actualYear)) {
+        String[] depreciation = getText(By.xpath("//table[contains(@class,'table table-bordered')]//tr[2]//th[21]//span"), 30).split(" ");
+        String actualHeaderName = depreciation[3];
+        if (expectedHeaderName.equalsIgnoreCase(actualHeaderName)) {
             getTest().log(LogStatus.PASS, "The depreciation list provide the accurate result based on the selected date when click search button");
             logger.info("The depreciation list provide the accurate result based on the selected date when click search button");
         } else {

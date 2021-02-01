@@ -38046,3 +38046,181 @@ Driver info: driver.version: unknown
 2021-01-29 16:34:40,639  INFO [main] Product Listing page:226 -  Text displayed is  - 3
 2021-01-29 16:34:42,887  INFO [main] Product Listing page:352 - Product is transferred to the requested location when reject the transfer request
 2021-01-29 16:34:48,825  INFO [main] Product Listing page:87 - Sub-status close clicked 
+2021-01-29 17:45:16,497  INFO [main] User Login Page:69 - User Name entered with value - safiya@yopmail.com
+2021-01-29 17:45:16,933  INFO [main] User Login Page:69 - Password entered with value - talygen@123
+2021-01-29 17:45:17,289  INFO [main] User Login Page:87 - Privacy Policy clicked 
+2021-01-29 17:45:17,337  INFO [main] User Login Page:241 -  get attribute value is  - safiya@yopmail.com
+2021-01-29 17:45:17,400  INFO [main] User Login Page:241 -  get attribute value is  - talygen@123
+2021-01-29 17:45:31,444  INFO [main] User Login Page:87 - Login clicked 
+2021-01-29 18:27:19,876  INFO [main] User Login Page:69 - User Name entered with value - safiya@yopmail.com
+2021-01-29 18:27:20,324  INFO [main] User Login Page:69 - Password entered with value - talygen@123
+2021-01-29 18:27:20,694  INFO [main] User Login Page:87 - Privacy Policy clicked 
+2021-01-29 18:27:20,778  INFO [main] User Login Page:241 -  get attribute value is  - safiya@yopmail.com
+2021-01-29 18:27:20,825  INFO [main] User Login Page:241 -  get attribute value is  - talygen@123
+2021-01-29 18:38:19,271  INFO [main] User Login Page:69 - User Name entered with value - safiya@yopmail.com
+2021-01-29 18:38:19,951  INFO [main] User Login Page:69 - Password entered with value - talygen@123
+2021-01-29 18:38:20,436  INFO [main] User Login Page:87 - Privacy Policy clicked 
+2021-01-29 18:38:20,537  INFO [main] User Login Page:241 -  get attribute value is  - safiya@yopmail.com
+2021-01-29 18:38:20,599  INFO [main] User Login Page:241 -  get attribute value is  - talygen@123
+2021-01-29 18:38:43,750  INFO [main] User Login Page:87 - Login clicked 
+2021-01-29 18:38:44,499  INFO [main] User Login Page:87 - Ful Menu clicked 
+2021-01-29 18:38:47,846  INFO [main] User Login Page:87 - Asset Management clicked 
+2021-01-29 18:39:03,961  INFO [main] User Login Page:87 - Product type clicked 
+2021-01-29 18:39:04,093  INFO [main] User Login Page:76 - Product type Listing Page is displayed
+2021-01-29 18:39:04,340  INFO [main] User Login Page:88 - BreadCrumb is displayed
+2021-01-29 18:39:14,924  INFO [main] User Login Page:87 - Company Setup from breadcrumb clicked 
+2021-01-29 18:39:15,040  INFO [main] User Login Page:226 -  Text displayed is  - Announcement
+2021-01-29 18:39:15,040  INFO [main] User Login Page:106 - BreadCrumb is Clicked and Company Setup Page is displayed
+2021-01-29 18:39:28,046  INFO [main] User Login Page:211 - Logout menu click by JS
+2021-01-29 18:39:34,966  INFO [main] User Login Page:211 - Logout click by JS
+2021-01-29 18:39:35,884  INFO [main] User Login Page:69 - User Name entered with value - safiya@yopmail.com
+2021-01-29 18:39:36,571  INFO [main] User Login Page:69 - Password entered with value - talygen@123
+2021-01-29 18:39:37,118  INFO [main] User Login Page:87 - Privacy Policy clicked 
+2021-01-29 18:39:37,203  INFO [main] User Login Page:241 -  get attribute value is  - safiya@yopmail.com
+2021-01-29 18:39:37,272  INFO [main] User Login Page:241 -  get attribute value is  - talygen@123
+2021-01-29 18:39:38,575  INFO [main] User Login Page:87 - Login clicked 
+2021-01-29 18:39:49,939  INFO [main] User Login Page:87 - Ful Menu clicked 
+2021-01-29 18:39:50,494  INFO [main] User Login Page:87 - Asset Management clicked 
+2021-01-29 18:40:00,788  INFO [main] User Login Page:87 - Product type clicked 
+2021-01-29 18:40:13,278  INFO [main] User Login Page:87 - Import Product Type clicked 
+2021-01-29 18:40:13,895  INFO [main] User Login Page:386 - Error occurred. org.openqa.selenium.WebDriverException: invalid argument: File not found : G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\productType.xls
+  (Session info: chrome=88.0.4324.104)
+  (Driver info: chromedriver=2.38.551601 (edb21f07fc70e9027c746edd3201443e011a61ed),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-O9KDV4N', ip: '192.168.1.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.551601 (edb21f07fc70e9..., userDataDir: C:\Users\Monisha\AppData\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 88.0.4324.104, webStorageEnabled: true, webdriver.remote.sessionid: b8c9bf5a6bb0975666549e60ca8...}
+Session ID: b8c9bf5a6bb0975666549e60ca8a682a
+2021-01-29 18:40:14,960  INFO [main] ProductType-verifyUploadedDocumentOnProductListingPage:77 - Method - verifyUploadedDocumentOnProductListingPage failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\verifyUploadedDocumentOnProductListingPage_20210129184014.png
+2021-01-29 18:40:28,054  INFO [main] User Login Page:211 - Logout menu click by JS
+2021-01-29 18:40:35,475  INFO [main] User Login Page:211 - Logout click by JS
+2021-01-29 18:40:36,293  INFO [main] User Login Page:69 - User Name entered with value - safiya@yopmail.com
+2021-01-29 18:40:36,995  INFO [main] User Login Page:69 - Password entered with value - talygen@123
+2021-01-29 18:40:37,628  INFO [main] User Login Page:87 - Privacy Policy clicked 
+2021-01-29 18:40:37,751  INFO [main] User Login Page:241 -  get attribute value is  - safiya@yopmail.com
+2021-01-29 18:40:37,867  INFO [main] User Login Page:241 -  get attribute value is  - talygen@123
+2021-01-29 18:40:39,302  INFO [main] User Login Page:87 - Login clicked 
+2021-01-29 18:40:54,514  INFO [main] User Login Page:87 - Ful Menu clicked 
+2021-01-29 18:40:55,062  INFO [main] User Login Page:87 - Asset Management clicked 
+2021-01-29 18:41:05,778  INFO [main] User Login Page:87 - Product type clicked 
+2021-01-29 18:41:06,633  INFO [main] User Login Page:87 - CheckBox clicked 
+2021-01-29 18:41:06,780  INFO [main] User Login Page:165 - Delete button is active after selecting the checkbox
+2021-01-29 18:41:06,865  INFO [main] User Login Page:226 -  Text displayed is  - AB20210128161552
+2021-01-29 18:41:07,768  INFO [main] User Login Page:69 - Product name entered with value - AB20210128161552
+2021-01-29 18:41:08,369  INFO [main] User Login Page:87 - Search button clicked 
+2021-01-29 18:41:09,758  INFO [main] User Login Page:226 -  Text displayed is  - AB20210128161552
+2021-01-29 18:41:09,758  INFO [main] User Login Page:149 - Searched Product is displayed as AB20210128161552
+2021-01-29 18:41:09,990  INFO [main] User Login Page:241 -  get attribute value is  - AB20210128161552
+2021-01-29 18:41:11,478  INFO [main] User Login Page:87 - Reset button clicked 
+2021-01-29 18:41:11,748  INFO [main] User Login Page:241 -  get attribute value is  - 
+2021-01-29 18:41:11,748  INFO [main] User Login Page:126 - Entered text is cleared in the search field text box
+2021-01-29 18:41:24,870  INFO [main] User Login Page:211 - Logout menu click by JS
+2021-01-29 18:41:31,389  INFO [main] User Login Page:211 - Logout click by JS
+2021-01-29 18:41:32,354  INFO [main] User Login Page:69 - User Name entered with value - safiya@yopmail.com
+2021-01-29 18:41:32,971  INFO [main] User Login Page:69 - Password entered with value - talygen@123
+2021-01-29 18:41:33,526  INFO [main] User Login Page:87 - Privacy Policy clicked 
+2021-01-29 18:41:33,673  INFO [main] User Login Page:241 -  get attribute value is  - safiya@yopmail.com
+2021-01-29 18:41:33,796  INFO [main] User Login Page:241 -  get attribute value is  - talygen@123
+2021-01-29 18:41:35,200  INFO [main] User Login Page:87 - Login clicked 
+2021-01-29 19:07:30,965  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-01-29 19:07:31,393  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-01-29 19:07:31,756  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-01-29 19:07:31,828  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-01-29 19:07:31,876  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-01-29 19:07:34,421  INFO [main] User Login Page:88 - Login clicked 
+2021-01-29 19:07:41,947  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-01-29 19:07:43,601  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-01-29 19:07:50,381  INFO [main] User Login Page:88 - Product type clicked 
+2021-01-29 19:07:53,779  INFO [main] User Login Page:88 - Import Product Type clicked 
+2021-01-29 19:07:54,479  INFO [main] User Login Page:384 - Upload Import Product Type file uploaded with value - G:\Taleygen\Client\TalygenAutomationTesting\src\main\resources\testfiles\productType.xls
+2021-01-29 19:07:55,141  INFO [main] User Login Page:88 - Import from Excel File  clicked 
+2021-01-29 19:07:55,562  INFO [main] User Login Page:88 - OK clicked 
+2021-01-29 19:08:03,780  INFO [main] User Login Page:70 - Change Product Type Name entered with value - AB20210129190730
+2021-01-29 19:08:03,846  INFO [main] User Login Page:242 -  get attribute value is  - AB20210129190730
+2021-01-29 19:08:03,847  INFO [main] User Login Page:783 - Changed First Product name is displayed as expected as AB20210129190730
+2021-01-29 19:08:04,326  INFO [main] User Login Page:70 - Change Product Type Name entered with value - ABD20210129190730
+2021-01-29 19:08:04,384  INFO [main] User Login Page:242 -  get attribute value is  - ABD20210129190730
+2021-01-29 19:08:04,385  INFO [main] User Login Page:801 - Changed Second Product name is displayed as expected as ABD20210129190730
+2021-01-29 19:08:04,831  INFO [main] User Login Page:70 - product code entered with value - 0730
+2021-01-29 19:08:04,888  INFO [main] User Login Page:242 -  get attribute value is  - 0730
+2021-01-29 19:08:04,888  INFO [main] User Login Page:819 - Changed First Product Code is displayed as expected as 0730
+2021-01-29 19:08:05,353  INFO [main] User Login Page:70 - product code entered with value - 730
+2021-01-29 19:08:05,419  INFO [main] User Login Page:242 -  get attribute value is  - 730
+2021-01-29 19:08:05,420  INFO [main] User Login Page:837 - Changed Second Product Code is displayed as expected as 730
+2021-01-29 19:08:05,993  INFO [main] User Login Page:88 - Submit clicked 
+2021-01-29 19:08:13,952  INFO [main] User Login Page:88 - Close success message clicked 
+2021-01-29 19:08:16,771  INFO [main] User Login Page:877 - Imported Product type is displayed on Product Listing Page
+2021-02-01 10:25:20,913  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-01 10:25:21,482  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-01 10:25:21,818  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-01 10:25:21,870  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-01 10:25:21,933  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-01 11:12:29,736  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-01 11:12:30,124  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-01 11:12:30,452  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-01 11:12:30,504  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-01 11:12:30,556  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-01 11:12:41,695  INFO [main] User Login Page:88 - Login clicked 
+2021-02-01 11:12:42,146  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-01 11:12:43,138  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-01 11:12:55,517  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-01 11:12:56,360  INFO [main] User Login Page:88 - CheckBox clicked 
+2021-02-01 11:12:56,793  INFO [main] User Login Page:88 - Active button clicked 
+2021-02-01 11:12:57,634  INFO [main] User Login Page:88 - OK clicked 
+2021-02-01 11:12:58,760  INFO [main] User Login Page:88 - Close success message clicked 
+2021-02-01 11:13:00,797  INFO [main] User Login Page:113 - Status selected with value - 1
+2021-02-01 11:13:01,169  INFO [main] User Login Page:88 - OK clicked 
+2021-02-01 11:13:02,200  INFO [main] User Login Page:88 - Close success message clicked 
+2021-02-01 11:13:07,481  INFO [main] User Login Page:1077 - The status for the single record is changed as expected when change from the dropdown along with the record
+2021-02-01 11:13:07,965  INFO [main] User Login Page:88 - Select All Check Box clicked 
+2021-02-01 11:13:08,292  INFO [main] User Login Page:88 - Inactive button clicked 
+2021-02-01 11:13:09,139  INFO [main] User Login Page:88 - OK clicked 
+2021-02-01 11:13:10,211  INFO [main] User Login Page:88 - Close success message clicked 
+2021-02-01 11:13:12,965  INFO [main] User Login Page:238 - Status is changed to Inactive for all the records
+2021-02-01 11:13:13,443  INFO [main] User Login Page:88 - Select All Check Box clicked 
+2021-02-01 11:13:13,783  INFO [main] User Login Page:88 - Active button clicked 
+2021-02-01 11:13:14,629  INFO [main] User Login Page:88 - OK clicked 
+2021-02-01 11:13:15,693  INFO [main] User Login Page:88 - Close success message clicked 
+2021-02-01 11:13:18,948  INFO [main] User Login Page:211 - Status is changed to Active for all the records
+2021-02-01 11:13:21,545  INFO [main] User Login Page:227 -  Text displayed is  - ABD20210129190730
+2021-02-01 11:13:22,041  INFO [main] User Login Page:227 -  Text displayed is  - AB20210129190730
+2021-02-01 11:13:22,109  INFO [main] User Login Page:166 - Delete button is active after selecting the checkbox
+2021-02-01 11:13:22,783  INFO [main] User Login Page:88 - Delete clicked 
+2021-02-01 11:13:23,644  INFO [main] User Login Page:88 - OK clicked 
+2021-02-01 11:13:25,235  INFO [main] User Login Page:88 - Close success message clicked 
+2021-02-01 11:13:27,532  INFO [main] User Login Page:290 - Deleted Product - ABD20210129190730 is not displayed in the list as expected
+2021-02-01 11:13:29,713  INFO [main] User Login Page:290 - Deleted Product - AB20210129190730 is not displayed in the list as expected
+2021-02-01 11:26:58,124  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-01 11:26:58,534  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-01 11:26:58,899  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-01 11:26:58,961  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-01 11:26:58,998  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-01 11:27:08,422  INFO [main] User Login Page:88 - Login clicked 
+2021-02-01 11:27:08,919  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-01 11:27:09,859  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-01 11:27:12,976  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-02-01 11:27:18,374  INFO [main] User Login Page:88 - Depreciation menu clicked 
+2021-02-01 11:27:18,422  INFO [main] User Login Page:901 - Depreciation page is displayed as expected when click on the "Depreciation Menu"
+2021-02-01 11:27:18,446  INFO [main] User Login Page:913 - BreadCrumb is displayed in the depreciation list page
+2021-02-01 11:27:41,253  INFO [main] User Login Page:88 - BreadCrumb Home clicked 
+2021-02-01 11:27:41,298  INFO [main] User Login Page:918 - Home page is displayed as expected when click "Home" in the breadcrumb
+2021-02-01 11:27:41,677  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-01 11:27:42,066  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-01 11:27:45,474  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-02-01 11:27:49,271  INFO [main] User Login Page:88 - Depreciation menu clicked 
+2021-02-01 11:27:50,106  INFO [main] User Login Page:88 - Date Field clicked 
+2021-02-01 11:27:50,450  INFO [main] User Login Page:88 - Month switch clicked 
+2021-02-01 11:27:50,722  INFO [main] User Login Page:88 - Year switch clicked 
+2021-02-01 11:27:51,064  INFO [main] User Login Page:88 - Year Value clicked 
+2021-02-01 11:27:51,538  INFO [main] User Login Page:88 - Month Value clicked 
+2021-02-01 11:27:51,976  INFO [main] User Login Page:88 - Day Value clicked 
+2021-02-01 11:27:52,007  INFO [main] User Login Page:242 -  get attribute value is  - 2/1/2022
+2021-02-01 11:27:52,007  INFO [main] User Login Page:960 - User not able to select date from the calendar
+2021-02-01 11:27:52,831  INFO [main] User Login Page:88 - Search Button clicked 
+2021-02-01 11:28:03,661  INFO [main] User Login Page:242 -  get attribute value is  - 2/1/2022
+2021-02-01 11:28:28,074  INFO [main] User Login Page:227 -  Text displayed is  - During the Month February-2022
+2021-02-01 11:28:42,905  INFO [main] User Login Page:977 - The depreciation list provide the accurate result based on the selected date when click search button
+2021-02-01 11:28:48,232  INFO [main] User Login Page:88 - Reset Date Search clicked 
+2021-02-01 11:28:57,842  INFO [main] User Login Page:242 -  get attribute value is  - 
+2021-02-01 11:28:57,843  INFO [main] User Login Page:993 - Selected date is cleared as expected when click reset button

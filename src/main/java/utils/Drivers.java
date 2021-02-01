@@ -1,19 +1,13 @@
 package utils;
 
-import com.browserstack.local.Local;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -41,7 +35,6 @@ public class Drivers {
         } else if (browser.equals("chrome")) {
 
             String downloadFilepath = System.getProperty("user.dir") + "\\src\\main\\resources\\downloadedFiles\\";
-            String chromeDownloadDir = System.getProperty("user.dir") + "\\chromedriver.exe";
 
             HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
             chromePrefs.put("profile.default_content_settings.popups", 0);
@@ -54,12 +47,9 @@ public class Drivers {
             options.setExperimentalOption("prefs", chromePrefs);
             options.addArguments("--disable-extensions");
 
-
-            System.setProperty("webdriver.chrome.driver", chromeDownloadDir);
             driver = new ChromeDriver(options);
             driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         }
-
         return driver;
     }
 
