@@ -613,7 +613,7 @@ public class ProductListingPage extends WebBasePage {
 
     public void clickSearchButton() {
         click(By.cssSelector("#Go"), "Search Button", 20);
-        waitForLoad(3000);
+        waitForLoad(30);
     }
 
     public void clickResetButton() {
@@ -655,6 +655,7 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void verifySearchedProductName() {
+        waitForLoad(20);
         String searchedProductName = getText(By.xpath("//table[@id='tablelistingdata']//tbody//tr//td[5]//span"), 30).trim();
         if (productNameToSearch.equals(searchedProductName)) {
             getTest().log(LogStatus.PASS, "Searched Product is displayed as expected when search with product name / code");
@@ -773,7 +774,7 @@ public class ProductListingPage extends WebBasePage {
 
     public void clickMoreIcon() {
         waitForLoad(5000);
-        click(By.xpath("//div[@class='chat_popup']//i[contains(@class,'arrow-rotate')]"),"Chat Popup Close",30);
+        waitForElementInVisibility(By.xpath("//div[@class='chat_popup']//i[contains(@class,'arrow-rotate')]"),180);
         click(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//span[@class='actions mobileaction']"), "More Icon", 60);
     }
 
@@ -932,9 +933,11 @@ public class ProductListingPage extends WebBasePage {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
         DateTimeFormatter monthName = DateTimeFormatter.ofPattern("MM");
         DateTimeFormatter monthDigit = DateTimeFormatter.ofPattern("M");
+        DateTimeFormatter dayDigit = DateTimeFormatter.ofPattern("d");
         LocalDateTime now = LocalDateTime.now();
         String monthChar = monthName.format(now);
         String monthInDigit = monthDigit.format(now);
+        String dayInDigit = dayDigit.format(now);
         String[] inputDateArray = dtf.format(now.plusYears(1)).split("/");
         String day = inputDateArray[0];
         String month = inputDateArray[1];
@@ -946,11 +949,12 @@ public class ProductListingPage extends WebBasePage {
         click(By.xpath("//span[contains(@class,'year') and text()='" + year + "']"), "Year Value", 15);
         click(By.xpath("//span[contains(@class,'month') and text()='" + month + "']"), "Month Value", 15);
         click(By.xpath("//td[@data-day='" + monthChar + "/" + day + "/" + year + "']"), "Day Value", 20);
-        return monthInDigit + "/" + day + "/" + year;
+        return monthInDigit + "/" + dayInDigit + "/" + year;
     }
 
     public void verifySelectedDate() {
         String expectedDate = selectDepreciationDate();
+        waitForLoader(20);
         String actualDate = getAtribute(By.cssSelector("input#depreciationDate"), "value", 30);
         if (actualDate.equals(expectedDate)) {
             getTest().log(LogStatus.PASS, "User can able to select date from the calendar");
@@ -963,6 +967,7 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void verifySearchedDepreciationList() {
+        waitForLoad(20);
         String[] selectedDate = getAtribute(By.cssSelector("input#depreciationDate"), "value", 30).split("/");
         String expectedYear = selectedDate[2];
         int expectedMonthNum = Integer.parseInt(selectedDate[0]);
@@ -1151,9 +1156,11 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void storeDuplicatePCode() {
+        String productType = getText(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//td[3]//span"), 30);
         String productCode = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[2]/td[4]//span"), 30);
         int endIndex = productCode.length();
         int startIndex = endIndex - 6;
+        duplicateProductType = productType;
         duplicateProductCode = productCode.substring(startIndex, endIndex);
     }
 
@@ -1184,7 +1191,7 @@ public class ProductListingPage extends WebBasePage {
     public void selectProductType() {
         int rowCount = findMultipleElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr//td[1]//select"), 30).size();
         for (int i = 1; i <= rowCount; i++) {
-            selectValueWithIndex(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr[" + i + "]//td[1]//select"), 1, "Imported Product Type", 20);
+            selectValueWithText(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr[" + i + "]//td[1]//select"), duplicateProductType, "Imported Product Type", 20);
             Select select = new Select(driver.findElement(By.xpath("//table[contains(@class,'table-bordered')]//tbody//tr[" + i + "]//td[1]//select")));
             WebElement option = select.getFirstSelectedOption();
             String defaultItem = option.getText();
@@ -1229,8 +1236,11 @@ public class ProductListingPage extends WebBasePage {
             String productCode = getText(By.xpath("//table[@id='tablelistingdata']/tbody/tr[" + i + "]/td[4]//span"), 30);
             int endIndex = productCode.length();
             int startIndex = endIndex - 6;
-            int actualProductCode = Integer.parseInt(productCode.substring(startIndex, endIndex));
-            int expectedProductCode = Integer.parseInt(duplicateProductCode) + j;
+            String actualPCode=productCode.substring(startIndex, endIndex);
+            actualPCode = actualPCode.replaceAll("[^\\d]", "");
+            int actualProductCode = Integer.parseInt(actualPCode);
+            String expectedPCode = duplicateProductCode.replaceAll("[^\\d]", "");
+            int expectedProductCode = Integer.parseInt(expectedPCode) + j;
             if (actualProductCode == expectedProductCode) {
                 getTest().log(LogStatus.PASS, "Imported product is added to the list with unique product code as expected");
                 logger.info("Imported product is added to the list with unique product code as expected");

@@ -15,6 +15,7 @@ public class StaticData {
     public static String productNameToSearch;
     public static String productStatusToSearch;
     public static String duplicateProductCode;
+    public static String duplicateProductType;
     public static String productTypeForContainer;
     public static String productLocationForContainer;
     public static String productTitleName;

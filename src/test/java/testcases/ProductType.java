@@ -89,7 +89,7 @@ public class ProductType extends WebTestBase
     @Test(priority = 9)
     public void verifyImportProductTypePageAfterClickingCancel()
     {
-        test = getTest("TC_Asset Management_Product_type_//165_166");
+        test = getTest("TC_Asset Management_Product_type_165_166");
         ProductTypeAction productTypeAction=new ProductTypeAction(driver);
         new LoginAction(driver).logoutLogin();
         productTypeAction.goToTheProductTypePage();

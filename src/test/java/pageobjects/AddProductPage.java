@@ -246,7 +246,8 @@ public class AddProductPage extends WebBasePage {
     public void clickNextButton() {
         click(By.cssSelector("a#btnNext"), "Next button", 10);
         waitForVisibilityOfElement(By.xpath("//div[@aria-labelledby='DeployProduct-tab']//section[@class='page-action']//span"), 30);
-        String deployTab = getText(By.xpath("//div[@aria-labelledby='DeployProduct-tab']//section[@class='page-action']//span"), 10);
+        waitForLoader(60);
+        String deployTab = getText(By.xpath("//div[@aria-labelledby='DeployProduct-tab']//section[@class='page-action']//span"), 60);
         String deployProduct = prop.getProperty("deployTab");
         if (deployProduct.equals(deployTab)) {
             getTest().log(LogStatus.PASS, "Deploy Product Tab page is displayed successfully ");

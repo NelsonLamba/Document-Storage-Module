@@ -329,10 +329,8 @@ public class ProductTransferPage extends WebBasePage {
     public void createNewProduct() {
         AddProductPage addProductPage = new AddProductPage(driver);
         DeployProductPage deployProductPage = new DeployProductPage(driver);
-        ProductTypePage productTypePage = new ProductTypePage(driver);
         addProductPage.clickAddNewButton();
         addProductPage.selectProductType();
-        productTypePage.handelSuccessPopup();
         Select select = new Select(driver.findElement(By.cssSelector("div>select#AssetTypeId")));
         WebElement option = select.getFirstSelectedOption();
         prodType = option.getText();
@@ -365,10 +363,8 @@ public class ProductTransferPage extends WebBasePage {
     public void createNewProductWithoutUniqueName() {
         AddProductPage addProductPage = new AddProductPage(driver);
         DeployProductPage deployProductPage = new DeployProductPage(driver);
-        ProductTypePage productTypePage = new ProductTypePage(driver);
         addProductPage.clickAddNewButton();
         addProductPage.selectProductType();
-        productTypePage.handelSuccessPopup();
         Select select = new Select(driver.findElement(By.cssSelector("div>select#AssetTypeId")));
         WebElement option = select.getFirstSelectedOption();
         prodType = option.getText();
@@ -399,6 +395,7 @@ public class ProductTransferPage extends WebBasePage {
 
     public void clickSearchButton() {
         click(By.cssSelector("a#Searchassest"), "Search", 30);
+        waitForLoad(20);
     }
 
     public void clickResetButton() {
@@ -781,6 +778,7 @@ public class ProductTransferPage extends WebBasePage {
 
     public void clickSearch() {
         click(By.cssSelector("a#Go"), "Search", 30);
+        waitForLoad(20);
     }
 
     public void verifyRequestIsCreated() {
@@ -839,7 +837,6 @@ public class ProductTransferPage extends WebBasePage {
     }
 
     public void goToDeployPage() {
-        AddProductPage addProductPage = new AddProductPage(driver);
         click(By.cssSelector("a#btnNext"), "Next button", 10);
         WebElement ele = findElementVisibility(By.xpath("//div[@role='alert']"), 20);
         if (ele != null) {
@@ -850,9 +847,6 @@ public class ProductTransferPage extends WebBasePage {
             click(By.xpath("//div[@id='juda-menu']//a[normalize-space(text())='Manage Product']"), "Manage product", 20);
             openProductCreatedProduct();
             click(By.cssSelector("a#btnNext"), "Next", 20);
-        } else {
-
-            addProductPage.clickNextButton();
         }
     }
 

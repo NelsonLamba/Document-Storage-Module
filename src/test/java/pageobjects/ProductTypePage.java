@@ -265,10 +265,11 @@ public class ProductTypePage extends WebBasePage {
     }
 
     public void handelSuccessPopup() {
-        waitForVisibilityOfElement(By.xpath("//div[@id='notifymessage']//div[@role='alert']"), 60);
-        WebElement element = findElementVisibility(By.xpath("//div[@id='notifymessage']//div[@role='alert']"), 20);
+        waitForLoader(20);
+        findElementVisibility(By.xpath("//div[@id='notifymessage']//div[@role='alert']"), 80);
+        WebElement element = findElementClickable(By.xpath("//div[@id='notifymessage']//div[@role='alert']"), 40);
         if (element != null) {
-            click(By.cssSelector("button#closenotifymessage"), "Close success message", 20);
+            click(By.cssSelector("button#closenotifymessage"), "Close success message", 40);
             waitForLoader(20);
         }
     }
@@ -1036,7 +1037,8 @@ public class ProductTypePage extends WebBasePage {
     }
 
     public void changeStatusForSingleRecord() {
-        Select select = new Select(driver.findElement(By.xpath("//table[@id='tblAsset']/tbody/tr[1]/td[7]//select")));
+        WebElement status=findElementPresence(By.xpath("//table[@id='tblAsset']/tbody/tr[1]/td[7]//select"),40);
+        Select select = new Select(status);
         WebElement option = select.getFirstSelectedOption();
         statusOfRecord = option.getText();
         if (statusOfRecord.equals("Inactive")) {
@@ -1058,9 +1060,10 @@ public class ProductTypePage extends WebBasePage {
     }
 
     public void statusChangeConfirmationPopup() {
-        WebElement statusChangeConfirmation=findElementVisibility(By.xpath("//div[text()='Are you sure to update this record?']"),60);
+        WebElement statusChangeConfirmation=findElementClickable(By.xpath("//div[text()='Are you sure to update this record?']/parent::div/parent::div//div/button[@data-original-title='OK']"),60);
         if (statusChangeConfirmation!=null) {
             click(By.xpath("//button[text()=' OK']"), "OK", 20);
+           waitForLoader(20);
         } else {
             getTest().log(LogStatus.FAIL, "Confirmation for status change is not displayed");
             logger.info("Confirmation for status change is not displayed");
