@@ -39872,3 +39872,273 @@ Session ID: 75a004c5f4246e2e49076fa74143fbb1
 2021-02-04 17:53:40,222  INFO [main] User Login Page:88 - Close success message clicked 
 2021-02-04 17:53:42,512  INFO [main] User Login Page:291 - Deleted Product - Temp1 is not displayed in the list as expected
 2021-02-04 17:53:44,690  INFO [main] User Login Page:291 - Deleted Product - AB20210204140116 is not displayed in the list as expected
+2021-02-05 10:37:31,191  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-05 10:37:31,549  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-05 10:37:31,839  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-05 10:37:31,891  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-05 10:37:31,929  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-05 10:37:34,682  INFO [main] User Login Page:88 - Login clicked 
+2021-02-05 10:37:47,455  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 10:37:50,575  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 10:38:00,049  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 10:38:05,861  INFO [main] User Login Page:88 - Product Type Name clicked 
+2021-02-05 10:38:05,904  INFO [main] User Login Page:242 -  get attribute value is  - AB20210204140116
+2021-02-05 10:38:08,420  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 10:38:08,771  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 10:38:13,116  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 10:38:13,512  INFO [main] Add product Page:129 - Page Size selected with value - 100
+2021-02-05 10:38:29,001  INFO [main] Add product Page:88 - Ful Menu clicked 
+2021-02-05 10:38:33,093  INFO [main] Add product Page:88 - Asset Management clicked 
+2021-02-05 10:38:39,700  INFO [main] Add product Page:88 - Manage Product clicked 
+2021-02-05 10:38:50,091  INFO [main] Add product Page:88 - Add New clicked 
+2021-02-05 10:38:50,633  INFO [main] Add product Page:146 - Product Type selected with value - AB20210204140116
+2021-02-05 10:38:51,788  INFO [main] Add product Page:70 - Product Name entered with value - IAT20210205103730
+2021-02-05 10:38:51,819  INFO [main] Add product Page:242 -  get attribute value is  - IAT20210205103730
+2021-02-05 10:38:52,111  INFO [main] Add product Page:113 - Barcode type selected with value - 1
+2021-02-05 10:38:54,284  INFO [main] Add product Page:212 - unique name click by JS
+2021-02-05 10:38:56,018  INFO [main] Add product Page:88 - Next button clicked 
+2021-02-05 10:38:57,017  INFO [main] Add product Page:227 -  Text displayed is  - Deploy Product
+2021-02-05 10:38:57,018  INFO [main] Add product Page:254 - Deploy Product Tab page is displayed successfully
+2021-02-05 10:39:00,553  INFO [main] Add product Page:88 - Add Deploy clicked 
+2021-02-05 10:39:02,102  INFO [main] Add product Page:401 - Location Dropdown clicked 
+2021-02-05 10:39:02,351  INFO [main] Add product Page:227 -  Text displayed is  - Locaiton10
+2021-02-05 10:39:02,719  INFO [main] Add product Page:70 - Quantity entered with value - 10
+2021-02-05 10:39:03,105  INFO [main] Add product Page:70 - Unit Price entered with value - 1
+2021-02-05 10:39:03,455  INFO [main] Add product Page:70 - AssetCost entered with value - 1
+2021-02-05 10:39:03,897  INFO [main] Add product Page:88 - Add to List clicked 
+2021-02-05 10:39:04,341  INFO [main] Add product Page:88 - Save clicked 
+2021-02-05 10:39:05,350  INFO [main] Add product Page:88 - Close Popup clicked 
+2021-02-05 10:39:05,931  INFO [main] Add product Page:88 - Next Button clicked 
+2021-02-05 10:39:08,593  INFO [main] Add product Page:88 - Full Menu clicked 
+2021-02-05 10:39:08,971  INFO [main] Add product Page:88 - Asset Management clicked 
+2021-02-05 10:39:15,034  INFO [main] Add product Page:88 - Prod Container Sub menu clicked 
+2021-02-05 10:39:16,310  INFO [main] Add product Page:91 - Add Container icon not clicked
+2021-02-05 10:39:17,087  INFO [main] ProductContainerTest-compartmentVerification:78 - Method - compartmentVerification failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\compartmentVerification_20210205103916.png
+2021-02-05 10:40:59,005  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-05 10:40:59,402  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-05 10:40:59,741  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-05 10:40:59,796  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-05 10:40:59,834  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-05 10:41:03,592  INFO [main] User Login Page:88 - Login clicked 
+2021-02-05 10:41:16,197  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 10:41:21,935  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 10:41:37,380  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 10:41:49,390  INFO [main] User Login Page:88 - Product Type Name clicked 
+2021-02-05 10:41:49,438  INFO [main] User Login Page:242 -  get attribute value is  - AB20210204140116
+2021-02-05 10:41:51,943  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 10:41:52,285  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 10:41:57,733  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 10:41:58,127  INFO [main] Add product Page:129 - Page Size selected with value - 100
+2021-02-05 10:42:15,239  INFO [main] Add product Page:88 - Ful Menu clicked 
+2021-02-05 10:42:23,076  INFO [main] Add product Page:88 - Asset Management clicked 
+2021-02-05 10:42:30,740  INFO [main] Add product Page:88 - Manage Product clicked 
+2021-02-05 10:42:35,354  INFO [main] Add product Page:88 - Add New clicked 
+2021-02-05 10:42:35,862  INFO [main] Add product Page:146 - Product Type selected with value - AB20210204140116
+2021-02-05 10:42:37,000  INFO [main] Add product Page:70 - Product Name entered with value - IAT20210205104058
+2021-02-05 10:42:37,032  INFO [main] Add product Page:242 -  get attribute value is  - IAT20210205104058
+2021-02-05 10:42:37,285  INFO [main] Add product Page:113 - Barcode type selected with value - 1
+2021-02-05 10:42:39,476  INFO [main] Add product Page:212 - unique name click by JS
+2021-02-05 10:42:40,711  INFO [main] Add product Page:88 - Next button clicked 
+2021-02-05 10:42:41,670  INFO [main] Add product Page:227 -  Text displayed is  - Deploy Product
+2021-02-05 10:42:41,671  INFO [main] Add product Page:254 - Deploy Product Tab page is displayed successfully
+2021-02-05 10:42:45,312  INFO [main] Add product Page:88 - Add Deploy clicked 
+2021-02-05 10:42:46,550  INFO [main] Add product Page:401 - Location Dropdown clicked 
+2021-02-05 10:42:46,820  INFO [main] Add product Page:227 -  Text displayed is  - Locaiton10
+2021-02-05 10:42:47,177  INFO [main] Add product Page:70 - Quantity entered with value - 10
+2021-02-05 10:42:47,547  INFO [main] Add product Page:70 - Unit Price entered with value - 1
+2021-02-05 10:42:47,860  INFO [main] Add product Page:70 - AssetCost entered with value - 1
+2021-02-05 10:42:48,305  INFO [main] Add product Page:88 - Add to List clicked 
+2021-02-05 10:42:48,749  INFO [main] Add product Page:88 - Save clicked 
+2021-02-05 10:42:49,623  INFO [main] Add product Page:88 - Close Popup clicked 
+2021-02-05 10:42:50,240  INFO [main] Add product Page:88 - Next Button clicked 
+2021-02-05 10:43:04,985  INFO [main] Add product Page:88 - Full Menu clicked 
+2021-02-05 10:43:06,682  INFO [main] Add product Page:88 - Asset Management clicked 
+2021-02-05 10:43:17,027  INFO [main] Add product Page:88 - Prod Container Sub menu clicked 
+2021-02-05 15:43:17,531  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-05 15:43:17,902  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-05 15:43:18,263  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-05 15:43:18,325  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-05 15:43:18,360  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-05 15:43:24,310  INFO [main] User Login Page:88 - Login clicked 
+2021-02-05 15:43:38,032  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 15:43:39,613  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 15:43:55,360  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 15:43:55,671  INFO [main] User Login Page:129 - Page Size selected with value - 100
+2021-02-05 15:44:12,496  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 15:44:16,624  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 15:44:23,393  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-02-05 15:44:28,763  INFO [main] User Login Page:88 - Add New clicked 
+2021-02-05 15:44:29,341  INFO [main] User Login Page:146 - Product Type selected with value - AB20210204140116
+2021-02-05 15:44:30,541  INFO [main] User Login Page:70 - Product Name entered with value - IAT20210205154316
+2021-02-05 15:44:30,573  INFO [main] User Login Page:242 -  get attribute value is  - IAT20210205154316
+2021-02-05 15:44:30,830  INFO [main] User Login Page:113 - Barcode type selected with value - 1
+2021-02-05 15:44:33,011  INFO [main] User Login Page:212 - unique name click by JS
+2021-02-05 15:44:34,750  INFO [main] User Login Page:88 - Next button clicked 
+2021-02-05 15:44:35,765  INFO [main] User Login Page:227 -  Text displayed is  - Deploy Product
+2021-02-05 15:44:35,766  INFO [main] User Login Page:295 - Deploy Product Tab page is displayed successfully
+2021-02-05 15:44:39,422  INFO [main] User Login Page:88 - Add Deploy clicked 
+2021-02-05 15:44:40,964  INFO [main] User Login Page:401 - Location Dropdown clicked 
+2021-02-05 15:44:41,203  INFO [main] User Login Page:227 -  Text displayed is  - Locaiton10
+2021-02-05 15:44:41,590  INFO [main] User Login Page:70 - Quantity entered with value - 10
+2021-02-05 15:44:42,017  INFO [main] User Login Page:70 - Unit Price entered with value - 1
+2021-02-05 15:44:42,383  INFO [main] User Login Page:70 - AssetCost entered with value - 1
+2021-02-05 15:44:42,832  INFO [main] User Login Page:88 - Add to List clicked 
+2021-02-05 15:44:43,288  INFO [main] User Login Page:88 - Save clicked 
+2021-02-05 15:44:44,285  INFO [main] User Login Page:88 - Close Popup clicked 
+2021-02-05 15:44:44,901  INFO [main] User Login Page:88 - Next Button clicked 
+2021-02-05 15:44:47,576  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-02-05 15:44:47,984  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 15:44:55,010  INFO [main] User Login Page:88 - Prod Container Sub menu clicked 
+2021-02-05 15:44:56,409  INFO [main] User Login Page:91 - Add Container icon not clicked
+2021-02-05 15:44:57,170  INFO [main] ProductContainerTest-productInContainerDD:78 - Method - productInContainerDD failed , see the screenshot - G:\Taleygen\Client\TalygenAutomationTesting\reports\productInContainerDD_20210205154456.png
+2021-02-05 15:45:45,580  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-05 15:45:46,000  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-05 15:45:46,343  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-05 15:45:46,398  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-05 15:45:46,435  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-05 15:45:58,824  INFO [main] User Login Page:88 - Login clicked 
+2021-02-05 15:45:59,259  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 15:46:01,157  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 15:46:09,532  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 15:46:09,838  INFO [main] User Login Page:129 - Page Size selected with value - 100
+2021-02-05 15:46:24,360  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 15:46:35,227  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 15:46:39,586  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-02-05 15:46:47,458  INFO [main] User Login Page:88 - Add New clicked 
+2021-02-05 15:46:47,972  INFO [main] User Login Page:146 - Product Type selected with value - AB20210204140116
+2021-02-05 15:46:49,149  INFO [main] User Login Page:70 - Product Name entered with value - IAT20210205154545
+2021-02-05 15:46:49,176  INFO [main] User Login Page:242 -  get attribute value is  - IAT20210205154545
+2021-02-05 15:46:49,445  INFO [main] User Login Page:113 - Barcode type selected with value - 1
+2021-02-05 15:46:51,636  INFO [main] User Login Page:212 - unique name click by JS
+2021-02-05 15:46:52,938  INFO [main] User Login Page:88 - Next button clicked 
+2021-02-05 15:46:53,941  INFO [main] User Login Page:227 -  Text displayed is  - Deploy Product
+2021-02-05 15:46:53,941  INFO [main] User Login Page:295 - Deploy Product Tab page is displayed successfully
+2021-02-05 15:46:57,614  INFO [main] User Login Page:88 - Add Deploy clicked 
+2021-02-05 15:46:58,862  INFO [main] User Login Page:401 - Location Dropdown clicked 
+2021-02-05 15:46:59,108  INFO [main] User Login Page:227 -  Text displayed is  - Locaiton10
+2021-02-05 15:46:59,494  INFO [main] User Login Page:70 - Quantity entered with value - 10
+2021-02-05 15:46:59,892  INFO [main] User Login Page:70 - Unit Price entered with value - 1
+2021-02-05 15:47:00,365  INFO [main] User Login Page:70 - AssetCost entered with value - 1
+2021-02-05 15:47:00,805  INFO [main] User Login Page:88 - Add to List clicked 
+2021-02-05 15:47:01,242  INFO [main] User Login Page:88 - Save clicked 
+2021-02-05 15:47:02,105  INFO [main] User Login Page:88 - Close Popup clicked 
+2021-02-05 15:47:02,771  INFO [main] User Login Page:88 - Next Button clicked 
+2021-02-05 15:47:05,518  INFO [main] User Login Page:88 - Full Menu clicked 
+2021-02-05 15:47:05,846  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 15:47:11,269  INFO [main] User Login Page:88 - Prod Container Sub menu clicked 
+2021-02-05 15:47:21,051  INFO [main] User Login Page:88 - Add Container icon clicked 
+2021-02-05 15:54:23,731  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-05 15:54:24,116  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-05 15:54:24,454  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-05 15:54:24,518  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-05 15:54:24,562  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-05 15:54:35,017  INFO [main] User Login Page:88 - Login clicked 
+2021-02-05 15:54:35,496  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 15:54:39,889  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 15:54:53,310  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 15:54:53,620  INFO [main] User Login Page:129 - Page Size selected with value - 100
+2021-02-05 15:55:09,979  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 15:55:10,352  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 15:55:17,749  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-02-05 15:55:47,014  INFO [main] User Login Page:88 - Add New clicked 
+2021-02-05 15:55:59,684  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 15:56:03,446  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 15:56:21,674  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 15:56:43,369  INFO [main] User Login Page:88 - Product Type clicked 
+2021-02-05 15:58:12,454  INFO [main] User Login Page:318 - ProductPage is not displayed
+2021-02-05 15:58:54,299  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 15:58:55,969  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 15:59:07,332  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-02-05 15:59:29,490  INFO [main] User Login Page:88 - Add New clicked 
+2021-02-05 15:59:44,702  INFO [main] User Login Page:146 - Product Type selected with value - AB20210204140116
+2021-02-05 15:59:58,305  INFO [main] User Login Page:88 - Terms and Condition close clicked 
+2021-02-05 16:05:56,862  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-05 16:05:57,256  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-05 16:05:57,598  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-05 16:05:57,669  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-05 16:05:57,709  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-05 16:06:30,269  INFO [main] User Login Page:88 - Login clicked 
+2021-02-05 16:06:30,675  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 16:06:35,539  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 16:06:49,493  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-02-05 16:06:51,583  INFO [main] User Login Page:56 - The expected header name "Image" is displayed in the table
+2021-02-05 16:06:51,595  INFO [main] User Login Page:56 - The expected header name "Product Type Name" is displayed in the table
+2021-02-05 16:06:51,605  INFO [main] User Login Page:56 - The expected header name "Product Code" is displayed in the table
+2021-02-05 16:06:51,616  INFO [main] User Login Page:56 - The expected header name "Product Name" is displayed in the table
+2021-02-05 16:06:51,626  INFO [main] User Login Page:56 - The expected header name "Status" is displayed in the table
+2021-02-05 16:06:51,637  INFO [main] User Login Page:56 - The expected header name "Total Number of Quantity" is displayed in the table
+2021-02-05 16:06:51,647  INFO [main] User Login Page:56 - The expected header name "Available Quantity" is displayed in the table
+2021-02-05 16:06:51,658  INFO [main] User Login Page:56 - The expected header name "Actions" is displayed in the table
+2021-02-05 16:06:59,693  INFO [main] Company setup page:88 - Add New clicked 
+2021-02-05 16:07:27,066  INFO [main] Company setup page:227 -  Text displayed is  - AB20210120190424
+2021-02-05 16:07:31,433  INFO [main] Company setup page:88 - Ful Menu clicked 
+2021-02-05 16:07:33,307  INFO [main] Company setup page:88 - Asset Management clicked 
+2021-02-05 16:07:56,894  INFO [main] Company setup page:88 - Product type clicked 
+2021-02-05 16:07:58,154  INFO [main] Company setup page:129 - Page Size selected with value - 100
+2021-02-05 16:08:32,540  INFO [main] Company setup page:88 - Product Type clicked 
+2021-02-05 16:08:46,612  INFO [main] Company setup page:88 - Ful Menu clicked 
+2021-02-05 16:08:48,718  INFO [main] Company setup page:88 - Asset Management clicked 
+2021-02-05 16:08:58,324  INFO [main] Company setup page:88 - Manage Product clicked 
+2021-02-05 16:18:50,281  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-05 16:18:50,631  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-05 16:18:50,935  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-05 16:18:51,001  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-05 16:18:51,045  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-05 16:19:02,546  INFO [main] User Login Page:88 - Login clicked 
+2021-02-05 16:19:03,148  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 16:19:08,047  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 16:19:22,621  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 16:19:22,920  INFO [main] User Login Page:129 - Page Size selected with value - 100
+2021-02-05 16:19:37,451  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 16:19:37,769  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 16:19:40,830  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-02-05 16:19:49,465  INFO [main] User Login Page:88 - Add New clicked 
+2021-02-05 16:19:59,081  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 16:20:01,303  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 16:20:09,385  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 16:20:22,231  INFO [main] User Login Page:129 - Page Size selected with value - 100
+2021-02-05 16:20:34,136  INFO [main] User Login Page:91 - Product Type not clicked
+2021-02-05 16:21:47,770  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-05 16:21:48,150  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-05 16:21:48,497  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-05 16:21:48,572  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-05 16:21:48,613  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-05 16:21:58,152  INFO [main] User Login Page:88 - Login clicked 
+2021-02-05 16:21:58,602  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 16:22:01,751  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 16:22:12,253  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 16:22:12,568  INFO [main] User Login Page:129 - Page Size selected with value - 100
+2021-02-05 16:22:27,320  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 16:22:27,673  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 16:22:37,448  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-02-05 16:22:42,003  INFO [main] User Login Page:88 - Add New clicked 
+2021-02-05 16:22:50,984  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 16:22:53,410  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 16:22:59,669  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 16:23:04,279  INFO [main] User Login Page:129 - Page Size selected with value - 100
+2021-02-05 16:23:12,743  INFO [main] User Login Page:189 - Scroll to this element - Product Type
+2021-02-05 16:23:22,682  INFO [main] User Login Page:91 - Product Type not clicked
+2021-02-05 16:24:21,376  INFO [main] User Login Page:70 - User Name entered with value - safiya@yopmail.com
+2021-02-05 16:24:21,760  INFO [main] User Login Page:70 - Password entered with value - talygen@123
+2021-02-05 16:24:22,064  INFO [main] User Login Page:88 - Privacy Policy clicked 
+2021-02-05 16:24:22,106  INFO [main] User Login Page:242 -  get attribute value is  - safiya@yopmail.com
+2021-02-05 16:24:22,146  INFO [main] User Login Page:242 -  get attribute value is  - talygen@123
+2021-02-05 16:24:29,912  INFO [main] User Login Page:88 - Login clicked 
+2021-02-05 16:24:30,377  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 16:24:31,198  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 16:24:42,385  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 16:24:42,692  INFO [main] User Login Page:129 - Page Size selected with value - 100
+2021-02-05 16:24:58,220  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 16:25:00,879  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 16:25:05,881  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-02-05 16:25:09,166  INFO [main] User Login Page:88 - Add New clicked 
+2021-02-05 16:25:16,896  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 16:25:18,992  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 16:25:24,422  INFO [main] User Login Page:88 - Product type clicked 
+2021-02-05 16:25:25,952  INFO [main] User Login Page:129 - Page Size selected with value - 100
+2021-02-05 16:25:45,378  INFO [main] User Login Page:88 - Product Type clicked 
+2021-02-05 16:26:37,556  INFO [main] User Login Page:88 - Ful Menu clicked 
+2021-02-05 16:26:39,553  INFO [main] User Login Page:88 - Asset Management clicked 
+2021-02-05 16:26:48,876  INFO [main] User Login Page:88 - Manage Product clicked 
+2021-02-05 16:26:52,211  INFO [main] User Login Page:88 - Add New clicked 
+2021-02-05 16:27:05,830  INFO [main] User Login Page:146 - Product Type selected with value - AB20210204140116

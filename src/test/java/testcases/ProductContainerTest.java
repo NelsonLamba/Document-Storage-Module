@@ -53,7 +53,7 @@ public class ProductContainerTest extends WebTestBase {
 
     @Test
     public void statusDeleteEditPage() {
-        test = getTest("TC_Asset Management_ProductContainerTest_259_260_261_262_258");
+        test = getTest("TC_Asset Management_ProductContainerTest_259_260_261_262");
         ProductContainerAction productContainer = new ProductContainerAction(driver);
         LoginAction login = new LoginAction(driver);
 

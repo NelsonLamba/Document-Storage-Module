@@ -746,8 +746,16 @@ public class ProductContainerPage extends WebBasePage {
 
     public void deployProductForContainer() {
         addProduct.clickAddNewButton();
+        boolean toggle=addProduct.getTermsAndCondition(containerProductType.get(0));
+        addProduct.clickFullMenuDropDown();
+        addProduct.clickAssetManagement();
+        addProduct.clickManageProduct();
+        addProduct.clickAddNewButton();
         selectValueWithText(By.cssSelector("div>select#AssetTypeId"), containerProductType.get(0), "Product Type", 20);
-        findElementVisibility(By.xpath("//span[contains(text(),'term and conditions')]//parent::div//button"), 10).click();
+        if(toggle)
+        {
+            click(By.xpath("//span[contains(text(),'term and conditions')]//parent::div//button"), "Terms and Condition close",40);
+        }
         Select select = new Select(driver.findElement(By.cssSelector("div>select#AssetTypeId")));
         WebElement option = select.getFirstSelectedOption();
         productTypeForContainer = option.getText();

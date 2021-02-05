@@ -34,6 +34,7 @@ public class AddProductPage extends WebBasePage {
     static String itemNameRandomValue;
     static String productCode;
     WebDriver driver;
+    boolean tcToggle=false;
     String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\testfiles\\";
 
     public AddProductPage(WebDriver driver) {
@@ -94,11 +95,53 @@ public class AddProductPage extends WebBasePage {
 
         }
     }
-
+    public boolean getTermsAndCondition(String productTypeName)
+    {
+        boolean tcToggle=false;
+        clickFullMenuDropDown();
+        clickAssetManagement();
+        findElementClickable(By.xpath("//ul[contains(@class,'submenu clschild')]//li//a[text()='Product Type']"),30);
+        click(By.xpath("//ul[contains(@class,'submenu clschild')]//li//a[text()='Product Type']"), "Product type", 20);
+        selectValueWithValue(By.cssSelector("select#pageSize"),"100","Page Size",30);
+        waitForLoader(20);
+        WebElement productType=findElementVisibility(By.xpath("//table[@id='tblAsset']//tbody//tr//td//a[normalize-space(text())='"+productTypeName+"']"),30);
+        if(productType==null)
+        {
+            WebElement paginationNavigator = findElementVisibility(By.xpath("//div[@class='nu-paging']//li//ul"), 15);
+            if (paginationNavigator != null) {
+                WebElement paginationLast = findElementClickable(By.xpath("//a[@class='page-link last']"), 30);
+                while (paginationLast != null) {
+                    click(By.xpath("//a[@class='page-link next' and text()='Next']"), "Pagination Next", 15);
+                    waitForLoader(20);
+                    productType = findElementVisibility(By.xpath("//table[@id='tblAsset']//tbody//tr//td//a[normalize-space(text())='"+productTypeName+"']"),30);
+                    if(productType!=null)
+                    {
+                        break;
+                    }
+                    findElementVisibility(By.xpath("//a[@class='page-link last']"), 30);
+                    paginationLast = findElementClickable(By.xpath("//a[@class='page-link last']"), 10);
+                }
+            }
+        }
+        scrollUpDown("up");
+        click(By.xpath("//table[@id='tblAsset']//tbody//tr//td//a[normalize-space(text())='"+productTypeName+"']"),"Product Type",30);
+        WebElement toggleYes=findElementVisibility(By.xpath("//input[@id='IsEnableTermsN']//parent::label//span/span[@class='slider-yes']"),20);
+        if(toggleYes!=null)
+        {
+            tcToggle=true;
+        }
+        return tcToggle;
+    }
     public void selectProductType() {
+        String productTypeName=getText(By.xpath("//select[@id='AssetTypeId']//option[2]"),30);
+        boolean toggle=getTermsAndCondition(productTypeName);
+        clickFullMenuDropDown();
+        clickAssetManagement();
+        clickManageProduct();
+        clickAddNewButton();
         selectValueWithIndex(By.cssSelector("div>select#AssetTypeId"), 1, "Product Type", 10);
-        WebElement element = findElementVisibility(By.xpath("//div[@id='notifymessage']//div[@role='alert']"), 30);
-        if (element != null) {
+        findElementVisibility(By.xpath("//div[@id='notifymessage']//div[@role='alert']"), 30);
+        if (toggle) {
             click(By.cssSelector("button#closenotifymessage"), "Close success message", 20);
         }
     }
