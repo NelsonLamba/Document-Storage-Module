@@ -156,7 +156,16 @@ public class ProductTypePage extends WebBasePage {
     }
 
     public void clickTheCheckBox() {
-        click(By.xpath("//table[@id='tblAsset']/tbody/tr/td[1]/div"), "CheckBox", 20);
+        List<WebElement> checkBox=findMultipleElement(By.xpath("//table[@id='tblAsset']/tbody/tr/td[1]/div"), 30);
+        for(WebElement ele : checkBox)
+        {
+            String checkBoxStatus=ele.findElement(By.tagName("input")).getAttribute("disabled");
+            if(checkBoxStatus==null)
+            {
+                ele.click();
+                break;
+            }
+        }
     }
 
     public void verifyDeleteButton() {
@@ -265,8 +274,7 @@ public class ProductTypePage extends WebBasePage {
     }
 
     public void handelSuccessPopup() {
-        waitForLoader(20);
-        findElementVisibility(By.xpath("//div[@id='notifymessage']//div[@role='alert']"), 80);
+        waitForLoad(10);
         WebElement element = findElementClickable(By.xpath("//div[@id='notifymessage']//div[@role='alert']"), 40);
         if (element != null) {
             click(By.cssSelector("button#closenotifymessage"), "Close success message", 40);
@@ -728,7 +736,7 @@ public class ProductTypePage extends WebBasePage {
         click(By.cssSelector("a.clsattclear"), "Clear", 20);
     }
 
-    public void verifyUploadFiledAfterClearingTheUploadedDco() {
+    public void verifyUploadFiledAfterClearingTheUploadedDoc() {
         String getDocName = getAtribute(By.cssSelector("input[class='form-control disabled']"), "value", 20);
         if (!getDocName.equals("ItemTypeSample.xls")) {
             getTest().log(LogStatus.PASS, "Uploaded document is cleared");
@@ -757,22 +765,15 @@ public class ProductTypePage extends WebBasePage {
     }
 
     public void verifyInvalidImportFileValidation() {
-        WebElement element = findElementVisibility(By.xpath("//label[@for='Upload_a_File']//parent::div//span[@class='invalid-feedback']"), 20);
+        WebElement element = findElementVisibility(By.xpath("//div[@id='notifymessage']/div/span[text()='Please upload valid excel file.']"), 40);
         if (element != null) {
-            String actualMsg = getText(By.xpath("//label[@for='Upload_a_File']//parent::div//span[@class='invalid-feedback']"), 20).trim();
-            if (actualMsg.equals(Errors.uploadValidFile)) {
-                getTest().log(LogStatus.PASS, "Validation message is displayed in upload file field as expected as " + actualMsg);
-                logger.info("Validation message is displayed in upload file field as expected as " + actualMsg);
-            } else {
-                getTest().log(LogStatus.FAIL, "Validation message is not displayed ");
-                logger.info("Validation message is not displayed ");
-                takeScreenshot("Validation msg on Upload file field");
-            }
-
+                getTest().log(LogStatus.PASS, "Error message is displayed as expected when upload file other than excel");
+                logger.info("Error message is displayed as expected when upload file other than excel");
+                click(By.xpath("//div[@id='notifymessage']/div/button"),"Invalid File Error message",30);
         } else {
-            getTest().log(LogStatus.FAIL, "Validation message is not displayed ");
-            logger.info("Validation message is not displayed ");
-            takeScreenshot("Validation msg on Upload file field");
+            getTest().log(LogStatus.FAIL, "Error message is not displayed when upload file other than excel");
+            logger.info("Error message is not displayed when upload file other than excel");
+            takeScreenshot("InvalidFile");
         }
     }
 
@@ -1060,9 +1061,9 @@ public class ProductTypePage extends WebBasePage {
     }
 
     public void statusChangeConfirmationPopup() {
-        WebElement statusChangeConfirmation=findElementClickable(By.xpath("//div[text()='Are you sure to update this record?']/parent::div/parent::div//div/button[@data-original-title='OK']"),60);
+        WebElement statusChangeConfirmation=findElementClickable(By.xpath("//div[text()='Are you sure to update this record?']"),60);
         if (statusChangeConfirmation!=null) {
-            click(By.xpath("//button[text()=' OK']"), "OK", 20);
+            click(By.xpath("//button[contains(@class,'btn btn-success')]"), "OK", 20);
            waitForLoader(20);
         } else {
             getTest().log(LogStatus.FAIL, "Confirmation for status change is not displayed");

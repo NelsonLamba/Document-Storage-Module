@@ -20,6 +20,7 @@ public class InTransitPage extends WebBasePage {
     int countInPopup;
     String transferProdName;
     String transferProdLocation;
+    int transferProdQuantity;
     private final static String FILE_NAME = System.getProperty("user.dir") + "\\src\\main\\resources\\testdata.properties";
     private static Properties prop = new PropertiesLoader(FILE_NAME).load();
 
@@ -126,6 +127,7 @@ public class InTransitPage extends WebBasePage {
         action.moveToElement(locationDropdown).perform();
         scrollUpDown("down");
         click(By.xpath("//a[@data-text='" + locationToSearch + "']"), locationToSearch, 20);
+        scrollUpDown("up");
     }
 
     public void verifySelectedLocation() {
@@ -148,9 +150,9 @@ public class InTransitPage extends WebBasePage {
                 logger.info("Searched status are displayed as expected");
             }
         } else {
-            getTest().log(LogStatus.FAIL, "Searched status are not displayed as expected");
-            logger.info("Searched status are not displayed as expected");
-            takeScreenshot("StatusSearch");
+            getTest().log(LogStatus.FAIL, "Searched location are not displayed as expected");
+            logger.info("Searched location are not displayed as expected");
+            takeScreenshot("LocationSearch");
         }
         resetButton();
     }
@@ -176,6 +178,7 @@ public class InTransitPage extends WebBasePage {
     }
 
     public void checkSearchBarIsEmptyInLocationField() {
+        click(By.xpath("//span[text()='Select Location']"),"Location Search field ",30);
         String searchField = findElementVisibility(By.xpath("//div[@class='btn form-control']//span"), 10).getText();
         if (searchField.equals("Select")) {
             getTest().log(LogStatus.PASS, "The Location search field is Empty in the In-Transit Page after clicked the Reset button");
@@ -273,8 +276,10 @@ public class InTransitPage extends WebBasePage {
         WebElement actualValue;
         waitForLoader(20);
         transferProdName=getText(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td[1]//span"),20);
-        transferProdLocation=getText(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td[3]//span"),20);;
-        clickByJavascript(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td//a"), "Accept or Reject button", 20);
+        transferProdLocation=getText(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td[3]//span"),20);
+        transferProdQuantity=Integer.parseInt(getText(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td[4]//span"),20));
+        findElementVisibility(By.xpath("//i[@class='fa fa-arrow-circle-left']"),180);
+        click(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td//a"), "Accept or Reject button", 180);
         actualValue = findElementVisibility(By.xpath("//h5[text()='In-Transit Products']"), 15);
         if (actualValue != null) {
             getTest().log(LogStatus.PASS, "In-Transit Products Page is displayed as expected when click accept or reject button");
@@ -296,11 +301,17 @@ public class InTransitPage extends WebBasePage {
     }
     public void chooseAcceptorReject(String option) {
         if (option.equals("Accept")) {
-            clickByJavascript(By.xpath("//div[text() [normalize-space()='Accept']]"), "Accept Option", 15);
+            int acceptOptions=findMultipleElement(By.xpath("//div[text() [normalize-space()='Accept']]"),30).size();
+            for(int i=1;i<=acceptOptions;i++) {
+                clickByJavascript(By.xpath("//table[@id='tblViewInTransitList']//tr["+i+"]//div[text() [normalize-space()='Accept']]"), "Accept Option", 15);
+            }
             getTest().log(LogStatus.PASS, "Accept option is Selected");
             logger.info("Accept option is Selected");
         } else if (option.equals("Reject")) {
-            clickByJavascript(By.xpath("//div[text() [normalize-space()='Reject']]//input"), "Reject Option", 15);
+            int acceptOptions=findMultipleElement(By.xpath("//table[@id='tblViewInTransitList']//tr//div[text() [normalize-space()='Reject']]"),30).size();
+            for(int i=1;i<=acceptOptions;i++) {
+                clickByJavascript(By.xpath("//table[@id='tblViewInTransitList']//tr["+i+"]//div[text() [normalize-space()='Reject']]//input"), "Reject Option", 15);
+            }
             getTest().log(LogStatus.PASS, "Reject option is Selected");
             logger.info("Reject option is Selected");
         } else {
@@ -324,7 +335,7 @@ public class InTransitPage extends WebBasePage {
     }
     public void verifyTransferReqActiveStatus() {
             int actualCount = Integer.parseInt(getText(By.xpath("//td[text()='"+transferProdLocation+"']//parent::tr//td[text()='Active']//parent::tr//td[contains(@class,'single-action')]/span/span"), 20));
-            if (actualCount==countInPopup+1) {
+            if (actualCount==countInPopup+transferProdQuantity) {
                 getTest().log(LogStatus.PASS, "Product is transferred to the requested location and status is displayed as Active in the sub status popup");
                 logger.info("Product is transferred to the requested location and status is displayed as Active in the sub status popup");
             } else {
@@ -336,8 +347,10 @@ public class InTransitPage extends WebBasePage {
     }
     public void verifyTransferReqRejectStatus()
     {
-            int actualCount = Integer.parseInt(getText(By.xpath("//td[text()='"+transferProdLocation+"']//parent::tr//td[text()='Active']//parent::tr//td[contains(@class,'single-action')]/span/span"), 20));
-            if (actualCount==countInPopup) {
+        WebElement requestedLocation=findElementVisibility(By.xpath("//td[text()='"+transferProdLocation+"']//parent::tr//td[text()='Active']//parent::tr//td[contains(@class,'single-action')]/span/span"),20);
+        if(requestedLocation!=null) {
+            int actualCount = Integer.parseInt(getText(By.xpath("//td[text()='" + transferProdLocation + "']//parent::tr//td[text()='Active']//parent::tr//td[contains(@class,'single-action')]/span/span"), 20));
+            if (actualCount == countInPopup) {
                 getTest().log(LogStatus.PASS, "Product is not transferred to the requested location when reject the transfer request");
                 logger.info("Product is not transferred to the requested location when reject the transfer request");
             } else {
@@ -345,7 +358,13 @@ public class InTransitPage extends WebBasePage {
                 logger.info("Product is transferred to the requested location when reject the transfer request");
                 takeScreenshot("ProductTransferActive");
             }
-        click(By.xpath("//div[@aria-describedby='divDialogSubStatus']//button[@class='close']"), "Sub-status close", 30);
+            click(By.xpath("//div[@aria-describedby='divDialogSubStatus']//button[@class='close']"), "Sub-status close", 30);
+        }
+        else
+        {
+            getTest().log(LogStatus.PASS, "Product is not transferred to the requested location when reject the transfer request");
+            logger.info("Product is not transferred to the requested location when reject the transfer request");
+        }
     }
 
     public void productLocationAscendingOrder() {

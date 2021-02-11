@@ -604,7 +604,6 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void selectValueFromLocationDropDown() {
-        clickExpandAllButton();
         click(By.xpath("//div[contains(@class,'CompantLocationdd')]/div"), "Location Dropdown", 20);
         locationToSearch = findMultipleElement(By.xpath("//a[contains(@class,'CompantLocationdd-option')]//span"), 30).get(0).getText();
         scrollUpDown("up");
@@ -692,6 +691,8 @@ public class ProductListingPage extends WebBasePage {
     public void verifySearchedStatus() {
         List<String> actualSearchedStatus = new ArrayList<>();
         List<String> result = new ArrayList<>();
+        selectValueWithValue(By.xpath("//select[@id='pageSize']"), "100", "Page Size", 30);
+        waitForLoader(30);
         List<WebElement> elements = findMultipleElement(By.xpath("//table[@id='tablelistingdata']//tbody//tr//td[6]//span"), 30);
         for (WebElement element : elements) {
             actualSearchedStatus.add(element.getText().trim());
@@ -773,8 +774,9 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void clickMoreIcon() {
-        waitForLoad(5000);
-        waitForElementInVisibility(By.xpath("//div[@class='chat_popup']//i[contains(@class,'arrow-rotate')]"),180);
+        waitForLoad(30);
+        findElementVisibility(By.xpath("//i[@class='fa fa-arrow-circle-left']"),180);
+        findElementVisibility(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//span[@class='actions mobileaction']"),180);
         click(By.xpath("//table[@id='tablelistingdata']//tbody//tr[2]//span[@class='actions mobileaction']"), "More Icon", 60);
     }
 

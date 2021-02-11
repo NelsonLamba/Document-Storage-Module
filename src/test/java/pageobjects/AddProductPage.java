@@ -65,6 +65,7 @@ public class AddProductPage extends WebBasePage {
             click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 20);
         } else {
             clickAssetManagement();
+            clickManageProduct();
         }
     }
 

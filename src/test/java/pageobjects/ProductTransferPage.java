@@ -343,7 +343,7 @@ public class ProductTransferPage extends WebBasePage {
         productCode = getAtribute(By.cssSelector("div>input#ItemCode"), "value", 30);
         addProductPage.clickTheCheckBox();
         goToDeployPage();
-        staticWait(5000);
+        staticWait(2000);
         deployProductPage.clickAddDeployButton();
         deployProductPage.clickLocationDropdown();
         deployProductPage.selectLocationValueFromDropdown();
@@ -376,7 +376,7 @@ public class ProductTransferPage extends WebBasePage {
         enter(By.cssSelector("div>input#ItemCode"), proCode, "product code", 10);
         productCode = getAtribute(By.cssSelector("div>input#ItemCode"), "value", 30);
         goToDeployPage();
-        staticWait(5000);
+        staticWait(2000);
         deployProductPage.clickAddDeployButton();
         deployProductPage.clickLocationDropdown();
         deployProductPage.selectLocationValueFromDropdown();
@@ -763,7 +763,7 @@ public class ProductTransferPage extends WebBasePage {
     }
 
     public void clickExpandAllOnInTransitPage() {
-        click(By.xpath("//span[normalize-space(text())='Product Name']"), "Expand All", 20);
+        click(By.xpath("//div[@class='bottom_filter_button']/a"), "Expand All", 20);
     }
 
     public void SelectLocation() {
@@ -782,6 +782,7 @@ public class ProductTransferPage extends WebBasePage {
     }
 
     public void verifyRequestIsCreated() {
+        waitForLoad(30);
         String actualLocation = getText(By.xpath("//table[@id='tblProjectList']/tbody/tr/td[3]/span"), 40).trim();
         String actualProductName = getText(By.xpath("//table[@id='tblProjectList']/tbody/tr/td[1]/span"), 40).trim();
         if (actualProductName.equals(productName)) {

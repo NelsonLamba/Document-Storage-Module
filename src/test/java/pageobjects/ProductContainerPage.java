@@ -20,6 +20,7 @@ public class ProductContainerPage extends WebBasePage {
 
     WebDriver driver;
     DeployProductPage deployProduct;
+    AttachmentsPage attachmentsPage;
     AddProductPage addProduct;
     ProductListingPage productListing;
     String containerToSearch;
@@ -35,10 +36,11 @@ public class ProductContainerPage extends WebBasePage {
 
     public ProductContainerPage(WebDriver driver) {
         super(driver, "Product Container Page");
+        this.driver = driver;
         this.deployProduct = new DeployProductPage(driver);
         this.addProduct = new AddProductPage(driver);
         this.productListing = new ProductListingPage(driver);
-        this.driver = driver;
+        this.attachmentsPage=new AttachmentsPage(driver);
     }
 
     public void openProductContainerPage() {
@@ -299,6 +301,10 @@ public class ProductContainerPage extends WebBasePage {
     public void clickAddProductContainerButton() {
         click(By.cssSelector("a#ancCreateDepartment"), "Add Container icon", 20);
     }
+    public void handleSuccessPopup()
+    {
+        deployProduct.handleSuccessPopup();
+    }
 
     public void verifyCreateProductContainerPage() {
         WebElement createContainerPage = findElementVisibility(By.xpath("//div[@id='General']//span[text()='Add Product Container List']"), 30);
@@ -535,6 +541,7 @@ public class ProductContainerPage extends WebBasePage {
     }
 
     public List<String> clickCheckBox(int count) {
+        waitForLoader(20);
         List<String> containerToDelete = new ArrayList<>();
         List<WebElement> checkBoxList = findMultipleElement(By.xpath("//input[@name='DeleteInputs']//parent::div"), 30);
         if (checkBoxList.size() != 0) {
@@ -653,8 +660,9 @@ public class ProductContainerPage extends WebBasePage {
     }
 
     public void navigateToEditPage() {
+        staticWait(1000);
         beforeEditProduct = getText(By.xpath("//table[@id='tblAssetGroup']//tr[1]//td[4]//span"), 30).trim();
-        click(By.xpath("//table[@id='tblAssetGroup']//tr[1]//a"), "Container", 20);
+        click(By.xpath("//table[@id='tblAssetGroup']//tr[1]//a"), "Container", 30);
     }
 
     public void changeProduct() {
@@ -674,7 +682,7 @@ public class ProductContainerPage extends WebBasePage {
     }
 
     public void handleContainerUpdateSuccess() {
-        WebElement successMsg = findElementVisibility(By.xpath("//span[text()='Container has been successfully updated.']"), 30);
+        WebElement successMsg = findElementVisibility(By.xpath("//span[text()='Product Container has been successfully updated.']"), 30);
         if (successMsg != null) {
             click(By.cssSelector("button#closenotifymessage"), "Success message close", 20);
         } else {
@@ -699,19 +707,49 @@ public class ProductContainerPage extends WebBasePage {
     public void getContainerProductType() {
         selectValueWithValue(By.xpath("//select[@id='pageSize']"), "100", "Page Size", 30);
         waitForLoader(20);
-        List<WebElement> elements = findMultipleElement(By.xpath("//table[@id='tblAsset']//tbody//tr//td[6]//span[text()='Yes']//parent::td//parent::tr//td[4]//a"), 30);
-        for (WebElement element : elements) {
-            containerProductType.add(element.getText().trim());
-        }
+            List<WebElement> containerStatus=findMultipleElement(By.xpath("//table[@id='tblAsset']//tr//td[6]"),30);
+            int iteration=0;
+            for(WebElement ele : containerStatus)
+            {
+                iteration++;
+                if(ele.getText().equalsIgnoreCase("Yes"))
+                {
+                    WebElement txtBoxStatus=findElementVisibility(By.xpath("//table[@id='tblAsset']//tr["+iteration+"]//td[7]//span"),1);
+                    if(txtBoxStatus==null)
+                    {
+                        txtBoxStatus=findElementVisibility(By.xpath("//table[@id='tblAsset']//tr["+iteration+"]//td[7]//select//option[@selected]"),1);
+                    }
+                    if(txtBoxStatus.getText().equalsIgnoreCase("Active"))
+                    {
+                        String actualName=getText(By.xpath("//table[@id='tblAsset']//tr["+iteration+"]//td[4]//a"),5);
+                        containerProductType.add(actualName);
+                    }
+                }
+            }
         WebElement paginationNavigator = findElementVisibility(By.xpath("//div[@class='nu-paging']//li//ul"), 10);
         if (paginationNavigator != null) {
             WebElement paginationLast = findElementClickable(By.xpath("//a[@class='page-link last']"), 5);
             while (paginationLast != null) {
                 click(By.xpath("//a[@class='page-link next' and text()='Next']"), "Pagination Next", 15);
                 waitForLoader(20);
-                elements = findMultipleElement(By.xpath("//table[@id='tblAsset']//tbody//tr//td[6]//span[text()='Yes']//parent::td//parent::tr//td[4]//a"), 30);
-                for (WebElement element : elements) {
-                    containerProductType.add(element.getText().trim());
+                List<WebElement> containerStatusOne=findMultipleElement(By.xpath("//table[@id='tblAsset']//tr//td[6]"),30);
+                int iterationOne=0;
+                for(WebElement ele : containerStatusOne)
+                {
+                    iterationOne++;
+                    if(ele.getText().equalsIgnoreCase("Yes"))
+                    {
+                        WebElement txtBoxStatus=findElementVisibility(By.xpath("//table[@id='tblAsset']//tr["+iterationOne+"]//td[7]//span"),1);
+                        if(txtBoxStatus==null)
+                        {
+                            txtBoxStatus=findElementVisibility(By.xpath("//table[@id='tblAsset']//tr["+iterationOne+"]//td[7]//select//option[@selected]"),1);
+                        }
+                        if(txtBoxStatus.getText().equalsIgnoreCase("Active"))
+                        {
+                            String actualName=getText(By.xpath("//table[@id='tblAsset']//tr["+iterationOne+"]//td[4]//a"),5);
+                            containerProductType.add(actualName);
+                        }
+                    }
                 }
                 findElementVisibility(By.xpath("//a[@class='page-link last']"), 5);
                 paginationLast = findElementClickable(By.xpath("//a[@class='page-link last']"), 5);
@@ -732,7 +770,6 @@ public class ProductContainerPage extends WebBasePage {
                 } else if (iteration == dropDownOptions.size()) {
                     getTest().log(LogStatus.FAIL, "The Product \"" + expectedProduct + "\" has container but not displayed in the product dropdown");
                     logger.info("The Product \"" + expectedProduct + "\" has container but not displayed in the product dropdown");
-                    takeScreenshot("ProductInDropdown");
                 }
             }
         }
@@ -780,6 +817,14 @@ public class ProductContainerPage extends WebBasePage {
         for (WebElement ele : productNameLocators) {
             deployedProductNames.add(ele.getText().trim());
         }
+        deployProduct.clickNextButton();
+        attachmentsPage.enterAttachmentName();
+        if(toggle) {
+            attachmentsPage.selectTermsAndConditionsYes();
+        }
+        attachmentsPage.uploadAttachment();
+        attachmentsPage.clickSaveButton();
+        deployProduct.handleSuccessPopup();
     }
 
     public void selectProductType() {
@@ -964,7 +1009,7 @@ public class ProductContainerPage extends WebBasePage {
     }
 
     public void handleContainerCreateSuccess() {
-        WebElement successMessage = findElementVisibility(By.xpath("//span[text()='Product has been successfully added.']"), 30);
+        WebElement successMessage = findElementVisibility(By.xpath("//span[text()='Product Container has been successfully added.']"), 60);
         if (successMessage != null) {
             click(By.cssSelector("button#closenotifymessage"), "Success message close", 20);
         } else {
@@ -992,6 +1037,7 @@ public class ProductContainerPage extends WebBasePage {
 
     public void getLocationForProductNameVerification() {
         int searchCount;
+        click(By.xpath("//div[@id='accordionEx']//a[@class='collapsed']/span[text()='Location']"), "Location Filter Option", 20);
         click(By.xpath("//div[contains(@class,'CompantLocationdd-container')]//div"), "Location Search Dropdown", 20);
         List<WebElement> locationList = findMultipleElement(By.xpath("//a[contains(@class,'CompantLocationdd-option')]"), 20);
         for (WebElement ele : locationList) {
@@ -1025,7 +1071,6 @@ public class ProductContainerPage extends WebBasePage {
                 for (WebElement ele : productsToValidateLocators) {
                     productsNameToValidate.add(ele.getText().trim());
                 }
-                click(By.xpath("//a[@class='page-link next' and text()='Next']"), "Pagination Next", 5);
                 findElementVisibility(By.xpath("//a[@class='page-link last']"), 5);
                 paginationLast = findElementClickable(By.xpath("//a[@class='page-link last']"), 5);
             }

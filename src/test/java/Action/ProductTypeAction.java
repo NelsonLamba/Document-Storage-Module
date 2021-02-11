@@ -93,12 +93,11 @@ public class ProductTypeAction {
         productTypePage.uploadImportProductTypeFile();
         productTypePage.verifyDocumentIsUploaded();
         productTypePage.clearUploadedFile();
-        productTypePage.verifyUploadFiledAfterClearingTheUploadedDco();
+        productTypePage.verifyUploadFiledAfterClearingTheUploadedDoc();
         productTypePage.clickImportFromExcelButton();
         productTypePage.verifyImportFileFieldValidation();
         productTypePage.uploadInvalidFileFormat();
         productTypePage.clickImportFromExcelButton();
-        productTypePage.clickConfirmInConfirmationPopup();
         productTypePage.verifyInvalidImportFileValidation();
     }
 

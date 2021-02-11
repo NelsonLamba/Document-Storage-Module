@@ -50,6 +50,10 @@ public class ProductContainerAction {
         productContainerPage.clickAddProductContainerButton();
     }
 
+    public void successPopup()
+    {
+        productContainerPage.handleSuccessPopup();
+    }
     public void verifyCreateContainerPage() {
         productContainerPage.verifyCreateProductContainerPage();
     }

@@ -35,6 +35,7 @@ public class InTransit extends WebTestBase {
         inTransit.searchOption();
         inTransit.verifySearchedProductName();
         inTransit.resetButton();
+        inTransit.expandAllOrCollapseAll();
         inTransit.clickLocationField();
         inTransit.selectLocation();
         inTransit.searchOption();
