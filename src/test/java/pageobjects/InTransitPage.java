@@ -101,7 +101,7 @@ public class InTransitPage extends WebBasePage {
 
     public void verifySearchedProductName() {
 
-        String searchProductNameResult = getText(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td[1]"), 20);
+        String searchProductNameResult = getText(By.xpath("//table[@id='tblProjectList']//tbody//tr[1]//td[1]"), 20,30);
         if (productName.equals(searchProductNameResult)) {
             getTest().log(LogStatus.PASS, "Searched product name is displayed as expected");
             logger.info("Searched product name is displayed as expected");

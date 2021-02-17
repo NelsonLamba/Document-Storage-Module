@@ -110,7 +110,7 @@ public class ProductTransferPage extends WebBasePage {
     }
 
     public void verifySearchedBarCodeProduct() {
-        WebElement element = findElementsVisibility(By.xpath("//table[@id='tblTransferMultipleItems']/tbody/tr[@class='itemAddlist']"));
+        WebElement element = findElementVisibility(By.xpath("//table[@id='tblTransferMultipleItems']/tbody/tr[@class='itemAddlist']"),60);
         if (element != null) {
             String actualUniqueName = getText(By.xpath("//table[@id='tblTransferMultipleItems']/tbody/tr[@class='itemAddlist']/td[4]"), 30).trim();
             if (actualUniqueName.equals(uniqueName)) {
@@ -176,9 +176,9 @@ public class ProductTransferPage extends WebBasePage {
     }
 
     public void verifySearchedProduct() {
-        WebElement element = findElementsVisibility(By.xpath("//table[@id='tblTransferMultipleItems']/tbody/tr[@class='itemAddlist']"));
+        WebElement element = findElementVisibility(By.xpath("//table[@id='tblTransferMultipleItems']/tbody/tr[@class='itemAddlist']"),60);
         if (element != null) {
-            String actualUniqueName = getText(By.xpath("//table[@id='tblTransferMultipleItems']/tbody/tr[@class='itemAddlist']/td[4]"), 30).trim();
+            String actualUniqueName = getText(By.xpath("//table[@id='tblTransferMultipleItems']/tbody/tr[@class='itemAddlist']/td[4]"), 30,30).trim();
             if (actualUniqueName.equals(uniqueName)) {
                 getTest().log(LogStatus.PASS, "Searched Product is displayed as expected");
                 logger.info("Searched Product is displayed as expected");
@@ -343,7 +343,7 @@ public class ProductTransferPage extends WebBasePage {
         productCode = getAtribute(By.cssSelector("div>input#ItemCode"), "value", 30);
         addProductPage.clickTheCheckBox();
         goToDeployPage();
-        staticWait(2000);
+        staticWait(5000);
         deployProductPage.clickAddDeployButton();
         deployProductPage.clickLocationDropdown();
         deployProductPage.selectLocationValueFromDropdown();
@@ -376,7 +376,7 @@ public class ProductTransferPage extends WebBasePage {
         enter(By.cssSelector("div>input#ItemCode"), proCode, "product code", 10);
         productCode = getAtribute(By.cssSelector("div>input#ItemCode"), "value", 30);
         goToDeployPage();
-        staticWait(2000);
+        staticWait(5000);
         deployProductPage.clickAddDeployButton();
         deployProductPage.clickLocationDropdown();
         deployProductPage.selectLocationValueFromDropdown();
@@ -783,8 +783,8 @@ public class ProductTransferPage extends WebBasePage {
 
     public void verifyRequestIsCreated() {
         waitForLoad(30);
-        String actualLocation = getText(By.xpath("//table[@id='tblProjectList']/tbody/tr/td[3]/span"), 40).trim();
-        String actualProductName = getText(By.xpath("//table[@id='tblProjectList']/tbody/tr/td[1]/span"), 40).trim();
+        String actualLocation = getText(By.xpath("//table[@id='tblProjectList']/tbody/tr/td[3]/span"), 40,30).trim();
+        String actualProductName = getText(By.xpath("//table[@id='tblProjectList']/tbody/tr/td[1]/span"), 40,30).trim();
         if (actualProductName.equals(productName)) {
             if (actualLocation.equals(toLocation)) {
                 getTest().log(LogStatus.PASS, "Product transfer to the location \""+actualLocation+"\" request is created on IN-Transit Page");

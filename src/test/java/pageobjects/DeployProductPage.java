@@ -48,6 +48,7 @@ public class DeployProductPage extends WebBasePage {
         if (assetManagementMenu != null) {
             click(By.xpath("//a[text()='Asset Management ']"), "Asset Management", 10);
         } else {
+            driver.navigate().refresh();
             clickFullMenuDropDown();
             clickAssetManagement();
         }
@@ -337,8 +338,8 @@ public class DeployProductPage extends WebBasePage {
     }
 
     public void handleSuccessPopup() {
-        waitForVisibilityOfElement(By.cssSelector("div.alert-success"), 20);
-        click(By.cssSelector("#closenotifymessage"), "Close Popup", 15);
+        //waitForVisibilityOfElement(By.cssSelector("div.alert-success"), 5);
+        click(By.cssSelector("#closenotifymessage"), "Close Popup", 20);
         waitForLoader(20);
     }
 

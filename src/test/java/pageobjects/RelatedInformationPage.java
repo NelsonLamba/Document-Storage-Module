@@ -49,7 +49,9 @@ public class RelatedInformationPage extends WebBasePage {
         if (assetManagementMenu != null) {
             click(By.xpath("//a[text()='Asset Management ']"), "Asset Management", 10);
         } else {
+            driver.navigate().refresh();
             clickFullMenuDropDown();
+            clickAssetManagement();
         }
     }
 
@@ -59,6 +61,7 @@ public class RelatedInformationPage extends WebBasePage {
             click(By.xpath("//div[@id='scrollbar']//a[text()='Manage Product']"), "Manage Product", 20);
         } else {
             clickAssetManagement();
+            clickManageProduct();
         }
     }
 

@@ -1,10 +1,7 @@
 package pageobjects;
 
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 import utils.Drivers;
 import utils.PropertiesLoader;
@@ -655,7 +652,7 @@ public class ProductListingPage extends WebBasePage {
 
     public void verifySearchedProductName() {
         waitForLoad(20);
-        String searchedProductName = getText(By.xpath("//table[@id='tablelistingdata']//tbody//tr//td[5]//span"), 30).trim();
+        String searchedProductName = getText(By.xpath("//table[@id='tablelistingdata']//tbody//tr//td[5]//span"), 30,30).trim();
         if (productNameToSearch.equals(searchedProductName)) {
             getTest().log(LogStatus.PASS, "Searched Product is displayed as expected when search with product name / code");
             logger.info("Searched Product is displayed as expected when search with product name / code");
@@ -970,7 +967,7 @@ public class ProductListingPage extends WebBasePage {
 
     public void verifySearchedDepreciationList() {
         waitForLoad(20);
-        String[] selectedDate = getAtribute(By.cssSelector("input#depreciationDate"), "value", 30).split("/");
+        String[] selectedDate = getAtribute(By.cssSelector("input#depreciationDate"), "value", 30,30).split("/");
         String expectedYear = selectedDate[2];
         int expectedMonthNum = Integer.parseInt(selectedDate[0]);
         String expectedMonth= Month.of(expectedMonthNum).name();
@@ -1315,7 +1312,7 @@ public class ProductListingPage extends WebBasePage {
     }
 
     public void clickCancelAfterImport() {
-        click(By.xpath("//div[@class='search-btm-btn']//a[contains(@class,'btn btn-danger')]"), "Cancel After Import", 30);
+        click(By.xpath("//div[@class='search-btm-btn']//a[contains(@class,'btn btn-danger')]"), "Cancel After Import", 50);
     }
 
     public void clickSubmitButton() {

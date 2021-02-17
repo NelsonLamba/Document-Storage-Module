@@ -67,6 +67,7 @@ public class ProductTypePage extends WebBasePage {
             click(By.xpath("//ul[contains(@class,'submenu clschild')]//li//a[text()='Product Type']"), "Product type", 20);
         } else {
             clickAssetManagement();
+            clickProductType();
         }
     }
 
@@ -275,11 +276,11 @@ public class ProductTypePage extends WebBasePage {
 
     public void handelSuccessPopup() {
         waitForLoad(10);
-        WebElement element = findElementClickable(By.xpath("//div[@id='notifymessage']//div[@role='alert']"), 40);
-        if (element != null) {
-            click(By.cssSelector("button#closenotifymessage"), "Close success message", 40);
+        //WebElement element = findElementClickable(By.xpath("//div[@id='notifymessage']//div[@role='alert']"), 40);
+        //if (element != null) {
+            click(By.cssSelector("button#closenotifymessage"), "Close success message", 60);
             waitForLoader(20);
-        }
+        //}
     }
 
     public void clickBulkDeleteButton() {

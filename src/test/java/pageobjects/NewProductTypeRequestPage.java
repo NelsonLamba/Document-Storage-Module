@@ -22,15 +22,30 @@ public class NewProductTypeRequestPage extends WebBasePage {
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
     String dateValue = simpleDateFormat.format(new Date());
     static String itemNameRandomValue;
+    DeployProductPage deployProduct;
 
     public NewProductTypeRequestPage(WebDriver driver) {
         super(driver, "Product Listing page");
         this.driver = driver;
+        this.deployProduct=new DeployProductPage(driver);
     }
 
+    public void goToAssetManagementMenu()
+    {
+        deployProduct.clickFullMenuDropDown();
+        deployProduct.clickAssetManagement();
+    }
     public void clickNewProductTypeRequest() {
-        scrollToWebelement(By.xpath("//a[text()='New Product Type Request']"), "New Product Type Request");
-        click(By.xpath("//div[@id='scrollbar']//a[text()='New Product Type Request']"), "New Product Type Request", 20);
+            scrollToWebelement(By.xpath("//a[text()='New Product Type Request']"), "New Product Type Request");
+            WebElement element=findElementVisibility(By.xpath("//div[@id='scrollbar']//a[text()='New Product Type Request']"),40);
+            if(element!=null) {
+                click(By.xpath("//div[@id='scrollbar']//a[text()='New Product Type Request']"), "New Product Type Request", 20);
+            }
+            else
+            {
+                goToAssetManagementMenu();
+                clickNewProductTypeRequest();
+            }
     }
 
     public void verifyNewProductTypeRequestHeaders() {
@@ -209,7 +224,7 @@ public class NewProductTypeRequestPage extends WebBasePage {
     }
 
     public void verifySearchedTitleDisplayed() {
-        String actualTitleName = getText(By.xpath("//table[@id='tblTicketGroup']//tr//td[2]/span"), 20);
+        String actualTitleName = getText(By.xpath("//table[@id='tblTicketGroup']//tr//td[2]/span"),20, 30);
         if (actualTitleName.equals(productTitleName)) {
             getTest().log(LogStatus.PASS, "Searched Title - " + actualTitleName + " is displayed in the list as expected");
             logger.info("Searched Title - " + actualTitleName + " is displayed in the list as expected");

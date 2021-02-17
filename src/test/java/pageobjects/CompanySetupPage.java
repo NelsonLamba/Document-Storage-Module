@@ -35,6 +35,7 @@ public class CompanySetupPage extends WebBasePage {
         if (companySetup != null) {
             click(By.cssSelector("[data-name='COMPANY']>a"), "Company Setup menu", 15);
         } else {
+            driver.navigate().refresh();
             clickFullMenu();
             clickCompanySetupMenu();
         }
@@ -46,6 +47,7 @@ public class CompanySetupPage extends WebBasePage {
             click(By.xpath("//ul[contains(@class,'submenu')]//a[text()='Company Setup']"), "Company Setup Sub Menu", 15);
         } else {
             clickCompanySetupMenu();
+            clickCompanySetupSubMenu();
         }
     }
 

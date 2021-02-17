@@ -1,29 +1,25 @@
 package Action;
 
 import org.openqa.selenium.WebDriver;
-import pageobjects.DeployProductPage;
 import pageobjects.InTransitPage;
 import pageobjects.NewProductTypeRequestPage;
 import pageobjects.ProductListingPage;
 
 public class NewProductTypeRequestAction {
     WebDriver driver;
-    DeployProductPage deployProduct;
     NewProductTypeRequestPage productTypeRequest;
     ProductListingPage productList;
     InTransitPage inTransit;
 
     public NewProductTypeRequestAction(WebDriver driver) {
         this.driver = driver;
-        this.deployProduct = new DeployProductPage(driver);
         this.productTypeRequest = new NewProductTypeRequestPage(driver);
         this.productList = new ProductListingPage(driver);
         this.inTransit = new InTransitPage(driver);
     }
 
     public void navigateToProductTypeRequestPage() {
-        deployProduct.clickFullMenuDropDown();
-        deployProduct.clickAssetManagement();
+        productTypeRequest.goToAssetManagementMenu();
         productTypeRequest.clickNewProductTypeRequest();
 
     }

@@ -177,6 +177,7 @@ public class ProductListingAction {
         productListingPage.selectLocation();
         productListingPage.clickSubmitButton();
         productListingPage.verifySuccessMessage();
+        productListingPage.handleSuccessPopup();
         productListingPage.verifyUniqueProductCode();
     }
 

@@ -46,7 +46,7 @@ public class AddProductPage extends WebBasePage {
 
     public void clickFullMenuDropDown() {
         findElementClickable(By.cssSelector("a#navbarDropdownPortfolio"), 20);
-        click(By.cssSelector("a#navbarDropdownPortfolio"), "Ful Menu", 20);
+        click(By.cssSelector("a#navbarDropdownPortfolio"), "Full Menu", 20);
     }
 
     public void clickAssetManagement() {
@@ -54,6 +54,7 @@ public class AddProductPage extends WebBasePage {
         if (assetManagementMenu != null) {
             click(By.xpath("//a[text()='Asset Management ']"), "Asset Management", 10);
         } else {
+            driver.navigate().refresh();
             clickFullMenuDropDown();
             clickAssetManagement();
         }

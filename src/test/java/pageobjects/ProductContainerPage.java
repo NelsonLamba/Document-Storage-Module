@@ -46,10 +46,11 @@ public class ProductContainerPage extends WebBasePage {
     public void openProductContainerPage() {
         deployProduct.clickFullMenuDropDown();
         deployProduct.clickAssetManagement();
-        String oldURL = driver.getCurrentUrl();
-        click(By.xpath("//ul[contains(@class,'submenu clschild')]//li//a[text()='Products Container List']"), "Prod Container Sub menu", 20);
-        String newURL = driver.getCurrentUrl();
-        if (oldURL.equals(newURL)) {
+        WebElement element=findElementVisibility(By.xpath("//ul[contains(@class,'submenu clschild')]//li//a[text()='Products Container List']"),40);
+        if(element!=null) {
+            click(By.xpath("//ul[contains(@class,'submenu clschild')]//li//a[text()='Products Container List']"), "Prod Container Sub menu", 20);
+        }
+        else{
             openProductContainerPage();
         }
     }
@@ -116,7 +117,7 @@ public class ProductContainerPage extends WebBasePage {
     }
 
     public void verifySearchedContainer() {
-        String searchedContainer = getText(By.xpath("//table[@id='tblAssetGroup']//tbody//tr//td//a"), 30).trim();
+        String searchedContainer = getText(By.xpath("//table[@id='tblAssetGroup']//tbody//tr//td//a"), 30,30).trim();
         if (searchedContainer.equals(containerToSearch)) {
             getTest().log(LogStatus.PASS, "Searched container " + containerToSearch + " is displayed as expected when enter and then click search button");
             logger.info("Searched container " + containerToSearch + " is displayed as expected when enter and then click search button");
