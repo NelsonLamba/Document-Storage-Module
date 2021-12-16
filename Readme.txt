@@ -16,10 +16,7 @@ mvn test "-Durl=https://sandbox2.talygen.com" "-Dusername=safiya@yopmail.com" "-
 To Run:
 
 1. Specify the functionality in the testing.xml 
-            <class name="testcases.AddProduct"/>
-            <class name="testcases.DeployProduct"/>
-            <class name="testcases.RelatedInformation"/>
-            <class name="testcases.Attachment"/>
+            
 2. To run , navigate to the workspace and issue the command mvn test.
 3. Once the execution is completed, navigate to the reports folder and open the AutomationReport.html file to see the result.
 
