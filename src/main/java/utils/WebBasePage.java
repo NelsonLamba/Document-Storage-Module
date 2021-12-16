@@ -34,6 +34,7 @@ public class WebBasePage extends WaitStatement {
         driver.get(url);
         getTest().log(LogStatus.PASS, "Url opened - " + url);
     }
+
     public List<WebElement> findMultipleElement(By by, int time) {
         List<WebElement> elements = new ArrayList<>();
         try {
@@ -104,96 +105,82 @@ public class WebBasePage extends WaitStatement {
     }
 
     public void selectValueWithIndex(By by, int value, String name, int time) {
-            boolean notStaleElement = false;
-            for(int i=0;i<=30;i++) {
-                try {
-                    WebElement element = findElementVisibility(by, time);
-                    Select se = new Select(element);
-                    se.selectByIndex(value);
-                    notStaleElement = true;
-                    break;
-                }
-                catch (Exception e)
-                {
+        boolean notStaleElement = false;
+        for (int i = 0; i <= 30; i++) {
+            try {
+                WebElement element = findElementVisibility(by, time);
+                Select se = new Select(element);
+                se.selectByIndex(value);
+                notStaleElement = true;
+                break;
+            } catch (Exception e) {
 
-                }
-                staticWait(200);
             }
-            if(notStaleElement) {
-                getTest().log(LogStatus.PASS, name + " selected with index - " + value);
-                logger.info(name + " selected with index - " + value);
-            }
-            else
-            {
-                getTest().log(LogStatus.FAIL, name + " not selected with index - " + value );
-                logger.info(name + " not selected with index - " + value );
-                takeScreenshot(new Object() {
-                }.getClass().getEnclosingMethod().getName());
-                Assert.fail(name+ " not selected with "+value);
-            }
+            staticWait(200);
+        }
+        if (notStaleElement) {
+            getTest().log(LogStatus.PASS, name + " selected with index - " + value);
+            logger.info(name + " selected with index - " + value);
+        } else {
+            getTest().log(LogStatus.FAIL, name + " not selected with index - " + value);
+            logger.info(name + " not selected with index - " + value);
+            takeScreenshot(new Object() {
+            }.getClass().getEnclosingMethod().getName());
+            Assert.fail(name + " not selected with " + value);
+        }
     }
 
     public void selectValueWithValue(By by, String value, String name, int time) {
-            boolean notStaleElement = false;
-            for(int i=0;i<=30;i++) {
-                try {
-                    WebElement element = findElementVisibility(by, time);
-                    Select se = new Select(element);
-                    se.selectByValue(value);
-                    notStaleElement = true;
-                    break;
-                }
-                catch (Exception e)
-                {
+        boolean notStaleElement = false;
+        for (int i = 0; i <= 30; i++) {
+            try {
+                WebElement element = findElementVisibility(by, time);
+                Select se = new Select(element);
+                se.selectByValue(value);
+                notStaleElement = true;
+                break;
+            } catch (Exception e) {
 
-                }
-                staticWait(200);
             }
-            if(notStaleElement) {
-                getTest().log(LogStatus.PASS, name + " selected with value - " + value);
-                logger.info(name + " selected with value - " + value);
-            }
-            else
-            {
-                getTest().log(LogStatus.FAIL, name + " not selected with value - " + value );
-                logger.info(name + " not selected with value - " + value );
-                takeScreenshot(new Object() {
-                }.getClass().getEnclosingMethod().getName());
-                Assert.fail(name+" not selected with "+value);
-            }
+            staticWait(200);
+        }
+        if (notStaleElement) {
+            getTest().log(LogStatus.PASS, name + " selected with value - " + value);
+            logger.info(name + " selected with value - " + value);
+        } else {
+            getTest().log(LogStatus.FAIL, name + " not selected with value - " + value);
+            logger.info(name + " not selected with value - " + value);
+            takeScreenshot(new Object() {
+            }.getClass().getEnclosingMethod().getName());
+            Assert.fail(name + " not selected with " + value);
+        }
     }
 
     public void selectValueWithText(By by, String value, String name, int time) {
-            staticWait(200);
-            boolean notStaleElement = false;
-            for(int i=0;i<=30;i++) {
-                try {
-                    WebElement element = findElementVisibility(by, time);
-                    Select se = new Select(element);
-                    se.selectByVisibleText(value);
-                    notStaleElement = true;
-                    break;
-                }
-                catch (Exception e)
-                {
+        staticWait(200);
+        boolean notStaleElement = false;
+        for (int i = 0; i <= 30; i++) {
+            try {
+                WebElement element = findElementVisibility(by, time);
+                Select se = new Select(element);
+                se.selectByVisibleText(value);
+                notStaleElement = true;
+                break;
+            } catch (Exception e) {
 
-                }
-                staticWait(200);
             }
-            if(notStaleElement) {
-                getTest().log(LogStatus.PASS, name + " selected with text - " + value);
-                logger.info(name + " selected with text - " + value);
-            }
-            else
-            {
-                getTest().log(LogStatus.FAIL, name + " not selected with text - " + value );
-                logger.info(name + " not selected with text - " + value );
-                takeScreenshot(new Object() {
-                }.getClass().getEnclosingMethod().getName());
-                Assert.fail(name+" not selected with "+value);
-            }
-            getTest().log(LogStatus.PASS, name + " selected with value - " + value);
-            logger.info(name + " selected with value - " + value);
+            staticWait(200);
+        }
+        if (notStaleElement) {
+            getTest().log(LogStatus.PASS, name + " selected with text - " + value);
+            logger.info(name + " selected with text - " + value);
+        } else {
+            getTest().log(LogStatus.FAIL, name + " not selected with text - " + value);
+            logger.info(name + " not selected with text - " + value);
+            takeScreenshot(new Object() {
+            }.getClass().getEnclosingMethod().getName());
+            Assert.fail(name + " not selected with " + value);
+        }
     }
 
     public void scrollDown() {
@@ -201,7 +188,7 @@ public class WebBasePage extends WaitStatement {
             staticWait(2000);
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-            getTest().log(LogStatus.PASS,"Page scroll down");
+            getTest().log(LogStatus.PASS, "Page scroll down");
             logger.info("Page scroll down");
             staticWait(2000);
         } catch (Exception e) {
@@ -387,11 +374,9 @@ public class WebBasePage extends WaitStatement {
     public int countNumberOfFilesInFolder(String path) {
         try {
             return Objects.requireNonNull(new File(path).list()).length;
-        }
-        catch (NullPointerException e)
-        {
-            getTest().log(LogStatus.FAIL,"File directory not found. "+path);
-            logger.info("File directory not found. "+path);
+        } catch (NullPointerException e) {
+            getTest().log(LogStatus.FAIL, "File directory not found. " + path);
+            logger.info("File directory not found. " + path);
             takeScreenshot("DirectoryNotFound");
             Assert.fail("" + e);
             return 0;
@@ -404,7 +389,7 @@ public class WebBasePage extends WaitStatement {
             int timeCount = 1;
             for (timeCount = 1; timeCount < 80; timeCount++) {
                 if (countNumberOfFilesInFolder(path) > previousFileCount) {
-                    getTest().log(LogStatus.PASS, "PDF downloaded...");
+                    getTest().log(LogStatus.PASS, "File downloaded...");
                     break;
                 }
                 staticWait(500);
@@ -459,6 +444,7 @@ public class WebBasePage extends WaitStatement {
         }
 
     }
+
     public boolean multipleClick(WebElement element, int count) {
         for (int cl = 1; cl <= count; cl++) {
             try {
@@ -478,25 +464,25 @@ public class WebBasePage extends WaitStatement {
         String text = null;
         WebElement element = findElementVisibility(by, time);
         if (element != null) {
-               for(int inc=1;inc<=staleCount;inc++) {
-                   try {
-                       text=element.getText();
-                       getTest().log(LogStatus.PASS,"Text is displayed as "+text);
-                       logger.info("Text is displayed as "+text);
-                       stateElement = true;
-                       break;
-                   } catch (StaleElementReferenceException e) {
+            for (int inc = 1; inc <= staleCount; inc++) {
+                try {
+                    text = element.getText();
+                    getTest().log(LogStatus.PASS, "Text is displayed as " + text);
+                    logger.info("Text is displayed as " + text);
+                    stateElement = true;
+                    break;
+                } catch (StaleElementReferenceException e) {
 
-                   }
-                   staticWait(200);
-               }
-                if(!stateElement){
-                    getTest().log(LogStatus.FAIL, "No text found");
-                    logger.info("No text found");
-                    takeScreenshot(new Object() {
-                    }.getClass().getEnclosingMethod().getName());
-                    Assert.fail("No text found");
                 }
+                staticWait(200);
+            }
+            if (!stateElement) {
+                getTest().log(LogStatus.FAIL, "No text found");
+                logger.info("No text found");
+                takeScreenshot(new Object() {
+                }.getClass().getEnclosingMethod().getName());
+                Assert.fail("No text found");
+            }
 
         } else {
             getTest().log(LogStatus.FAIL, "No text found");
@@ -507,38 +493,39 @@ public class WebBasePage extends WaitStatement {
         }
         return text;
     }
-    public String getAtribute(By by,String tag, int time, int staleCount) {
+
+    public String getAtribute(By by, String tag, int time, int staleCount) {
 
         boolean stateElement = false;
         String text = null;
         WebElement element = findElementVisibility(by, time);
         if (element != null) {
-               for(int inc=1;inc<=staleCount;inc++) {
-                   try {
-                       text=element.getAttribute(tag);
-                       getTest().log(LogStatus.PASS,"Get attribute value is"+text);
-                       logger.info("Get attribute value is"+text);
-                       stateElement = true;
-                       break;
-                   } catch (StaleElementReferenceException e) {
+            for (int inc = 1; inc <= staleCount; inc++) {
+                try {
+                    text = element.getAttribute(tag);
+                    getTest().log(LogStatus.PASS, "Get attribute value is" + text);
+                    logger.info("Get attribute value is" + text);
+                    stateElement = true;
+                    break;
+                } catch (StaleElementReferenceException e) {
 
-                   }
-                   staticWait(200);
-               }
-                if(!stateElement){
-                    getTest().log(LogStatus.FAIL, tag+" attribute not found");
-                    logger.info(tag+" attribute not found");
-                    takeScreenshot(new Object() {
-                    }.getClass().getEnclosingMethod().getName());
-                    Assert.fail(tag+" attribute not found");
                 }
+                staticWait(200);
+            }
+            if (!stateElement) {
+                getTest().log(LogStatus.FAIL, tag + " attribute not found");
+                logger.info(tag + " attribute not found");
+                takeScreenshot(new Object() {
+                }.getClass().getEnclosingMethod().getName());
+                Assert.fail(tag + " attribute not found");
+            }
 
         } else {
-            getTest().log(LogStatus.FAIL, tag+" attribute not found");
-            logger.info(tag+" attribute not found");
+            getTest().log(LogStatus.FAIL, tag + " attribute not found");
+            logger.info(tag + " attribute not found");
             takeScreenshot(new Object() {
             }.getClass().getEnclosingMethod().getName());
-            Assert.fail(tag+" attribute not found");
+            Assert.fail(tag + " attribute not found");
         }
         return text;
     }
